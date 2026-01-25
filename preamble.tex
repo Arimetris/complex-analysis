@@ -1,0 +1,86 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage[english, russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{soulutf8}
+\usepackage{nicematrix}
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes}
+
+\usepackage{pgfplots}
+
+\usepackage{mathrsfs}
+
+%настройка точек
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage{amsfonts} %Для красивых C, R, Q
+\usepackage{amsthm} %Работа с теоремами
+\usepackage{amsmath} %Добавили команду text
+\usepackage{indentfirst} %Делает первый абзац с отступом
+\usepackage{amssymb}
+
+\usepackage[left=25mm, right=10mm, top=20mm, bottom=20mm]{geometry}
+\renewcommand{\baselinestretch}{1.25}
+
+
+\renewcommand{\thesection}{\arabic{section}.} % Для разделов
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.} % Для подразделов
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.} % Для подподразделов
+
+%Мой стиль теорем без точек
+\newtheoremstyle{nodot}
+{3pt}               % Пробел сверху
+{3pt}               % Пробел снизу
+{\itshape}          % Шрифт тела (курсив)
+{0pt}               % Отступ слева (0pt — без отступа)
+{\bfseries}         % Шрифт заголовка (жирный)
+{}                  % Пунктуация после заголовка (пусто для nodot, или {.} для точки)
+{5pt plus 1pt minus 1pt}  % Пробел после заголовка (гибкий)
+{}                  % Кастомный заголовок (пусто для стандартного)
+
+\theoremstyle{nodot}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{lemma}{Лемма}
+\newtheorem*{definition}{Опр.\\ \indent}
+\newtheorem*{statement}{Утв. \indent}
+\newtheorem*{consequence}{Следствие \\}
+
+\usepackage{titleps}
+\newpagestyle{main}
+{
+	\setheadrule{0.4pt}
+	\sethead{Комплексный анализ}{}{Лекция \arabic{section}}
+	%\setfootrule{0.4pt}
+	\setfoot{}{\thepage}{}
+}
+
+\newpagestyle{сontent}
+{
+	\setheadrule{0.4pt}
+	\sethead{Комплексный анализ}{}{}
+	%\setfootrule{0.4pt}
+	\setfoot{}{\thepage}{}
+}
+
+\newcommand{\Cm}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\kappa}{\varkappa}
+
+\usepackage[
+unicode=true,
+colorlinks=true,      % цветные ссылки вместо рамок
+urlcolor=blue,        % цвет URL-ссылок (внешних)
+linkcolor=blue,       % цвет внутренних ссылок (на разделы, рисунки)
+citecolor=blue,       % цвет ссылок на библиографию
+filecolor=magenta]{hyperref} % альтернативно: сделать ВСЕ ссылки синими

@@ -1,0 +1,169 @@
+\input{preamble}
+
+\author{Падерин А.Ю.}
+\date{3 Модуль}
+\title{Комплексный анализ}
+
+\begin{document}
+	\maketitle %Генерация заголовка
+	\thispagestyle{empty} %делаем страницу без колонтитулов
+	\newpage
+	
+	\pagestyle{main}
+	\tableofcontents
+	\thispagestyle{сontent}
+	\newpage
+	
+	\section{Лекция 1}
+	\subsection{Комплексные числа и комплексная плоскость}
+	
+	\begin{definition}
+		Комплексным числом называют выражение вида: 
+		\[ z = a+ib, \text{ где } a,b \in \R \ \text{и } i \text{"---} \text{мнимая единица} \ (i^2 = -1) \]
+	\end{definition}
+	
+	\begin{flushleft}
+		\begin{minipage}{0.35\textwidth}
+			\begin{tikzpicture}[>=stealth]
+				% Оси
+				\draw[->] (-0.5,0) -- (4,0) node[below] {$x$};
+				\draw[->] (0,-0.5) -- (0,3) node[left] {$y$};
+				
+				% Вектор
+				\coordinate (O) at (0,0);
+				\coordinate (A) at (3,2);
+				\draw[->, thick, black] (O) -- (A) node[above right] {$z$};
+				\draw[dashed] (A) -- (3,0) node[below] {$x$};
+				\draw[dashed] (A) -- (0,2) node[left] {$y$};
+				
+				% Угол φ
+				\draw (1,0) arc (0:atan2(2,3):1) node[midway, right] {$\phi$};
+			\end{tikzpicture}
+		\end{minipage}
+		\begin{minipage}{0.3\textwidth}
+			\[ 
+			\begin{cases}
+				x = r\cos{\phi}\\
+				y = r\sin{\phi}
+			\end{cases} 
+			\]
+		\end{minipage}
+	\end{flushleft}
+	
+	\noindent
+	$ |z| = r = \sqrt{x^2 + y^2}, \ r\geqslant0 $\\
+	$ \operatorname{arg} z = \phi \text{ "--- главное значение аргумента } z,\ \phi\in(-\pi, \pi]$\\
+	$ \operatorname{Arg} z = \phi +2\pi k,\ k \in \Z$ \\
+	$ \operatorname{Re} z = x \text{ "--- вещественая часть }$\\
+	$ \operatorname{Im} z = y \text{ "--- мнимая часть }$\\
+	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи }$\\
+	$ z = re^{i\phi} \text{ "--- показательная форма записи }$\\
+	\begin{statement}
+		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
+	\end{statement}
+	
+	\begin{proof}
+		\[ 
+			e^s = \sum\limits_{k=1}^{\infty}\frac{s^{\mathrlap{k}}}{k!}, 
+			\ \ \sin s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k-1}}}{(2k-1)!},
+			\ \ \cos s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k}}}{(2k)!}\\ % Делаю степень нулевой длинны
+		\]
+		
+		\begin{multline*}
+			e^{i\phi} = \sum\limits_{k=1}^{\infty} \frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m - 1 \} = 
+			\sum\limits_{m=0}^{\infty} \frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} + 
+			\sum\limits_{m=1}^{\infty} \frac{i^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} = \\
+			= \sum\limits_{m=0}^{\infty} \frac{(-1)^{m}\phi^{\mathrlap{2m}}}{(2m)!} + 
+			i\sum\limits_{m=1}^{\infty} \frac{(-1)^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} =
+			\cos{\phi} + i\sin{\phi}
+		\end{multline*}
+		
+	\end{proof}
+	
+	\newpage
+	\begin{consequence}
+		\[ 
+			\cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \ \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}
+		\]
+	\end{consequence}
+	
+	\begin{proof}
+		\begin{align}
+		&e^{i\phi} = \cos \phi + i\sin \phi \\
+		&e^{-i\phi} = \cos \phi - i\sin \phi
+		\end{align}
+		
+		\begin{flalign*}
+			&\frac{(1) + (2)}{2} \Rightarrow  \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
+			\frac{(1) - (2)}{2} \Rightarrow  \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}&
+		\end{flalign*}
+	\end{proof}
+	
+	\subsection{Операции над комплексными числами}
+	\noindent
+	\begin{flalign*}
+		1) \ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2) & \\
+		2) \ &z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1) & \\
+		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} & \\
+		3) \ &\bar z = x - iy & \\
+		\ & \bar{z} = \overline{re^{i\phi}} = re^{-i\phi} & \\
+		4) \ &\frac{z_1}{z_2} = \frac{z_1 \bar {z_2}}{z_2 \bar {z_2}} = \frac{z_1 \bar {z_2}}{|z_2|^2}, \ z \ne 0 &\\
+		\ &\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)} &\\
+		5) \ & z_1 = z_2 \iff x_1 = x_2 \land y_1 = y_2 &\\
+	\end{flalign*}
+	
+	\newpage
+	\subsection{Расширенная комплексная плоскость}
+	\noindent
+	\[ \Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ "--- Поле комплексных чисел}\]
+	\[ \overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость} \]
+	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\frac{1}{2})^2 = \frac{1}{4}\}$\\
+	\includegraphics[width=1\textwidth]{Проекция.png}
+	Из подобия в треугольнике: \[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta) \  ,SZ = r, AB = \rho, AS = \zeta, NS = 1 \]
+	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$\\
+	$\eta = \rho\sin\phi = r(1 - \zeta)\sin\phi = (1 - \zeta)y$\\
+	Подставляем в исходное уравнение:\\
+	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta-\frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta-1)\zeta = 0 \]
+	
+	\[ (1 - \zeta)\bigg((1 - \zeta)(x^2+y^2)-\zeta\bigg) = 0 \]
+	
+	\[
+	\left\{
+	\begin{array}{rcl}
+		\zeta &= \dfrac{x^2+y^2}{x^2+y^2+1} \\
+		\xi   &= \dfrac{x}{x^2+y^2+1} \\
+		\eta  &= \dfrac{y}{x^2+y^2+1}
+	\end{array}
+	\right.
+	\iff
+	\left\{
+	\begin{array}{rcl}
+		u &= \dfrac{x}{|z|^2+1} \\
+		v &= \dfrac{y}{|z|^2+1} \\
+		w &= \dfrac{|z|^2}{|z|^2+1}
+	\end{array}
+	\right.
+	\]
+	
+	\noindent
+	$ S \leftrightarrow \Cm$\\
+	$ \Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
+	
+	\begin{statement}
+		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2| \]
+	\end{statement}
+	
+	\begin{proof}
+		 \[ |\tilde z_1-\tilde z_3| = |\tilde z_1 - \tilde z_2 + \tilde z_2 - \tilde z_3| \leqslant |\tilde z_1-\tilde z_2|+|\tilde z_2-\tilde z_3|\]
+		 $\text{т.е. требуется доказать, что } |z_1+z_2 | \leqslant |z_1|+|z_2|$
+		 \noindent
+		\begin{flalign*}
+			|z_1+z_2|^2 &=(z_1+z_2)\overline{(z_1+z_2)} = (r_1e^{i\phi_1}+r_2e^{i\phi_2})(r_1e^{-i\phi_1}+r_2e^{-i\phi_2}) =&\\
+			&= r_1^2+r_2^2 + r_1r_2(e^{i(\phi_1-\phi_2)}+e^{-i(\phi_1-\phi_2)}) = r_1^2+r_2^2+2\cos(\phi_1-\phi_2)r_1r_2 = \\
+			&\leqslant r_1^2+r_2^2+2r_1r_2 = (r_1+r_2)^2 = (|z_1|+|z_2|)^2
+		\end{flalign*}
+	\end{proof}
+	\newpage
+	\section{Лекция 2}
+	\subsection{Комплексные числа и комплексная плоскость}
+\end{document}
