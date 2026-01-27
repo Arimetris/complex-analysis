@@ -165,5 +165,110 @@
 	\end{proof}
 	\newpage
 	\section{Лекция 2}
-	\subsection{Комплексные числа и комплексная плоскость}
+	\subsection{Примеры}
+	\noindent
+	\begin{flalign*}
+	\textbf{1)} \quad e^{\phi_1+\phi_2} &= e^{i\phi_1}\cdot e^{i\phi_2} = (\cos\phi_1 + \sin\phi_1)(\cos\phi_2 + \sin\phi_2) = &\\
+	&= (\cos\phi_1\cos\phi_2 - \sin\phi_1\sin\phi_2) + i(\cos\phi_1\sin\phi_2 + \sin\phi_1\cos\phi_2) = &\\
+	&= \cos{(\phi_1+\phi_2)} + i\sin{(\phi_1+\phi_2)}
+	\end{flalign*}
+	\begin{flalign*}
+	\textbf{2})\quad &S_1 = 1 + \cos x + \ldots + \cos{nx} &\\
+	&S_2 = \sin x + \ldots + \sin{nx} &\\
+	&S_1 + iS_2 = 1 + (\cos x + i\sin x) + \ldots + (\cos {nx} + i\sin {nx}) = 1 + e^{ix} + \ldots + e^{inx} = &\\
+	&= \frac{1\cdot(1-e^{i(n+1)x})}{(1-e^{ix})} = \frac{(e^{i(n+1)x}-1)}{(e^{ix}-1)}\cdot\frac{e^\frac{-ix}{2}}{e^\frac{-ix}{2}}  = \frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{(e^\frac{ix}{2} - e^\frac{-ix}{2})\cdot\frac{2i}{2i}} =&\\  &=\frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{2i\sin{\frac{x}{2}}}\cdot\frac{e^{-\frac{i(n+1)x}{2}}}{e^{-\frac{i(n+1)x}{2}}} 
+	\frac{e^\frac{i(n+1)x}{2} - e^\frac{-i(n+1)x}{2}}{2i}\cdot\frac{1}{\sin\frac{x}{2}}\cdot\frac{e^\frac{-ix}{2}}{e^{-\frac{i(n+1)x}{2}}} = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot e^\frac{inx}{2}
+	\end{flalign*}
+	
+	\[ S_1 = \operatorname{Re}S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2}, \ x \neq 2\pi k \]
+	\[S_2 = \operatorname{Im}S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2}, \ x \neq 2\pi k \]
+	
+	\begin{flalign*}
+	\textbf{3)}\quad &\text{Дана рекурентная последовательность: } u_{n+2} = 2(u_{n+1} - u_n), \ u_0 = u_1 = 1&\\
+	&\text{Найти общий член этой последовательности.}&\\
+	&\text{Замена: } u_n = \lambda^n, \quad \lambda^{n+2} = 2\lambda^{n+1} - 2\lambda^n \iff \lambda^2-2\lambda+2=0&\\
+	&\lambda_{1,2} = 1\pm\sqrt{1-2} = 1 \pm i. \text{ Далее, будем искать } u_n \text{ в виде: }&\\
+	&u_n = C_1(1+i)^n+C_2(1-i)^n. \text{ Найдем } C_1 \text{ и } C_2 \text{ используя начальные условия:}
+	\end{flalign*}
+	\[
+	\left\{
+	\begin{array}{rcl}
+		u_0 &=& C_1 + C_2 = 1\\
+		u_1 &=& C_1(1+i) + C_2(1-i) = 1
+	\end{array}
+	\right.
+	\iff
+	\left\{
+	\begin{array}{rcl}
+		C_1 =\frac{1}{2}\\ 
+		C_2 =\frac{1}{2}
+	\end{array}
+	\right.
+	\]
+	\\
+	\[ u_n = \frac{1}{2}((1+i)^n+(1-i)^n) = \frac{(\sqrt{2})^n}{2}(e^{i\frac{\pi n}{4}}+e^{-i\frac{\pi n}{4}}) = 2^\frac{n}{2}\cos\frac{\pi n}{4}\]
+	\newpage
+	\begin{flalign*}
+		\textbf{4)}\quad 
+	\end{flalign*}
+	\subsection{Многочлены и формулы муавра}
+	\begin{statement1}
+		Основная теорема алгебры
+		\[\forall  P(z) = c_nz^n+c_{n-1}z^{n-1}+\ldots+c_0, \ c_i \in \Cm,\ c_n\ne0, \ n\in\N, \text{ имеет n корней с учетом кратности}\]
+	\end{statement1}
+	\noindent
+	\textbf{Формула Муавра}\\
+	\indent
+	Пусть $z = re^{i\phi}$ и $A = |A|e^{i(\operatorname{arg}A+2\pi k)}$, тогда\\ $z_n = \sqrt[n]{|A|}e^\frac{i(\operatorname{arg}A+2\pi k)}{n},\  k = 0,\ \ldots,\ n-1$ \\
+	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$\\
+	
+	\begin{theorem}
+		(Фробениуса)\\
+		\indent
+		Несуществует других расширений сисем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
+	\end{theorem}
+	\newpage
+	\section{Лекция 3}
+	\subsection{Кривые и множества}
+	
+	\begin{definition}
+		Точка $z_0 \in \Cm$ называется\\
+		1) \textbf{Внутренней} точкой множества $M\subset\Cm$, если $\ \exists U_\epsilon(z_0)\subset M$.\\
+		2) \textbf {Предельной} точкой множества $M\subset\Cm$, если $\ \forall \mathring U_\epsilon(z_0)\subset M \ \Rightarrow \ \mathring U_\epsilon(z_0)\cap M \ne \varnothing$.\\
+		3) \textbf {Граничной} точкой множества $M\subset\Cm$, если $\ \forall U_\epsilon(z_0) \ \exists$ точки, как из $M$, так и не из $M$.\\ \\
+		$ U_\epsilon(z_0) = \{\ z \in \Cm : |z-z_0|<\epsilon \ \} $\\
+		$ \mathring U_\epsilon(z_0) = \{\ z \in \Cm : 0<|z-z_0|<\epsilon \ \} $\\
+		$ U_\epsilon(\infty) = \{\ z \in \overline\Cm : |z|>\epsilon \ \} $\\
+		$ \mathring U_\epsilon(\infty) = \{\ z \in \overline\Cm : \epsilon<|z|<\infty \ \} $\\
+	\end{definition}
+	\begin{definition}
+		Множество вида: $\gamma =\{\ z \in \Cm : z(t) = x(t) + iy(t),\ t \in [\alpha, \beta]  \ \}$ называют \textbf{кривой} на $\Cm$\\
+		$z(\alpha)$ "--- начальная точка\\
+		$z(\beta)$ "--- конечная точка\\
+		$t \uparrow$ "--- ориентация\\
+	\end{definition}
+	\begin{definition}
+		Кривая $\gamma$ называется\\ 
+		1) \textbf{Непрерывной}, если $\ x(t), y(t) \in C[\alpha, \beta]$\\
+		2) \textbf{Замкнутой}, если $\ z(\alpha) = z(\beta)$\\
+		3) \textbf{Гладкой}, если $\ x(t), y(t) \in C^1[\alpha, \beta] \ $ и $\ \forall t \in [\alpha, \beta] \Rightarrow z'(t) \ne 0$\\
+	\end{definition}
+	\begin{definition}
+		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha, \beta$.\\
+	\end{definition}
+	\begin{definition}
+		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^{N} \gamma_i$, где N "--- конечное число гладких кривых.\\
+	\end{definition}
+	\begin{definition}
+		Множество $M\subset\Cm$ называют\\
+		1) \textbf{Открытым}, если $\forall z_0 \in M$ "--- внутренняя точка M.\\
+		2) \textbf{Связным}, если $\forall z_1, z_2 \in M \Rightarrow \exists$ Кривая Жордана $\gamma \subset M : z_1, z_2 \in \gamma $\\
+	\end{definition}
+	\begin{definition}
+		\textbf{Область} "--- открытое связное множество $D \subset \Cm$
+	\end{definition}
+	\begin{definition}
+		\textbf{Область} "--- открытое связное множество $D \subset \Cm \ 26 $
+	\end{definition}
+	
 \end{document}
