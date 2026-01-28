@@ -58,9 +58,9 @@
 	$ \operatorname{Im} z = y \text{ "--- мнимая часть }$\\
 	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи }$\\
 	$ z = re^{i\phi} \text{ "--- показательная форма записи }$\\
-	\begin{statement}
+	\begin{statementname}
 		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
-	\end{statement}
+	\end{statementname}
 	
 	\begin{proof}
 		\[ 
@@ -119,7 +119,7 @@
 	\[ \overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость} \]
 	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\frac{1}{2})^2 = \frac{1}{4}\}$\\
 	\includegraphics[width=1\textwidth]{Проекция.png}
-	Из подобия в треугольнике: \[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta) \  ,SZ = r, AB = \rho, AS = \zeta, NS = 1 \]
+	Из подобия в треугольнике: \[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
 	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$\\
 	$\eta = \rho\sin\phi = r(1 - \zeta)\sin\phi = (1 - \zeta)y$\\
 	Подставляем в исходное уравнение:\\
@@ -149,9 +149,9 @@
 	$ S \leftrightarrow \Cm$\\
 	$ \Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
 	
-	\begin{statement}
+	\begin{statementname}
 		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2| \]
-	\end{statement}
+	\end{statementname}
 	
 	\begin{proof}
 		 \[ |\tilde z_1-\tilde z_3| = |\tilde z_1 - \tilde z_2 + \tilde z_2 - \tilde z_3| \leqslant |\tilde z_1-\tilde z_2|+|\tilde z_2-\tilde z_3|\]
@@ -211,22 +211,21 @@
 	\begin{flalign*}
 		\textbf{4)}\quad 
 	\end{flalign*}
-	\subsection{Многочлены и формулы муавра}
-	\begin{statement1}
-		Основная теорема алгебры
-		\[\forall  P(z) = c_nz^n+c_{n-1}z^{n-1}+\ldots+c_0, \ c_i \in \Cm,\ c_n\ne0, \ n\in\N, \text{ имеет n корней с учетом кратности}\]
-	\end{statement1}
+	\subsection{Многочлены и формула Муавра}
+	\begin{statementname}
+		(Основная теорема алгебры)
+		\[\forall  P(z) = c_nz^n+c_{n-1}z^{n-1}+\ldots+c_0, \ c_i \in \Cm,\ c_n\ne0, \ n\in\N, \text{ имеет n корней с учетом кратности.}\]
+	\end{statementname}
 	\noindent
 	\textbf{Формула Муавра}\\
 	\indent
 	Пусть $z = re^{i\phi}$ и $A = |A|e^{i(\operatorname{arg}A+2\pi k)}$, тогда\\ $z_n = \sqrt[n]{|A|}e^\frac{i(\operatorname{arg}A+2\pi k)}{n},\  k = 0,\ \ldots,\ n-1$ \\
 	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$\\
 	
-	\begin{theorem}
-		(Фробениуса)\\
-		\indent
-		Несуществует других расширений сисем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
-	\end{theorem}
+	\begin{theoremname}
+		(Фробениуса)\\ \indent
+		Несуществует других расширений систем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
+	\end{theoremname}
 	\newpage
 	\section{Лекция 3}
 	\subsection{Кривые и множества}
@@ -265,10 +264,115 @@
 		2) \textbf{Связным}, если $\forall z_1, z_2 \in M \Rightarrow \exists$ Кривая Жордана $\gamma \subset M : z_1, z_2 \in \gamma $\\
 	\end{definition}
 	\begin{definition}
-		\textbf{Область} "--- открытое связное множество $D \subset \Cm$
+		\textbf{Область} "--- открытое связное множество $D \subset \Cm$.\\
 	\end{definition}
 	\begin{definition}
-		\textbf{Область} "--- открытое связное множество $D \subset \Cm \ 26 $
+		Область D \textbf{односвязная}, если $\partial D$ "--- связное множество.\\
+	\end{definition}
+	\begin{definition}
+		Область D \textbf{многосвязная}, если $\partial D$ "--- не является связным множеством и\\ $\partial D = \bigcup\limits_{i=1}^{N}\gamma, \text{ где } \gamma_1, \ldots \gamma_N$ "--- связные кривые не имеющие общих точек.
 	\end{definition}
 	
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+			\draw[fill=blue!10] (0,0) circle (1);
+			\node at (0,-1.5) {Односвязная};
+		\end{tikzpicture}
+		\hspace{2cm}
+		\begin{tikzpicture}[scale=1]
+			\draw[fill=blue!10] (0,0) circle (1);
+			\fill[white] (0,0) circle (0.5);
+			\draw (0,0) circle (0.5);
+			\node at (0,-1.5) {Двусвязная};
+		\end{tikzpicture}
+		\hspace{2cm}
+		\begin{tikzpicture}[scale=1]
+			\draw[fill=blue!10] (0,0) circle (1);
+			\fill[white] (-0.4,0.3) circle (0.2);
+			\fill[white] (0.4,-0.3) circle (0.2);
+			\draw (-0.4,0.3) circle (0.2);
+			\draw (0.4,-0.3) circle (0.2);
+			\node at (0,-1.5) {Трёхсвязная};
+		\end{tikzpicture}
+	\end{center}
+	
+	\subsection{Пределы последовательностей}
+	\begin{definition}
+		Число $z$ называется пределом последовательности $\{z_n\}$, если
+		\[ \forall\epsilon>0 \ \exists\delta = \delta(\epsilon)>0 : \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n - z| < \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = z \]
+	\end{definition}
+	\begin{definition}
+		Число $\infty$ называется пределом последовательности $\{z_n\}$, если
+		\[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n| > \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = \infty \]
+	\end{definition}
+	\begin{theoremname}
+		\[ \displaystyle\lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
+	\end{theoremname}
+	\begin{proof}
+		\ \\$\boxed\Rightarrow$ \[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
+		\begin{flalign*}
+			&|x_n -a| < \epsilon \Rightarrow \displaystyle\lim_{n \to \infty} x_n = a &\\
+			&|y_n -b| < \epsilon \Rightarrow \displaystyle\lim_{n \to \infty} y_n = b &
+		\end{flalign*}
+		
+		\newpage
+		\noindent
+		$\boxed\Leftarrow$ \[ \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
+		\begin{flalign*}
+			&\forall\epsilon>0 \ \exists N_1(\epsilon)\in\N : \forall n > N_1 \Rightarrow |x_n -a| < \epsilon &\\
+			&\forall\epsilon>0 \ \exists N_2(\epsilon)\in\N : \forall n > N_2 \Rightarrow |y_n -b| < \epsilon &
+		\end{flalign*}
+		\vspace{-1cm}
+		\begin{multline*}
+			\hspace{-0.5cm}
+			\text{ Фиксируем } \epsilon > 0,\ N(\epsilon) = \operatorname{max}\{N_1(\epsilon),\ N_2(\epsilon)\} :\\ 
+			\forall n>N(\epsilon) \ \Rightarrow |z_n - z|^2 = (x_n -a)^2 + (y_n - b)^2 < 2\epsilon^2 \Leftrightarrow |z_n - z| < \sqrt 2 \epsilon
+		\end{multline*}
+	\end{proof}
+	\begin{theoremname}
+		(Арифметические св-ва пределов)\\
+			\indent
+			$\text{Пусть } \exists\displaystyle\lim_{n \to \infty} z_n = z, \ \exists\displaystyle\lim_{n \to \infty} s_n = s, \text{тогда}$
+		\vspace{-0.25cm}
+		\begin{flalign*}
+			&1)\ \displaystyle\lim_{n \to \infty} (z_n+s_n) = z + s&\\
+			&2)\ \displaystyle\lim_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
+			&3)\ \displaystyle\lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\  \forall n \in \N \ s_n \ne 0,\ s \ne 0&\\
+		\end{flalign*}
+	\end{theoremname}
+	\begin{theoremname}
+		(Единственность)\\
+		\indent
+		$\text{Если } \exists\displaystyle\lim_{n \to \infty} z_n = z, \text{тогда он единственный.}$\\
+	\end{theoremname}
+	\begin{definition}
+		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ "--- подпоследоватедьность последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$\\
+	\end{definition}
+	\begin{definition}
+		Последовательность  $\{ z_n \}$ называется ограниченной, если\\
+		$ \exists K > 0 : \forall n \in \N \Rightarrow |z_n| \leqslant K$\\
+	\end{definition}
+	\begin{theoremname}
+		(Больцано-Вейерштрасса)\\
+		\indent Из всякой ограниченной последовательности можно выбрать сходящуюся подпоследовательность.\\
+	\end{theoremname}
+	\begin{theoremname}
+		(Критерий Коши)
+		\[ \displaystyle\lim_{n \to \infty} z_n = z \ \Leftrightarrow \ \forall\epsilon > 0 \ \exists N \in \N : \forall n, m > N \Rightarrow |z_n - z_m| < \epsilon \]
+	\end{theoremname}
+	\newpage
+	\begin{example}
+		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2\]
+	\end{example}
+	\begin{flalign*}
+		&\displaystyle\lim_{n \to \infty} \sqrt[n]{n} = \displaystyle\lim_{n \to \infty}n^\frac{1}{n} = \displaystyle\lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \displaystyle\lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1&\\
+		&\displaystyle\lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \displaystyle\lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \displaystyle\lim_{n \to \infty} n \frac{2}{n}} = e^2&\\
+	\end{flalign*}
+	\begin{example}
+		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ "---расходится, т.к. } (-1)^n \text{ расходится.}\]
+	\end{example}
+	\newpage
+	
+	\section{Лекция 4}
+	\subsection{Функции. Предел. Непрерывность}
 \end{document}
