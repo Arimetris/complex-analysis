@@ -15,7 +15,7 @@
 	\newpage
 	
 	\section{Лекция 1}
-	\subsection{Комплексные числа и комплексная плоскость}
+	\subsection{Комплексные числа и комплексная плоскость.}
 	
 	\begin{definition}
 		Комплексным числом называют выражение вида: 
@@ -99,7 +99,7 @@
 		\end{flalign*}
 	\end{proof}
 	
-	\subsection{Операции над комплексными числами}
+	\subsection{Операции над комплексными числами.}
 	\noindent
 	\begin{flalign*}
 		1) \ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2) & \\
@@ -113,7 +113,7 @@
 	\end{flalign*}
 	
 	\newpage
-	\subsection{Расширенная комплексная плоскость}
+	\subsection{Расширенная комплексная плоскость.}
 	\noindent
 	\[ \Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ "--- Поле комплексных чисел}\]
 	\[ \overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость} \]
@@ -209,9 +209,14 @@
 	\[ u_n = \frac{1}{2}((1+i)^n+(1-i)^n) = \frac{(\sqrt{2})^n}{2}(e^{i\frac{\pi n}{4}}+e^{-i\frac{\pi n}{4}}) = 2^\frac{n}{2}\cos\frac{\pi n}{4}\]
 	\newpage
 	\begin{flalign*}
-		\textbf{4)}\quad 
+		\textbf{4)}\quad &f(x) = \frac{1}{x^2+1} = \frac{A}{x-i} + \frac{B}{x+i}= \frac{i}{2}\left( \frac{1}{x+i} - \frac{1}{x-i}\right) &\\
+		&f^{(k)}(x) = \frac{i(-1)^k k!}{2}\left( \frac{1}{(x+i)^{k+1}} -\frac{1}{(x-i)^{k+1}}\right) = \frac{i(-1)^k k!}{2}\left( \frac{(x-i)^{k+1}}{(x^2-1)^{k+1}} -\frac{(x+i)^{k+1}}{(x^2-1)^{k+1}}\right) &\\ \\
+		&(x-i)^{k+1} - (x+i)^{k+1} = \sum\limits_{j=0}^{k+1}\binom{k+1}{j} (-i)^j x^{k+1-j} - \sum\limits_{j=0}^{k+1}\binom{k+1}{j} i^j x^{k+1-j} = \{ k = 2m\} =&\\ 
+		&= 2i \sum\limits_{l=1}^{m+1}\binom{2m+1}{2l-1} (-1)^l x^{2m+1 - 2l+1}&\\
+		&f^{(2m)}(x) = \frac{-(2m)!}{(x^2+1)^{2m+1}}\sum\limits_{l=1}^{m+1}\binom{2m+1}{2l-1}(-1)^lx^{2(m-l+1)}\\
+		&f^{(2m+1)}(x) = \frac{(2m-1)!}{(x^2+1)^{2m}}\sum\limits_{l=1}^{m}\binom{2m}{2l-1}(-1)^lx^{2(m-l)+1}
 	\end{flalign*}
-	\subsection{Многочлены и формула Муавра}
+	\subsection{Многочлены и формула Муавра.}
 	\begin{statementname}
 		(Основная теорема алгебры)
 		\[\forall  P(z) = c_nz^n+c_{n-1}z^{n-1}+\ldots+c_0, \ c_i \in \Cm,\ c_n\ne0, \ n\in\N, \text{ имеет n корней с учетом кратности.}\]
@@ -228,7 +233,7 @@
 	\end{theoremname}
 	\newpage
 	\section{Лекция 3}
-	\subsection{Кривые и множества}
+	\subsection{Кривые и множества.}
 	
 	\begin{definition}
 		Точка $z_0 \in \Cm$ называется\\
@@ -296,7 +301,7 @@
 		\end{tikzpicture}
 	\end{center}
 	
-	\subsection{Пределы последовательностей}
+	\subsection{Пределы последовательностей.}
 	\begin{definition}
 		Число $z$ называется пределом последовательности $\{z_n\}$, если
 		\[ \forall\epsilon>0 \ \exists\delta = \delta(\epsilon)>0 : \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n - z| < \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = z \]
@@ -374,5 +379,42 @@
 	\newpage
 	
 	\section{Лекция 4}
-	\subsection{Функции. Предел. Непрерывность}
+	\subsection{Функции. Предел. Непрерывность.}
+	\begin{definition}
+		\textbf{ Однозначная функция } "--- отображение, ставящее в соответствие любому $z \in D$ единственное число $ w \in \overline\Cm $.\ ($ w = f(z), D_f$ "--- область определения f(z))
+	\end{definition}
+	\begin{definition}
+		\textbf{ Многозначная функция } "--- отображение, ставящие в соответсвтие любому $z \in D$
+		некоторое множество значений $ E(z) \subset \overline\Cm $.
+	\end{definition}
+	\begin{example}
+		\[ f(z) = e^z,\ z\in\Cm,\  D_f = \Cm \] 
+		$e^z = e^{x+iy} = e^x(\cos y + i\sin y)\\
+		e^z = e^{z+2\pi ik}, \ T = 2\pi i$\\
+		Функция однозначная
+	\end{example}
+	\begin{example}
+		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus\{0 \} \]
+		$ \operatorname{Ln} z = \ln z + i(\phi + 2\pi k), \ k \in \Z $\\
+		Функция многозначная
+	\end{example}
+	\begin{example}
+		\[ \sin z = \frac{e^{iz}- e^{-iz}}{2i}, \ \cos z = \frac{e^{iz}+ e^{-iz}}{2}, \ \sh z = \frac{e^z - e^{-iz}}{2}, \ \ch z = \frac{e^z + e^{-iz}}{2}, \ D_f \in \Cm \]
+	\end{example}
+	\begin{example}
+		\[\text{Решить уравнение: } \cos w = \frac{e^{iw}+ e^{-iw}}{2} = z \]
+	\end{example}
+	\begin{proof}
+		\begin{flalign*}
+			&\text{Замена: } S = e^{iw}, \text{ тогда: } S + \frac{1}{S} - 2z = 0\ \Leftrightarrow \ S^2-2zS+1 = 0&\\
+			&S_{1, 2} = z + \sqrt{z^2 - 1} &\\
+			&\text{Обратная замена: }e^{iw} = z + \sqrt{z^2 - 1} \ \Leftrightarrow \ iw = \operatorname{Ln} (z+\sqrt{z^2 - 1})&\\
+			& w = -i\operatorname{Ln} (z+\sqrt{z^2 - 1})&\\
+			&\operatorname{Argcos} z = -i\operatorname{Ln}(z + \sqrt{z^2 - 1}) \text{"--- многозначная функция.}(\text{Для корня берем два значения.})\\
+			&\text{Когда } \operatorname{Argcos}z \text{ принимает вещественные значения?}\\
+			&\ln{|z+\sqrt{z^2-1}|} = 0 \ \Leftrightarrow \ |z+\sqrt{z^2+1}| = 1 \ \Leftrightarrow \ z+\sqrt{z^2+1} = e^{it} &\\
+			&z^2+1 = (e^{it}-z)^2 = e^{2it}- 2ze^{it}+z^2 \ \Leftrightarrow \ z = \frac{e^{2it}+1}{2e^{it}} = \frac{e^{it}+e^{-it}}{2} = \cos t &\\ \\
+			&\text{Ответ: } M = \{ z \in \Cm : \operatorname{Im}z = 0, \ \operatorname{Re} \in [-1, 1] \}
+		\end{flalign*}
+	\end{proof}
 \end{document}
