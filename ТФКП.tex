@@ -5,8 +5,8 @@
 \title{Комплексный анализ}
 
 \begin{document}
-	\maketitle %Генерация заголовка
-	\thispagestyle{empty} %делаем страницу без колонтитулов
+	\maketitle
+	\thispagestyle{empty}
 	\newpage
 	
 	\pagestyle{main}
@@ -18,8 +18,8 @@
 	\subsection{Комплексные числа и комплексная плоскость.}
 	
 	\begin{definition}
-		Комплексным числом называют выражение вида: 
-		\[ z = a+ib, \text{ где } a,b \in \R \ \text{и } i \text{"---} \text{мнимая единица} \ (i^2 = -1) \]
+		\textbf{Комплексным числом} называют выражение вида: 
+		$z = a+ib, \text{ где } a,b \in \R \\ \text{и } i \text{"---} \text{мнимая единица} \ (i^2 = -1)$.
 	\end{definition}
 	
 	\begin{flushleft}
@@ -57,7 +57,7 @@
 	$ \operatorname{Re} z = x \text{ "--- вещественая часть }$\\
 	$ \operatorname{Im} z = y \text{ "--- мнимая часть }$\\
 	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи }$\\
-	$ z = re^{i\phi} \text{ "--- показательная форма записи }$\\
+	$ z = re^{i\phi} \text{ "--- показательная форма записи }$
 	\begin{statementname}
 		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
 	\end{statementname}
@@ -68,7 +68,6 @@
 			\ \ \sin s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k-1}}}{(2k-1)!},
 			\ \ \cos s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k}}}{(2k)!}\\ % Делаю степень нулевой длинны
 		\]
-		
 		\begin{multline*}
 			e^{i\phi} = \sum\limits_{k=1}^{\infty} \frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m - 1 \} = 
 			\sum\limits_{m=0}^{\infty} \frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} + 
@@ -77,14 +76,10 @@
 			i\sum\limits_{m=1}^{\infty} \frac{(-1)^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} =
 			\cos{\phi} + i\sin{\phi}
 		\end{multline*}
-		
 	\end{proof}
-	
 	\newpage
 	\begin{consequence}
-		\[ 
-			\cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \ \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}
-		\]
+		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \ \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i} \]
 	\end{consequence}
 	
 	\begin{proof}
@@ -92,7 +87,6 @@
 		&e^{i\phi} = \cos \phi + i\sin \phi \\
 		&e^{-i\phi} = \cos \phi - i\sin \phi
 		\end{align}
-		
 		\begin{flalign*}
 			&\frac{(1) + (2)}{2} \Rightarrow  \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
 			\frac{(1) - (2)}{2} \Rightarrow  \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}&
@@ -218,14 +212,14 @@
 	\end{flalign*}
 	\subsection{Многочлены и формула Муавра.}
 	\begin{statementname}
-		(Основная теорема алгебры)
-		\[\forall  P(z) = c_nz^n+c_{n-1}z^{n-1}+\ldots+c_0, \ c_i \in \Cm,\ c_n\ne0, \ n\in\N, \text{ имеет n корней с учетом кратности.}\]
+		(Основная теорема алгебры)\\ \indent
+		Любой многочлен степени n над полем $ \Cm $ имеет n корней с учетом кратности.\\
 	\end{statementname}
 	\noindent
 	\textbf{Формула Муавра}\\
 	\indent
 	Пусть $z = re^{i\phi}$ и $A = |A|e^{i(\operatorname{arg}A+2\pi k)}$, тогда\\ $z_n = \sqrt[n]{|A|}e^\frac{i(\operatorname{arg}A+2\pi k)}{n},\  k = 0,\ \ldots,\ n-1$ \\
-	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$\\
+	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.\\
 	
 	\begin{theoremname}
 		(Фробениуса)\\ \indent
@@ -234,46 +228,49 @@
 	\newpage
 	\section{Лекция 3}
 	\subsection{Кривые и множества.}
-	
+	\noindent
+	\begin{definition}
+		$ U_\epsilon(z_0) = \{\ z \in \Cm : |z-z_0|<\epsilon \ \} $\\
+		$ \mathring U_\epsilon(z_0) = \{\ z \in \Cm : 0<|z-z_0|<\epsilon \ \} $\\
+		$ U_\epsilon(\infty) = \{\ z \in \overline\Cm : |z|>\epsilon \ \} $\\
+		$ \mathring U_\epsilon(\infty) = \{\ z \in \overline\Cm : \epsilon<|z|<\infty \ \} $		
+	\end{definition}
 	\begin{definition}
 		Точка $z_0 \in \Cm$ называется\\
 		1) \textbf{Внутренней} точкой множества $M\subset\Cm$, если $\ \exists U_\epsilon(z_0)\subset M$.\\
 		2) \textbf {Предельной} точкой множества $M\subset\Cm$, если $\ \forall \mathring U_\epsilon(z_0)\subset M \ \Rightarrow \ \mathring U_\epsilon(z_0)\cap M \ne \varnothing$.\\
-		3) \textbf {Граничной} точкой множества $M\subset\Cm$, если $\ \forall U_\epsilon(z_0) \ \exists$ точки, как из $M$, так и не из $M$.\\ \\
-		$ U_\epsilon(z_0) = \{\ z \in \Cm : |z-z_0|<\epsilon \ \} $\\
-		$ \mathring U_\epsilon(z_0) = \{\ z \in \Cm : 0<|z-z_0|<\epsilon \ \} $\\
-		$ U_\epsilon(\infty) = \{\ z \in \overline\Cm : |z|>\epsilon \ \} $\\
-		$ \mathring U_\epsilon(\infty) = \{\ z \in \overline\Cm : \epsilon<|z|<\infty \ \} $\\
+		3) \textbf {Граничной} точкой множества $M\subset\Cm$, если $\ \forall U_\epsilon(z_0) \ \exists$ точки из $M$ и не из $M$.
 	\end{definition}
 	\begin{definition}
 		Множество вида: $\gamma =\{\ z \in \Cm : z(t) = x(t) + iy(t),\ t \in [\alpha, \beta]  \ \}$ называют \textbf{кривой} на $\Cm$\\
 		$z(\alpha)$ "--- начальная точка\\
 		$z(\beta)$ "--- конечная точка\\
-		$t \uparrow$ "--- ориентация\\
+		$t \uparrow$ "--- ориентация
 	\end{definition}
 	\begin{definition}
 		Кривая $\gamma$ называется\\ 
 		1) \textbf{Непрерывной}, если $\ x(t), y(t) \in C[\alpha, \beta]$\\
 		2) \textbf{Замкнутой}, если $\ z(\alpha) = z(\beta)$\\
-		3) \textbf{Гладкой}, если $\ x(t), y(t) \in C^1[\alpha, \beta] \ $ и $\ \forall t \in [\alpha, \beta] \Rightarrow z'(t) \ne 0$\\
+		3) \textbf{Гладкой}, если $\ x(t), y(t) \in C^1[\alpha, \beta] \ $ и $\ \forall t \in [\alpha, \beta] \Rightarrow z'(t) \ne 0$
 	\end{definition}
 	\begin{definition}
-		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha, \beta$.\\
+		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha, \beta$.
 	\end{definition}
 	\begin{definition}
-		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^{N} \gamma_i$, где N "--- конечное число гладких кривых.\\
+		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^{N} \gamma_i$, где N "--- конечное число гладких кривых.
 	\end{definition}
 	\begin{definition}
 		Множество $M\subset\Cm$ называют\\
 		1) \textbf{Открытым}, если $\forall z_0 \in M$ "--- внутренняя точка M.\\
-		2) \textbf{Связным}, если $\forall z_1, z_2 \in M \Rightarrow \exists$ Кривая Жордана $\gamma \subset M : z_1, z_2 \in \gamma $\\
+		2) \textbf{Связным}, если $\forall z_1, z_2 \in M \Rightarrow \exists$ Кривая Жордана $\gamma \subset M : z_1, z_2 \in \gamma $
 	\end{definition}
 	\begin{definition}
-		\textbf{Область} "--- открытое связное множество $D \subset \Cm$.\\
+		\textbf{Область} "--- открытое связное множество $D \subset \Cm$.
 	\end{definition}
 	\begin{definition}
-		Область D \textbf{односвязная}, если $\partial D$ "--- связное множество.\\
+		Область D \textbf{односвязная}, если $\partial D$ "--- связное множество.
 	\end{definition}
+	\newpage
 	\begin{definition}
 		Область D \textbf{многосвязная}, если $\partial D$ "--- не является связным множеством и\\ $\partial D = \bigcup\limits_{i=1}^{N}\gamma, \text{ где } \gamma_1, \ldots \gamma_N$ "--- связные кривые не имеющие общих точек.
 	\end{definition}
@@ -319,8 +316,6 @@
 			&|x_n -a| < \epsilon \Rightarrow \displaystyle\lim_{n \to \infty} x_n = a &\\
 			&|y_n -b| < \epsilon \Rightarrow \displaystyle\lim_{n \to \infty} y_n = b &
 		\end{flalign*}
-		
-		\newpage
 		\noindent
 		$\boxed\Leftarrow$ \[ \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
 		\begin{flalign*}
@@ -334,6 +329,7 @@
 			\forall n>N(\epsilon) \ \Rightarrow |z_n - z|^2 = (x_n -a)^2 + (y_n - b)^2 < 2\epsilon^2 \Leftrightarrow |z_n - z| < \sqrt 2 \epsilon
 		\end{multline*}
 	\end{proof}
+	\newpage
 	\begin{theoremname}
 		(Арифметические св-ва пределов)\\
 			\indent
@@ -342,36 +338,35 @@
 		\begin{flalign*}
 			&1)\ \displaystyle\lim_{n \to \infty} (z_n+s_n) = z + s&\\
 			&2)\ \displaystyle\lim_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
-			&3)\ \displaystyle\lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\  \forall n \in \N \ s_n \ne 0,\ s \ne 0&\\
+			&3)\ \displaystyle\lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\  \forall n \in \N \ s_n \ne 0,\ s \ne 0&
 		\end{flalign*}
 	\end{theoremname}
 	\begin{theoremname}
 		(Единственность)\\
 		\indent
-		$\text{Если } \exists\displaystyle\lim_{n \to \infty} z_n = z, \text{тогда он единственный.}$\\
+		$\text{Если } \exists\displaystyle\lim_{n \to \infty} z_n = z, \text{тогда он единственный.}$
 	\end{theoremname}
 	\begin{definition}
-		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ "--- подпоследоватедьность последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$\\
+		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ "--- подпоследоватедьность последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$
 	\end{definition}
 	\begin{definition}
 		Последовательность  $\{ z_n \}$ называется ограниченной, если\\
-		$ \exists K > 0 : \forall n \in \N \Rightarrow |z_n| \leqslant K$\\
+		$ \exists K > 0 : \forall n \in \N \Rightarrow |z_n| \leqslant K$
 	\end{definition}
 	\begin{theoremname}
 		(Больцано-Вейерштрасса)\\
-		\indent Из всякой ограниченной последовательности можно выбрать сходящуюся подпоследовательность.\\
+		\indent Из всякой ограниченной последовательности можно выбрать сходящуюся подпоследовательность.
 	\end{theoremname}
 	\begin{theoremname}
 		(Критерий Коши)
 		\[ \displaystyle\lim_{n \to \infty} z_n = z \ \Leftrightarrow \ \forall\epsilon > 0 \ \exists N \in \N : \forall n, m > N \Rightarrow |z_n - z_m| < \epsilon \]
 	\end{theoremname}
-	\newpage
 	\begin{example}
 		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2\]
 	\end{example}
 	\begin{flalign*}
 		&\displaystyle\lim_{n \to \infty} \sqrt[n]{n} = \displaystyle\lim_{n \to \infty}n^\frac{1}{n} = \displaystyle\lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \displaystyle\lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1&\\
-		&\displaystyle\lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \displaystyle\lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \displaystyle\lim_{n \to \infty} n \frac{2}{n}} = e^2&\\
+		&\displaystyle\lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \displaystyle\lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \displaystyle\lim_{n \to \infty} n \frac{2}{n}} = e^2&
 	\end{flalign*}
 	\begin{example}
 		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ "---расходится, т.к. } (-1)^n \text{ расходится.}\]
@@ -395,7 +390,7 @@
 	\end{example}
 	\begin{example}
 		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus\{0 \} \]
-		$ \operatorname{Ln} z = \ln z + i(\phi + 2\pi k), \ k \in \Z $\\
+		$ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ k \in \Z $\\
 		Функция многозначная
 	\end{example}
 	\begin{example}
@@ -416,5 +411,80 @@
 			&z^2+1 = (e^{it}-z)^2 = e^{2it}- 2ze^{it}+z^2 \ \Leftrightarrow \ z = \frac{e^{2it}+1}{2e^{it}} = \frac{e^{it}+e^{-it}}{2} = \cos t &\\ \\
 			&\text{Ответ: } M = \{ z \in \Cm : \operatorname{Im}z = 0, \ \operatorname{Re} \in [-1, 1] \}
 		\end{flalign*}
+	\end{proof}
+	\newpage
+	\begin{example}
+		\[f(z) = z^n, \ n\in\N, \ D_f = \Cm \]
+	Функция однозначная
+	\end{example}
+	\begin{example}
+		\[ f(z) = z^\frac{1}{n}, \ D_f = \Cm \]
+	$ z^\frac{1}{n} = \sqrt[n]{|z|} = e^\frac{i(\operatorname{arg}z+2\pi k)}{n}, \ k = 0, 1, \ldots, n-1 $\\
+	Функция n - значная
+	\end{example}
+	\begin{example}
+		\[f(z) = z^A = e^{A\operatorname{Ln}z}, \ A \in \Cm, \ D_f = \Cm \setminus \{0\} \]
+		Функция многозначная
+	\end{example}
+	\begin{remark}
+		 	\[ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ \ln z = \ln{|z|} + i\phi \]
+	\end{remark}
+	\begin{definition}
+		Пусть однозначная функция определена на области $ D, z_0 \in D $, тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если:
+		\[ \forall \epsilon > 0 \ \exists \delta(\epsilon) > 0 : \forall z \in \ \mathring U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \ \Leftrightarrow \ \displaystyle\lim_{z \to z_0} z = A  \]
+	\end{definition}
+	\begin{theoremname}
+		(Арифметические свойства)\\ \indent
+		Пусть однозначная функции $ f(z), g(z)$ определены на области $ D, \ z_0 \in D \text{ и }\newline \displaystyle\lim_{z \to z_0}f(z)= A, \ \displaystyle\lim_{z \to z_0}g(z)= B$, тогда
+		\begin{flalign*}
+		&1)\ \displaystyle\lim_{z \to z_0}(f(z)\pm g(z))= A \pm B&\\
+		&2)\ \displaystyle\lim_{z \to z_0}(f(z)\cdot g(z)) = A\cdot B&\\
+		&3)\ \displaystyle\lim_{z \to z_0}\frac{f(z)}{g(z)} = \frac{A}{B}, \ B\ne 0
+		\end{flalign*}
+	\end{theoremname}
+	\begin{definition}
+		Пусть однозначная функция $ f(z) $ определена на области D. Тогда $ f(z) $ называется \textbf{ непрерывной в точке } $ z_0 \in D $, если
+		\[ \displaystyle\lim_{z \to z_0}f(z) = f(z_0) \]
+		\indent Функция $ f(z) $ \textbf{ непрерывна на D }, если $ f(z) $ непрерывна в каждой точке $ z_0\in D $ 		
+	\end{definition}
+	\begin{theorem}
+		Пусть $ f(z) $ непрерывна в точке $ z_0 \in D_f, \ g(w)$ непрерывна в точке $ w_0 \in D_f$ и $w_0 = f(z_0)$. Тогда $ g(f(z))$ "--- непрерывна в точке $ z_0 $.
+	\end{theorem}
+	\newpage
+	\subsection{Производная. Дифференцируемость. Условия Коши-Римана.}
+	\begin{definition}
+		Пусть функция $ f(z) $ определена на области $ D, z_0 \in D $. Тогда, если $ \exists $ конечный предел отношения приращения функции к приращению аргумета, то его называют\\ \textbf{производной функции} $ f(z) $ в точке $ z_0 $.
+		\[ f'(z_0) = \displaystyle\lim_{z \to z_0}\frac{f(z) - f(z_0)}{z - z_0} \]
+	\end{definition}
+	\begin{definition}
+		Пусть однозначная функция $ f(z) $  определена на области $D, \ z_0 \in D $. Тогда функция $ f(z) $
+		называется \textbf{дифференцируемой в точке} $ z_0 $, если 
+		\[ \Delta f(z_0) = A\Delta z + \alpha(z; \Delta z_0)\Delta z, \text{ где } \displaystyle\lim_{\Delta z \to 0}\alpha = 0.\]
+	\end{definition}
+	\begin{theorem}
+		Функция $ f(z)$ дифференцируема в точке $z_0 \in D \ \Leftrightarrow \ f(z)$ имеет производную в $ z_0 $.\\ При этом $ A = f'(z), \ df(z_0) = f'(z_0)dz $ "--- главная линейная часть (дифференциал).\\
+	\end{theorem}
+	Далее будем рассматривать функции вида: 
+	\begin{flalign*}
+		&f(z) = u(x, y) + iv(x, y), \ z = x + iy, \ \operatorname{Re}f(z) = u(x, y),\ \operatorname{Im}f(z) = v(x, y)&\\
+		&\Delta u(x_0, y_0) = u(x, y) - u(x_0, y_0), \ \Delta x = x - x_0, \ \Delta y = y - y_0&\\
+		&\Delta u(x_0, y_0) = A\Delta x + B\Delta y + \beta(x_0, y_0, \Delta x, \Delta y)\sqrt{\Delta x^2 + \Delta y^2}, \ \displaystyle\lim_{\rho \to 0}\beta = 0.
+	\end{flalign*}
+	\newpage
+	\begin{theorem}
+		Пусть функция $f(z)$ определена на области $D$, $z_0 \in D$. Тогда следующие условия эквивалентны:
+		\begin{enumerate}
+			\item $f(z)$ дифференцируема в точке $z_0$.
+			\item Функции $u(x,y)$ и $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$ и удовлетворяют условиям Коши–Римана:
+			\[
+			\begin{cases}
+				u'_x(x_0,y_0) = v'_y(x_0,y_0)\\
+				u'_y(x_0,y_0) = -v'_x(x_0,y_0)
+			\end{cases}
+			\]
+		\end{enumerate}
+	\end{theorem}
+	\begin{proof}
+		Очевидно
 	\end{proof}
 \end{document}
