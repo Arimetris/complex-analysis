@@ -485,6 +485,141 @@
 		\end{enumerate}
 	\end{theorem}
 	\begin{proof}
-		Очевидно
+		\ \\$\boxed\Rightarrow$\\
+		$ f(z) $ "--- дифференцируема в точке $ z_0 $, тогда 
+		\[ \Delta f(z_0) = f'(z_0)\Delta z + \alpha(z_0, \Delta z)\Delta z,\ \displaystyle\lim_{\Delta z \to 0}\alpha(z_0, \Delta z) = 0 \]
+		\[ f'(z_0) = a+ib, \ \alpha = \beta +i\delta \] 
+		\[ \Delta z = \Delta x + i\Delta y, \ \Delta f(z_0) = \Delta u(x_0, y_0) + i\Delta v(x_0, y_0) \]
+		Подставим в определение дифференцируемости:
+		\[ \Delta u(x_0, y_0) + i\Delta v(x_0, y_0) = (a + ib)(\Delta x + i\Delta y) + (\beta +i\delta)(\Delta x + i\Delta y) \]
+		\[
+		\begin{cases}
+			\Delta u(x_0, y_0) = a\Delta x - b\Delta y + \beta\Delta x - \delta\Delta y\\
+			\Delta v(x_0, y_0) = a\Delta y + b\Delta x + \beta\Delta y + \delta\Delta x
+		\end{cases}
+		\displaystyle\lim_{(\Delta x, \Delta y) \to 0}\beta = 0, 
+		\displaystyle\lim_{(\Delta x, \Delta y) \to 0}\delta = 0 \ \Rightarrow
+		\]
+		\[ \Rightarrow u(x, y), \ v(x, y) \text{"--- дифференцируемы в } (x_0, y_0) \text{ и } \] 
+		\[
+		\begin{cases}
+		  a = u'_x(x_0, y_0), \ b = -u'_y(x_0, y_0)\\
+		  a = v'_y(x_0, y_0), \ b = v'_x(x_0, y_0)
+		\end{cases}
+		\]
+		\ \\$\boxed\Leftarrow$\\
+		$ u, v $ "--- дифференцируемы в точке $ (x_0, y_0) $ и удовлетворяют условию Коши-Римана
+		\[ \Delta u(x_0, y_0) = a\Delta x - b\Delta y +\beta \rho \]
+		\[ \Delta v(x_0, y_0) = b\Delta x + a\Delta y +\delta \rho \]
+		\[ \Delta f(z_0) = \Delta u(x_0, y_0) + \Delta v(x_0, y_0) = a(\Delta x + i\Delta y) + b(i\Delta x - i\Delta y) + (\beta + i\delta)\rho = \]
+		\[ = (a+ib)(\Delta x + i\Delta y) + \frac{\alpha (|\Delta z|)}{\Delta z}\Delta z  = A\Delta z + \tilde\alpha\Delta z, \displaystyle\lim_{\Delta z \to 0}\tilde\alpha = 0 \ \rho = \sqrt{\Delta x^2 + \Delta y^2} = |\Delta z| \]
 	\end{proof}
+	\newpage
+	\section{Лекция 5}
+	\subsection{Следствие:}
+	\begin{theorem}
+		Пусть функция $f(z)$ определена на области $D$, $z_0 \in D$. Тогда следующие условия эквивалентны:
+		\begin{enumerate}
+			\item $f(z) = u(x, y) +iv(x, y)$ дифференцируема в точке $z_0$.
+			\item Функции $u(x,y)$ и $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$ и удовлетворяют условиям Коши–Римана:
+			\[
+			\begin{cases}
+				u'_x(x_0,y_0) = v'_y(x_0,y_0)\\
+				u'_y(x_0,y_0) = -v'_x(x_0,y_0)
+			\end{cases}
+			\]
+		\end{enumerate}
+	\end{theorem}
+	\begin{consequence}
+		Формулы вычисления $f'(z_0)$:
+		\[f'(z_0) = u'_x(x_0, y_0) + iv'_x(x_0, y_0)\]
+		\[f'(z_0) = v'_y(x_0, y_0) + iv'_x(x_0, y_0)\]
+		\[f'(z_0) = u'_x(x_0, y_0) - iu'_y(x_0, y_0)\]
+		\[f'(z_0) = v'_y(x_0, y_0) - iu'_y(x_0, y_0)\]	
+	\end{consequence}
+	\subsection{Примеры}
+	\noindent
+	\begin{example}
+		Исследовать $f(z)$ на дифференцируемость на $\Cm$: $f(z) = z^2 - 2(\overline z)^2$ 
+	\end{example}
+	\begin{proof}
+		\[ f(z) = (x + iy)^2 - 2(x - iy)^2 = x^2 - y^2 + 2xyi - 2x^2 + 2y^2 + 4xyi = y^2 - x^2 + 6xyi \]
+		\[ u(x, y) = y^2 - x^2,  \quad v(x, y) = 6xy \] 
+		\[ u, v - \text{ дифференцируемые в } \R^2 \] 
+		\[	u'_x(x, y) = -2x, u'_y(x, y) = 2y \]
+		\[	v'_x(x, y) = 6y, v'_y(x, y) = 6x \]
+		Решим уравнения, чтобы найти точки, где выполняется К-Р:
+		\[
+		\begin{cases} 
+			u'_x(x, y) = v'_y(x, y) \implies -2x - 6x = 0 \implies x_0 = 0 \\
+			u'_y(x, y) = -v'_x(x, y) \implies -2x - 6x = 0 \implies y_0 = 0
+		\end{cases}
+		\]
+		Тогда получаем, что $f(z)$ дифференцируема только в точке $z_0 = 0$ и ее производная равна:
+		\[f'(0) = u'_x(0, 0) + iv'_x(0, 0) = 0 \]
+	\end{proof}
+	\begin{example}
+		Показать, что в точке $z_0 = 0$ для $f(z) = \sqrt{|xy|}$ выполнены условия К-Р, но $f(z)$ не дифференцируема в этой точке:
+	\end{example}
+	\begin{proof}
+		\[ u = \sqrt{|xy|}, \quad v = 0 \]
+		\[ v'_x = 0, \quad v'_y = 0 \]
+		\[ u'_x(0, 0) = \displaystyle\lim_{x \to 0}\frac{u(x, 0) - u(0, 0)}{x - 0} = 0 \]
+		\[ u'_y(0, 0) = \displaystyle\lim_{y \to 0}\frac{u(0, y) - u(0, 0)}{y - 0} = 0 \]
+		Покажем, что $u(x,y)$ не дифференцируема в $(0, 0)$:
+		\[ u'_x = v'_y, \quad u'_y = -v'_x, \quad (x_0, y_0) = (0, 0) \]
+		Вопрос в следующем, можем ли мы представить нашу функцию как:
+		\[ \Delta u(0, 0) \stackrel{?}{=} u'_x(0, 0)\Delta x + u'_y(0, 0)\Delta y + \mu \sqrt{\Delta x^2 + \Delta y^2} \text{, где } \mu \text{--- бесконечно малая}\]
+		\[ \Delta u(0, 0) = \mu \sqrt{\Delta x^2 + \Delta y^2} \]
+		\[\displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \implies \displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] 
+		Нам нужно показать, что если такого предела не существует или он не равен 0.\\
+		\textbf{Способ 1:}\\
+		Рассмотрим этот предел вдоль прямой $y = kx$:
+		\[ \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \displaystyle\lim_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \implies \nexists \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
+		\textbf{Способ 2:}\\
+		Перейдем в полярные координаты $x = r \cos \phi$, $y = r \sin \phi$:
+		\[ \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \displaystyle\lim_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \implies \nexists \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
+		В итоге получили, что предела не существует.
+		\[\implies u(x, y) \text{ не дифференцируема в } (0, 0) \implies f(z) \text{ не дифференцируема в } z_0 = 0 \]
+	\end{proof}
+	\newpage
+	\subsection{Условие Коши-Римана в полярной СК}
+	
+	\[ \text{Пусть } \Um (r, \phi) = u (r \cos \phi, r \sin \phi)\]
+	\[ \text{Пусть } \Vm (r, \phi) = v (r \cos \phi, r \sin \phi)\]
+	\[f(z) = \Um(r, \phi) + i \Vm(r, \phi)\]
+	\begin{statement}
+		\[\begin{cases}
+			\Um'_r(r, \phi) = \frac{1}{r}\Vm'_{\phi}(r, \phi) \\
+			\frac{1}{r}\Um'_{\phi}(r, \phi) = -\Vm'_r(r, \phi)
+		\end{cases}
+		\]
+	\end{statement}
+	\begin{proof}
+		\[\Um'_r(r, \phi) = u'_x x'_r + u'_y y'_r = u'_x \cos \phi + u'_y \sin \phi\]
+		\[\Um'_{\phi}(r, \phi) = u'_x x'_{\phi} + u'_y y'_{\phi} = u'_x (-r\sin \phi) + u'_y (r\cos \phi)\]
+		\[\Vm'_r(r, \phi) = v'_m x'_r + u'_y y'_r = v'_x \cos \phi + v'_y \sin \phi\]
+		\[\Vm'_{\phi}(r, \phi) = v'_x x'_{\phi} + v'_y y'_{\phi} = v'_x (-r\sin \phi) + v'_y (r\cos \phi)\]
+		Зная что $\begin{cases}u'_x = v'_y\\ u'_y = -v'_x\end{cases}$ получим $ \implies r\Um'_r = \Vm'_{\phi} \text{ и } -r\Vm'_r = \Um'_{\phi}$
+	\end{proof}
+	\subsection{Аналитические функции}
+	В следующих определениях $f(z)$ --- однозначная функция.
+	\begin{definition}
+		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists \epsilon > 0 : f(z)$ дифференцируема в $O_{\epsilon}(z_0)$. 
+	\end{definition} 
+	\begin{definition}
+		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если она аналитична в $\forall$ точке области D.
+	\end{definition}
+	\begin{remark}
+		Обозначается $f(z) \in \mathcal{A}(z_0)$ и $f(z) \in \mathcal{A}(D)$ cоответственно.
+	\end{remark}
+	\begin{example}
+		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке $z_0 = 0 \implies f(z) \notin \mathcal{A}(\Cm)$
+	\end{example}
+	\begin{example}
+		Функция $f(z) = e^z \implies f(z) \in \mathcal{A}(\Cm)$
+	\end{example}
+	\begin{example}
+	Функция $f(z) = \frac{1}{z - 1} \implies f(z) \in \mathcal{A}(\Cm \setminus \{1\})$
+	\end{example}
 \end{document}
