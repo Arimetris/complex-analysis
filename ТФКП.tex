@@ -352,7 +352,7 @@
 	\subsection{Пределы последовательностей.}
 	\begin{definition}
 		Число $z$ называется пределом последовательности $\{z_n\}$, если
-		\[ \forall\epsilon>0 \ \exists\delta = \delta(\epsilon)>0 : \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n - z| < \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = z \]
+		\[ \forall\epsilon>0 \ \exists \ \delta = \delta(\epsilon)>0 : \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n - z| < \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = z \]
 	\end{definition}
 	\begin{definition}
 		Число $\infty$ называется пределом последовательности $\{z_n\}$, если
@@ -805,106 +805,350 @@
 	\newpage
 	\subsection{Связанные теоремы}
 	В последующих теоремах считаем $f(z)$ - однозначной функцией, $D$ - область на которой она определена.
+	
 	\begin{theorem}
-		Пусть функция $f(z)$ определена на области $D$, $z_0 \in D$. Тогда следующие условия эквивалентны:
-		\begin{enumerate}
-			\item $f(z) = u(x, y) +iv(x, y)$ дифференцируема в точке $z_0$.
-			\item Функции $u(x,y)$ и $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$ и удовлетворяют условиям Коши–Римана:
-			\[
-			\begin{cases}
-				u'_x(x_0,y_0) = v'_y(x_0,y_0)\\
-				u'_y(x_0,y_0) = -v'_x(x_0,y_0)
-			\end{cases}
-			\]
-		\end{enumerate}
+		Пусть $f(z) \in \mathcal{A}(D), \quad f(z) \cancel{\equiv} \mathrm{const}, \quad t \in D$, тогда $D_\omega = f(D_z)$ - область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
 	\end{theorem}
-	\begin{consequence}
-		Формулы вычисления $f'(z_0)$:
-		\[f'(z_0) = u'_x(x_0, y_0) + iv'_x(x_0, y_0)\]
-		\[f'(z_0) = v'_y(x_0, y_0) + iv'_x(x_0, y_0)\]
-		\[f'(z_0) = u'_x(x_0, y_0) - iu'_y(x_0, y_0)\]
-		\[f'(z_0) = v'_y(x_0, y_0) - iu'_y(x_0, y_0)\]	
-	\end{consequence}
-	\subsection{Примеры}
-	\noindent
-	\begin{example}
-		Исследовать $f(z)$ на дифференцируемость на $\Cm$: $f(z) = z^2 - 2(\overline z)^2$ 
-	\end{example}
-	\begin{proof}
-		\[ f(z) = (x + iy)^2 - 2(x - iy)^2 = x^2 - y^2 + 2xyi - 2x^2 + 2y^2 + 4xyi = y^2 - x^2 + 6xyi \]
-		\[ u(x, y) = y^2 - x^2,  \quad v(x, y) = 6xy \] 
-		\[ u, v - \text{ дифференцируемые в } \R^2 \] 
-		\[	u'_x(x, y) = -2x, u'_y(x, y) = 2y \]
-		\[	v'_x(x, y) = 6y, v'_y(x, y) = 6x \]
-		Решим уравнения, чтобы найти точки, где выполняется К-Р:
-		\[
-		\begin{cases} 
-			u'_x(x, y) = v'_y(x, y) \implies -2x - 6x = 0 \implies x_0 = 0 \\
-			u'_y(x, y) = -v'_x(x, y) \implies -2x - 6x = 0 \implies y_0 = 0
-		\end{cases}
-		\]
-		Тогда получаем, что $f(z)$ дифференцируема только в точке $z_0 = 0$ и ее производная равна:
-		\[f'(0) = u'_x(0, 0) + iv'_x(0, 0) = 0 \]
-	\end{proof}
-	\begin{example}
-		Показать, что в точке $z_0 = 0$ для $f(z) = \sqrt{|xy|}$ выполнены условия К-Р, но $f(z)$ не дифференцируема в этой точке:
-	\end{example}
-	\begin{proof}
-		\[ u = \sqrt{|xy|}, \quad v = 0 \]
-		\[ v'_x = 0, \quad v'_y = 0 \]
-		\[ u'_x(0, 0) = \displaystyle\lim_{x \to 0}\frac{u(x, 0) - u(0, 0)}{x - 0} = 0 \]
-		\[ u'_y(0, 0) = \displaystyle\lim_{y \to 0}\frac{u(0, y) - u(0, 0)}{y - 0} = 0 \]
-		Покажем, что $u(x,y)$ не дифференцируема в $(0, 0)$:
-		\[ u'_x = v'_y, \quad u'_y = -v'_x, \quad (x_0, y_0) = (0, 0) \]
-		Вопрос в следующем, можем ли мы представить нашу функцию как:
-		\[ \Delta u(0, 0) \stackrel{?}{=} u'_x(0, 0)\Delta x + u'_y(0, 0)\Delta y + \mu \sqrt{\Delta x^2 + \Delta y^2} \text{, где } \mu \text{--- бесконечно малая}\]
-		\[ \Delta u(0, 0) = \mu \sqrt{\Delta x^2 + \Delta y^2} \]
-		\[\displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \implies \displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \displaystyle\lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] 
-		Нам нужно показать, что если такого предела не существует или он не равен 0.\\
-		\textbf{Способ 1:}\\
-		Рассмотрим этот предел вдоль прямой $y = kx$:
-		\[ \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \displaystyle\lim_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \implies \nexists \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
-		\textbf{Способ 2:}\\
-		Перейдем в полярные координаты $x = r \cos \phi$, $y = r \sin \phi$:
-		\[ \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \displaystyle\lim_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \implies \nexists \displaystyle\lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
-		В итоге получили, что предела не существует.
-		\[\implies u(x, y) \text{ не дифференцируема в } (0, 0) \implies f(z) \text{ не дифференцируема в } z_0 = 0 \]
-	\end{proof}
-	\newpage
-	\section{Лекция 6}
-	\subsection{Гармонические функции}
+	
+	\begin{theorem}
+		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z))$ и $f(z_0) \neq 0$, тогда $\exists \delta > 0$ в $O_{\delta}(\omega_0), \omega_0 = f(z_0)$ определена обратная для $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)): \implies \psi'(\omega_0) = \frac{1}{f'(z_0)}$
+	\end{theorem}
+	
 	\begin{statement}
-		\[\begin{cases}
-			\Um'_r(r, \phi) = \frac{1}{r}\Vm'_{\phi}(r, \phi) \\
-			\frac{1}{r}\Um'_{\phi}(r, \phi) = -\Vm'_r(r, \phi)
-		\end{cases}
-		\]
+		Пусть $f(z) \in \mathcal{A}(D_z): f: D_z \longrightarrow D_{\omega}$ гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
 	\end{statement}
+	
+	\[\gamma_z = \{ z \in \mathbb{C}: z = \phi(t), \ \alpha \leq t \leq \beta\}\]
+	
+	Предположим существование этих величин:
+	\[S_{D_\omega} = \underset{D_z}{\iint}|f'(x)|^2 \mathrm{d}x \mathrm{d}y \text{ --- площадь}\]
+	\[L_{\gamma_{\omega}} = \int_{\alpha}^{\beta} |f'(\psi(t))|\cdot |\psi'(t)| \mathrm{d}t \text{ --- длина}\]
+	
 	\begin{proof}
-		\[\Um'_r(r, \phi) = u'_x x'_r + u'_y y'_r = u'_x \cos \phi + u'_y \sin \phi\]
-		\[\Um'_{\phi}(r, \phi) = u'_x x'_{\phi} + u'_y y'_{\phi} = u'_x (-r\sin \phi) + u'_y (r\cos \phi)\]
-		\[\Vm'_r(r, \phi) = v'_m x'_r + u'_y y'_r = v'_x \cos \phi + v'_y \sin \phi\]
-		\[\Vm'_{\phi}(r, \phi) = v'_x x'_{\phi} + v'_y y'_{\phi} = v'_x (-r\sin \phi) + v'_y (r\cos \phi)\]
-		Зная что $\begin{cases}u'_x = v'_y\\ u'_y = -v'_x\end{cases}$ получим $ \implies r\Um'_r = \Vm'_{\phi} \text{ и } -r\Vm'_r = \Um'_{\phi}$
+		\[1) \quad S_{D_\omega} = \underset{D_\omega}{\iint} \mathrm{d}u \mathrm{d}v = \left|(u, v) \xrightarrow{\text{замена}} (x, y)\right| = \underset{D_z}{\iint}|\mathcal{J}(x, y)|\mathrm{d}x \mathrm{d}y = \underset{D_z}{\iint}\begin{vmatrix}
+			u_x & u_y \\
+			v_x & v_y
+		\end{vmatrix}\mathrm{d}x \mathrm{d}y\]
+		
+		\[\det\mathcal{J}(x, y) = \begin{vmatrix}
+			u_x & u_y \\
+			v_x & v_y
+		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \implies S_{D_\omega} = \underset{D_z}{\iint} |f'(z)|^2 \mathrm{d}x \mathrm{d}y\]
+		
+		\[2) \quad L_{\gamma_z} = \underset{\gamma_z}{\int}|\mathrm{d}\omega|; \quad \omega = f(\psi(t))\]
+		
+		\[\mathrm{d}\omega = f'(\psi(t))\psi'(t) \mathrm{d}t \implies |\mathrm{d}\omega| = |f'(\psi(t))||\psi'(t)|\mathrm{d}t \implies L_{\gamma_{\omega}} = \int_{\alpha}^{\beta} |f'(\psi(t))|\cdot |\psi'(t)| \mathrm{d}t\]
 	\end{proof}
-	\subsection{Аналитические функции}
-	В следующих определениях $f(z)$ --- однозначная функция.
+	
+	\newpage
+	
+	\subsection{Примеры}
+	
+	\begin{example}
+		Пусть дана функция $f(z) = e^z$, дана область определения:
+		\[ D_z = \{ z \in \mathbb{C} : 1 \leq \operatorname{Re} z \leq 2, \ 0 \leq \operatorname{Im} z \leq 4\}\]
+		и кривая Жордана:
+		\[\gamma_z = \{ z \in \mathbb{C}: \operatorname{Re} z = \operatorname{Im} z, \ 0 \leq \operatorname{Re} z \leq 2\pi \}\]
+		Найти площадь образа области и длину образа этой кривой.
+	\end{example}
+	
+	\begin{proof}
+		\[\text{Наше отображение переводит } f: \begin{cases} D_z \longrightarrow D_\omega \\ \gamma_z \longrightarrow \gamma_\omega \end{cases}\]
+		
+		\begin{center}
+			\begin{tikzpicture}[scale=0.8]
+				\begin{scope}[xshift=0cm]
+					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\operatorname{Re} z$};
+					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\operatorname{Im} z$};
+					\fill[blue!10, draw=blue, thick] (1,0) rectangle (2,4);
+					\draw[dashed] (1,0) -- (1,-0.2) node[below] {$1$};
+					\draw[dashed] (2,0) -- (2,-0.2) node[below] {$2$};
+					\draw[dashed] (0,4) -- (-0.2,4) node[left] {$4$};
+					\node[blue] at (2.4, 4.2) {$D_z$};
+				\end{scope}
+				
+				\begin{scope}[xshift=8cm]
+					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\operatorname{Re} z$};
+					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\operatorname{Im} z$};
+					\draw[red, thick] (0,0) -- (4,4);
+					\node[red] at (2.7, 3.2) {$\gamma_z$};
+					\draw[dashed] (4,0) -- (4,-0.2) node[below] {$2\pi$};
+					\draw[dashed] (0,4) -- (-0.2,4) node[left] {$2\pi$};
+				\end{scope}
+			\end{tikzpicture}
+		\end{center}
+		
+		\[f(z) = e^z \implies  f'(z) = e^z = e^{x+iy} \implies |f'(z)| = e^x\]
+		
+		\[ S_{D_\omega} = \underset{D_z}{\iint} |f'(z)|^2 \mathrm{d}x \mathrm{d}y = \int_0^4 \int_1^2 e^{2x} \mathrm{d}x \mathrm{d}y = 4 \cdot \left.\frac{e^{2x}}{2}\right|_1^2 = 2 (e^4 - e^2)\]
+		
+		Для поиска длины кривой параметризуем ее параметром $x$:
+		\[\text{Из рисунка } y = x \implies z = x + ix, \ 0 \leq x < 2\pi\]
+		\[|f'(z(x))| = e^x, \quad |z'(x)| = |1 + i| = \sqrt{2}\]
+		
+		Тогда получаем, что:
+		\[L_{\gamma_{\omega}} = \int_{0}^{2\pi} |f'(\psi(x))|\cdot |\psi'(x)| \mathrm{d}x = \int_{0}^{2\pi} \sqrt{2} e^x \mathrm{d}x = \sqrt{2} \left. e^x \right |_0^{2\pi} = \sqrt{2}(e^{2\pi} - 1)\]
+	\end{proof}
+	
+	\newpage
+	
+	\newpage
+	\section{Лекция 7}
+	\subsection{Гармонические функции}
 	\begin{definition}
-		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists \epsilon > 0 : f(z)$ дифференцируема в $O_{\epsilon}(z_0)$. 
-	\end{definition} 
-	\begin{definition}
-		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если она аналитична в $\forall$ точке области D.
+		Вещественнозначная функция $u(x, y)$ называется \textbf{гармонической} в области $D$, если $u(x, y) \in C^2(D)$ и удовлетворяет уравнению Лапласа: $\Delta u = 0$, где $\Delta u = u''_{xx} + u''_{yy}$, $(x, y) \in D$.
 	\end{definition}
+	
 	\begin{remark}
-		Обозначается $f(z) \in \mathcal{A}(z_0)$ и $f(z) \in \mathcal{A}(D)$ cоответственно.
+		Уравнение в частных производных вида $\Delta u = 0$ называется \textbf{уравнением Лапласа}.
 	\end{remark}
+	
+	\begin{theorem}
+		Если $f(z) \in \mathcal{A}(D) \implies \operatorname{Re} f, \operatorname{Im} f$ --- гармонические функции в $D$.
+	\end{theorem}
+	
+	\begin{proof}
+		$f(z) = u(x,y) + i v(x,y)$, где $u = \operatorname{Re} f$, $v = \operatorname{Im} f$.
+		
+		Из условий Коши-Римана: $u'_x = v'_y$, $u'_y = -v'_x$.
+		
+		Дифференцируем первое уравнение по $x$, второе по $y$:
+		\[u''_{xx} = v''_{yx}, \quad u''_{yy} = -v''_{xy}\]
+		
+		Складывая и учитывая равенство смешанных производных $v''_{xy} = v''_{yx}$, получаем:
+		\[u''_{xx} + u''_{yy} = v''_{yx} - v''_{xy} = 0\]
+		Аналогично для $v(x,y)$.
+	\end{proof}
+	
+	\begin{definition}
+		Две гармонические в области $D$ функции, связанные условием Коши-Римана называют \textbf{гармонически сопряженными функциями}.
+	\end{definition}
+	
+	\begin{remark}
+		Вещественные и мнимые части аналитической функции являются гармонически сопряженными функциями.
+	\end{remark}
+	
+	Есть некоторая гармоническая функция, как построить аналитическую функцию, для которой она ее вещественная или мнимая часть?
+	
+	\begin{theorem}
+		Пусть $u(x,y)$ гармоническая в односвязной области $D$ функция, тогда $\exists$ однозначная функция $f(z)$, такая что $f(z) \in \mathcal{A}(D)$ и $u(x,y) = \operatorname{Re} f(z)$, причем $f(z)$ определяется с точностью до аддитивной мнимой постоянной.
+	\end{theorem}
+	
+	\begin{proof}
+		Построим гармонически-сопряженную функцию. Введем обозначения $u'_x = v'_y, \quad u'_y = -v'_x$.
+		
+		\[dv = v'_x dx + v'_y dy = -u'_y dx + u'_x dy\]
+		
+		\[(*) \quad v(x,y) = \int_{(x_0, y_0)}^{(x,y)} -u'_y dx + u'_x dy + c, \quad c \in \R\]
+		
+		Проверим независимость интеграла от пути. Пусть $P = -u'_y$, $Q = u'_x$. Условием является равенство перекрестных производных:
+		\[P_y = Q_x \implies -u''_{yy} = u''_{xx} \implies \Delta u = 0\]
+		
+		Как видим, пришли к уравнению Лапласа, которое выполняется по условию.
+		
+		Тогда аналитическая функция $f(z)$ запишется как:
+		\[f(z) = u + iv = u + i \cdot\int_{(x_0, y_0)}^{(x,y)} -u'_y dx + u'_x dy + ic, \quad c \in \R\]
+		Откуда видим, что наша функция определяется чисто мнимой постоянной.
+	\end{proof}
+	
+	\begin{remark}
+		Если $D$ - многосвязная область, то интеграл $(*)$ может быть многозначной функцией.
+	\end{remark}
+
+	\subsection{Примеры}
+	Напоминание:
+	\[u(x, y) \in C^2(D), \Delta u = 0 \text{ --- гармоническая функция}\]
+	\[ f(z) = u(x, y) + i v(x, y), f \in \mathcal{A}(D) \quad u, v \text{ --- гармонически сопряженные функции}\]
+	\[\begin{cases} u'_x = v'_y \\ u'_y = - v'_x \end{cases} \quad (x,y) \in D\]
+	Известно $u$. Требуется найти гармонически сопряженную функцию $v$. 
+	\[\begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \implies v(x, y) = \int _{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy)\]
+	
 	\begin{example}
-		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке $z_0 = 0 \implies f(z) \notin \mathcal{A}(\Cm)$
+		Пусть $u = e^{-y}\cos x$, $z = x + iy \in \Cm$
+		Найти $f(z)$, такое что $Re f = u$
 	\end{example}
+	
+	\begin{proof}
+		\[u'_x = -e^{-y} \sin x\]
+		\[u'_y = -e^{-y} \cos x\]
+		\[\begin{cases}
+			v'_x = -u'_y = e^{-y} \cos x \\ 
+			v'_y = u'_x = -e^{-y} \sin x
+		\end{cases}\]
+		
+		Найдем $v$ из первого уравнения:
+		\[v = e^{-y} \int \cos x dx = e^{-y} (\sin x + A(y))\]
+		где $A(y)$ - произвольная функция от переменной $y$.
+		
+		Тогда:
+		\[v = e^{-y} \sin x + B(y), \text{ где } B(y) = e^{-y}A(y)\]
+		
+		Найдем производную по $y$:
+		\[v'_y = -e^{-y} \sin x + B'(y)\]
+		
+		Подставляем во второе уравнение системы:
+		\[-e^{-y} \sin x + B'(y) = -e^{-y} \sin x \implies B'(y) = 0 \implies B(y) = c_0\]
+		
+		Таким образом:
+		\[v = e^{-y} \sin x + c_0, c_0 \in \R\]
+		
+		Имеем:
+		\[f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0\]
+		
+		Воспользуемся формулами Эйлера:
+		\[\sin x = \frac{e^{ix} - e^{-ix}}{2i}\]
+		\[\cos x = \frac{e^{ix} + e^{-ix}}{2}\]
+		
+		Тогда:
+		\[f(z) = \frac{e^{-y}}{2}(e^{ix} + e^{-ix}) + i \cdot \frac{e^{-y}}{2i}(e^{ix} - e^{-ix}) + i c_0\]
+		\[= \frac{e^{-y}}{2}(e^{ix} + e^{-ix} + e^{ix} - e^{-ix}) + i c_0\]
+		\[= e^{-y} e^{ix} + i c_0 = e^{ix - y} + i c_0\]
+		\[= e^{i(x + iy)} + i c_0 = e^{iz} + i c_0\]
+		
+		Ответ: $f(z) = e^{iz} + i c_0, c_0 \in \R$
+	\end{proof} 
+	
+	В общем случае не так легко получить результат, чтобы он зависел от $z$, а не от $x$ и $y$. Для этого используем:
+	\[\begin{cases} z = x + iy \\ \overline{z} = x - iy\end{cases} \implies \begin{cases} x = \frac{z + \overline{z}}{2} \\ y = \frac{z - \overline{z}}{2i} \end{cases}\]
+	
 	\begin{example}
-		Функция $f(z) = e^z \implies f(z) \in \mathcal{A}(\Cm)$
+		Существуют ли гармонические функции вида $u(x,y) = \psi(\frac{y}{x})$? Если да, то найти их.
+		\[\Delta u = 0 \implies u''_{xx} + u''_{yy} = 0\]
+		\[s = \frac{y}{x}, u = \psi(s) \implies u'_y = \psi'(s) \cdot s'_y = \psi '(s) \cdot \frac{1}{x} \implies u''_{yy} = \frac{1}{x} \cdot \psi''(s) \cdot s'_y = \frac{\psi ''(s)}{x^2}\]
+		\[u''_{xx} = \psi ''(s) \cdot (-\frac{y}{x^2})^2 + \frac{2y\psi'(s)}{x^3}\]
+		Далее подставляем эти формулы в уравнение (*):
+		\[\psi'' \cdot \frac{y^2}{x^4} + \frac{2y}{x^3}\psi' + \frac{\psi''}{x^2} = 0\]
+		\[\psi'' \cdot \frac{y^2}{x^2} + \frac{2y}{x}\psi' + \psi'' = 0\]
+		Получили линейное дифференциальное уравнение с переменными коэффициентами:
+		\[\psi '' (s^2 + 1) + 2s \psi' = 0 \text{--- ОДУ}\]
+		Сделаем замену $\psi'(s) = h(s)$
+		\[h'(s^2 + 1) + 2sh = 0 \implies \frac{dh}{h} = -\frac{2s}{s^2 + 1}ds\]
+		\[\ln|h| = - \ln|s^2 + 1| + \ln c_1 \implies h = \frac{c_2}{s^2 + 1} \implies \psi ' = \frac{c_2}{s^2 + 1}\]
+		Решаем ОДУ первого порядка:
+		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \implies \psi = \arctan{s} \cdot c_2 + c_3\]
+		Ответ: $u(x, y) = c_2 \cdot \arctan(\frac{y}{x}) + c_3, \quad c_2, c_3 \in \R$
 	\end{example}
-	\begin{example}
-	Функция $f(z) = \frac{1}{z - 1} \implies f(z) \in \mathcal{A}(\Cm \setminus \{1\})$
-	\end{example}
+	
+	\begin{theorem}
+		Пусть $f(z) \in \mathcal{A}(D)$ и $\forall z \in D \implies f'(z) \neq 0$.
+		Тогда $\{ u(x, y) = c_1\} \perp \{v(x,y) = c_2\}$, где $u = Re f, v = Im f$
+	\end{theorem}
+	
+	\begin{proof}
+		\[f(z) \in \mathcal{A}(D) \implies u, v - \text{гармонически сопряженные в D функции}\]
+		\[\implies u'_x = v'_y, \quad u'_y = -v'_x, (x, y) \in D\] 
+		\[\{u = c_1\} \perp \{v = c_2\} \iff \nabla u \perp \nabla v\]
+		\[\nabla u = u'_x \overline{e}_x + u'_y \overline{e}_y\]
+		\[\nabla v = v'_x \overline{e}_x + v'_y \overline{e}_y\]
+		\[(\nabla u, \nabla v) = u'_x v'_x + u'_y v'_y = -u'_x u'_y + u'_y u'_x = 0\]
+	\end{proof}
+	
+	\begin{remark}
+		Если $\exists z_0 \in D: f'(z_0) = 0 \implies f'(z_0) = u'_x(x_0, y_0) + i v'_x(x_0, y_0) = 0$
+		\[\begin{cases} u'_x (x_0, y_0) = 0 \\ v'_x(x_0, y_0) = 0 \end{cases} \implies \begin{cases} v'_y (x_0, y_0) = 0 \\ u'_y(x_0, y_0) = 0\end{cases} \implies \begin{cases} \nabla u(x_0, y_0) = \overline{0} \\ \nabla v(x_0, y_0) = \overline{0}\end{cases}\] 
+	\end{remark}
+	\newpage
+	\subsection{Конформные отображения}
+	\begin{tikzpicture}[
+		>=Stealth,
+		curve/.style={very thick, blue!60!black},
+		region/.style={fill=blue!10, draw=black, thin},
+		point/.style={circle, fill=red, inner sep=2pt, outer sep=0pt},
+		tangent/.style={thick, red!70!black},
+		label/.style={font=\small, black},
+		angle/.style={draw=green!50!black, thick},
+		plane/.style={circle, draw=black, thick, inner sep=2pt} % стиль для кружков плоскостей
+		]
+		
+		% ===============================
+		% Область D с кривой \gamma_z
+		% ===============================
+		\begin{scope}[local bounding box=scope1]
+			% Область D
+			\fill[region] (0.5,0) to[out=30, in=210] (2,1.5)
+			to[out=30, in=150] (5,0.5)
+			to[out=330, in=90] (4,-1.5)
+			to[out=270, in=30] (0.3,-1)
+			to[out=210, in=330] cycle;
+			
+			% Плоскость z в кружочке
+			\node[plane, label={[label] below:$z$}] at (0.5, 1.5) {$z$};
+			
+		\end{scope}
+		
+		% ===============================
+		% Область D' с кривой \gamma_{\omega}
+		% ===============================
+		\begin{scope}[local bounding box=scope2, xshift=9cm]
+			% Область D'
+			\fill[region, fill=green!10] (0.5,0) to [out=50, in=230] (1.7,1.5)
+			to[out=50, in=130] (4.7,1)
+			to[out=310, in=80] (4,-1.4)
+			to[out=260, in=10] (1.2, -1.7)
+			to[out=190, in=330] cycle;
+			
+			% Плоскость ω в кружочке
+			\node[plane, label={[label] below:$\omega$}] at (1, 1.5) {$\omega$};
+			
+		\end{scope}
+		
+		% ===============================
+		% ДУГОВАЯ СТРЕЛКА ОТОБРАЖЕНИЯ
+		% ===============================
+		% Координаты для дуговой стрелки
+		\coordinate (startArrow) at ([yshift=0.4cm]scope1.east);
+		\coordinate (endArrow) at ([yshift=0.1cm]scope2.west);
+		\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, -1.5cm)$);
+		
+		% Рисуем дуговую стрелку
+		\draw[->, ultra thick, red!60!black, 
+		line width=1.2pt,
+		shorten >=2pt, shorten <=-13pt] 
+		(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+		node[midway, above, label, yshift=5pt] {$f$};
+	\end{tikzpicture}\\
+	Классы задач:\\
+	I) Найти область $D_\omega$ куда после отображения отображение $f(z)$ области $D_z$ $\quad$ Дано: $D_z, \omega = f(z)$\\
+	II) Найти такое отображение $\omega = f(z)$ Дано $D_z, D_\omega$
+	
+	\begin{definition}
+		Пусть функция $f(z)$ определена на области $D_z$. Тогда, если отображение $\omega = f(z)$ взаимно-однозначно на $D_z$, то это отображение называют \textbf{однолистным}.
+		(Взаимно-однозначное) = (Однолистность)
+		\[\omega = f(z)\]
+		\[D_z : z_1 \neq z_2 \iff D_\omega: \omega_1 \neq \omega_2\]
+	\end{definition}
+	
+	\begin{definition}
+		Пусть функция $f(z)$ определена на области $D_z$. Отображение $\omega = f(z)$ называют \textbf{конформным} на $D_z$, если: 
+		\begin{enumerate} 
+			\item это отображение однолистно и в обе стороны непрерывно на $D$ (\textbf{гомеоморфизм}) 
+			\item это отображение в каждой точке области $D$ обладает свойством сохранения углов и постоянством коэффициента подобия.
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{theorem}
+		Пусть $f(z) \in \mathcal{A}(D), z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists \ \mathcal{U}_\epsilon(z_0) \subset D_z$: отображение $\omega = f(z)$ конформно на $\mathcal{U}_\epsilon(z_0)$.
+	\end{theorem}
+	
+	\begin{proof}
+		Теорема об аналитичности обратной функции $\implies$ \textbf{1)} \\ 
+		Из геометрического смысла модуля и аргумента производной $\implies$ \textbf{2)}
+	\end{proof}
+	
+	\begin{theorem} 
+		Если функция $f(z) \in \mathcal{A}(D)$ и положим отображение $\omega = f(z)$ однолистно на $D_z$. Тогда отображение $\omega = f(z)$ конформно на $D_z$.
+		\end{theorem}	
+	Бесконечность: \\ 
+	1) $z_0 \xrightarrow{f} \infty \quad (\frac{1}{\omega} = \frac{1}{f(z)})$
+	\begin{definition}
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(z_0)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\xi = \frac{1}{f(z)}$ конформно переводит $\mathcal{U}_\epsilon(z_0)$ на $\mathcal{U}_\mu(0)$
+	\end{definition}
+	2) $\infty \xrightarrow{f} \omega_0 \quad (\eta = \frac{1}{z})$
+	\begin{definition}
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\omega_0)$, если отображение $\omega = f(\frac{1}{z})$ конформно переводит $\mathcal{U}_r(0)$ на $\mathcal{U}_delta(\omega_0)$
+	\end{definition}
+	3) $\infty \xrightarrow{f} \infty \quad (\eta = \frac{1}{z}, \xi = \frac{1}{\omega})$
+	\begin{definition}
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\frac{1}{f(\frac{1}{z})}$ конформно переводит $\mathcal{U}_\mu (0)$ на $\mathcal{U}_\mathcal{M} (0)$
+	\end{definition}
 \end{document}
