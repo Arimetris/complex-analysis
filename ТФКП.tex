@@ -22,7 +22,7 @@
 			{\fontsize{14}{16}\selectfont Падерин Артемий}\\[0.2cm]
 			{\fontsize{14}{16}\selectfont Кожевников Максим}\\[3cm]
 			
-			{\fontsize{12}{14}\selectfont Москва, 2025 год}
+			{\fontsize{12}{14}\selectfont Москва, 2026 год}
 		\end{center}
 	\end{titlepage}
 	
@@ -109,9 +109,9 @@
 	$ \operatorname{Im} z = y \text{ "--- мнимая часть }$\\
 	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи }$\\
 	$ z = re^{i\phi} \text{ "--- показательная форма записи }$
-	\begin{statementname}
+	\begin{statement*}
 		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
-	\end{statementname}
+	\end{statement*}
 	
 	\begin{proof}
 		\[ 
@@ -171,7 +171,6 @@
 	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta-\frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta-1)\zeta = 0 \]
 	
 	\[ (1 - \zeta)\bigg((1 - \zeta)(x^2+y^2)-\zeta\bigg) = 0 \]
-	
 	\[
 	\left\{
 	\begin{array}{rcl}
@@ -194,9 +193,9 @@
 	$ S \leftrightarrow \Cm$\\
 	$ \Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
 	
-	\begin{statementname}
+	\begin{statement*}
 		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2| \]
-	\end{statementname}
+	\end{statement*}
 	
 	\begin{proof}
 		 \[ |\tilde z_1-\tilde z_3| = |\tilde z_1 - \tilde z_2 + \tilde z_2 - \tilde z_3| \leqslant |\tilde z_1-\tilde z_2|+|\tilde z_2-\tilde z_3|\]
@@ -262,24 +261,25 @@
 		&f^{(2m+1)}(x) = \frac{(2m-1)!}{(x^2+1)^{2m}}\sum\limits_{l=1}^{m}\binom{2m}{2l-1}(-1)^lx^{2(m-l)+1}
 	\end{flalign*}
 	\subsection{Многочлены и формула Муавра.}
-	\begin{statementname}
+	\begin{statement*}
 		(Основная теорема алгебры)\\ \indent
 		Любой многочлен степени n над полем $ \Cm $ имеет n корней с учетом кратности.\\
-	\end{statementname}
+	\end{statement*}
 	\noindent
 	\textbf{Формула Муавра}\\
 	\indent
 	Пусть $z = re^{i\phi}$ и $A = |A|e^{i(\operatorname{arg}A+2\pi k)}$, тогда\\ $z_n = \sqrt[n]{|A|}e^\frac{i(\operatorname{arg}A+2\pi k)}{n},\  k = 0,\ \ldots,\ n-1$ \\
 	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.\\
 	
-	\begin{theoremname}
+	\begin{theorem*}
 		(Фробениуса)\\ \indent
 		Несуществует других расширений систем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
-	\end{theoremname}
+	\end{theorem*}
 	\newpage
 	\section{Лекция 3}
 	\subsection{Кривые и множества.}
 	\noindent
+	
 	\begin{definition}
 		\hspace{-0.93cm}
 		$ U_\epsilon(z_0) = \{\ z \in \Cm : |z-z_0|<\epsilon \ \} $\\
@@ -359,9 +359,9 @@
 		Число $\infty$ называется пределом последовательности $\{z_n\}$, если
 		\[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n| > \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = \infty \]
 	\end{definition}
-	\begin{theoremname}
+	\begin{theorem*}
 		\[ \displaystyle\lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
-	\end{theoremname}
+	\end{theorem*}
 	\begin{proof}
 		\ \\$\boxed\Rightarrow$ \[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
 		\begin{flalign*}
@@ -382,9 +382,8 @@
 		\end{multline*}
 	\end{proof}
 	\newpage
-	\begin{theoremname}
-		(Арифметические св-ва пределов)\\
-			\indent
+	\begin{theorem*}
+		(Арифметические св-ва пределов)\\ \indent
 			$\text{Пусть } \exists\displaystyle\lim_{n \to \infty} z_n = z, \ \exists\displaystyle\lim_{n \to \infty} s_n = s, \text{тогда}$
 		\vspace{-0.25cm}
 		\begin{flalign*}
@@ -392,12 +391,11 @@
 			&2)\ \displaystyle\lim_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
 			&3)\ \displaystyle\lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\  \forall n \in \N \ s_n \ne 0,\ s \ne 0&
 		\end{flalign*}
-	\end{theoremname}
-	\begin{theoremname}
-		(Единственность)\\
-		\indent
+	\end{theorem*}
+	\begin{theorem*}
+		(Единственность)\\ \indent
 		$\text{Если } \exists\displaystyle\lim_{n \to \infty} z_n = z, \text{тогда он единственный.}$
-	\end{theoremname}
+	\end{theorem*}
 	\begin{definition}
 		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ "--- подпоследоватедьность последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$
 	\end{definition}
@@ -405,24 +403,24 @@
 		Последовательность  $\{ z_n \}$ называется ограниченной, если\\
 		$ \exists K > 0 : \forall n \in \N \Rightarrow |z_n| \leqslant K$
 	\end{definition}
-	\begin{theoremname}
-		(Больцано-Вейерштрасса)\\
-		\indent Из всякой ограниченной последовательности можно выбрать сходящуюся подпоследовательность.
-	\end{theoremname}
-	\begin{theoremname}
+	\begin{theorem*}
+		(Больцано-Вейерштрасса)\\ \indent 
+		Из всякой ограниченной последовательности можно выбрать сходящуюся подпоследовательность.
+	\end{theorem*}
+	\begin{theorem*}
 		(Критерий Коши)
 		\[ \displaystyle\lim_{n \to \infty} z_n = z \ \Leftrightarrow \ \forall\epsilon > 0 \ \exists N \in \N : \forall n, m > N \Rightarrow |z_n - z_m| < \epsilon \]
-	\end{theoremname}
-	\begin{example}
+	\end{theorem*}
+	\begin{example*}
 		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2\]
-	\end{example}
+	\end{example*}
 	\begin{flalign*}
 		&\displaystyle\lim_{n \to \infty} \sqrt[n]{n} = \displaystyle\lim_{n \to \infty}n^\frac{1}{n} = \displaystyle\lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \displaystyle\lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1&\\
 		&\displaystyle\lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \displaystyle\lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \displaystyle\lim_{n \to \infty} n \frac{2}{n}} = e^2&
 	\end{flalign*}
-	\begin{example}
+	\begin{example*}
 		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ "---расходится, т.к. } (-1)^n \text{ расходится.}\]
-	\end{example}
+	\end{example*}
 	\newpage
 	
 	\section{Лекция 4}
@@ -434,23 +432,23 @@
 		\textbf{ Многозначная функция } "--- отображение, ставящие в соответсвтие любому $z \in D$
 		некоторое множество значений $ E(z) \subset \overline\Cm $.
 	\end{definition}
-	\begin{example}
+	\begin{example*}
 		\[ f(z) = e^z,\ z\in\Cm,\  D_f = \Cm \] 
 		$e^z = e^{x+iy} = e^x(\cos y + i\sin y)\\
 		e^z = e^{z+2\pi ik}, \ T = 2\pi i$\\
 		Функция однозначная
-	\end{example}
-	\begin{example}
+	\end{example*}
+	\begin{example*}
 		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus\{0 \} \]
 		$ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ k \in \Z $\\
 		Функция многозначная
-	\end{example}
-	\begin{example}
+	\end{example*}
+	\begin{example*}
 		\[ \sin z = \frac{e^{iz}- e^{-iz}}{2i}, \ \cos z = \frac{e^{iz}+ e^{-iz}}{2}, \ \sh z = \frac{e^z - e^{-iz}}{2}, \ \ch z = \frac{e^z + e^{-iz}}{2}, \ D_f \in \Cm \]
-	\end{example}
-	\begin{example}
+	\end{example*}
+	\begin{example*}
 		\[\text{Решить уравнение: } \cos w = \frac{e^{iw}+ e^{-iw}}{2} = z \]
-	\end{example}
+	\end{example*}
 	\begin{proof}
 		\begin{flalign*}
 			&\text{Замена: } S = e^{iw}, \text{ тогда: } S + \frac{1}{S} - 2z = 0\ \Leftrightarrow \ S^2-2zS+1 = 0&\\
@@ -465,19 +463,19 @@
 		\end{flalign*}
 	\end{proof}
 	\newpage
-	\begin{example}
+	\begin{example*}
 		\[f(z) = z^n, \ n\in\N, \ D_f = \Cm \]
 	Функция однозначная
-	\end{example}
-	\begin{example}
+	\end{example*}
+	\begin{example*}
 		\[ f(z) = z^\frac{1}{n}, \ D_f = \Cm \]
 	$ z^\frac{1}{n} = \sqrt[n]{|z|} = e^\frac{i(\operatorname{arg}z+2\pi k)}{n}, \ k = 0, 1, \ldots, n-1 $\\
 	Функция n - значная
-	\end{example}
-	\begin{example}
+	\end{example*}
+	\begin{example*}
 		\[f(z) = z^A = e^{A\operatorname{Ln}z}, \ A \in \Cm, \ D_f = \Cm \setminus \{0\} \]
 		Функция многозначная
-	\end{example}
+	\end{example*}
 	\begin{remark}
 		 	\[ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ \ln z = \ln{|z|} + i\phi \]
 	\end{remark}
@@ -485,7 +483,7 @@
 		Пусть однозначная функция определена на области $ D, z_0 \in D $, тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если:
 		\[ \forall \epsilon > 0 \ \exists \delta(\epsilon) > 0 : \forall z \in \ \mathring U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \ \Leftrightarrow \ \displaystyle\lim_{z \to z_0} z = A  \]
 	\end{definition}
-	\begin{theoremname}
+	\begin{theorem*}
 		(Арифметические свойства)\\ \indent
 		Пусть однозначная функции $ f(z), g(z)$ определены на области $ D, \ z_0 \in D \text{ и }\newline \displaystyle\lim_{z \to z_0}f(z)= A, \ \displaystyle\lim_{z \to z_0}g(z)= B$, тогда
 		\begin{flalign*}
@@ -493,7 +491,7 @@
 		&2)\ \displaystyle\lim_{z \to z_0}(f(z)\cdot g(z)) = A\cdot B&\\
 		&3)\ \displaystyle\lim_{z \to z_0}\frac{f(z)}{g(z)} = \frac{A}{B}, \ B\ne 0
 		\end{flalign*}
-	\end{theoremname}
+	\end{theorem*}
 	\begin{definition}
 		Пусть однозначная функция $ f(z) $ определена на области D. Тогда $ f(z) $ называется \textbf{ непрерывной в точке } $ z_0 \in D $, если
 		\[ \displaystyle\lim_{z \to z_0}f(z) = f(z_0) \]
@@ -565,25 +563,22 @@
 		\[ \Delta f(z_0) = \Delta u(x_0, y_0) + \Delta v(x_0, y_0) = a(\Delta x + i\Delta y) + b(i\Delta x - i\Delta y) + (\beta + i\delta)\rho = \]
 		\[ = (a+ib)(\Delta x + i\Delta y) + \frac{\alpha (|\Delta z|)}{\Delta z}\Delta z  = A\Delta z + \tilde\alpha\Delta z, \displaystyle\lim_{\Delta z \to 0}\tilde\alpha = 0 \ \rho = \sqrt{\Delta x^2 + \Delta y^2} = |\Delta z| \]
 	\end{proof}
-	\begin{consequencename}
+	\begin{consequence*}
 		\begin{align*}
 			f'(z_0) = u'_x(x_0, y_0) + iv'_x(x_0, y_0)\\
 			f'(z_0) = v'_y(x_0, y_0) + iv'_x(x_0, y_0)\\
 			f'(z_0) = u'_x(x_0, y_0) - iu'_y(x_0, y_0)\\
 			f'(z_0) = v'_y(x_0, y_0) - iu'_y(x_0, y_0)
 		\end{align*}
-	\end{consequencename}
+	\end{consequence*}
 	\newpage
-	
 	
 	\section{Лекция 5}
 	\subsection{Примеры}
 	
-	
-	\noindent
-	\begin{example}
-		\ \\ \indent Исследовать $f(z)$ на дифференцируемость на $\Cm$: $f(z) = z^2 - 2(\overline z)^2$
-	\end{example}
+	\begin{example*}
+		\[ \text{Исследовать } f(z) = z^2 - 2\bar z^2 \text{ на дифференцируемость на } \Cm. \]
+	\end{example*}
 	\begin{proof}
 		\[ f(z) = (x + iy)^2 - 2(x - iy)^2 = x^2 - y^2 + 2xyi - 2x^2 + 2y^2 + 4xyi = y^2 - x^2 + 6xyi \]
 		\[ u(x, y) = y^2 - x^2,  \quad v(x, y) = 6xy \]
@@ -602,7 +597,7 @@
 	\end{proof}
 	\vspace{-0.5cm}
 	\begin{example}
-		\ \\ \indent Показать, что в точке $z_0 = 0$ для $f(z) = \sqrt{|xy|}$ выполнены условия К"---Р,\\ но $f(z)$ не дифференцируема в этой точке:
+		Показать, что в точке $z_0 = 0$ для $f(z) = \sqrt{|xy|}$ выполнены условия К"---Р,\\ но $f(z)$ не дифференцируема в этой точке.
 	\end{example}
 	\begin{proof}
 		\[ u = \sqrt{|xy|}, \quad v = 0 \]
@@ -631,12 +626,12 @@
 	
 	\[ \text{Пусть } \ \Um (r, \phi) = u (r \cos \phi, r \sin \phi), \ \Vm (r, \phi) = v (r \cos \phi, r \sin \phi)\]
 	\[f(z) = \Um(r, \phi) + i \Vm(r, \phi)\]
-	\begin{statementname}
+	\begin{statement*}
 		\[\begin{cases}
 			\Um'_r(r, \phi) = (\frac{1}{r})\Vm'_{\phi}(r, \phi) \\
 			(\frac{1}{r})\Um'_{\phi}(r, \phi) = -\Vm'_r(r, \phi)
 		\end{cases}\]
-	\end{statementname}
+	\end{statement*}
 	\begin{proof}
 		\begin{align*}
 			\Um'_r(r, \phi) &= u'_x x'_r + u'_y y'_r = u'_x \cos\phi + u'_y \sin\phi \\
@@ -659,14 +654,13 @@
 		Обозначается $f(z) \in \mathcal{A}(z_0)$ и $f(z) \in \mathcal{A}(D)$ cоответственно.
 	\end{remark}
 	\begin{example}
-		\ \\ \indent
 		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке\\ $z_0 = 0 \implies f(z) \notin \mathcal{A}(\Cm)$
 	\end{example}
 	\begin{example}
-		\ \\ \indent Функция $f(z) = e^z \implies f(z) \in \mathcal{A}(\Cm)$
+		Функция $f(z) = e^z \implies f(z) \in \mathcal{A}(\Cm)$
 	\end{example}
 	\begin{example}
-		\ \\ \indent Функция $f(z) = \frac{1}{z - 1} \implies f(z) \in \mathcal{A}(\Cm \setminus \{1\})$
+		Функция $f(z) = \frac{1}{z - 1} \implies f(z) \in \mathcal{A}(\Cm \setminus \{1\})$
 	\end{example}
 	\newpage
 	
@@ -788,19 +782,19 @@
 	Откуда по свойству аргумента комплексного числа и $\begin{cases} \arg (\omega'(t_0)) = \theta \\ \arg (f'(t_0)) = \alpha \\ \arg (z'(t_0)) = \beta \end{cases}$ получаем, что:
 	\[\arg (\omega'(t_0)) = \arg (f'(z_0)) + \arg (z'(t_0)) \implies \theta = \alpha + \beta\]
 	Тогда $\alpha = \theta - \beta$ - угол поворота кривой в точке $z_0$
-	\begin{statementname}
+	\begin{statement*}
 		Геометрический смысл аргумента производной\\
 		Угол между жордановыми кривыми в точке $z_0$ равен углу между их образами в точке $\omega_0$
-	\end{statementname}
+	\end{statement*}
 	\vspace{0.5cm}
 	Рассмотрим выражение $|\underbrace{f'(z_0)}_{\mathclap{K \neq 0}}| = \displaystyle\lim_{\Delta t \to 0}\left|\frac{\Delta \omega}{\Delta t}\right|$, откуда следует его представление в виде:
 	\[|\Delta \omega | = K|\Delta z| + \overline{\overline{o}}(|\Delta t|)\]
 	Из этого следует, что бесконечно малые фигуры преобразуются в подобные им, при этом число $K$ называется \textbf{коэффициентом подобия}.
 	\vspace{0.5cm}
-	\begin{statementname}
+	\begin{statement*}
 		Геометрический смысл модуля производной\\
 		При отображении кривых сохраняется коэффициент подобия: $|\Delta \omega| \approx k |\Delta z|$ 
-	\end{statementname}
+	\end{statement*}
 	\newpage
 	\subsection{Связанные теоремы}
 	В последующих теоремах считаем $f(z)$ - однозначной функцией, $D$ - область на которой она определена.
@@ -1044,7 +1038,22 @@
 	
 	\begin{remark}
 		Если $\exists z_0 \in D: f'(z_0) = 0 \implies f'(z_0) = u'_x(x_0, y_0) + i v'_x(x_0, y_0) = 0$
-		\[\begin{cases} u'_x (x_0, y_0) = 0 \\ v'_x(x_0, y_0) = 0 \end{cases} \implies \begin{cases} v'_y (x_0, y_0) = 0 \\ u'_y(x_0, y_0) = 0\end{cases} \implies \begin{cases} \nabla u(x_0, y_0) = \overline{0} \\ \nabla v(x_0, y_0) = \overline{0}\end{cases}\] 
+		\[
+			\begin{cases} 
+				u'_x (x_0, y_0) = 0 \\ 
+				v'_x(x_0, y_0) = 0 
+			\end{cases} 
+			\implies 
+			\begin{cases} 
+				v'_y (x_0, y_0) = 0 \\ 
+				u'_y(x_0, y_0) = 0
+			\end{cases} 
+			\implies 
+			\begin{cases} 
+				\nabla u(x_0, y_0) = \overline{0} \\ 
+				\nabla v(x_0, y_0) = \overline{0}
+			\end{cases}
+		\] 
 	\end{remark}
 	\newpage
 	\subsection{Конформные отображения}
@@ -1096,9 +1105,9 @@
 		% ДУГОВАЯ СТРЕЛКА ОТОБРАЖЕНИЯ
 		% ===============================
 		% Координаты для дуговой стрелки
-		\coordinate (startArrow) at ([yshift=0.4cm]scope1.east);
+		\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
 		\coordinate (endArrow) at ([yshift=0.1cm]scope2.west);
-		\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, -1.5cm)$);
+		\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 2cm)$); % подняли вверх
 		
 		% Рисуем дуговую стрелку
 		\draw[->, ultra thick, red!60!black, 
@@ -1146,10 +1155,192 @@
 	\end{definition}
 	2) $\infty \xrightarrow{f} \omega_0 \quad (\eta = \frac{1}{z})$
 	\begin{definition}
-		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\omega_0)$, если отображение $\omega = f(\frac{1}{z})$ конформно переводит $\mathcal{U}_r(0)$ на $\mathcal{U}_delta(\omega_0)$
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\omega_0)$, если отображение $\omega = f(\frac{1}{z})$ конформно переводит $\mathcal{U}_r(0) \text{ на } \mathcal{U}_\delta(\omega_0)$
 	\end{definition}
 	3) $\infty \xrightarrow{f} \infty \quad (\eta = \frac{1}{z}, \xi = \frac{1}{\omega})$
 	\begin{definition}
-		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\frac{1}{f(\frac{1}{z})}$ конформно переводит $\mathcal{U}_\mu (0)$ на $\mathcal{U}_\mathcal{M} (0)$
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\frac{1}{f(\frac{1}{z})}$ конформно переводит $\mathcal{U}_\mu (0) \text{ на } \mathcal{U}_\mathcal{M} (0)$
 	\end{definition}
+	
+	\newpage
+	\section{Лекция 8}
+	
+	\begin{theorem*} 
+		(Принцип соответсвтия границ)\\ \indent 
+		Пусть \\
+		1) $ D_z, D_w $ --- односвязные области, $ D_w$ --- ограниченная $(\forall z \in D \ \exists M > 0 : |z| \leqslant M)$\\
+		2) $ f(z) \in \mathcal A(D_z)\cap C(\overline D_z) $ \\
+		3) $ f(z)$ биективно отображает $ \partial D_z \text{на } \partial D_w$ с сохранением напрвления обхода.\\(область остается слева)\\
+		Тогда $ f(z) $ "--- конформно отображает $ D_z $ на $ D_w $.
+	\end{theorem*}
+	
+	\subsection{Примеры конформных отображениый}
+	
+	\begin{example}
+		\[ f(z) = \frac{1}{z}  \]
+		$ D_z = \{z \in \Cm : |z| < 1 \}$\\
+		$ z = re^{i\phi},\ w = \frac{1}{r}e^{-i\phi}, \text{где } \phi\in(-\pi, \pi] $\\
+		$ D_z = \{z \in \Cm : |z| < 1 \} \ \mapsto \ D_w = \{w \in \Cm : |w| > 1 \} $\\
+		Направление обхода можем узать из того, куда переходят точки. А из этого уже узнаем, куда переходит область (Область должна оставаться слева от обхода)\\
+		$ 1 \ \mapsto \ 1$\\
+		$ i \ \mapsto \ -i$
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% Левый рисунок
+			\begin{scope}[local bounding box=scope1]
+				\draw[thick] (0,0) circle (1);
+				\fill[blue!20, even odd rule] (0,0) circle (1);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+			\end{scope}
+			
+			\draw[->, thick, red] (1,0) arc (0:90:1);
+			% Правый рисунок
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\draw[thick] (0,0) circle (1);
+				\begin{scope}
+					\clip (-1.5,-1.5) rectangle (1.5,1.5) (0,0) circle (1);
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[->, thick, red] (1,0) arc (0:-90:1);
+			\end{scope}
+			
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+		\[ \partial D_z = \{e^{i\phi}, -\pi < \phi \leqslant \pi\}\ \mapsto \ \partial D_w = \{e^{-i\phi}, -\pi < \phi \leqslant \pi\} \]
+	\end{example}
+	\newpage
+	\begin{example}
+		\[ f(z) = \frac{1}{z}  \]
+		$ D_z = \{z \in \Cm : x^2+y^2 < ax\},\  a\in\R \setminus\{0\} $\\
+		$ |z-z_0| = R \iff z = z_0 + Re^{i\phi} $ (Параметрическое представление точек на окружности)\\
+		$ x^2 - ax + y^2 < 0 \ \iff \ (x-\frac{a}{2})^2 + y^2 < \left ( \frac{a}{2} \right)^2 $\\
+		$ \partial D_z = \{z = \frac{a}{2} + \frac{a}{2}e^{i\phi},\ \phi\in(-\pi, \pi] \} $\\
+		\[ w = \frac{1}{z} = \frac{1}{\frac{a}{2}+ \frac{a}{2}e^{i\phi}} = \frac{2}{a+ae^{i\phi}} = \frac{2e^{-i\frac{\phi}{2}}}{(a+ae^{i\phi})e^{-i\frac{\phi}{2}}} = \frac{\cos\frac{\phi}{2} - i\sin\frac{\phi}{2}}{a\cos\frac{\phi}{2}} = \frac{1}{a} - \frac{i}{a}\tg\frac{\phi}{2} \]
+		Вещественная цасть всегда одинаковая, а мнимая принимает все значения.
+		\begin{flalign*}
+			&\text{Можем найти, куда переходит область, если отследим, куда переходят точки} :  \frac{a}{2} \mapsto \frac{2}{a} &
+		\end{flalign*}
+		
+		\begin{center}
+			\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\draw[thick] (1/2,0) circle (1/2);
+					\fill[blue!20, even odd rule] (1/2,0) circle (1/2);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\end{scope}
+				\draw[->, thick, red] (1,0) arc (0:90:0.5);
+				\fill[black] (0.5,0) circle (0.5pt);
+				\node at (0.5,-0.2) {$\frac{a}{2}$};
+				
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\draw[thick, black] (0.5,-1.5) -- (0.5,1.5);
+					\begin{scope}
+						\clip (0.5,-1.5) rectangle (1.5,1.5); % оставляем только x > 0.5
+						\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5); % закрашиваем всю область, но clip оставляет только правую часть
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw[<-, thick, red] (0.5,-0.5) -- (0.5,0.5);
+					\node at (0.4,-0.2) {$\frac{a}{2}$};
+				\end{scope}
+				
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+		\end{center}
+		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a > 0\} \ \mapsto \ D_w = \{w \in \Cm : \operatorname{Re}w > \frac{1}{a} \} \]
+		Аналогично доказывается для $ a < 0 $
+		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a < 0\} \ \mapsto \ D_w = \{w \in \Cm : \operatorname{Re}w < \frac{1}{a} \} \]
+	\end{example}
+	\begin{theorem*}
+		(Римана)\\ \indent
+		Пусть $ D_z, D_w$ "--- односвязные области, границы которых состоят более чем из оодной точки.
+		Тогда $\exists \ f(z)$ "--- конформное отображение $ D_z $ на $ D_w $.  
+	\end{theorem*}
+	\begin{remark}
+		Если наложить условия $ f(z_0) = w_0, \ z_0 \in D_z, \ w_0 \in D_w $ и $ \operatorname{arg}f(z_0) = \alpha_0 \in \R. $\\
+		Тогда $ f(z) $ "--- единственно.
+		Фиксируем $ \alpha_0 \text{ и } z_0 = x_0 +iy_0,\text{ где } \alpha_0, x_0, y_0 \in \R$.
+	\end{remark}
+	\newpage
+	\subsection{Дробно-линейные отображения.}
+	\[ w = \frac{az+b}{cz+d},\text{ где } a, b, c, d \in \Cm \text{ и } ad - bc \ne 0 \]
+	\begin{theorem}
+		Всякое дробно-линейное отображение можно представить, как композицию базовых отображений:
+		\begin{flalign*}
+			1)\ &w_1 = e^{i\theta}z \text{"--- поворот на угол }\theta \in \R &\\
+			2)\ &w_2 = rz \text{"--- растяжение или сжатие с коэффициентом } r > 0 &\\
+			3)\ &w_3 = z + B \text{"--- параллельный перенос на } B\in \R &\\
+			4)\ &w_4 = \frac{1}{z}& 
+		\end{flalign*}
+	\end{theorem}
+	\begin{proof}
+		\[ w = V + \frac{E}{cz+d},\ V = \frac{a}{c}, \ E = b - \frac{ad}{c}, \ c \ne 0 \]
+	\begin{flalign*}
+		&z_1 = cz \text{ (1 и 2 тип) } &\\
+		&z_2 = z_1 + d \text{ (3 тип)} &\\
+		&z_3 = \frac{1}{z_2} \text{ (4 тип) } &\\
+		&w = V + z_4 \text{ (3 тип) }&
+	\end{flalign*}
+	\end{proof}
+	\begin{theorem*}
+		\ \\
+		1) Композиция дробно-линейных отображений "--- дробно-линейное отображение.\\
+		2) Обратное отображение к дробно-линейному "--- дробно-линейное.
+	\end{theorem*}
+	\begin{proof}
+		\ \\ 1) Выполняем несколько дробно линейных преобразований: 
+		 \[  
+		 	\begin{cases}
+		 	w = \frac{az+b}{cz+d}\\ 
+		 	\xi = \frac{Aw+B}{Cz+D} 
+		 	\end{cases}
+		 	\implies \ 
+		 	\xi = \frac{A\left(\frac{az+b}{cz+d}\right) + B}{C\left(\frac{az+b}{cz+d}\right) + D} = \frac{A(az+b) + B(cz+d)}{C(az+b) + D(cz+d)} = \frac{(Aa+Bc)z + Ab+Bd}{(Ca+Dc)z + Cb+Dd}
+		 \]
+		 Получилось дробно-линейное отображение.
+	\end{proof}
+	\newpage
+	Далее считаем, если
+	\[ w =  \frac{az+b}{cz+d}, \  ad - bc \ne 0. \text{ Тогда } w\left( -\frac{d}{c}\right)  = \infty, \ w(\infty) = \frac{a}{c} \]
+	\begin{theorem}
+		Всякое дробно-линейное преобразование конформно отображает $ \overline\Cm $ на $\overline\Cm$.
+	\end{theorem}
+	\begin{proof}
+		\ \\Покажем, что это преобразование взаимнооднозначно:\\
+		\[
+		\begin{cases}
+			w_1 = \frac{az_1+b}{cz_1+d}\\ 
+			w_2 = \frac{az_2+b}{cz_2+d} 
+		\end{cases}
+		\implies
+		w_1 - w_2 = \frac{(az_1+b)(cz_2+d) - (az_2+b)(cz_1+d)}{(cz_1+d)(cz_2+d)} = \frac{(ad-bc)(z_1-z_2)}{(cz_1+d)(cz_2+d)} \ne 0
+		\]
+		Получается, при $ z_1 \ne z_2$ верно, что $ w_1 \ne w_2 $.\\
+		\[\text{Функция } w \text{ всюду дифференцируема: }  w' = \frac{ad-bc}{(cz+d)^2}, \text{ кроме точек: }\infty, -\frac{d}{c}\]
+		\[ \text{ т.е. } \ w \in \mathcal A(\overline\Cm \setminus \{\infty, -\frac{d}{c}\}) \implies \text{Непрерывность, коэффициенты подобия, углы сохраняются.} \]
+		Точки $ \{\infty, -\frac{d}{c}\} $ преабразованиями $ \xi = \frac{1}{z} $ и $ \eta = \frac{1}{w} $ соответственно переведем в 0. 
+	\end{proof}
+	\newpage
+	\section{Лекция 9}
 \end{document}
