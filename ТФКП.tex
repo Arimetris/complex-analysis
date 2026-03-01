@@ -102,14 +102,16 @@
 	\end{flushleft}
 	
 	\noindent
-	$ |z| = r = \sqrt{x^2 + y^2}, \ r\geqslant0 $\\
-	$ \operatorname{arg} z = \phi \text{ "--- главное значение аргумента } z,\ \phi\in(-\pi, \pi]$\\
-	$ \operatorname{Arg} z = \phi +2\pi k,\ k \in \Z$ \\
-	$ \operatorname{Re} z = x \text{ "--- вещественая часть }$\\
-	$ \operatorname{Im} z = y \text{ "--- мнимая часть }$\\
-	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи }$\\
-	$ z = re^{i\phi} \text{ "--- показательная форма записи }$
+	$ |z| = r = \sqrt{x^2 + y^2}, \ r\geqslant0. $\\
+	$ \operatorname{arg} z = \phi \text{ "--- главное значение аргумента } z,\ \phi\in(-\pi, \pi].$\\
+	$ \operatorname{Arg} z = \phi +2\pi k,\ k \in \Z$. \\
+	$ \operatorname{Re} z = x \text{ "--- вещественая часть. }$\\
+	$ \operatorname{Im} z = y \text{ "--- мнимая часть. }$\\
+	$ z = r (\cos\phi + i\sin\phi) \text{ "--- тригонометрическая форма записи. }$\\
+	$ z = re^{i\phi} \text{ "--- показательная форма записи. }$
+	
 	\begin{statement*}
+		(Формула Эйлера)
 		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
 	\end{statement*}
 	
@@ -120,7 +122,7 @@
 			\ \ \cos s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k}}}{(2k)!}\\ % Делаю степень нулевой длинны
 		\]
 		\begin{multline*}
-			e^{i\phi} = \sum\limits_{k=1}^{\infty} \frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m - 1 \} = 
+			e^{i\phi} = \sum\limits_{k=1}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m - 1 \} = 
 			\sum\limits_{m=0}^{\infty} \frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} + 
 			\sum\limits_{m=1}^{\infty} \frac{i^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} = \\
 			= \sum\limits_{m=0}^{\infty} \frac{(-1)^{m}\phi^{\mathrlap{2m}}}{(2m)!} + 
@@ -129,9 +131,9 @@
 		\end{multline*}
 	\end{proof}
 	\newpage
-	\begin{consequence}
+	\begin{consequence*}
 		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \ \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i} \]
-	\end{consequence}
+	\end{consequence*}
 	
 	\begin{proof}
 		\begin{align}
@@ -139,8 +141,8 @@
 		&e^{-i\phi} = \cos \phi - i\sin \phi
 		\end{align}
 		\begin{flalign*}
-			&\frac{(1) + (2)}{2} \Rightarrow  \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
-			\frac{(1) - (2)}{2} \Rightarrow  \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}&
+			&\frac{(1) + (2)}{2} \implies  \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
+			\frac{(1) - (2)}{2} \implies  \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}&
 		\end{flalign*}
 	\end{proof}
 	
@@ -149,58 +151,56 @@
 	\begin{flalign*}
 		1) \ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2) & \\
 		2) \ &z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1) & \\
-		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} & \\
+		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} = r_1r_2e^{i(\phi_1+\phi_2)} & \\
 		3) \ &\bar z = x - iy & \\
 		\ & \bar{z} = \overline{re^{i\phi}} = re^{-i\phi} & \\
-		4) \ &\frac{z_1}{z_2} = \frac{z_1 \bar {z_2}}{z_2 \bar {z_2}} = \frac{z_1 \bar {z_2}}{|z_2|^2}, \ z \ne 0 &\\
+		4) \ &\frac{z_1}{z_2} = \frac{z_1 \bar {z_2}}{z_2 \bar {z_2}} = \frac{z_1 \bar {z_2}}{|z_2|^2}, \ z_2 \ne 0 &\\
 		\ &\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)} &\\
-		5) \ & z_1 = z_2 \iff x_1 = x_2 \land y_1 = y_2 &\\
+		5) \ & z_1 = z_2 \iff x_1 = x_2 \text{ и } y_1 = y_2 &\\
 	\end{flalign*}
 	
 	\newpage
 	\subsection{Расширенная комплексная плоскость.}
 	\noindent
-	\[ \Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ "--- Поле комплексных чисел}\]
-	\[ \overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость} \]
+	\begin{align*}
+		&\Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ "--- Комплексная плоскость.} \\
+		&\overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость.}
+	\end{align*}
+	
 	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\frac{1}{2})^2 = \frac{1}{4}\}$\\
 	\includegraphics[width=1\textwidth]{Проекция.png}
-	Из подобия в треугольнике: \[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
+	Из подобия в треугольниках \textit{ABN} и \textit{SZN}: 
+	\[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
 	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$\\
 	$\eta = \rho\sin\phi = r(1 - \zeta)\sin\phi = (1 - \zeta)y$\\
-	Подставляем в исходное уравнение:\\
+	Подставляем в исходное уравнение:
 	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta-\frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta-1)\zeta = 0 \]
-	
 	\[ (1 - \zeta)\bigg((1 - \zeta)(x^2+y^2)-\zeta\bigg) = 0 \]
 	\[
-	\left\{
-	\begin{array}{rcl}
-		\zeta &= \dfrac{x^2+y^2}{x^2+y^2+1} \\
-		\xi   &= \dfrac{x}{x^2+y^2+1} \\
-		\eta  &= \dfrac{y}{x^2+y^2+1}
-	\end{array}
-	\right.
+	\begin{cases}
+		\xi   = \dfrac{x}{x^2+y^2+1} \\
+		\eta  = \dfrac{y}{x^2+y^2+1} \\
+		\zeta = \dfrac{x^2+y^2}{x^2+y^2+1} 
+	\end{cases}
 	\iff
-	\left\{
-	\begin{array}{rcl}
-		u &= \dfrac{x}{|z|^2+1} \\
-		v &= \dfrac{y}{|z|^2+1} \\
-		w &= \dfrac{|z|^2}{|z|^2+1}
-	\end{array}
-	\right.
+	\begin{cases}
+		u = \dfrac{x}{|z|^2+1} \\
+		v = \dfrac{y}{|z|^2+1} \\
+		w = \dfrac{|z|^2}{|z|^2+1}
+	\end{cases}
 	\]
 	
 	\noindent
-	$ S \leftrightarrow \Cm$\\
-	$ \Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
+	$ S \simeq \overline\Cm$\\
+	$ \overline\Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
 	
 	\begin{statement*}
-		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2| \]
+		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2|. \]
 	\end{statement*}
 	
 	\begin{proof}
-		 \[ |\tilde z_1-\tilde z_3| = |\tilde z_1 - \tilde z_2 + \tilde z_2 - \tilde z_3| \leqslant |\tilde z_1-\tilde z_2|+|\tilde z_2-\tilde z_3|\]
+		 \[ |\tilde z_1-\tilde z_3| = |\underbrace{\tilde z_1 - \tilde z_2}_{z_1}+ \underbrace{\tilde z_2 - \tilde z_3}_{z_2}| \leqslant |\underbrace{\tilde z_1-\tilde z_2}_{z_1}|+|\underbrace{\tilde z_2-\tilde z_3}_{z_2}|\]
 		 $\text{т.е. требуется доказать, что } |z_1+z_2 | \leqslant |z_1|+|z_2|$
-		 \noindent
 		\begin{flalign*}
 			|z_1+z_2|^2 &=(z_1+z_2)\overline{(z_1+z_2)} = (r_1e^{i\phi_1}+r_2e^{i\phi_2})(r_1e^{-i\phi_1}+r_2e^{-i\phi_2}) =&\\
 			&= r_1^2+r_2^2 + r_1r_2(e^{i(\phi_1-\phi_2)}+e^{-i(\phi_1-\phi_2)}) = r_1^2+r_2^2+2\cos(\phi_1-\phi_2)r_1r_2 = \\
@@ -212,9 +212,10 @@
 	\subsection{Примеры}
 	\noindent
 	\begin{flalign*}
-	\textbf{1)} \quad e^{(\phi_1+\phi_2)i} &= e^{i\phi_1}\cdot e^{i\phi_2} = (\cos\phi_1 + i\sin\phi_1)(\cos\phi_2 + i\sin\phi_2) = &\\
-	&= (\cos\phi_1\cos\phi_2 - \sin\phi_1\sin\phi_2) + i(\cos\phi_1\sin\phi_2 + \sin\phi_1\cos\phi_2) = &\\
-	&= \cos{(\phi_1+\phi_2)} + i\sin{(\phi_1+\phi_2)}
+	\textbf{1)} \quad &e^{i(\phi_1+\phi_2)} = e^{i\phi_1}\cdot e^{i\phi_2}\\
+	&e^{i\phi_1}\cdot e^{i\phi_2} = (\cos\phi_1 + i\sin\phi_1)(\cos\phi_2 + i\sin\phi_2) = &\\
+	&(\cos\phi_1\cos\phi_2 - \sin\phi_1\sin\phi_2) + i(\cos\phi_1\sin\phi_2 + \sin\phi_1\cos\phi_2) = &\\
+	&\cos{(\phi_1+\phi_2)} + i\sin{(\phi_1+\phi_2)} = e^{i(\phi_1+\phi_2)}
 	\end{flalign*}
 	\begin{flalign*}
 	\textbf{2})\quad &S_1 = 1 + \cos x + \ldots + \cos{nx} &\\
@@ -235,21 +236,16 @@
 	&u_n = C_1(1+i)^n+C_2(1-i)^n. \text{ Найдем } C_1 \text{ и } C_2 \text{ используя начальные условия:}
 	\end{flalign*}
 	\[
-	\left\{
-	\begin{array}{rcl}
-		u_0 &=& C_1 + C_2 = 1\\
-		u_1 &=& C_1(1+i) + C_2(1-i) = 1
-	\end{array}
-	\right.
+	\begin{cases}
+		u_0 = C_1 + C_2 = 1\\
+		u_1 = C_1(1+i) + C_2(1-i) = 1
+	\end{cases}
 	\iff
-	\left\{
-	\begin{array}{rcl}
+	\begin{cases}
 		C_1 =\frac{1}{2}\\ 
 		C_2 =\frac{1}{2}
-	\end{array}
-	\right.
+	\end{cases}
 	\]
-	\\
 	\[ u_n = \frac{1}{2}((1+i)^n+(1-i)^n) = \frac{(\sqrt{2})^n}{2}(e^{i\frac{\pi n}{4}}+e^{-i\frac{\pi n}{4}}) = 2^\frac{n}{2}\cos\frac{\pi n}{4}\]
 	\newpage
 	\begin{flalign*}
@@ -261,10 +257,10 @@
 		&f^{(2m+1)}(x) = \frac{(2m-1)!}{(x^2+1)^{2m}}\sum\limits_{l=1}^{m}\binom{2m}{2l-1}(-1)^lx^{2(m-l)+1}
 	\end{flalign*}
 	\subsection{Многочлены и формула Муавра.}
-	\begin{statement*}
+	\begin{theorem*}
 		(Основная теорема алгебры)\\ \indent
 		Любой многочлен степени n над полем $ \Cm $ имеет n корней с учетом кратности.\\
-	\end{statement*}
+	\end{theorem*}
 	\noindent
 	\textbf{Формула Муавра}\\
 	\indent
@@ -273,7 +269,7 @@
 	
 	\begin{theorem*}
 		(Фробениуса)\\ \indent
-		Несуществует других расширений систем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
+		Не существует других расширений систем и чисел, кроме $\ \R\ $ и $ \ \Cm$, так чтобы новая система образовывала поле.(Нестрогая формулировка)
 	\end{theorem*}
 	\newpage
 	\section{Лекция 3}
@@ -715,7 +711,7 @@
 			\draw[gray, thin, dashed] (z0) -- ++(1,0);
 			
 			% Плоскость z в кружочке
-			\node[plane, label={[label] below:$z$}] at (0.5, 1.5) {$z$};
+			\node[plane, label={[label] below:$D_z$}] at (0.5, 1.5) {$D_z$};
 			
 			% Подпись кривой
 			\node[label] at (4.3, 0.2) {$\gamma_z$};
@@ -755,7 +751,7 @@
 			\draw[gray, thin, dashed] (w0) -- ++(1,0);
 			
 			% Плоскость ω в кружочке
-			\node[plane, label={[label] below:$\omega$}] at (1, 1.5) {$\omega$};
+			\node[plane, label={[label] below:$D_\omega$}] at (1, 1.5) {$D_\omega$};
 			
 			% Подпись кривой
 			\node[label] at (4, 0.7) {$\gamma_{\omega}$};
@@ -777,14 +773,14 @@
 		node[midway, above, label, yshift=5pt] {$f$};
 	\end{tikzpicture}\\
 	\end{center}
-	Тогда, $\omega_0 = f(z_0)$. Рассмотрим сложную функцию $\omega(t) = f(z(t))$ и найдем ее производную в точке $t_0$:
+	Рассмотрим сложную функцию $\omega(t) = f(z(t))$ и найдем ее производную в точке $t_0$:
 	\[\omega'(t_0) = f'(z_0)z'(t_0)\]
 	Откуда по свойству аргумента комплексного числа и $\begin{cases} \arg (\omega'(t_0)) = \theta \\ \arg (f'(t_0)) = \alpha \\ \arg (z'(t_0)) = \beta \end{cases}$ получаем, что:
 	\[\arg (\omega'(t_0)) = \arg (f'(z_0)) + \arg (z'(t_0)) \implies \theta = \alpha + \beta\]
-	Тогда $\alpha = \theta - \beta$ - угол поворота кривой в точке $z_0$
+	Тогда $\alpha = \theta - \beta$ "--- угол поворота кривой в точке $z_0$
 	\begin{statement*}
-		Геометрический смысл аргумента производной\\
-		Угол между жордановыми кривыми в точке $z_0$ равен углу между их образами в точке $\omega_0$
+		(Геометрический смысл аргумента производной)\\ \indent
+		Угол между жордановыми кривыми в $z_0$ равен углу между их образами в $\omega_0$.
 	\end{statement*}
 	\vspace{0.5cm}
 	Рассмотрим выражение $|\underbrace{f'(z_0)}_{\mathclap{K \neq 0}}| = \displaystyle\lim_{\Delta t \to 0}\left|\frac{\Delta \omega}{\Delta t}\right|$, откуда следует его представление в виде:
@@ -792,19 +788,19 @@
 	Из этого следует, что бесконечно малые фигуры преобразуются в подобные им, при этом число $K$ называется \textbf{коэффициентом подобия}.
 	\vspace{0.5cm}
 	\begin{statement*}
-		Геометрический смысл модуля производной\\
-		При отображении кривых сохраняется коэффициент подобия: $|\Delta \omega| \approx k |\Delta z|$ 
+		(Геометрический смысл модуля производной)\\ \indent
+		При отображении кривых сохраняется коэффициент подобия: $|\Delta \omega| \approx k |\Delta z|$.
 	\end{statement*}
 	\newpage
 	\subsection{Связанные теоремы}
-	В последующих теоремах считаем $f(z)$ - однозначной функцией, $D$ - область на которой она определена.
+	В последующих теоремах считаем $f(z)$ "--- однозначной функцией, $D$ "--- область на которой она определена.
 	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D), \quad f(z) \cancel{\equiv} \mathrm{const}, \quad t \in D$, тогда $D_\omega = f(D_z)$ - область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
+		Пусть $f(z) \in \mathcal{A}(D), \ f(z) \ \cancel{\equiv} \ \mathrm{const}, \ t \in D$, тогда $D_\omega = f(D_z)$ "--- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
 	\end{theorem}
 	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z))$ и $f(z_0) \neq 0$, тогда $\exists \delta > 0$ в $O_{\delta}(\omega_0), \omega_0 = f(z_0)$ определена обратная для $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)): \implies \psi'(\omega_0) = \frac{1}{f'(z_0)}$
+		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z))$ и $f(z_0) \neq 0$, тогда $\exists \ \delta > 0$ в $O_{\delta}(\omega_0), \omega_0 = f(z_0)$ определена обратная для $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)): \implies \psi'(\omega_0) = \frac{1}{f'(z_0)}$
 	\end{theorem}
 	
 	\begin{statement}
@@ -814,39 +810,41 @@
 	\[\gamma_z = \{ z \in \mathbb{C}: z = \phi(t), \ \alpha \leq t \leq \beta\}\]
 	
 	Предположим существование этих величин:
-	\[S_{D_\omega} = \underset{D_z}{\iint}|f'(x)|^2 \mathrm{d}x \mathrm{d}y \text{ --- площадь}\]
-	\[L_{\gamma_{\omega}} = \int_{\alpha}^{\beta} |f'(\psi(t))|\cdot |\psi'(t)| \mathrm{d}t \text{ --- длина}\]
-	
+	\begin{align*}
+		&S_{D_\omega} = \iint\limits_{D_z}|f'(x)|^2 \, dxdy \text{ "--- площадь}\\
+		&L_{\gamma_\omega} = \int\limits_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)| \, dt \text{ "--- длина}
+	\end{align*}
 	\begin{proof}
-		\[1) \quad S_{D_\omega} = \underset{D_\omega}{\iint} \mathrm{d}u \mathrm{d}v = \left|(u, v) \xrightarrow{\text{замена}} (x, y)\right| = \underset{D_z}{\iint}|\mathcal{J}(x, y)|\mathrm{d}x \mathrm{d}y = \underset{D_z}{\iint}\begin{vmatrix}
+		\begin{align*}
+		&1)\quad S_{D_\omega} = \iint\limits_{D_\omega} dudv = \left\lbrace  (u, v) \xrightarrow{\text{замена}} (x, y) \right\rbrace  = \iint\limits_{D_z}|\mathcal{J}(x, y)| \, dxdy = \iint\limits_{D_z}
+		\begin{vmatrix}
 			u_x & u_y \\
 			v_x & v_y
-		\end{vmatrix}\mathrm{d}x \mathrm{d}y\]
-		
-		\[\det\mathcal{J}(x, y) = \begin{vmatrix}
+		\end{vmatrix} \, dxdy\\
+		&\det\mathcal{J}(x, y) = 
+		\begin{vmatrix}
 			u_x & u_y \\
 			v_x & v_y
-		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \implies S_{D_\omega} = \underset{D_z}{\iint} |f'(z)|^2 \mathrm{d}x \mathrm{d}y\]
-		
-		\[2) \quad L_{\gamma_z} = \underset{\gamma_z}{\int}|\mathrm{d}\omega|; \quad \omega = f(\psi(t))\]
-		
-		\[\mathrm{d}\omega = f'(\psi(t))\psi'(t) \mathrm{d}t \implies |\mathrm{d}\omega| = |f'(\psi(t))||\psi'(t)|\mathrm{d}t \implies L_{\gamma_{\omega}} = \int_{\alpha}^{\beta} |f'(\psi(t))|\cdot |\psi'(t)| \mathrm{d}t\]
+		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \implies S_{D_\omega} = \iint\limits_{D_z} |f'(z)|^2 \, dxdy \\
+		&2)\quad L_{\gamma_z} = \int\limits_{\gamma_z}|d\omega|, \text{ где }\  \omega = f(\psi(t)) \\
+		&d\omega = f'(\psi(t))\psi'(t) \, dt \implies |d\omega| = |f'(\psi(t))|\cdot|\psi'(t)|\, dt \implies L_{\gamma_\omega} = \int\limits_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)|\, dt \\
+		\end{align*}
 	\end{proof}
 	
 	\newpage
-	
+
 	\subsection{Примеры}
 	
 	\begin{example}
-		Пусть дана функция $f(z) = e^z$, дана область определения:
-		\[ D_z = \{ z \in \mathbb{C} : 1 \leq \operatorname{Re} z \leq 2, \ 0 \leq \operatorname{Im} z \leq 4\}\]
-		и кривая Жордана:
-		\[\gamma_z = \{ z \in \mathbb{C}: \operatorname{Re} z = \operatorname{Im} z, \ 0 \leq \operatorname{Re} z \leq 2\pi \}\]
+		Дана функция $f(z) = e^z$, область определения $ D_z $ и кривая Жордана $ \gamma_z $:
+		\begin{align*}
+		&D_z = \{ z \in \mathbb{C} : 1 \leq \operatorname{Re} z \leq 2, \ 0 \leq \operatorname{Im} z \leq 4\}, \\
+		&\gamma_z = \{ z \in \mathbb{C}: \operatorname{Re} z = \operatorname{Im} z, \ 0 \leq \operatorname{Re} z \leq 2\pi \}
+		\end{align*}
 		Найти площадь образа области и длину образа этой кривой.
 	\end{example}
-	
 	\begin{proof}
-		\[\text{Наше отображение переводит } f: \begin{cases} D_z \longrightarrow D_\omega \\ \gamma_z \longrightarrow \gamma_\omega \end{cases}\]
+		\[f: \begin{cases} D_z \longrightarrow D_\omega \\ \gamma_z \longrightarrow \gamma_\omega \end{cases}\]
 		
 		\begin{center}
 			\begin{tikzpicture}[scale=0.8]
@@ -870,24 +868,22 @@
 				\end{scope}
 			\end{tikzpicture}
 		\end{center}
-		
-		\[f(z) = e^z \implies  f'(z) = e^z = e^{x+iy} \implies |f'(z)| = e^x\]
-		
-		\[ S_{D_\omega} = \underset{D_z}{\iint} |f'(z)|^2 \mathrm{d}x \mathrm{d}y = \int_0^4 \int_1^2 e^{2x} \mathrm{d}x \mathrm{d}y = 4 \cdot \left.\frac{e^{2x}}{2}\right|_1^2 = 2 (e^4 - e^2)\]
-		
+		\begin{align*}
+		&f(z) = e^z \implies  f'(z) = e^z = e^{x+iy} \implies |f'(z)| = e^x\\
+		&S_{D_\omega} = \iint\limits_{D_z} |f'(z)|^2 \, dxdy = \int\limits_0^4 \int\limits_1^2 e^{2x} \, dxdy = 4 \cdot \left.\frac{e^{2x}}{2}\right|_1^2 = 2 (e^4 - e^2)
+		\end{align*}
+		\[ \]
 		Для поиска длины кривой параметризуем ее параметром $x$:
 		\[\text{Из рисунка } y = x \implies z = x + ix, \ 0 \leq x < 2\pi\]
 		\[|f'(z(x))| = e^x, \quad |z'(x)| = |1 + i| = \sqrt{2}\]
 		
 		Тогда получаем, что:
-		\[L_{\gamma_{\omega}} = \int_{0}^{2\pi} |f'(\psi(x))|\cdot |\psi'(x)| \mathrm{d}x = \int_{0}^{2\pi} \sqrt{2} e^x \mathrm{d}x = \sqrt{2} \left. e^x \right |_0^{2\pi} = \sqrt{2}(e^{2\pi} - 1)\]
+		\[L_{\gamma_\omega} = \int\limits_0^{2\pi} |f'(\psi(x))|\cdot |\psi'(x)|\, dx = \int\limits_0^{2\pi} \sqrt{2} e^x\, dx = \sqrt{2} \left. e^x \right |_0^{2\pi} = \sqrt {2}(e^{2\pi} - 1)\]
 	\end{proof}
-	
-	\newpage
-	
 	\newpage
 	\section{Лекция 7}
 	\subsection{Гармонические функции}
+	
 	\begin{definition}
 		Вещественнозначная функция $u(x, y)$ называется \textbf{гармонической} в области $D$, если $u(x, y) \in C^2(D)$ и удовлетворяет уравнению Лапласа: $\Delta u = 0$, где $\Delta u = u''_{xx} + u''_{yy}$, $(x, y) \in D$.
 	\end{definition}
@@ -928,11 +924,12 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Построим гармонически-сопряженную функцию. Введем обозначения $u'_x = v'_y, \quad u'_y = -v'_x$.
+		\ \\ \indent
+		Построим гармонически-сопряженную функцию. Введем обозначения $u'_x = v'_y,\  u'_y = -v'_x$.
 		
 		\[dv = v'_x dx + v'_y dy = -u'_y dx + u'_x dy\]
 		
-		\[(*) \quad v(x,y) = \int_{(x_0, y_0)}^{(x,y)} -u'_y dx + u'_x dy + c, \quad c \in \R\]
+		\[ v(x,y) = \int\limits_{(x_0, y_0)}^{(x,y)}(-u'_ydx + u'_xdy) + c, \ c \in \R\]
 		
 		Проверим независимость интеграла от пути. Пусть $P = -u'_y$, $Q = u'_x$. Условием является равенство перекрестных производных:
 		\[P_y = Q_x \implies -u''_{yy} = u''_{xx} \implies \Delta u = 0\]
@@ -940,12 +937,13 @@
 		Как видим, пришли к уравнению Лапласа, которое выполняется по условию.
 		
 		Тогда аналитическая функция $f(z)$ запишется как:
-		\[f(z) = u + iv = u + i \cdot\int_{(x_0, y_0)}^{(x,y)} -u'_y dx + u'_x dy + ic, \quad c \in \R\]
+		\[f(z) = u + iv = u + i\int\limits_{(x_0, y_0)}^{(x,y)}(-u'_y dx + u'_x dy) + ic, \ c \in \R\]
 		Откуда видим, что наша функция определяется чисто мнимой постоянной.
 	\end{proof}
 	
 	\begin{remark}
-		Если $D$ - многосвязная область, то интеграл $(*)$ может быть многозначной функцией.
+		Если "--- многосвязная область, тогда
+		\[ \int\limits_{(x_0, y_0)}^{(x,y)}(-u'_ydx + u'_xdy) + c \text{"--- может быть многозначной функцией.} \]
 	\end{remark}
 
 	\subsection{Примеры}
@@ -954,51 +952,50 @@
 	\[ f(z) = u(x, y) + i v(x, y), f \in \mathcal{A}(D) \quad u, v \text{ --- гармонически сопряженные функции}\]
 	\[\begin{cases} u'_x = v'_y \\ u'_y = - v'_x \end{cases} \quad (x,y) \in D\]
 	Известно $u$. Требуется найти гармонически сопряженную функцию $v$. 
-	\[\begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \implies v(x, y) = \int _{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy)\]
+	\[\begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \implies v(x, y) = \int\limits_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy)\]
 	
 	\begin{example}
-		Пусть $u = e^{-y}\cos x$, $z = x + iy \in \Cm$
-		Найти $f(z)$, такое что $Re f = u$
+		Пусть $u = e^{-y}\cos x$, $z = x + iy \in \Cm$.
+		Найти такую $f(z)$, что $Re f = u$.
 	\end{example}
 	
 	\begin{proof}
-		\[u'_x = -e^{-y} \sin x\]
-		\[u'_y = -e^{-y} \cos x\]
-		\[\begin{cases}
+		\[ 
+		\begin{cases}
+			u'_x = -e^{-y} \sin x\\
+			u'_y = -e^{-y} \cos x
+		\end{cases}
+		\underset{\text{Т. К-Р}}{\implies}
+		\begin{cases}
 			v'_x = -u'_y = e^{-y} \cos x \\ 
 			v'_y = u'_x = -e^{-y} \sin x
-		\end{cases}\]
-		
+		\end{cases} 
+		\]
+		\noindent
 		Найдем $v$ из первого уравнения:
-		\[v = e^{-y} \int \cos x dx = e^{-y} (\sin x + A(y))\]
-		где $A(y)$ - произвольная функция от переменной $y$.
-		
+		\[v = e^{-y} \int\cos x \, dx = e^{-y} (\sin x + A(y)), \text{ где } A(y) \text{"--- констата зависящая от } y.\]
 		Тогда:
 		\[v = e^{-y} \sin x + B(y), \text{ где } B(y) = e^{-y}A(y)\]
-		
+		\noindent
 		Найдем производную по $y$:
 		\[v'_y = -e^{-y} \sin x + B'(y)\]
-		
+		\noindent
 		Подставляем во второе уравнение системы:
 		\[-e^{-y} \sin x + B'(y) = -e^{-y} \sin x \implies B'(y) = 0 \implies B(y) = c_0\]
 		
+		\noindent
 		Таким образом:
-		\[v = e^{-y} \sin x + c_0, c_0 \in \R\]
-		
-		Имеем:
-		\[f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0\]
-		
+		\[v = e^{-y} \sin x + c_0 \implies f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0,\ c_0 \in \R\]
+		\noindent
 		Воспользуемся формулами Эйлера:
-		\[\sin x = \frac{e^{ix} - e^{-ix}}{2i}\]
-		\[\cos x = \frac{e^{ix} + e^{-ix}}{2}\]
-		
+		\[ \sin x = \frac{e^{ix} - e^{-ix}}{2i}, \ \cos x = \frac{e^{ix} + e^{-ix}}{2} \]
 		Тогда:
-		\[f(z) = \frac{e^{-y}}{2}(e^{ix} + e^{-ix}) + i \cdot \frac{e^{-y}}{2i}(e^{ix} - e^{-ix}) + i c_0\]
-		\[= \frac{e^{-y}}{2}(e^{ix} + e^{-ix} + e^{ix} - e^{-ix}) + i c_0\]
-		\[= e^{-y} e^{ix} + i c_0 = e^{ix - y} + i c_0\]
-		\[= e^{i(x + iy)} + i c_0 = e^{iz} + i c_0\]
-		
-		Ответ: $f(z) = e^{iz} + i c_0, c_0 \in \R$
+		\begin{align*}
+		f(z) &= \frac{e^{-y}}{2}(e^{ix} + e^{-ix}) + i\frac{e^{-y}}{2i}(e^{ix} - e^{-ix}) + i c_0 = \frac{e^{-y}}{2}(e^{ix} + e^{-ix} + e^{ix} - e^{-ix}) + i c_0 = \\
+		&= e^{-y} e^{ix} + i c_0 = e^{ix - y} + i c_0 = e^{i(x + iy)} + i c_0 = e^{iz} + i c_0
+		\end{align*}
+		\noindent
+		Ответ: $f(z) = e^{iz} + i c_0,\ c_0 \in \R$
 	\end{proof} 
 	
 	В общем случае не так легко получить результат, чтобы он зависел от $z$, а не от $x$ и $y$. Для этого используем:
@@ -1018,8 +1015,8 @@
 		\[h'(s^2 + 1) + 2sh = 0 \implies \frac{dh}{h} = -\frac{2s}{s^2 + 1}ds\]
 		\[\ln|h| = - \ln|s^2 + 1| + \ln c_1 \implies h = \frac{c_2}{s^2 + 1} \implies \psi ' = \frac{c_2}{s^2 + 1}\]
 		Решаем ОДУ первого порядка:
-		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \implies \psi = \arctan{s} \cdot c_2 + c_3\]
-		Ответ: $u(x, y) = c_2 \cdot \arctan(\frac{y}{x}) + c_3, \quad c_2, c_3 \in \R$
+		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \implies \psi = \arctg{s} \cdot c_2 + c_3\]
+		Ответ: $u(x, y) = c_2 \cdot \arctg(\frac{y}{x}) + c_3, \quad c_2, c_3 \in \R$
 	\end{example}
 	
 	\begin{theorem}
@@ -1056,6 +1053,7 @@
 		\] 
 	\end{remark}
 	\newpage
+	
 	\subsection{Конформные отображения}
 	\begin{center}
 	\begin{tikzpicture}[
@@ -1131,13 +1129,13 @@
 	\begin{definition}
 		Пусть функция $f(z)$ определена на области $D_z$. Отображение $\omega = f(z)$ называют \textbf{конформным} на $D_z$, если: 
 		\begin{enumerate} 
-			\item это отображение однолистно и в обе стороны непрерывно на $D$ (\textbf{гомеоморфизм}) 
-			\item это отображение в каждой точке области $D$ обладает свойством сохранения углов и постоянством коэффициента подобия.
+			\item Это отображение однолистно и в обе стороны непрерывно на $D$ (\textbf{гомеоморфизм}) 
+			\item Это отображение в каждой точке области $D$ обладает свойством сохранения углов и постоянством коэффициента подобия.
 		\end{enumerate}
 	\end{definition}
 	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D), z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists \ \mathcal{U}_\epsilon(z_0) \subset D_z$: отображение $\omega = f(z)$ конформно на $\mathcal{U}_\epsilon(z_0)$.
+		Пусть $f(z) \in \mathcal{A}(D), z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists \ \mathcal{U}_\epsilon(z_0) \subset D_z$: отображение $\omega = f(z)$ конформно на  $ \ \mathcal{U}_\epsilon(z_0)$.
 	\end{theorem}
 	
 	\begin{proof}
