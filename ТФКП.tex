@@ -1343,174 +1343,143 @@
 	\section{Лекция 9}
 	\subsection{Неподвижные точки}
 	\begin{definition}
-		Пусть $w = f(z) : D_z \to D_\omega$. Точка $z_0 \in D_z$ называется неподвижной точкой при отображении $\omega = f(z)$, если $f(z_0) = z_0$.
+		Пусть $w = f(z) : D_z \to D_\omega$. Точка $z_0 \in D_z$ называется \textbf{неподвижной}, если $f(z_0) = z_0$.
 	\end{definition}
 	
 	\begin{theorem}
-		Если дробно-линейное отображение имеет более двух неподвижных точек, то оно имеет вид $w = z$.
+		Если дробно-линейное отображение имеет более двух неподвижных точек, тогда оно имеет вид $w = z$.
 	\end{theorem}
 	
 	\begin{proof}
-		\[\frac{az+b}{cz+d} = z\]
-		\[cz^2 + dz = az + b\]
-		\[cz^2 + (d - a)z - b = 0 \quad (*)\]
-		\begin{enumerate}
-			\item $c = 0$, $a = d$, $b \neq 0$:
-			\[w = z + \frac{b}{d}\]
-			Конечных неподвижных точек нет и одна неподвижная точка $\infty$.
-			
-			\item $c = 0$, $a \neq d$:
-			\[z_1 = \frac{b}{d-a} \text{ --- неподвижная точка}\]
-			\[z_2 = \infty \text{ --- неподвижная точка}\]
-			
-			\item $c \neq 0$, $z_1$, $z_2$ --- корни уравнения (*):
-			$z_1$, $z_2$ --- неподвижные точки.\\
-			Одна $(z_1 = z_2)$ или две $(z_1 \neq z_2)$ неподвижные точки.
-			
-			\item $c = 0$, $a = d$, $b = 0$:
-			\[\forall z \in \overline{\mathbb{C}} \text{ --- неподвижная точка}\]
-			\[\omega = z\]
-		\end{enumerate}
+		\[\frac{az+b}{cz+d} = z \iff cz^2 + (d - a)z - b = 0 \]
+		1) Если $c = 0$, $a = d$, $b \neq 0$, тогда \[w = z + \frac{b}{d}\]
+		\noindent
+		Конечных неподвижных точек нет и одна неподвижная точка $\infty$.\\
+		\\2) Если $c = 0, \ a \neq d$, тогда
+		\[z_1 = \frac{b}{d-a},\ z_2 = \infty \text{ "--- неподвижные точки}\]
+		\\3) Если $c \neq 0 \text{ обозначим } z_1,\ z_2$ "--- корни уравнения.\\
+		В случае, когда $ z_1 = z_2 $ одна неподвижная точка, если $ z_1 \neq z_2 $ две неподвижные точки.\\
+		\\4) Если $c = 0,\ a = d,\ b = 0$, тогда $ \forall z \in \overline\Cm $ "--- неподвижная точка
 	\end{proof}
-	
 	\begin{theorem}
-		$\exists !$ дробно-линейное отображение, переводящее три различные точки $z_1, z_2, z_3 \in \overline{\mathbb{C}}$ в три различные точки $\omega_1, \omega_2, \omega_3 \in \overline{\mathbb{C}}$
+		$\exists !$ дробно-линейное отображение, переводящее три различные точки $z_1, z_2, z_3 \in \overline\Cm$\\ в три различные точки $\omega_1, \omega_2, \omega_3 \in \overline\Cm$.
 	\end{theorem}
-	%%%%%%%%%%%%%%%%%%%%%%%PICTURE ONE%%%%%%%%%%%%%%%%%%%%%
 	\begin{proof}
-		1) Существование:
-		\begin{align*}
-			&z_j \to \omega_j,\; j = 1, 2, 3 \\
-			&\xi = \frac{az+b}{cz+d} \quad : \quad z_1 \to 0,\; z_2 \to \infty,\; z_3 \to 1 \\
-			&(1) \implies az_1 + b = 0 \implies b = -az_1 \\
-			&(2) \implies cz_2 + d = 0 \implies d = -cz_2 \\
-			&\xi = \frac{a(z-z_1)}{c(z-z_2)} = K \cdot \frac{z-z_1}{z-z_2}\\
-			&(3) \implies K \cdot \frac{z_3 - z_1}{z_3 - z_2} = 1 \implies K = \frac{z_3 - z_2}{z_3 - z_1}\\
-			&\xi = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1} \\
-			&\xi = \frac{\omega - \omega_1}{\omega - \omega_2} \cdot \frac{\omega_3 - \omega_2}{\omega_3 - \omega_1} \\
-			&h(\omega) \quad : \quad \omega_1 \to 0,\; \omega_2 \to \infty,\; \omega_3 \to 1 \\
-			&f(z) = h^{-1}(g(z)) \quad \omega = h^{-1}(g(z)) \text{ --- дробно-линейное отображение} \\ 
-			&z_j \to \omega_j \\
-			&h(\omega) = g(z) \implies \frac{\omega - \omega_1}{\omega - \omega_2} \cdot \frac{\omega_3 - \omega_2}{\omega_3 - \omega_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}
-		\end{align*}
-		
-		2) Единственность: 
-		
-		От противного:
-		\begin{align*}
-			&\text{Пусть } \exists \overline{f} \text{ --- дробно-линейное отображение} \quad : \quad z_j \xrightarrow{\overline{f}} \omega_j,\; j = 1, 2, 3 \\
-			&\overline{f}(z) \neq f(z) \\
-			&\psi(z) = \overline{f}^{-1}(f(z)) \text{ --- дробно-линейное отображение} \\ 
-			&z_j \xrightarrow{\psi} z_j \implies \psi(z) \text{ имеет три различных неподвижных точки} \implies \psi(z) = z \implies \overline{f}^{-1}(f(z)) = z \implies f(z) = \overline{f}(z) \\
-			&\text{Получили противоречие}
-		\end{align*}
+		Существование:\\
+		(Идея доказательства заключается в том, чтобы использовать вспомогательное множество, и уже по нему склеить точки между двумя исходными множествами.)\\
+		Необходимо доказать, что существует отображение $ f $, которое переводит три различные точки в различные образы:
+			$ z_j \mapsto w_j,\ j = 1, 2, 3 $\\
+			Введем вспомогательную функцию $ g(z) $ и найдем такие $ z $, что $ z_1 \mapsto 0,\ z_2 \mapsto \infty,\ z_3 \mapsto 1 $
+			\[ g(z) = \frac{az+b}{cz+d} \]
+			\vspace{-1cm}
+			\begin{flalign*}
+				1)\ &z_1 \mapsto 0 : az_1 + b = 0 \iff b = -az_1&\\
+				2)\ &z_2 \mapsto \infty : cz_2 + d = 0 \iff d = -cz_2&
+			\end{flalign*}
+			Тогда, 
+			\[ g(z) = \frac{a(z-z_1)}{c(z-z_2)} = K \cdot \frac{z-z_1}{z-z_2} \]
+			\begin{flalign*}
+				3)\ &z_3 \mapsto 1 : K \cdot \frac{z_3 - z_1}{z_3 - z_2} = 1 \iff K = \frac{z_3 - z_2}{z_3 - z_1}&
+			\end{flalign*}
+			Получаем,
+			\[ g(z) = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1} \]
+			Аналогичные преобразования делаем с точками из образа:
+			\[ h(w) = \frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1}, \quad w_1 \mapsto 0,\ w_2 \mapsto \infty,\ w_3 \mapsto 1  \]
+			Рассмотрим отображение:
+			\[ w = f(z) = h^{-1}(g(z)) \text{ "--- дробно-линейное отображение} \]
+			Итого имеем, 
+			\[ h(w) = g(z) \implies \boxed{\frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}} \]
+			Отсюда можно в явном виде найти чему равно $ w $.\\
+		\noindent
+		2) Единственность:\\
+			Пусть $ \exists \ \tilde f $ "--- другое дробно-линейное отображение, которое преводит $ z_j \mapsto w_i, \ j = 1, 2, 3 $\\
+		Рассмотрим дробно-линейное отображение $ \psi $:
+		\[ \psi(z) = \tilde f^{-1}(f(z)) \]
+		Такое отображение переводит $ z_j \mapsto z_j $, т.е. оставляет точки неподвижными.\\ 
+		Получается, что
+		\[ \psi(z) = z \implies \tilde f^{-1}(f(z)) = z  \implies f(z) \equiv \tilde f(z)\ !?\] 
 	\end{proof}
-	
-	\begin{remark}
-		1) Пусть $z_3 = \infty$
-		\[ \]
-	\end{remark}
-	
+	\vspace{-0.5cm}
 	\begin{definition}
-		Окружность или прямую будем называть обобщенной окружностью.
+		\textbf{Обобщенная окружность} "--- окружность или прямая.
 	\end{definition}
-	
 	\begin{theorem}
-		$\forall$ дробно-линейное отображение переводит обобщенную окружность в обобщенную окружность.
+		Всякое дробно-линейное отображение переводит обобщенную окружность в обобщенную окружность.
 	\end{theorem}
-	
 	\begin{proof}
-		1) Для первых трех базовых отображений утверждение очевидно. \\
-		2) Покажем, что теорема верна для отображения $\omega = \frac{1}{z}$:
+		Для первых трех базовых отображений утверждение очевидно. \\
+		Покажем, что теорема верна для отображения $w = \frac{1}{z}$\\
 		Запишем уравнение обобщенной окружности:
-		\[A(x^2 + y^2) + Bx + Cy + D = 0, \quad A, B, C, D \in \R\]
-		\[x^2 + y^2 = z \overline{z}\]
-		\[\begin{cases} 
-			z = x + iy\\
-			\overline{z} = x - iy
-		\end{cases}
-		\implies x = \frac{z + \overline{z}}{2}, \quad y = \frac{z - \overline{z}}{2i}\]
-		\[Az \overline{z} + \frac{B}{2}(z + \overline{z}) + \frac{C}{2i}(z - \overline{z}) + D = 0\]
-		\[A \frac{1}{\omega \overline{\omega}} + \frac{B}{2}\left(\frac{1}{\omega} + \frac{1}{\overline{\omega}}\right) + \frac{C}{2i}\left(\frac{1}{\omega} - \frac{1}{\overline{\omega}}\right) + D = 0 \;|\; \cdot \omega \overline{\omega}\]
-		\[D \cdot \omega \overline{\omega} + \frac{B}{2}(\omega + \overline{\omega}) + \frac{C}{2i}(\overline{\omega} - \omega) + A = 0\]
-		\[\omega = u + iv, \quad \overline{\omega} = u - iv\]
-		\[D \cdot (u^2 + v^2) + B u - C v + A = 0\]
+		\[ A(x^2 + y^2) + Bx + Cy + D = 0, \ A, B, C, D \in \R \]
+		Запишем это уравнение через $ z $:
+		\[ Az \overline{z} + \frac{B}{2}(z + \overline{z}) + \frac{C}{2i}(z - \overline{z}) + D = 0\]
+		Под действием отображения, уравнение перепишется в виде: 
+		\[ A \frac{1}{w\overline w} + \frac{B}{2}\left(\frac{1}{w} + \frac{1}{\overline w}\right) + \frac{C}{2i}\left(\frac{1}{w} - \frac{1}{\overline w}\right) + D = 0 \;|\; \cdot w \overline w \]
+		\[Dw \overline w + \frac{B}{2}(w + \overline w) + \frac{C}{2i}(\overline w - w) + A = 0\]
+		Если представить уравниение через $ w = u + iv $ получим:
+		\[D(u^2 + v^2) + B u - C v + A = 0 \text{ --- Уравнение обобщенной окружности.}\]
 	\end{proof}
-	
+	\vspace{-0.5cm}
 	\begin{definition}
-		$\gamma_{R} = \{ z \in \mathbb{C} : |z - z_0| = R\}$ 
-		Точки $z$, $z^{*}$ называются симметричными относительно окружности $\gamma_{R}$, если:
-		\begin{enumerate}
-			\item они лежат на одном луче, выходящем из центра окружности;
-			\item произведение расстояний от этих точек до центра окружности равно $R^2$.
-		\end{enumerate}
+		Пусть $\gamma_R = \{ z \in \Cm : |z - z_0| = R\}$ --- окружность радиуса R.\\
+		Точки $z$, $z^*$ называются \textbf{симметричными относительно окружности} $\gamma_R$, если:\\
+		\textbf{1)} Они лежат на одном луче, выходящем из центра окружности;\\
+		\textbf{2)} $|z-z_0||z^*-z_0| = R^2$.
 	\end{definition}
-	
-	\begin{remark}
-		\begin{align*}
-			&1)\; \arg(z - z_0) = \arg(z^{*} - z_0) \\
-			&2)\; |z - z_0| \cdot |z^{*} - z_0| = R^2 \\
-			&z^{*} - z_0 = |z^{*} - z_0| \cdot e^{i \arg(z^{*} - z_0)} \\
-			&z^{*} - z_0 = \frac{R^2 \cdot e^{i \arg(z - z_0)}}{|z - z_0|} \\
-			&z^{*} = z_0 + \frac{R^2}{|z - z_0| e^{-i \arg(z - z_0)}} \implies z^{*} = z_0 + \frac{R^2}{\overline{z - z_0}}
-		\end{align*}
-	\end{remark}
-	
 	\begin{definition}
-		Точки $z$ и $z^{*}$ называются симметричными относительно прямой, если они лежат на одном перпендикуляре к прямой на одинаковых расстояниях по разные стороны от прямой.
-		%PICTURE 3 and PICTURE 4%
+		Точки $z$ и $z^*$ называются \textbf{симметричными относительно прямой}, если:\\
+		\textbf{1)} Они лежат на одном перпендикуляре к прямой;\\ 
+		\textbf{2)} Они лежат на одинаковом расстоянии, но с разных сторон относительно прямой.
 	\end{definition}
-	
 	\begin{statement}
-		Точки $z$ и $z^{*}$ симметричны относительно окружности $\gamma_R$ $\Longleftrightarrow$
-		$\forall \Gamma$ (окружность) такой, что $z, z^{*} \in \Gamma$, выполняется $\Gamma \perp \gamma_R$.
-		%PICTURE 5
+		Точки $z$ и $z^*$ симметричны относительно окружности $\gamma_R \iff$\\
+		Для всякой окружности $\Gamma$, выполняется $z, z^* \in \Gamma \implies \Gamma \perp \gamma_R$.
 	\end{statement}
-	
 	\begin{proof}
-		1) $z$ и $z^{*}$ симметричны относительно $\gamma_R$:
-		\[|z -z_0| \cdot |z^{*} - z_0| = R^2 \implies \text{ длина отрезка касательной равна } R \implies \gamma_R \perp \Gamma\]
-		
-		2) $\gamma_R \perp \Gamma$:
-		%PICTURE 6
-		$z$ и $z^{*}$ лежат на одном луче, выходящем из точки $z_0$:
-		\[|OB|^2 = |OC| \cdot |OD| \implies R^2 = |z - z_0| \cdot |z^{*} - z_0| \implies z \text{ и } z^{*} \text{ симметричны относительно окружности}\]
+		\ \\
+		\boxed \Rightarrow\\ 
+		Пусть $z$ и $z^*$ симметричны относительно окружности $\gamma_R$, тогда
+		\[ |z - z_0||z^* - z_0| = R^2 \implies \text{ длина отрезка касательной равна } R \implies \gamma_R \perp \Gamma\]
+		\noindent
+		\boxed \Leftarrow\\ 
+		$\Gamma  \perp \gamma_R $, значит $z$ и $z^*$ лежат на одном луче, выходящем из точки $z_0$.\\
+		\textbf{(Тут должа быть картинка)}\\
+		Из школьной геометрии: $ |OB|^2 = |OC||OD| $, тогда
+		\[ R^2 = |z - z_0||z^* - z_0| \implies z \text{ и } z^* \text{ симметричны относительно окружности}\]
 	\end{proof}
-	
+	\newpage
 	\begin{theorem}
 		При дробно-линейном отображении точки, симметричные относительно обобщенной окружности, переходят в точки, симметричные относительно образа этой обобщенной окружности.
-		%PICTURE 7
 	\end{theorem}
-	
 	\begin{proof}
-		$\gamma_z$ --- обобщенная окружность, $\gamma_z \subset \overline{\mathbb{C}}$. \\
-		$z$, $z^{*}$ --- точки, симметричные относительно $\gamma_z$. \\
-		$\omega = f(z)$ --- дробно-линейное отображение. \\
-		$\gamma_z \xrightarrow{f} \gamma_\omega$ --- обобщенная окружность. \\
-		$z \xrightarrow{f} \omega$, $z^{*} \xrightarrow{f} \omega^{*}$. \\
-		$\Gamma_z$ --- произвольная окружность такая, что $z, z^{*} \in \Gamma_z$ и $\Gamma_z \perp \gamma_z$. \\
-		$\Gamma_z \xrightarrow{f} \Gamma_\omega$ --- обобщенная окружность. \\
-		$f$ --- конформное отображение $\implies$ по свойству сохранения углов $\gamma_\omega \perp \Gamma_\omega$. \\
-		Следовательно, $\omega$ и $\omega^{*}$ симметричны относительно $\gamma_\omega$.
+		\ \\
+		Пусть $\gamma_z$ --- обобщенная окружность, и $z$, $z^*$ --- точки, симметричные относительно $\gamma_z$.\\
+		Пусть $ w = f(z)$ --- некоторое дробно-линейное отображение, тогда \\
+		$\gamma_z \xrightarrow{f} \gamma_w$ --- обобщенная окружность перейдет в обобщенную окружность. \\
+		Под действием $ f $ точки перейдут в $z \mapsto w$, $z^* \mapsto w^*$. \\
+		Возьмем $\Gamma_z$ ---  такую произвольную окружность, что $z, z^* \in \Gamma_z$ и $\Gamma_z \perp \gamma_z$.(по предыдущему свойству). Тогда $\Gamma_z \xrightarrow{f} \Gamma_w$ --- обобщенная окружность перейдет в обобщенную окружность.\\
+		$f$ --- конформное отображение, тогда по свойству сохранения углов $\gamma_w \perp \Gamma_w$. \\
+		Следовательно, $w$ и $w^*$ симметричны относительно $\gamma_w$.
 	\end{proof}
+	\newpage
+	\section{Лекция 10}
 	\subsection{Примеры}
-	\begin{example}
-		Дана область $D_z = \{z \in \Cm : \operatorname{Re} z < 0, \operatorname{Im} z > 0\}$
-		\[\omega = \frac{z - i}{z + i}\] 
-		\[ \gamma_1 : z = iy, y \geq 0 \]  
-		\[ 0 \to -1, \quad i \to 0, \quad \infty \to 1\]
-		\[ \gamma_2 : z = x, x \leq 0\] 
-		\[ \infty \to 1, \quad -1 \to i,\quad 0 \to -1\]
-		%PICTURE 8
-		Нужно подставить все три точки справа в уравнение:
-		\[|\omega - \omega_0| = R \implies (u - u_0)^2 + (v - v_0)^2 = R^2\]
-		Тогда нам удастся найти $u_0, v_0, R$ \\
-		Возьмем внутреннюю точку $-1 + i$: $ -1 + i \to \frac{-1}{-1+2i} = \frac{1}{1 - 2i} = \frac{1+2i}{5}$ \\ 
-	\textbf{Ответ}: $D_\omega = \{\omega \in \Cm : |\omega| < 1, \operatorname{Im}\omega > 0\}$
-	\end{example}
-	\begin{example}
-		%Picture 9
-		Дана область $D_z = \{ z \in \Cm : 0 < \operatorname{Re}z < 1\}$ и $\omega = \frac{z - 1}{z}$
+	\noindent
+	\textbf{1)} Дана область $D_z = \{ z \in \Cm : \operatorname{Re}z < 0,\ \operatorname{Im}z > 0 \}$ и отображение $ f(z) = \dfrac{z - i}{z + i} $\\
+	Возьмем луч $ \gamma_1 : z = iy, y \geqslant 0 $\\ 
+	Найдем, куда перейдут точки лежащие на $ \gamma_1 $ под действием отображения $ f $:
+		\[ 0 \mapsto -1, \ i \mapsto 0, \ \infty \mapsto 1\]
+	Возьмем луч $ \gamma_2 : z = x, x \leqslant 0\ $\\
+	Найдем, куда перейдут точки лежащие на $ \gamma_2 $ под действием отображения $ f $:
+		\[ \infty \mapsto 1, \ -1 \mapsto i,\ 0 \mapsto -1 \]
+	\textbf{(Тут должна быть картинка)}\\
+	Если непонятно, куда перейдут три точки, то можем подставить точки справа в уравнение и найти из него $ u_0, v_0, R $:
+		\[|w - w_0| = R \iff (u - u_0)^2 + (v - v_0)^2 = R^2\]
+	Можем определить, куда перейдет сама область, если возьмем внутреннюю точку $-1 + i \in D_z$: 
+	 \[ -1 + i \mapsto \frac{1+2i}{5} \]
+	\textbf{Ответ}: $D_w = \{w \in \Cm : |w| < 1, \operatorname{Im}w > 0\}$\\ \ \\
+	\noindent
+	\textbf{2)} Дана область $D_z = \{ z \in \Cm : 0 < \operatorname{Re}z < 1\}$ и отображение $ f(z) = \dfrac{z - 1}{z}$
 		\[\gamma_1 : z = iy, \quad y \in \R \]
 		\[0 \to \infty,\quad  -i \to 1 -i, \quad \infty \to 1\] 
 		\[\gamma_2 : z = 1 + iy, \quad y \in \R\]
@@ -1525,7 +1494,6 @@
 			(\frac{1}{2} - v_0)^2 = R^2 \quad (3)
 		\end{cases} \implies R = \frac{1}{2}, \quad v_0 = 0\] \\
 		\textbf{Ответ:} $\{ w \in \Cm : \operatorname{Re} \omega < 1, |\omega - \frac{1}{2}| > \frac{1}{2}\}$
-	\end{example}
 	\begin{example}
 		\textbf{Задача 1 с коллоквиума} \\
 		Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : \operatorname{Im} z > 0\}$ на $K_\omega = \{ \omega \in \Cm : |\omega| < 1\}$. 
