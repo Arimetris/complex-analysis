@@ -440,7 +440,7 @@
 		Функция многозначная
 	\end{example*}
 	\begin{example*}
-		\[ \sin z = \frac{e^{iz}- e^{-iz}}{2i}, \ \cos z = \frac{e^{iz}+ e^{-iz}}{2}, \ \sh z = \frac{e^z - e^{-iz}}{2}, \ \ch z = \frac{e^z + e^{-iz}}{2}, \ D_f \in \Cm \]
+		\[ \sin z = \frac{e^{iz}- e^{-iz}}{2i}, \ \cos z = \frac{e^{iz}+ e^{-iz}}{2}, \ \sh z = \frac{e^z - e^{-z}}{2}, \ \ch z = \frac{e^z + e^{-z}}{2}, \ D_f \in \Cm \]
 	\end{example*}
 	\begin{example*}
 		\[\text{Решить уравнение: } \cos w = \frac{e^{iw}+ e^{-iw}}{2} = z \]
@@ -544,9 +544,10 @@
 			\Delta v(x_0, y_0) = a\Delta y + b\Delta x + \beta\Delta y + \delta\Delta x
 		\end{cases}
 		\displaystyle\lim_{(\Delta x, \Delta y) \to 0}\beta = 0, 
-		\displaystyle\lim_{(\Delta x, \Delta y) \to 0}\delta = 0 \ \Rightarrow
+		\displaystyle\lim_{(\Delta x, \Delta y) \to 0}\delta = 0 \implies
 		\]
-		\[ \Rightarrow u(x, y), \ v(x, y) \text{"--- дифференцируемы в } (x_0, y_0) \text{ и } 
+		\[ 
+		\implies u(x, y), \ v(x, y) \text{ --- дифференцируемы в } (x_0, y_0) \text{ и } 
 		\begin{cases}
 		  a = u'_x(x_0, y_0), \ b = -u'_y(x_0, y_0)\\
 		  a = v'_y(x_0, y_0), \ b = v'_x(x_0, y_0)
@@ -556,19 +557,18 @@
 		$ u, v $ "--- дифференцируемы в точке $ (x_0, y_0) $ и удовлетворяют условию Коши-Римана
 		\[ \Delta u(x_0, y_0) = a\Delta x - b\Delta y +\beta \rho \]
 		\[ \Delta v(x_0, y_0) = b\Delta x + a\Delta y +\delta \rho \]
-		\[ \Delta f(z_0) = \Delta u(x_0, y_0) + \Delta v(x_0, y_0) = a(\Delta x + i\Delta y) + b(i\Delta x - i\Delta y) + (\beta + i\delta)\rho = \]
+		\[ \Delta f(z_0) = \Delta u(x_0, y_0) + i\Delta v(x_0, y_0) = a(\Delta x + i\Delta y) + b(i\Delta x - i\Delta y) + (\beta + i\delta)\rho = \]
 		\[ = (a+ib)(\Delta x + i\Delta y) + \frac{\alpha (|\Delta z|)}{\Delta z}\Delta z  = A\Delta z + \tilde\alpha\Delta z, \displaystyle\lim_{\Delta z \to 0}\tilde\alpha = 0 \ \rho = \sqrt{\Delta x^2 + \Delta y^2} = |\Delta z| \]
 	\end{proof}
 	\begin{consequence*}
 		\begin{align*}
-			f'(z_0) = u'_x(x_0, y_0) + iv'_x(x_0, y_0)\\
-			f'(z_0) = v'_y(x_0, y_0) + iv'_x(x_0, y_0)\\
-			f'(z_0) = u'_x(x_0, y_0) - iu'_y(x_0, y_0)\\
-			f'(z_0) = v'_y(x_0, y_0) - iu'_y(x_0, y_0)
+			&f'(z_0) = u'_x(x_0, y_0) + iv'_x(x_0, y_0)\\
+			&f'(z_0) = v'_y(x_0, y_0) + iv'_x(x_0, y_0)\\
+			&f'(z_0) = u'_x(x_0, y_0) - iu'_y(x_0, y_0)\\
+			&f'(z_0) = v'_y(x_0, y_0) - iu'_y(x_0, y_0)
 		\end{align*}
 	\end{consequence*}
 	\newpage
-	
 	\section{Лекция 5}
 	\subsection{Примеры}
 	
@@ -1229,7 +1229,6 @@
 		\begin{flalign*}
 			&\text{Можем найти, куда переходит область, если отследим, куда переходят точки} :  \frac{a}{2} \mapsto \frac{2}{a} &
 		\end{flalign*}
-		
 		\begin{center}
 			\begin{tikzpicture}[scale=2]
 				% Левый рисунок
@@ -1468,7 +1467,7 @@
 	\textbf{1)} Дана область $D_z = \{ z \in \Cm : \operatorname{Re}z < 0,\ \operatorname{Im}z > 0 \}$ и отображение $ f(z) = \dfrac{z - i}{z + i} $\\
 	Возьмем луч $ \gamma_1 : z = iy, y \geqslant 0 $\\ 
 	Найдем, куда перейдут точки лежащие на $ \gamma_1 $ под действием отображения $ f $:
-		\[ 0 \mapsto -1, \ i \mapsto 0, \ \infty \mapsto 1\]
+	\[ 0 \mapsto -1, \ i \mapsto 0, \ \infty \mapsto 1\]
 	Возьмем луч $ \gamma_2 : z = x, x \leqslant 0\ $\\
 	Найдем, куда перейдут точки лежащие на $ \gamma_2 $ под действием отображения $ f $:
 		\[ \infty \mapsto 1, \ -1 \mapsto i,\ 0 \mapsto -1 \]
@@ -1476,70 +1475,181 @@
 	Если непонятно, куда перейдут три точки, то можем подставить точки справа в уравнение и найти из него $ u_0, v_0, R $:
 		\[|w - w_0| = R \iff (u - u_0)^2 + (v - v_0)^2 = R^2\]
 	Можем определить, куда перейдет сама область, если возьмем внутреннюю точку $-1 + i \in D_z$: 
-	 \[ -1 + i \mapsto \frac{1+2i}{5} \]
+		\[ -1 + i \mapsto \frac{1+2i}{5} \]
 	\textbf{Ответ}: $D_w = \{w \in \Cm : |w| < 1, \operatorname{Im}w > 0\}$\\ \ \\
 	\noindent
-	\textbf{2)} Дана область $D_z = \{ z \in \Cm : 0 < \operatorname{Re}z < 1\}$ и отображение $ f(z) = \dfrac{z - 1}{z}$
-		\[\gamma_1 : z = iy, \quad y \in \R \]
-		\[0 \to \infty,\quad  -i \to 1 -i, \quad \infty \to 1\] 
-		\[\gamma_2 : z = 1 + iy, \quad y \in \R\]
-		\[\infty \to 1, \quad 1 \to 0, \quad 1 + i \to \frac{1 + i}{2}\]
-		\[(u - u_0)^2 + (v - v_0)^2 = R^2\]
-		\[1: (1 - u_0)^2 + v_0^2 = R^2 \quad (1)\]
-		\[0: u_0^2 + v_0^2 = R^2 \quad(2) \]
-		\[\frac{1+i}{2} : (\frac{1}{2} - u_0)^2 + (\frac{1}{2} - v_0)^2 = R^2  \quad (3)\]
-		Из $(1) - (2)$ получим, что $u_0 = \frac{1}{2}$, затем остается система:
-		\[\begin{cases}
-			(\frac{1}{2})^2 + v_0^2 = R^2 \quad (1) \\
-			(\frac{1}{2} - v_0)^2 = R^2 \quad (3)
-		\end{cases} \implies R = \frac{1}{2}, \quad v_0 = 0\] \\
-		\textbf{Ответ:} $\{ w \in \Cm : \operatorname{Re} \omega < 1, |\omega - \frac{1}{2}| > \frac{1}{2}\}$
-	\begin{example}
-		\textbf{Задача 1 с коллоквиума} \\
-		Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : \operatorname{Im} z > 0\}$ на $K_\omega = \{ \omega \in \Cm : |\omega| < 1\}$. 
-		\begin{solve}
-			%picture 10.1
-			$a \to 0, \operatorname{Im}a > 0 \quad \overline{a} \to \infty$
-			%picture 10.2
-			$\omega^{*} = \omega_0 + \frac{R^2}{\overline{\omega - \omega_0}} \text{ после упрощения } \omega^{*} = \frac{1}{\omega}$ \\
-			$\omega = \frac{Az + B}{Cz + D} \implies \begin{cases}
-				A \cdot a + B = 0 \implies B = -a A\\
-				C \cdot \overline{a} + D = 0 \implies D = -\overline{a}C
-				\end{cases} \implies \omega = \frac{A(z - a)}{C(z - \overline{a})}$
-			Тогда получим $\omega = K \cdot \frac{(z - a)}{z - \overline{a}}$
-			Далее нужно определить $K$:
-			\[0 \to e^{it} \implies \frac{-a}{-\overline{a}} \cdot K = e^{it} \implies |K| = 1 \text{ или } K = e^{i \alpha}\] 
-			\textbf{Ответ:} $\omega = \frac{z - a}{z - \overline{a}} \cdot e^{i \alpha}, \quad \operatorname{Im} a > 0, \alpha \in \R$
-		\end{solve}
-	\end{example}
-	\begin{example}
-		\textbf{Задача 2 с коллоквиума} \\
-		Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : |z| < 1\}$ на $K_\omega = \{\omega \in \Cm : |\omega| < 1\}$. 
-		\begin{solve}
-			%picture 11.1
-			$a \to 0, |a| < 1$
-			%picture 11.2
-			 
-		\end{solve}
-	\end{example}
-	\begin{example}
-		\textbf{Способ 1:}
-		$K_z = \{ z \in \Cm : |z - 2| < 1\}$ и $K_\omega = \{\omega \in \Cm : |\omega - ri| < 2\}$ \\
-		$\omega(2) = i, \arg \omega(2) = 0$\\
-		%picture 12 и a = -\frac{i}{2}
-		$\xi = z - 2 \implies \eta = \frac{\omega - 2i}{2}$ 
-		\[ \xi = \frac{\eta - a}{1 - \overline{a} \cdot \eta} \cdot e^{i \alpha}\]
-		\[ \xi = \frac{\eta + \frac{i}{2}}{1 - \frac{i}{2}\eta} \cdot e^{i \alpha}\]
-		\[z - 2 = \frac{\frac{\omega - 2i}{2} + \frac{i}{2}}{1 - \frac{i}{2}(\frac{\omega - 2i}{2})} \cdot e^{i \alpha}\]
-		\[z - 2 = \frac{2(\omega - i)}{4 - 2 - i \omega} \cdot e^{i \alpha}\]
-		\[z - 2 = \frac{2(\omega - i)}{2 - i \omega} \cdot e ^{i \alpha} \]
-		\[z - 2 = \frac{2(\omega(z) - i)}{2 - i \omega(z)} \cdot e^{i \alpha}\]
-		\[1 = \frac{2 \cdot \omega'(z) ( 2 - i \omega(z)) + i \omega' (z) \cdot 2 (\omega(z) - i)}{(2 - i \omega(z))^2} \cdot e^{i \alpha}, \text{ где } z = 2, \omega(2) = i\]
-		\[ 1 = \frac{\omega'(2)(2 \cdot 3 \cdot e^{i \alpha})}{9}\]
-		$\arg \omega'(2) = 0$ и $\omega'(2) = Ae^{-i \alpha}$, причем $A > 0$ \\
-		$\arg \omega'(2) = -\alpha, \alpha = 0 \implies \alpha = 0$ \\
-		\textbf{Ответ: } $z - 2 = \frac{2(\omega - i)}{2 - i \omega}$ \\ 
-		\textbf{Способ 2:}
-	\end{example}
+	\textbf{2)} Дана область $D_z = \{ z \in \Cm : 0 < \operatorname{Re}z < 1\}$ и отображение $ f(z) = \dfrac{z - 1}{z}$\\
+	\textbf{(Тут должна быть картинка)}\\
+	Возьмем луч $ \gamma_1 : z = iy, \ y \in \R $\\
+	Найдем, куда перейдут точки лежащие на $ \gamma_1 $ под действием отображения $ f $:
+	\[ 0 \mapsto \infty,\ -i \mapsto 1-i, \ \infty \mapsto 1\]
+	Возьмем луч $ \gamma_2 : z = 1 + iy, \ y \in \R $\\
+	Найдем, куда перейдут точки лежащие на $ \gamma_2 $ под действием отображения $ f $:
+	\[ \infty \mapsto 1,\ 1 \mapsto 0,\ 1+i \mapsto \frac{1 + i}{2} \]
+	Подставить точки справа в уравнение и найдем из него $ u_0, v_0, R $:
+	\[|w - w_0| = R \iff (u - u_0)^2 + (v - v_0)^2 = R^2 \iff 
+	\begin{cases}
+		\frac{1}{2}^2 + v_0^2 = R^2 \\
+		(\frac{1}{2} - v_0)^2 = R^2
+	\end{cases} \iff R = \frac{1}{2}, \ v_0 = 0 \]
+	Можем определить, куда перейдет сама область, если возьмем внутреннюю точку $\dfrac{1}{2} \in D_z$.
+	\textbf{Ответ:} $ D_w = \{ w \in \Cm : \operatorname{Re} w < 1, |w - \frac{1}{2}| > \frac{1}{2}\}$
 	\newpage
+	\noindent\textbf{Задача 1} \\
+	Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : \operatorname{Im} z > 0 \}$ на $K_w = \{ w \in \Cm : |w| < 1 \}$. 
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% Левый рисунок
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (-1.5,0) rectangle (1.5,1.5); % закрашиваем только y > 0
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				% Стрелка слева направо вдоль оси y=0
+				\draw[->, thick, red] (-1,0) -- (1,0);
+				\fill[black] (-1,1) circle (0.5pt) node[above] {$a$};
+				\fill[black] (-1,-1) circle (0.5pt) node[above] {$\bar a$};
+				% Подпись области
+				\node at (0,1.8) {$D_z$};
+			\end{scope}
+			
+			% Правый рисунок
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\draw[thick] (0,0) circle (1);
+				\fill[blue!20, even odd rule] (0,0) circle (1);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				
+				\draw[->, thick, red] (1,0) arc (0:90:1);
+				\node at (0,1.8) {$K_w$};
+				\node at (1.15,-0.15) {$1$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	В верхней полуплоскости найдется такая точка $ a $, что $a \mapsto 0,\ \operatorname{Im}a > 0$.\\
+	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точки $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \implies w^* = \frac{1}{w}$)\\
+	\[ f(z) = \frac{Az + B}{Cz + D} = 0 \implies
+	\begin{cases}
+		Aa + B = 0\\
+		C\bar a + D = 0
+	\end{cases}
+	\iff
+	\begin{cases}
+		B = -a A \\
+		D = -\bar aC
+	\end{cases} 
+	\implies w = \frac{A(z - a)}{C(z - \bar a)} = K\frac{(z - a)}{(z - \bar a)} \]
+	Знаем, что точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
+	\[ 0 \mapsto e^{it} \implies \frac{-a}{-\bar a}K = e^{it} \implies |K| = 1 \implies K = e^{i\alpha} \] 
+	\textbf{Ответ:} $w = \dfrac{z - a}{z - \bar a} e^{i \alpha}, \ \operatorname{Im} a > 0, \ \alpha \in \R$\\
+	\newpage
+	\noindent
+	\textbf{Задача 2} \\
+	Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : |z| < 1\}$ на $K_w = \{w \in \Cm : |w| < 1\}$. 
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% Левый рисунок
+			\begin{scope}[local bounding box=scope1]
+				\draw[thick] (0,0) circle (1);
+				\fill[blue!20, even odd rule] (0,0) circle (1);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				
+				\draw[->, thick, red] (1,0) arc (0:90:1);
+				\node at (0,1.8) {$D_z$};
+				\node at (1.15,-0.15) {$1$};
+			\end{scope}
+			
+			% Правый рисунок
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\draw[thick] (0,0) circle (1);
+				\fill[blue!20, even odd rule] (0,0) circle (1);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				
+				\draw[->, thick, red] (1,0) arc (0:90:1);
+				\node at (0,1.8) {$K_w$};
+				\node at (1.15,-0.15) {$1$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Внутри окружности найдется такая точка $ a $, что $ a \mapsto 0,\ |a| < 1 $, также симметричная точка перейдет в симметричную  $ \dfrac{1}{\bar a} \mapsto \infty $ (из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}})$. Тогда
+	\[ f(z) = \tilde K\frac{z - a}{z - \frac{1}{\bar a}} = K\frac{z-a}{1-\bar az} \]
+	Точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
+	\[ 1 \mapsto e^{it} \implies K\frac{1-a}{1-\bar a} = e^{it} \implies  |K|\frac{|1-a|}{|1-\bar a|} = 1 \implies |K| = 1 \]
+	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az} e^{i \alpha}, \ |a| > 0, \ \alpha \in \R$\\
+	\begin{example}
+		Найти такое отображени $ f $, что $K_z$ переводит в $K_w$ и $w(2) = i,\ \arg w(2) = 0$\\
+		$K_z = \{ z \in \Cm : |z - 2| < 1 \}$, $K_w = \{w \in \Cm : |w - 2i| < 2\}$ 
+	\end{example}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\draw[thick] (1,0) circle (0.5);
+					\fill[blue!20, even odd rule] (1,0) circle (0.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					
+					\draw[->, thick, red] (1.5,0) arc (0:90:0.5);
+					\node at (0,1.8) {$D_z$};
+					\fill[black] (1,0) circle (0.5pt) node at (1.1,-0.15) {$2$};
+				\end{scope}
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\draw[thick] (0,0.5) circle (0.5);
+					\fill[blue!20, even odd rule] (0,0.5) circle (0.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					
+					\draw[->, thick, red] (0.5,0.5) arc (0:90:0.5);
+					\node at (0,1.8) {$K_w$};
+					\fill[black] (0,0.5) circle (0.5pt) node at (0.15,0.4) {$2i$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	Сделаем заменну переменных:
+	$ \begin{cases}
+		\xi = z - 2\\ 
+		\eta = \dfrac{w - 2i}{2}
+	\end{cases} $
+	\[ \xi =\left.\frac{\eta - a}{1 - \bar a\eta} e^{i\alpha} \right|_{a=\frac{i}{2}} = \frac{\eta + \frac{i}{2}}{1 - \frac{i}{2}\eta}e^{i \alpha} \iff z - 2 = \frac{\frac{w - 2i}{2} + \frac{i}{2}}{1 - \frac{i}{2}(\frac{w - 2i}{2})}e^{i \alpha} \iff z - 2 = \frac{2(w(z) - i)}{2 - iw(z)}e^{i\alpha} \]
+	Возьмем произвводную слева и справа:
+	\[1 = \frac{2w'(z)\cdot(2 - iw(z)) + 2(w(z) - i)\cdot iw'(z)}{(2 - iw(z))^2}e^{i\alpha}, \text{ где } z = 2,\ w(2) = i\]
+	Получаем:
+	\[ 1 = \frac{6w'(2)e^{i \alpha}}{9} \]
+	\[ \begin{cases}
+			\arg w'(2) = 0\\ 
+			w'(2) = Ae^{-i\alpha}, \ A > 0
+		\end{cases} \implies \alpha = 0 \]
+	\textbf{Ответ: } $z - 2 = \dfrac{2(w - i)}{2 - iw}$ \\ 
+	\textbf{Способ 2}
+	\newpage
+	\section{Лекция 11}
 \end{document}
