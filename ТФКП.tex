@@ -451,8 +451,8 @@
 			&S_{1, 2} = z + \sqrt{z^2 - 1} &\\
 			&\text{Обратная замена: }e^{iw} = z + \sqrt{z^2 - 1} \ \Leftrightarrow \ iw = \operatorname{Ln} (z+\sqrt{z^2 - 1})&\\
 			& w = -i\operatorname{Ln} (z+\sqrt{z^2 - 1})&\\
-			&\operatorname{Argcos} z = -i\operatorname{Ln}(z + \sqrt{z^2 - 1}) \text{"--- многозначная функция.}(\text{Для корня берем два значения.})\\
-			&\text{Когда } \operatorname{Argcos}z \text{ принимает вещественные значения?}\\
+			&\operatorname{Arccos} z = -i\operatorname{Ln}(z + \sqrt{z^2 - 1}) \text{"--- многозначная функция.}(\text{Для корня берем два значения.})\\
+			&\text{Когда } \operatorname{Arccos}z \text{ принимает вещественные значения?}\\
 			&\ln{|z+\sqrt{z^2-1}|} = 0 \ \Leftrightarrow \ |z+\sqrt{z^2+1}| = 1 \ \Leftrightarrow \ z+\sqrt{z^2+1} = e^{it} &\\
 			&z^2+1 = (e^{it}-z)^2 = e^{2it}- 2ze^{it}+z^2 \ \Leftrightarrow \ z = \frac{e^{2it}+1}{2e^{it}} = \frac{e^{it}+e^{-it}}{2} = \cos t &\\ \\
 			&\text{Ответ: } M = \{ z \in \Cm : \operatorname{Im}z = 0, \ \operatorname{Re} \in [-1, 1] \}
@@ -1652,4 +1652,68 @@
 	\textbf{Способ 2}
 	\newpage
 	\section{Лекция 11}
+	\subsection{Отображения, задаваемые функциями $f(z) = z^n; f(z) = z^{\frac{1}{n}}, n \in \N$}
+	\begin{definition}
+		Отображение $w = f(z)$ называется конформным в точке $z_0 \in \overline{\Cm}$, если оно конформно в некоторой окрестности этой точки.
+	\end{definition}
+	\begin{remark}
+		Пусть $f(z) \in \mathcal{A}(\mathbb{U}(z_0))$ и $f'(z_0) \neq 0$. Тогда отображение $w = f(z)$ конформно в $z_0$.
+	\end{remark}
+	\begin{example}
+		$$w = z^n, n \in \N \quad
+		f'(z) = n \cdot z ^{n - 1}, f(z) \in \mathcal{A}(\Cm) $$
+		$$\text{Отображение } w = z^n \text{ конформно в } \forall \text{ точки из } \Cm \setminus {0}$$
+	\end{example}
+	\begin{remark}
+		Отображение $w = z^n$ конформно в любой области, которая не содержит любых двух вершин правильного $n$-угольника с центром в начале координат.
+	\end{remark}
+	\begin{example}
+	$$\texttt{РИСУНОК 1}$$
+	$$D_z = \{ z \in \Cm : \beta < \operatorname{arg} z < \beta + \frac{2\pi}{n}\}, \quad w = z^n \text{--- конформно в $D_z$}$$
+	$$f(z) = z^{\frac{1}{n}} \text{--- $n$-значная функция}$$
+	$$\texttt{РИСУНОК 2}$$
+	На $\widetilde{D} = \Cm \setminus \{z \in \Cm: \operatorname{Im} z = 0, \operatorname{Re}z \geq 0 \}$ можно выделить $n$ однозначных ветвей.
+	$$f_k(z) = \sqrt[n]{|z|} \cdot e ^{\frac{i(\operatorname{arg}z + 2 \pi k)}{n}}, \quad k = 0, 1, ..., n - 1$$\\
+	$w = f_0(z)$ конформно на $\widetilde{D}$
+	$$\texttt{РИСУНОК 3}$$
+	\end{example}
+	\subsection{Отображения, задаваемые функциями $f(z) = e^z$, $f(z) = \operatorname{Ln}(z)$}
+	$1) f(z) = e^z$ и $f'(z) = e^z \neq = 0, \quad f(z) \in \mathcal{A}(\Cm)$\\
+	Отображение $w = e^z$ конформно в каждой точке $\Cm$. \\
+	$e^z = e^{x + iy} \implies |e^z| = e^x$\\
+	$\forall z \in \Cm \implies e^z = e^{z + 2\pi i}$\\
+	$T = 2\pi i$ --- основной период, уравнение $e^z = 0$ не имеет решений.
+	$$D = \{z \in \Cm : 0 < \operatorname{Im}z < 2\pi\}$$
+	Отображение $w = e^z$ конформно в $D$ \\
+	$$\texttt{РИСУНОК 4}$$
+	$\gamma_1: z = x, x \in \R, \quad w = e^x$ \\
+	$\gamma_2: z = x + 2 \pi i, x \in R, \quad w = e^x $ \\
+	$\gamma_3: z = x + \pi i, x \in R, \quad w = -e^x$
+	\begin{example}
+		$$\texttt{РИСУНОК 5}$$
+		1) $D_w = \{w \in \Cm: |w| > 1\} \setminus \{w \in \Cm: \operatorname{Im} w = 0, \operatorname{Re} w \geq 1\}$\\
+		$$\texttt{РИСУНОК 6}$$
+		2) .................................\\
+		$$\texttt{РИСУНОК 7}$$
+		3) $D_w = \{w \in \Cm: \operatorname{Im}w > 0\}$ \\
+		$$\texttt{РИСУНОК 8}$$
+		4) $D_w = \{|w| < 1, 0 < \operatorname{arg} w < \pi\}$
+		$$\texttt{РИСУНОК 9}$$
+		5) $D_w = \{|w| > 1, 0 < \operatorname{w} < \pi\}\}$
+	\end{example}
+	Рассмотрим отображение $f(z) = \operatorname{Ln} z = \ln{|z|} + i (\operatorname{arg z} + 2 \pi k), \quad k \in \Z$ --- бесконечно-значная функция \\
+	$f_k(z) = \ln{|z|} + i(\operatorname{arg}z + 2 \pi k)$
+	$$\texttt{РИСУНОК 10}$$
+	$w = f_0(z) = \ln{z} = \ln{|z|} + i \operatorname{arg}z$\\
+	$D_z = \Cm \setminus \{z \in \Cm: \operatorname{Im}z = 0, \operatorname{Re}z \geq 0 \}$ \\
+	Отображение $w = f_0(z) = \ln{z}$ конформное в $D_z$
+	$$D_w= \{w \in \Cm : 0 < \operatorname{Im}w < 2pi\}$$
+	\subsection{Отображение задаваемые функцией Жуковского}
+	$f(z) = \frac{1}{2} (z + \frac{1}{z}) \implies f'(z) = \frac{1}{2} (1 - \frac{1}{z^2}), \quad f'(z) \neq 0, \ z \neq \pm 1$ \\
+	Можно увидеть, что $0 \xrightarrow{} \infty$. Рассмотрим $z_1 = 0$ $\frac{1}{f(z)} = \frac{2}{z + \frac{1}{z}} = \frac{2z}{z^2 + 1}$, обозначим функцию $g(z) = \frac{2z}{z^2 + 1} \implies g'(z) = \frac{2}{z^2 + 1} + z \cdot (...)'$, а в точке 0 получим $g'(0) = 2 \neq 0$\\
+	Получили $w = f(z)$ конформно в точке 0. \\
+	Рассмотрим $z_2 = \infty \quad \infty \xrightarrow{} \infty$, обозначим за $s = \frac{1}{z}$, тогда получим $h(s) = \frac{1}{2}(\frac{1}{s} + s)$. Возьмем $s_2 = 0$ и $w = f(z)$ конформное в точке $\infty$. Отображение $w = f(z)$ конформно в каждой точке $\Cm \setminus \{\pm 1\}$ \\
+	\begin{statement}
+	Функция Жуковского может быть записана как композиция двух следующих функций: $w_1 = \frac{z - 1}{z + 1}$ и получим $w_2 = w_1^2$, тогда $w = \frac{1 + w_2}{1 - w_2} = \frac{1 + (\frac{z - 1}{z + 1})^2}{1 - (\frac{z - 1}{z + 1})^2} = \frac{2z^2 + 2}{4z} = \frac{1}{2}(z + \frac{1}{z})$
+	\end{statement}
 \end{document}
