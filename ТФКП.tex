@@ -353,10 +353,10 @@
 	\end{definition}
 	\begin{definition}
 		Число $\infty$ называется пределом последовательности $\{z_n\}$, если
-		\[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n| > \epsilon \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = \infty \]
+		\[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n| > \epsilon \ \Longleftrightarrow \ \displaystyle\lim_{n \to \infty} z_n = \infty \]
 	\end{definition}
 	\begin{theorem*}
-		\[ \displaystyle\lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n \ \Leftrightarrow \ \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
+		\[ \displaystyle\lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n \iff \displaystyle\lim_{n \to \infty} x_n = a, \displaystyle\lim_{n \to \infty} y_n = b \]
 	\end{theorem*}
 	\begin{proof}
 		\ \\$\boxed\Rightarrow$ \[ \forall\epsilon>0 \ \exists N(\epsilon)\in\N : \forall n > N \Rightarrow |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
@@ -773,9 +773,13 @@
 		node[midway, above, label, yshift=5pt] {$f$};
 	\end{tikzpicture}\\
 	\end{center}
-	Рассмотрим сложную функцию $\omega(t) = f(z(t))$ и найдем ее производную в точке $t_0$:
+	Рассмотрим сложную функцию $\omega(t) = f(z(t))$ и найдем ее производную в точке $t_0$
 	\[\omega'(t_0) = f'(z_0)z'(t_0)\]
-	Откуда по свойству аргумента комплексного числа и $\begin{cases} \arg (\omega'(t_0)) = \theta \\ \arg (f'(t_0)) = \alpha \\ \arg (z'(t_0)) = \beta \end{cases}$ получаем, что:
+	Откуда по свойству аргумента комплексного числа и 
+	$\begin{cases} \arg (\omega'(t_0)) = \theta \\ 
+		\arg (f'(z_0)) = \alpha \\ 
+		\arg (z'(t_0)) = \beta 
+	\end{cases}$ получаем, что:
 	\[\arg (\omega'(t_0)) = \arg (f'(z_0)) + \arg (z'(t_0)) \implies \theta = \alpha + \beta\]
 	Тогда $\alpha = \theta - \beta$ "--- угол поворота кривой в точке $z_0$
 	\begin{statement*}
@@ -1168,7 +1172,7 @@
 		Пусть \\
 		1) $ D_z, D_w $ --- односвязные области, $ D_w$ --- ограниченная $(\forall z \in D \ \exists M > 0 : |z| \leqslant M)$\\
 		2) $ f(z) \in \mathcal A(D_z)\cap C(\overline D_z) $ \\
-		3) $ f(z)$ биективно отображает $ \partial D_z \text{на } \partial D_w$ с сохранением напрвления обхода.\\(область остается слева)\\
+		3) $ f(z)$ биективно отображает $ \partial D_z \text{на } \partial D_w$ с сохранением направления обхода.\\(область остается слева)\\
 		Тогда $ f(z) $ "--- конформно отображает $ D_z $ на $ D_w $.
 	\end{theorem*}
 	
@@ -1318,13 +1322,12 @@
 		 Получилось дробно-линейное отображение.
 	\end{proof}
 	\newpage
-	Далее считаем, если
-	\[ w =  \frac{az+b}{cz+d}, \  ad - bc \ne 0. \text{ Тогда } w\left( -\frac{d}{c}\right)  = \infty, \ w(\infty) = \frac{a}{c} \]
+	\noindent Далее считаем, если $ w =  \dfrac{az+b}{cz+d}, \  ad - bc \ne 0. \text{ Тогда } w\left( -\dfrac{d}{c}\right)  = \infty, \ w(\infty) = \dfrac{a}{c}. $
 	\begin{theorem}
 		Всякое дробно-линейное преобразование конформно отображает $ \overline\Cm $ на $\overline\Cm$.
 	\end{theorem}
 	\begin{proof}
-		\ \\Покажем, что это преобразование взаимнооднозначно:\\
+		\ \\Покажем, что это преобразование взаимнооднозначно\\
 		\[
 		\begin{cases}
 			w_1 = \frac{az_1+b}{cz_1+d}\\ 
@@ -1334,9 +1337,9 @@
 		w_1 - w_2 = \frac{(az_1+b)(cz_2+d) - (az_2+b)(cz_1+d)}{(cz_1+d)(cz_2+d)} = \frac{(ad-bc)(z_1-z_2)}{(cz_1+d)(cz_2+d)} \ne 0
 		\]
 		Получается, при $ z_1 \ne z_2$ верно, что $ w_1 \ne w_2 $.\\
-		\[\text{Функция } w \text{ всюду дифференцируема: }  w' = \frac{ad-bc}{(cz+d)^2}, \text{ кроме точек: }\infty, -\frac{d}{c}\]
-		\[ \text{ т.е. } \ w \in \mathcal A(\overline\Cm \setminus \{\infty, -\frac{d}{c}\}) \implies \text{Непрерывность, коэффициенты подобия, углы сохраняются.} \]
-		Точки $ \{\infty, -\frac{d}{c}\} $ преобразованиями $ \xi = \frac{1}{z} $ и $ \eta = \frac{1}{w} $ соответственно переведем в 0. 
+		$ \text{Функция } w \text{ всюду дифференцируема: }  w' = \dfrac{ad-bc}{(cz+d)^2}, \text{ кроме точек: }\infty, -\dfrac{d}{c}. $\\
+		$ \text{т.е. } \ w \in \mathcal A(\overline\Cm \setminus \{\infty, -\dfrac{d}{c}\}) \implies \text{Непрерывность, коэффициенты подобия, углы сохраняются.} $
+		Точки $ \{\infty, -\dfrac{d}{c}\} $ преобразованиями $ \xi = \dfrac{1}{z} $ и $ \eta = \dfrac{1}{w} $ соответственно переведем в 0. 
 	\end{proof}
 	\newpage
 	\section{Лекция 9}
@@ -1597,7 +1600,7 @@
 	\[ 1 \mapsto e^{it} \implies K\frac{1-a}{1-\bar a} = e^{it} \implies  |K|\frac{|1-a|}{|1-\bar a|} = 1 \implies |K| = 1 \]
 	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az} e^{i \alpha}, \ |a| > 0, \ \alpha \in \R$\\
 	\begin{example}
-		Найти такое отображени $ f $, что $K_z$ переводит в $K_w$ и $w(2) = i,\ \arg w(2) = 0$\\
+		Найти такое отображение $ f $, что $K_z$ переводит в $K_w$, $w(2) = i,\ \arg w(2) = 0$\\
 		$K_z = \{ z \in \Cm : |z - 2| < 1 \}$, $K_w = \{w \in \Cm : |w - 2i| < 2\}$ 
 	\end{example}
 	\begin{center}
@@ -1634,86 +1637,1092 @@
 				node[midway, above, yshift=5pt] {$f$};
 			\end{tikzpicture}
 	\end{center}
+	\textbf{Способ 1}\\
 	Сделаем заменну переменных:
 	$ \begin{cases}
 		\xi = z - 2\\ 
 		\eta = \dfrac{w - 2i}{2}
 	\end{cases} $
 	\[ \xi =\left.\frac{\eta - a}{1 - \bar a\eta} e^{i\alpha} \right|_{a=\frac{i}{2}} = \frac{\eta + \frac{i}{2}}{1 - \frac{i}{2}\eta}e^{i \alpha} \iff z - 2 = \frac{\frac{w - 2i}{2} + \frac{i}{2}}{1 - \frac{i}{2}(\frac{w - 2i}{2})}e^{i \alpha} \iff z - 2 = \frac{2(w(z) - i)}{2 - iw(z)}e^{i\alpha} \]
-	Возьмем произвводную слева и справа:
+	Возьмем производную слева и справа
 	\[1 = \frac{2w'(z)\cdot(2 - iw(z)) + 2(w(z) - i)\cdot iw'(z)}{(2 - iw(z))^2}e^{i\alpha}, \text{ где } z = 2,\ w(2) = i\]
-	Получаем:
+	Получаем
 	\[ 1 = \frac{6w'(2)e^{i \alpha}}{9} \]
 	\[ \begin{cases}
 			\arg w'(2) = 0\\ 
 			w'(2) = Ae^{-i\alpha}, \ A > 0
 		\end{cases} \implies \alpha = 0 \]
-	\textbf{Ответ: } $z - 2 = \dfrac{2(w - i)}{2 - iw}$ \\ 
-	\textbf{Способ 2}
+	\textbf{Ответ: } $z - 2 = \dfrac{2(w - i)}{2 - iw}$. \\ 
+	\textbf{Способ 2}\\
+	Знаем, что $ 2 \mapsto i $, значит точка симметричная 2 тоже перейдет в симметричную: 
+	$ \infty \mapsto -2i $. Точки на границе перейедут в точки на границе: $ 1 \mapsto 2i+2e^{it} $ или $ 2+e^{it} \mapsto 0 $.\\
+	Далее по трем точкам можем найти искомое дробно-линейное отображение.
+	\newpage
+	\begin{example}
+		Отобразить $ D_z = \{z \in \Cm: \operatorname{Im}z>0\} $ на $ D_w = \{w \in \Cm: \operatorname{Re}w>0\},\\ a \mapsto b,\ \operatorname{Im}a>0,\ \operatorname{Re}b>0. $
+	\end{example}
+	\noindent
+	Отображение $ \eta = e^{i\frac{\pi}{2}}w = iw \text{ переведет } b\mapsto ib $\\
+	$ \xi = \dfrac{z-a}{z-a}e^{i\alpha},\ \alpha > 0 $\\
+	$ w = \psi^{-1}h^{-1}g(z) \iff \psi(w) = h^{-1}g(z) \iff h(\psi(w)) = g(z) $\\
+	$ \xi = \dfrac{\eta - ib}{\eta - \overline{(ib)}}e^{i\theta},\ \theta\in\R $
+	\[ \frac{z - a}{z - \bar a}e^{i\alpha} = \frac{\eta - ib}{\eta + i\bar b}e^{i\theta} \iff \frac{z - a}{z - \bar a}e^{i\beta} = \frac{iw - ib}{iw + i\bar b}, \ \beta = \alpha - \theta \iff \frac{w - b}{w + \bar b} = \frac{z - a}{z - \bar a}e^{i\beta},\ \operatorname{Im}a>0, \ \operatorname{Re}b>0 \]
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% ========== ВЕРХНИЙ РЯД ==========
+			% Левый верхний
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (-1.5,0) rectangle (1.5,1.5);
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[->, thick, red] (-1,0) -- (1,0);
+				\fill[black] (1,1) circle (0.5pt) node[above] {$a$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			% Правый верхний
+			\begin{scope}[xshift=4.5cm, local bounding box=scope2]
+				\begin{scope}
+					\clip (0,-1.5) rectangle (1.5,1.5);
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[->, thick, red] (0,1) -- (0,-1);
+				\fill[black] (1,-0.5) circle (0.5pt) node[above] {$b$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			
+			% ========== НИЖНИЙ РЯД ==========
+			% Левый нижний
+			\begin{scope}[yshift=-4cm, local bounding box=scope3]
+				\draw[thick] (0,0) circle (0.5);
+				\fill[blue!20, even odd rule] (0,0) circle (0.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[->, thick, red] (0.5,0) arc (0:90:0.5);
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$\xi$};
+			\end{scope}
+			
+			% Правый нижний
+			\begin{scope}[xshift=4.5cm, yshift=-4cm, local bounding box=scope4]
+				\begin{scope}
+					\clip (-1.5,0) rectangle (1.5,1.5);
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[->, thick, red] (-1,0) -- (1,0);
+				\fill[black] (-0.5, 1) circle (0.5pt) node[above] {$ib$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$\eta$};
+			\end{scope}
+			
+			% ========== СТРЕЛКИ ==========
+			\coordinate (startArrow) at (scope2.south);
+			\coordinate (endArrow) at (scope4.north);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (1.5cm, 0)$);
+			\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.2!(midArrow)$) and ($(endArrow)!0.2!(midArrow)$) .. (endArrow) node[midway, right, xshift=5pt] {$\psi$};
+			
+			\coordinate (startArrow) at ([yshift=1cm]scope4.west);
+			\coordinate (endArrow) at ([yshift=1cm]scope3.east);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow) node[midway, above, yshift=5pt] {$h$};
+			
+			\coordinate (startArrow) at (scope1.south);
+			\coordinate (endArrow) at (scope3.north);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (-1.5cm, 0)$);
+			\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.2!(midArrow)$) and ($(endArrow)!0.2!(midArrow)$) .. (endArrow) node[midway, left, yshift=5pt] {$g$};
+		\end{tikzpicture}
+	\end{center}
 	\newpage
 	\section{Лекция 11}
-	\subsection{Отображения, задаваемые функциями $f(z) = z^n; f(z) = z^{\frac{1}{n}}, n \in \N$}
+	\subsection{Отображения, задаваемые функциями $f(z) = z^n, \ f(z) = z^\frac{1}{n}$}
 	\begin{definition}
 		Отображение $w = f(z)$ называется конформным в точке $z_0 \in \overline{\Cm}$, если оно конформно в некоторой окрестности этой точки.
 	\end{definition}
 	\begin{remark}
-		Пусть $f(z) \in \mathcal{A}(\mathbb{U}(z_0))$ и $f'(z_0) \neq 0$. Тогда отображение $w = f(z)$ конформно в $z_0$.
-	\end{remark}
-	\begin{example}
-		$$w = z^n, n \in \N \quad
-		f'(z) = n \cdot z ^{n - 1}, f(z) \in \mathcal{A}(\Cm) $$
-		$$\text{Отображение } w = z^n \text{ конформно в } \forall \text{ точки из } \Cm \setminus {0}$$
-	\end{example}
+		Пусть $f(z) \in \mathcal{A}(U(z_0))$ и $f'(z_0) \neq 0$. Тогда отображение $w = f(z)$ конформно в $z_0$.
+	\end{remark}\ \\ \indent
+	Рассмотрим отображение $w = z^n,\ n \in \N$, и найдем её производную:
+		$f'(z) = nz ^{n-1}. $\\
+		$ f'(z) \ne 0 \text{ при } z \ne 0, \ f(z) \in \mathcal{A}(\Cm) $\\
+		Отображение $ w = z^n $ конформно в любой точке из $\Cm \setminus \{{0}\}$. 
 	\begin{remark}
 		Отображение $w = z^n$ конформно в любой области, которая не содержит любых двух вершин правильного $n$-угольника с центром в начале координат.
 	\end{remark}
-	\begin{example}
-	$$\texttt{РИСУНОК 1}$$
-	$$D_z = \{ z \in \Cm : \beta < \operatorname{arg} z < \beta + \frac{2\pi}{n}\}, \quad w = z^n \text{--- конформно в $D_z$}$$
-	$$f(z) = z^{\frac{1}{n}} \text{--- $n$-значная функция}$$
-	$$\texttt{РИСУНОК 2}$$
-	На $\widetilde{D} = \Cm \setminus \{z \in \Cm: \operatorname{Im} z = 0, \operatorname{Re}z \geq 0 \}$ можно выделить $n$ однозначных ветвей.
-	$$f_k(z) = \sqrt[n]{|z|} \cdot e ^{\frac{i(\operatorname{arg}z + 2 \pi k)}{n}}, \quad k = 0, 1, ..., n - 1$$\\
-	$w = f_0(z)$ конформно на $\widetilde{D}$
-	$$\texttt{РИСУНОК 3}$$
-	\end{example}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% Левый рисунок
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (0,0) -- (1.5,0) -- (1.5,{1.5*tan(45)});
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) -- (1.5,{1.5*tan(45)});
+				\draw[thick] (0.3,0) arc (0:45:0.3);
+				\node at (0.5,0.2) {$\alpha$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			% Правый рисунок
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (0,0) -- (0:1.5) arc (0:135:1.5) -- cycle;
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) -- (135:1.5);
+				\draw[thick] (0.3,0) arc (0:135:0.3);
+				\node at (0.3,0.4) {$n\alpha$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Чтобы отображение было взаимооднозначным необходимо, чтобы $ 0 < \alpha < \dfrac{2\pi}{n}. $\\
+	$w = z^n \text{--- конформно в $D_z$, где} \ D_z = \{ z \in \Cm : \beta < \arg z < \beta + \dfrac{2\pi}{n}\} $\\
+	
+	Рассмотрим обратное отображение $f(z) = z^\frac{1}{n} \text{ --- $n$-значная функция.}$\\
+	На $\widetilde D = \Cm \setminus \{z \in \Cm: \operatorname{Im} z = 0,\  \operatorname{Re}z \geqslant 0 \}$ можно выделить $n$ однозначных ветвей.
+	\[ f_k(z) = \sqrt[n]{|z|} e^\frac{i(\arg z + 2 \pi k)}{n},\ k = 0, 1, \ldots, n-1 \]
+	$w = f_0(z)$ --- конформно на $\widetilde{D}$
+	\newpage
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (-1.5,-1.5) rectangle (1.5,1.5);
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
+					(0, -0.05) rectangle (1.5, 0.05); % луч (вычитается)
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (0,0) -- (0:1.5) arc (0:135:1.5) -- cycle;
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) -- (135:1.5);
+				\draw[thick] (0.3,0) arc (0:135:0.3);
+				\node at (0.4,0.5) {$\dfrac{2\pi}{n}$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
 	\subsection{Отображения, задаваемые функциями $f(z) = e^z$, $f(z) = \operatorname{Ln}(z)$}
-	$1) f(z) = e^z$ и $f'(z) = e^z \neq = 0, \quad f(z) \in \mathcal{A}(\Cm)$\\
-	Отображение $w = e^z$ конформно в каждой точке $\Cm$. \\
+	\subsubsection{Функция $ f(z) = e^z $}
+	Её производная $f'(z) = e^z \neq 0, \ \forall z \in \Cm \implies f(z) \in \mathcal{A}(\Cm)$, она конформна на $\Cm$.\\
 	$e^z = e^{x + iy} \implies |e^z| = e^x$\\
-	$\forall z \in \Cm \implies e^z = e^{z + 2\pi i}$\\
-	$T = 2\pi i$ --- основной период, уравнение $e^z = 0$ не имеет решений.
-	$$D = \{z \in \Cm : 0 < \operatorname{Im}z < 2\pi\}$$
-	Отображение $w = e^z$ конформно в $D$ \\
-	$$\texttt{РИСУНОК 4}$$
-	$\gamma_1: z = x, x \in \R, \quad w = e^x$ \\
-	$\gamma_2: z = x + 2 \pi i, x \in R, \quad w = e^x $ \\
-	$\gamma_3: z = x + \pi i, x \in R, \quad w = -e^x$
-	\begin{example}
-		$$\texttt{РИСУНОК 5}$$
-		1) $D_w = \{w \in \Cm: |w| > 1\} \setminus \{w \in \Cm: \operatorname{Im} w = 0, \operatorname{Re} w \geq 1\}$\\
-		$$\texttt{РИСУНОК 6}$$
-		2) .................................\\
-		$$\texttt{РИСУНОК 7}$$
-		3) $D_w = \{w \in \Cm: \operatorname{Im}w > 0\}$ \\
-		$$\texttt{РИСУНОК 8}$$
-		4) $D_w = \{|w| < 1, 0 < \operatorname{arg} w < \pi\}$
-		$$\texttt{РИСУНОК 9}$$
-		5) $D_w = \{|w| > 1, 0 < \operatorname{w} < \pi\}\}$
-	\end{example}
-	Рассмотрим отображение $f(z) = \operatorname{Ln} z = \ln{|z|} + i (\operatorname{arg z} + 2 \pi k), \quad k \in \Z$ --- бесконечно-значная функция \\
-	$f_k(z) = \ln{|z|} + i(\operatorname{arg}z + 2 \pi k)$
-	$$\texttt{РИСУНОК 10}$$
-	$w = f_0(z) = \ln{z} = \ln{|z|} + i \operatorname{arg}z$\\
-	$D_z = \Cm \setminus \{z \in \Cm: \operatorname{Im}z = 0, \operatorname{Re}z \geq 0 \}$ \\
-	Отображение $w = f_0(z) = \ln{z}$ конформное в $D_z$
-	$$D_w= \{w \in \Cm : 0 < \operatorname{Im}w < 2pi\}$$
+	$\forall z \in \Cm \implies e^z = e^{z + 2\pi i},\ T = 2\pi i$ --- основной период\\
+	Уравнение $e^z = 0$ не имеет решений.
+	\[ D = \{z \in \Cm :\ 0 < \operatorname{Im}z < 2\pi\} \text{ --- область конформности.} \]
+	(Любая полоса шириной $ 2\pi $ является облостью конформности.)
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			% Левый рисунок
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-1.5, 1) -- (1.5,1);
+				
+				\fill[black] (0,1) circle (0.5pt) node[above right] {$2\pi i$};
+				\node at (0.6,-0.15) {$\Gamma_1$};
+				\node at (0.6,1.15) {$\Gamma_2$};
+				\node at (-0.15,0.5) {$\Gamma_3$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			% Правый рисунок
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\clip (-1.5,-1.5) rectangle (1.5,1.5);
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
+					(0, -0.05) rectangle (1.5, 0.05); % луч (вычитается)
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Парметризуем границы этой области:
+	$ \begin{cases}
+		\Gamma_1: z = x,\ x \in \R \implies w = e^x\\
+		\Gamma_2: z = x + 2 \pi i,\ x \in \R \implies w = e^x\\
+		\Gamma_3: z = x + \pi i,\ x \in \R \implies w = -e^x
+	\end{cases} $
+	\[ D_w = \{ w \in \Cm :\ 0 < \arg w < 2\pi \} \]
+	\newpage
+	\subsection*{Примеры}
+	\noindent\textbf{1)} $ D_z = \{z \in \Cm :\ 0 \leqslant \operatorname{Im}z \leqslant 2\pi,\ \operatorname{Re}z \leqslant 0 \} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20] (-1.5,0) rectangle (0,1);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (-1.5, 1) -- (0,1);
+					\node at (-0.6,-0.15) {$\Gamma_1$};
+					\node at (-0.6,1.15) {$\Gamma_3$};
+					\node at (0.15,0.5) {$\Gamma_2$};
+					\fill[black] (0,1) circle (0.5pt) node[above right] {$2\pi i$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(0,0) circle (0.75)
+						(0,-0.05) rectangle (0.75,0.05);
+					\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) circle (0.75);
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	$ \begin{cases}
+		\Gamma_1: z = x,\ x \leqslant 0 \implies w = e^x \\
+		\Gamma_2: z = yi,\  0 \leqslant y \leqslant 2\pi \implies w = e^{iy}\\
+		\Gamma_3: z = x + 2\pi i,\ x \leqslant 0 \implies w = e^x
+	\end{cases} $
+	\[ D_w = \{ w \in \Cm: |w| < 1\} \setminus \{ w \in \Cm: \operatorname{Im} w = 0,\ 0 \leqslant \operatorname{Re} w \leqslant 1 \} \]
+	\noindent\textbf{2)} $ D_z = \{z \in \Cm :\ 0 \leqslant \operatorname{Im}z \leqslant 2\pi,\ \operatorname{Re}z \geqslant 0 \} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20] (0,0) rectangle (1.5,1);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0, 1) -- (1.5,1);
+					\node at (0.6,-0.15) {$\Gamma_1$};
+					\node at (0.6,1.15) {$\Gamma_3$};
+					\node at (-0.15,0.5) {$\Gamma_2$};
+					\fill[black] (0,1) circle (0.5pt) node[above right] {$2\pi i$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(0,0) circle (0.75)
+						(-1.5,-1.5) rectangle (1.5,1.5);
+						\fill[white!20](0.75,-0.05) rectangle (1.5,0.05);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0,0) circle (0.75);
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	Знаем, что вся полоса перейдет на плоскость с разрезом. Выше увидили, что левая половина перешла на круг с разрезом, а значит правая полоса перейдет во внешность окружности с разрезом.
+	\[ D_w = \{ w \in \Cm: |w| > 1\} \setminus \{ w \in \Cm: \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 1 \} \]\newpage
+	\noindent\textbf{3)} Аналогичные примеры с более тонокой полоской.
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (-1.5, 1) -- (1.5,1);
+					%\node at (0.6,-0.15) {$\Gamma_1$};
+					%\node at (0.6,1.15) {$\Gamma_3$};
+					%\node at (-0.15,0.5) {$\Gamma_2$};
+					\fill[black] (0,1) circle (0.5pt) node[above right] {$\pi i$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					%\node at (0.6,-0.15) {$\Gamma_1$};
+					%\node at (0.6,1.15) {$\Gamma_3$};
+					%\node at (-0.15,0.5) {$\Gamma_2$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20] (-1.5,0) rectangle (0,1);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (-1.5, 1) -- (0,1);
+					\fill[black] (0,1) circle (0.5pt) node[above right] {$\pi i$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\draw[fill=blue!20] (-0.75,0) arc (180:0:0.75) -- cycle;
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill[black] (-0.75,0) circle (0.5pt) node[above left] {$-1$};
+					\fill[black] (0.75,0) circle (0.5pt) node[above right] {$1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				% Левый рисунок
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20] (0,0) rectangle (1.5,1);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0, 1) -- (1.5,1);
+					%\node at (0.6,-0.15) {$\Gamma_1$};
+					%\node at (0.6,1.15) {$\Gamma_3$};
+					%\node at (-0.15,0.5) {$\Gamma_2$};
+					\fill[black] (0,1) circle (0.5pt) node[above right] {$\pi i$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				% Правый рисунок
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-0.75,0) arc (180:0:0.75) -- cycle
+						(-1.5,-1.5) rectangle (1.5,1.5);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw (-0.75,0) arc (180:0:0.75) -- cycle;
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill[black] (-0.75,0) circle (0.5pt) node[above left] {$-1$};
+					\fill[black] (0.75,0) circle (0.5pt) node[above right] {$1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				% Стрелка между рисунками
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	\newpage
+	\subsubsection{Функция $ f(z) = \operatorname{Ln}z $}
+	\noindent
+	\[ \operatorname{Ln}z = \ln{|z|} + i(\arg z +2\pi k)\text{ --- бесконечно-значная функция} \]
+	\noindent
+	$w = f_0(z)=\ln z=\ln{|z|} + i \arg z $ --- Главная ветвь.(Оно конформно в $ D_z $)\\
+	$D_z = \Cm \setminus \{z \in \Cm: \operatorname{Im}z = 0,\ \operatorname{Re}z \geqslant 0 \}$
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (-1.5,-1.5) rectangle (1.5,1.5);
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
+					(0, -0.05) rectangle (1.5, 0.05); % луч (вычитается)
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-1.5, 1) -- (1.5,1);
+				
+				\fill[black] (0,1) circle (0.5pt) node[above right] {$2\pi i$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w= \{ w \in \Cm : 0 < \operatorname{Im}w < 2\pi i \} \]
 	\subsection{Отображение задаваемые функцией Жуковского}
-	$f(z) = \frac{1}{2} (z + \frac{1}{z}) \implies f'(z) = \frac{1}{2} (1 - \frac{1}{z^2}), \quad f'(z) \neq 0, \ z \neq \pm 1$ \\
-	Можно увидеть, что $0 \xrightarrow{} \infty$. Рассмотрим $z_1 = 0$ $\frac{1}{f(z)} = \frac{2}{z + \frac{1}{z}} = \frac{2z}{z^2 + 1}$, обозначим функцию $g(z) = \frac{2z}{z^2 + 1} \implies g'(z) = \frac{2}{z^2 + 1} + z \cdot (...)'$, а в точке 0 получим $g'(0) = 2 \neq 0$\\
-	Получили $w = f(z)$ конформно в точке 0. \\
-	Рассмотрим $z_2 = \infty \quad \infty \xrightarrow{} \infty$, обозначим за $s = \frac{1}{z}$, тогда получим $h(s) = \frac{1}{2}(\frac{1}{s} + s)$. Возьмем $s_2 = 0$ и $w = f(z)$ конформное в точке $\infty$. Отображение $w = f(z)$ конформно в каждой точке $\Cm \setminus \{\pm 1\}$ \\
+	\[ f(z) = \frac{1}{2} (z + \frac{1}{z}) \]
+	Найдем ее производную: $f'(z) = \dfrac{1}{2} (1 - \dfrac{1}{z^2})$. Производная не равна 0, при $z \neq \pm 1.$ \\ \noindent
+	Очевидно, что $0 \mapsto \infty$ и $\infty \mapsto \infty$.
+	 
+	Рассмотрим $z_1 = 0$ и отображение $\dfrac{1}{f(z)}$
+	\[ \frac{1}{f(z)} = \frac{2}{z + \frac{1}{z}} = \frac{2z}{z^2 + 1} = g(z) \implies g'(0) = 2 \implies w = f(z) \text{ конформно в точке } 0.\]
+	
+	Рассмотрим $z_2 = \infty$. Обозначим $s = \dfrac{1}{z}$. Тогда
+	\[ h(s) = \frac{1}{2}(\frac{1}{s} + s) \implies h(s)\text{ конформно в точке } 0 \implies w = f(z) \text{ конформно в точке } \infty/ \]
+	\textbf{Вывод:} отображение $ f(z) = \dfrac{1}{2} (z + \dfrac{1}{z}) $ конформно в каждой точке, кроме $ z = \pm 1 $
+	\newpage
+	\section{Лекция 12}
 	\begin{statement}
-	Функция Жуковского может быть записана как композиция двух следующих функций: $w_1 = \frac{z - 1}{z + 1}$ и получим $w_2 = w_1^2$, тогда $w = \frac{1 + w_2}{1 - w_2} = \frac{1 + (\frac{z - 1}{z + 1})^2}{1 - (\frac{z - 1}{z + 1})^2} = \frac{2z^2 + 2}{4z} = \frac{1}{2}(z + \frac{1}{z})$
+		Функция Жуковского может быть записана как композиция двух следующих функций: 
+		$w_1 = \dfrac{z - 1}{z + 1}$ и $w_2 = w_1^2$.
 	\end{statement}
+	\begin{proof}
+		\[ w = \frac{1 + w_2}{1 - w_2} = \frac{1 + \left( \dfrac{z - 1}{z + 1}\right) ^2}{1 - \left( \dfrac{z - 1}{z + 1}\right) ^2} = \frac{2z^2 + 2}{4z} = \frac{1}{2}\left( z + \frac{1}{z}\right)  \]
+	\end{proof}
+	\begin{statement}
+		Отображение $ f(z) = \frac{1}{2} (z + \frac{1}{z})$, конформно в области $ D_z $, если
+		$ D_z $ одовременно не содержит точек $ z_1,\ z_2 : z_1z_2 = 1$ и $ \pm 1 \notin D_z.$
+	\end{statement}
+	\begin{proof}
+		Исследуем на взаимооднозначность при $ z_1 \ne z_2. $
+		\[w_1 - w_2 = \frac{1}{2}\left( z_1 + \frac{1}{z_1}\right)  - \frac{1}{2}\left( z_2 + \frac{1}{z_2}\right) = \frac{z_1-z_2}{2}\left( 1-\frac{1}{z_1z_2} \right) \implies w_1 \ne w_1 \iff z_1z_2 \ne 1 \]
+	\end{proof}
+	\subsection{Примеры}
+	\noindent \textbf{1)} $ D_z = \{ z\in \Cm: |z| < R, R < 1 \} $\\
+	Параметрически предстваляем границу: $ z = Re^{i\phi},\ -\pi < \phi \leqslant \pi$
+	\[  w = \frac{1}{2}(Re^{i\phi} + \frac{1}{R}e^{-i\phi}) = \frac{1}{2}(R(\cos\phi + i\sin\phi) + \frac{1}{R}(\cos\phi - i\sin\phi)) \] 
+	$ \begin{cases}
+		u(R, \phi) = \dfrac{1}{2}\left( R+\dfrac{1}{R}\right)\cos\phi\\
+		v(R, \phi) = \dfrac{1}{2}\left( R-\dfrac{1}{R}\right)\sin\phi
+	\end{cases} $, геометрическое место этих точек --- эллипс.
+	\[ \dfrac{u^2}{\dfrac{1}{2^2}\left(R +\dfrac{1}{R} \right)^2 } + \dfrac{v^2}{\dfrac{1}{2^2}\left( R-\dfrac{1}{R} \right)^2 } = 1 \]
+	\[ D_w = \{ w \in \Cm: \frac{4(\operatorname{Re} w)^2}{\left( R+\dfrac{1}{R}\right) ^2} + \frac{4(\operatorname{Im} w)^2}{\left( R-\dfrac{1}{R}\right) ^2} > 1 \} \]
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\draw[fill=blue!20]
+					(0,0) circle (0.75);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node at (1.1,-0.15) {$R<1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
+					(0,0) ellipse (1.2 and 0.75); % луч (вычитается)
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) ellipse (1.2 and 0.75);
+				\fill[black] (0,0.75) circle (0.5pt) node[above right] {$\frac{1}{2}(R-\frac{1}{R}) $};
+				\fill[black] (1.2,0) circle (0.5pt) node[below left] {$\frac{1}{2}(R+\frac{1}{R}) $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\textbf{2)} $ D_z = \{ z\in \Cm: |z| \leqslant 1 \} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\draw[fill=blue!20] (0,0) circle (0.75);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node at (1.1,-0.15) {$R=1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.75,-0.05) rectangle (0.75,0.05);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-0.75,-0.05) rectangle (0.75,0.05);
+				\node[above left] at (-0.75,0) {$-1$};
+				\node[above right] at (0.75,0) {$1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w = \overline\Cm\setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ -1\leqslant\operatorname{Re} \leqslant 1 \} \]
+	\textbf{3)} $ D_z = \{ z\in \Cm: |z| > R,\ R > 1 \} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule]
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0,0) circle (0.75);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) circle (0.75);
+				\node at (1.1,-0.15) {$R>1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
+					(0,0) ellipse (1.2 and 0.75); % луч (вычитается)
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) ellipse (1.2 and 0.75);
+				\fill[black] (0,0.75) circle (0.5pt) node[above right] {$\frac{1}{2}(R-\frac{1}{R}) $};
+				\fill[black] (1.2,0) circle (0.5pt) node[below left] {$\frac{1}{2}(R+\frac{1}{R}) $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w = \{ w \in \Cm: \frac{4(\operatorname{Re} w)^2}{\left( R+\dfrac{1}{R}\right) ^2} + \frac{4(\operatorname{Im} w)^2}{\left( R-\dfrac{1}{R}\right) ^2} > 1 \} \]
+	\newpage
+	\textbf{4)} $ D_z = \{ z\in \Cm: |z| >1\} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule]
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0,0) circle (0.75);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) circle (0.75);
+				\node at (1.1,-0.15) {$R=1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.75,-0.05) rectangle (0.75,0.05);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				
+				\draw (-0.75,-0.05) rectangle (0.75,0.05);
+				\node[above left] at (-0.75,0) {$-1$};
+				\node[above right] at (0.75,0) {$1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w = \overline\Cm\setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ -1\leqslant\operatorname{Re} \leqslant 1 \} \]
+	\textbf{5)} $ D_z = \{ z\in\Cm: \operatorname{Im} > 0\} $\\
+	Выполним анализ графика функции $ f(x) = \dfrac{1}{2}\left(x+\dfrac{1}{x}\right)  $
+	\begin{center}
+		\begin{tikzpicture}[scale=1]
+			\begin{scope}
+				\begin{scope}
+					\clip (-3,-3) rectangle (3,3);
+					\draw[domain=-3:-0.1, smooth, variable=\x, blue, thick] 
+					plot ({\x}, {0.5*(\x + 1/\x)});
+					\draw[domain=0.1:3, smooth, variable=\x, blue, thick] 
+					plot ({\x}, {0.5*(\x + 1/\x)});
+				\end{scope}
+				\draw[->] (-3,0) -- (3,0) node[below] {$ x $};
+				\draw[->] (0,-3) -- (0,3) node[below left] {$ y $};
+				\draw[dashed] (1,0) -- (1,1);
+				\draw[dashed] (0,1) -- (1,1);
+				\draw[dashed] (-1,0) -- (-1,-1);
+				\draw[dashed] (0,-1) -- (-1,-1);
+				\fill (1,1) circle (1pt);
+				\fill (-1,-1) circle (1pt);
+				\node[below right] at (1,0) {$1$};
+				\node[below left] at (0,1) {$1$};
+				\node[below left] at (-1,0) {$-1$};
+				\node[below right] at (0,-1) {$-1$};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+	\begin{flalign*}
+		&f' = \frac{1}{2}\left(1 - \frac{1}{x^2} \right) = 0 \implies x = \pm 1 \text{ экстремумы. }&\\
+		&f'' = \frac{1}{x^2} \implies f''(1) = 1 > 0 \text{ --- выпукла вниз},\ f''(-1) = -1 > 0 \text{ --- выпукла вверх.}&
+	\end{flalign*}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-1.5,-0.05) rectangle (-0.75,0.05)
+					(0.75,0.05) rectangle (1.5,-0.05);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-1.5,-0.05) rectangle (-0.75,0.05);
+				\draw (0.75,0.05) rectangle (1.5,-0.05);
+				\node[below left] at (0.75,0) {$1$};
+				\node[below right] at (-0.75,0) {$-1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w = \Cm \setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \leqslant 0 \} \cup \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 0 \} \]
+	\textbf{6)} $ D_z = \{ z\in\Cm: \operatorname{Im} < 0\} $\\
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,0);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-1.5,-0.05) rectangle (-0.75,0.05)
+					(0.75,0.05) rectangle (1.5,-0.05);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-1.5,-0.05) rectangle (-0.75,0.05);
+				\draw (0.75,0.05) rectangle (1.5,-0.05);
+				\node[below left] at (0.75,0) {$1$};
+				\node[below right] at (-0.75,0) {$-1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	\[ D_w = \Cm \setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \leqslant 0 \} \cup \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 0 \} \]
+	\subsection{Отображение луночек и областей с разрывами}
+	\begin{definition}
+		\textbf{Луночка} --- область, граница которой имеет вид: $ \gamma_1 \cup \gamma_2 $, где  $ \gamma_1, \gamma_2 $ --- дуги обобщенных окружностей и
+		$ \gamma_1 \cap \gamma_2 $ содержит две точки.
+	\end{definition}
+	\begin{example}
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1,\ \operatorname{Im} > 0 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+	\end{example}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\draw[fill=blue!20] (-0.75,0) arc (180:0:0.75) -- cycle;
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill[black] (-0.75,0) circle (0.5pt) node[above left] {$-1$};
+				\fill[black] (0.75,0) circle (0.5pt) node[above right] {$1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Найдем отображение, которое переводит полуокружность в угол с центром в начале координат, для этого $ -1\mapsto 0 $ и $ 1\mapsto \infty $.\\
+	Получим $ w_1 = \dfrac{z+1}{z-1} $.
+	\newpage
+	Найдем, куда под действием отображения перейдут кривые:\\
+	$ \Gamma_1: z = x,\ -1 \leqslant x \leqslant 1$ перейдет в луч. ($ 0 \mapsto -1 $)\\
+	$ \Gamma_2: z = e^{i\phi},\ 0 \leqslant \phi \leqslant \pi$ перейдет в луч. ($ i \mapsto -i $)
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\draw[fill=blue!20] (-0.75,0) arc (180:0:0.75) -- cycle;
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill[black] (-0.75,0) circle (0.5pt) node[above left] {$-1$};
+				\fill[black] (0.75,0) circle (0.5pt) node[above right] {$1$};
+				\node[above left] at (0.5,-0.3) {$\Gamma_1$};
+				\node[above left] at (0.5,0.7) {$\Gamma_2$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (-1.5,-1.5) rectangle (0,0);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[blue][<-](-1.5, 0) -- (0,0) node[midway, above] {$ \gamma_1 $};
+				\draw[blue][<-](0, -1.5) -- (0,0) node[midway, right] {$ \gamma_2 $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_1$};
+		\end{tikzpicture}
+	\end{center}
+	Далее, отображением $ w_2 = e^{i\phi}w_1$ повернем наш угол на $ -\pi $.
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (-1.5,-1.5) rectangle (0,0);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[blue][<-](-1.5, 0) -- (0,0) node[midway, above] {$ \gamma_1 $};
+				\draw[blue][<-](0, -1.5) -- (0,0) node[midway, right] {$ \gamma_2 $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20] (0,0) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[blue][->](0, 0) -- (1.5,0) node[midway, below] {$ \gamma_1 $};
+				\draw[blue][->](0, 0) -- (0,1.5) node[midway, left] {$ \gamma_2 $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_2$};
+		\end{tikzpicture}
+	\end{center}
+	В конце, отображением $ w = w^2_2 $ развернем угол в два раза.
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20] (0,0) rectangle (1.5,1.5);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[blue][->](0, 0) -- (1.5,0) node[midway, below] {$ \gamma_1 $};
+				\draw[blue][->](0, 0) -- (0,1.5) node[midway, left] {$ \gamma_2 $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[blue][->](0, 0) -- (1.5,0) node[midway, below] {$ \gamma_1 $};
+				\draw[blue][->](0, 0) -- (-1.5,0) node[midway, below] {$ \gamma_2 $};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w$};
+		\end{tikzpicture}
+	\end{center}
+	\begin{flalign*}
+		&\text{Ответ: } w = \left( \frac{z+1}{z-1}\right)^2&\\
+	\end{flalign*}
+	\begin{example}
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1, |z-i| < 1 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+	\end{example}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (0,0) circle (0.75);
+					\fill[blue!20] (0,0.75) circle (0.75);
+				\end{scope}
+				\draw(0,0) circle (0.75);
+				\draw(0,0.75) circle (0.75);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw[dashed] (0.6495,0) -- (0.6495,0.375);
+				\draw[dashed] (-0.6495,0) -- (-0.6495,0.375);
+				\draw[dashed] (-0.6495,0.375) -- (0.6495,0.375);
+				\fill[black] (0.6495,0.375) circle (0.5pt) node[right] {$z_2$};
+				\fill[black] (-0.6495,0.375) circle (0.5pt) node[left] {$z_1$};
+				\node[above right] at (0,0.75) {$i$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (0,0) -- (-0.75 , 1.3) arc (120:240:1.5) -- cycle;
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw(0, 0) -- (-0.75 , 1.3);
+				\draw(0, 0) -- (-0.75 , -1.3);
+				\draw (-0.2,0.346) arc (120:240:0.4);
+				\node at (-0.6,0.3) {$\dfrac{2\pi}{3}$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+			\end{scope}
+			% Стрелка между рисунками
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_1$};
+		\end{tikzpicture}
+	\end{center}
+	\[ z_1 =  -\frac{\sqrt 3}{2} + \frac{i}{2},\ z_2 = \frac{\sqrt 3}{2} + \frac{i}{2} \]
+	Отображение $ w_1 = \dfrac{z - z_1}{z-z_2} $ такое, что $ z_1 \mapsto 0, \ z_2 \mapsto \infty,$ тогда \\
+	$ 0 \mapsto \dfrac{z_1}{z_2} = \dfrac{-\sqrt 3 + i}{\sqrt 3 + i} = -\dfrac{1}{2} + \dfrac{\sqrt 3i}{2} $\\
+	$ i \mapsto \dfrac{i - z_1}{i - z_2} = \dfrac{-\sqrt 3 + i}{\sqrt 3 + i} = -\dfrac{1}{2} - \dfrac{\sqrt 3i}{2} $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\fill[blue!20] (0,0) -- (-0.75 , 1.3) arc (120:240:1.5) -- cycle;
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw(0, 0) -- (-0.75 , 1.3);
+				\draw(0, 0) -- (-0.75 , -1.3);
+				\draw (-0.2,0.346) arc (120:240:0.4);
+				\node at (-0.6,0.3) {$\dfrac{2\pi}{3}$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (0,0) -- (1.5,0) arc (0:120:1.5) -- cycle;
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw(0, 0) -- (-0.75 , 1.3);
+				\draw (0.3,0) arc (0:120:0.3);
+				\node at (0.6,0.3) {$\dfrac{2\pi}{3}$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_2$};
+		\end{tikzpicture}
+	\end{center}
+	Далее, поворачиваем этот угол на $ \phi = -\dfrac{2\pi}{3} $ отображением $ w_2 = e^{i\phi}w_1. $
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\fill[blue!20] (0,0) -- (1.5,0) arc (0:120:1.5) -- cycle;
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw(0, 0) -- (-0.75 , 1.3);
+				\draw (0.3,0) arc (0:120:0.3);
+				\node at (0.6,0.3) {$\dfrac{2\pi}{3}$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w$};
+		\end{tikzpicture}
+	\end{center}
+	В конце, отображением $ w = w^\frac{3}{2}_2 $ развернем угол.+7 917 835 16 19
+	\begin{flalign*}
+	&\text{Ответ: } w = -\left( \frac{2z+\sqrt 3 - i}{2z - \sqrt 3 - i}\right)^\frac{3}{2}&
+	\end{flalign*}
+	Общая схема:
+	\begin{flalign*}
+		&w_1 = \frac{z-z_1}{z-z_2}&\\
+		&w_2 = e^{i\phi}w_1,\ \phi \in \R&\\
+		&w = w_2^l,\ l \in \R&
+	\end{flalign*}
+	\begin{remark}
+		$ z_1 $ и $ z_2 $ можно менять местами в выражении $ w_1 = \dfrac{z-z_2}{z-z_1} $
+	\end{remark}
+	\begin{example}
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \Cm \setminus \{ z\in\Cm: \operatorname{Im}z = 0,\ x_1\leqslant\operatorname{Re}z \leqslant x_2 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+	\end{example}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.5,-0.05) rectangle (0.75,0.05);
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-0.5,-0.05) rectangle (0.75,0.05);
+				\node[above left] at (-0.5,0) {$x_1$};
+				\node[above right] at (0.75,0) {$x_2$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Отобразим точку $ x_1 $ в $ 0 $, а точку $ x_2 $ в $ \infty $. Получим $ w_1 = \dfrac{z - x_1}{z - x_2} $.\\ Третью точку: $ \dfrac{x_1+x_2}{2} \mapsto -1 $.
+	\newpage 
+	Получится левый вырез, его повернем на $ \pi $ отображением: $ w_2 = e^{i\phi}w_1,\ \phi = \pi. $
+	В конце, развернем угол в два раза отображением: $ w = w_2^\frac{1}{2}$.
+	\begin{flalign*}
+		&\text{Ответ: } w = \left( \frac{z - x_1}{x_2 - z}\right)^\frac{1}{2}&
+	\end{flalign*}
+	
 \end{document}
