@@ -2724,5 +2724,1950 @@
 	\begin{flalign*}
 		&\text{Ответ: } w = \left( \frac{z - x_1}{x_2 - z}\right)^\frac{1}{2}&
 	\end{flalign*}
+	\newpage
 	
+	\section{Лекция 13}
+	\subsection{Отображение луночки на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение луночки на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=2]
+				% --- Область Z (луночка) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка луночки
+					\begin{scope}
+						\clip (-0.4,0) circle (1.4);
+						\fill[blue!20] (0.4,0) circle (1.4);
+					\end{scope}
+					
+					% Оси
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					
+					% Границы луночки
+					\draw[thick] (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
+					\draw[thick] (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
+					
+					% Точки пересечения (полюсы)
+					\fill[red] (0,{sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[above right] {$z_1$};
+					\fill[red] (0,{-sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[below right] {$z_2$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.6) {$z$};
+				\end{scope}
+				
+				% --- Область W ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Для начала используем дробно-линейное отображение $w_1 = \frac{z - z_1}{z - z_2}$, где один из полюсов отправляем в 0, а другой в $\infty$
+			\begin{center}
+				\begin{tikzpicture}[scale=2]
+					% --- Область Z (луночка) ---
+					\begin{scope}[local bounding box=scope1]
+						% Заливка луночки
+						\begin{scope}
+							\clip (-0.4,0) circle (1.4);
+							\fill[blue!20] (0.4,0) circle (1.4);
+						\end{scope}
+						
+						% Оси
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Границы луночки
+						\draw[thick] (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
+						\draw[thick] (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
+						
+						% Точки пересечения (полюсы)
+						\fill[red] (0,{sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[above right] {$z_1$};
+						\fill[red] (0,{-sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[below right] {$z_2$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.6) {$z$};
+					\end{scope}
+					
+					% --- Область W (сектор) ---
+					\begin{scope}[local bounding box=scope2, xshift=4cm]
+						% Заливка сектора
+						\fill[blue!20] (0,0) -- (20:1.8) arc[start angle=20, end angle=70, radius=1.8] -- cycle;
+						
+						% Оси
+						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
+						
+						% Границы сектора
+						\draw[thick] (0,0) -- (20:1.8);
+						\draw[thick] (0,0) -- (70:1.8);
+						\draw[thick] (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
+						
+						% Обозначение 0 в вершине сектора
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Обозначение угла альфа
+						\draw[->] (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
+						\node at (10:0.75) {$\alpha$};
+						
+						% Обозначение угла бета
+						\draw[->] (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
+						\node at (45:0.95) {$\beta$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.1,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.1cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.2!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = \frac{z-z_1}{z-z_2}$};
+				\end{tikzpicture}
+			\end{center}
+			\newpage
+			\item Далее при помощи $w_2 = e^{-i\alpha} w_1$ поворачиваем на угол $\alpha$ по часовой.
+			\begin{center}
+				\begin{tikzpicture}[scale=2]
+					% --- Область W1 (сектор до поворота) ---
+					\begin{scope}[local bounding box=scope1]
+						% Заливка сектора
+						\fill[blue!20] (0,0) -- (20:1.8) arc[start angle=20, end angle=70, radius=1.8] -- cycle;
+						
+						% Оси
+						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
+						
+						% Границы сектора
+						\draw[thick] (0,0) -- (20:1.8);
+						\draw[thick] (0,0) -- (70:1.8);
+						\draw[thick] (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
+						
+						% Обозначение 0 в вершине сектора
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Обозначение угла альфа
+						\draw[->] (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
+						\node at (10:0.75) {$\alpha$};
+						
+						% Обозначение угла бета
+						\draw[->] (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
+						\node at (45:0.95) {$\beta$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.1,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 (повёрнутый сектор) ---
+					\begin{scope}[local bounding box=scope2, xshift=4cm]
+						% Заливка повёрнутого сектора (теперь от 0 до бета)
+						\fill[blue!20] (0,0) -- (0:1.8) arc[start angle=0, end angle=50, radius=1.8] -- cycle;
+						
+						% Оси
+						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
+						
+						% Границы сектора
+						\draw[thick] (0,0) -- (0:1.8);
+						\draw[thick] (0,0) -- (50:1.8);
+						\draw[thick] (0:1.8) arc[start angle=0, end angle=50, radius=1.8];
+						
+						% Обозначение 0 в вершине сектора
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Обозначение угла бета
+						\draw[->] (0.5,0) arc[start angle=0, end angle=50, radius=0.5];
+						\node at (25:0.75) {$\beta$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (0.9,0.8) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = e^{-i\alpha} w_1$};
+				\end{tikzpicture}
+			\end{center}
+			\item На последнем шаге нужно раскрыть наш сектор из угла $\beta$ до угла $\pi$, используя отображение $w = w_2^{\frac{\pi}{\beta}}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=2]
+					% --- Область W2 (сектор от 0 до бета) ---
+					\begin{scope}[local bounding box=scope1]
+						% Заливка сектора
+						\fill[blue!20] (0,0) -- (0:1.8) arc[start angle=0, end angle=50, radius=1.8] -- cycle;
+						
+						% Оси
+						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
+						
+						% Границы сектора
+						\draw[thick] (0,0) -- (0:1.8);
+						\draw[thick] (0,0) -- (50:1.8);
+						\draw[thick] (0:1.8) arc[start angle=0, end angle=50, radius=1.8];
+						
+						% Обозначение 0 в вершине сектора
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Обозначение угла бета
+						\draw[->] (0.5,0) arc[start angle=0, end angle=50, radius=0.5];
+						\node at (25:0.75) {$\beta$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (0.9,0.8) {$w_2$};
+					\end{scope}
+					
+					% --- Область W (верхняя полуплоскость) ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Обозначение 0
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Подпись области
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.05cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = w_2^{\pi/\beta}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+	\end{example}
+	\subsection{Отображение плоскости с выколотым отрезком на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение плоскости с выколотым отрезком $[z_1, z_2]$ на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (плоскость с выколотым отрезком) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка всей плоскости
+					\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+					
+					% Оси
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					
+					% Выколотый отрезок
+					\draw[white, line width=6pt] (-0.6,0.8) -- (0.8,-0.4);
+					\draw[thick] (-0.62,0.82) -- (0.78,-0.38);
+					\draw[thick] (-0.58,0.78) -- (0.82,-0.42);
+					
+					% Концы отрезка
+					\fill[red] (-0.6,0.8) circle (1.2pt) node[above left] {$z_1$};
+					\fill[red] (0.8,-0.4) circle (1.2pt) node[below right] {$z_2$};
+					
+					% Середина отрезка
+					\fill[blue] (0.1,0.2) circle (1.2pt) node[above right] {$\frac{z_1+z_2}{2}$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.9) {$z$};
+				\end{scope}
+				
+				% --- Область W (верхняя полуплоскость) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Используем дробно-линейное отображение $w_1 = \frac{z - z_1}{z - z_2}$. Отрезок $[z_1, z_2]$ переходит в луч. Проверим середину отрезка:
+			\[
+			\frac{z_1 + z_2}{2} \xrightarrow{w_1} \frac{\frac{z_1+z_2}{2} - z_1}{\frac{z_1+z_2}{2} - z_2} = \frac{z_2 - z_1}{z_1 - z_2} = -1
+			\]
+			Значит, отрезок переходит в луч $(-\infty, 0]$.
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (-0.6,0.8) -- (0.8,-0.4);
+						\draw[thick] (-0.62,0.82) -- (0.78,-0.38);
+						\draw[thick] (-0.58,0.78) -- (0.82,-0.42);
+						\fill[red] (-0.6,0.8) circle (1.2pt) node[above left] {$z_1$};
+						\fill[red] (0.8,-0.4) circle (1.2pt) node[below right] {$z_2$};
+						\fill[blue] (0.1,0.2) circle (1.2pt) node[above right] {$\frac{z_1+z_2}{2}$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.9) {$z$};
+					\end{scope}
+					
+					% --- Область W1 (плоскость с выколотым лучом) ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Выколотый луч (-∞, 0]
+						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
+						\draw[thick] (-1.8,0.05) -- (0,0.05);
+						\draw[thick] (-1.8,-0.05) -- (0,-0.05);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (-1,0) circle (1.2pt) node[below] {$-1$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = \frac{z-z_1}{z-z_2}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Разворачиваем луч при помощи $w_2 = e^{i\pi} w_1 = -w_1$. Луч $(-\infty, 0]$ переходит в $[0, +\infty)$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
+						\draw[thick] (-1.8,0.05) -- (0,0.05);
+						\draw[thick] (-1.8,-0.05) -- (0,-0.05);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (-1,0) circle (1.2pt) node[below] {$-1$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 (луч [0, +∞)) ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Выколотый луч [0, +∞)
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.05) -- (1.8,0.05);
+						\draw[thick] (0,-0.05) -- (1.8,-0.05);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (1,0) circle (1.2pt) node[below] {$1$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = -w_1$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Наконец, извлекаем корень $w = w_2^{1/2}$. Луч $[0, +\infty)$ раскрывается в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.05) -- (1.8,0.05);
+						\draw[thick] (0,-0.05) -- (1.8,-0.05);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (1,0) circle (1.2pt) node[below] {$1$};
+						
+						% Обозначение берегов разреза
+						\node[above right] at (0.8,0.15) {$w_2 = r e^{i0}$};
+						\node[below right] at (0.8,-0.15) {$w_2 = r e^{i2\pi}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
+					\end{scope}
+					
+					% --- Область W (верхняя полуплоскость) ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = w_2^{1/2}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \sqrt{\frac{z-z_1}{z_2-z}}$
+	\end{example}
+	
+	\newpage
+	\subsection{Отображение верхней полуплоскости с вертикальным разрезом на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение верхней полуплоскости с вертикальным разрезом на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (верхняя полуплоскость с разрезом от 0 до ih) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка верхней полуплоскости
+					\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
+					
+					% Оси
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					% Вертикальный разрез от 0 до ih
+					\draw[white, line width=6pt] (0,0) -- (0,0.6);
+					\draw[thick] (-0.05,0) -- (-0.05,0.6);
+					\draw[thick] (0.05,0) -- (0.05,0.6);
+					
+					% Точка ih
+					\fill[red] (0,0.6) circle (1.2pt) node[above right] {$ih$};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$z$};
+				\end{scope}
+				
+				% --- Область W (верхняя полуплоскость) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Первым шагом возводим в квадрат: $w_1 = z^2$. Верхняя полуплоскость переходит в плоскость с разрезом вдоль горизонтальной оси. Вертикальный разрез $[0, ih]$ переходит в горизонтальный $[-h^2, +\infty)$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (0,0.6);
+						\draw[thick] (-0.05,0) -- (-0.05,0.6);
+						\draw[thick] (0.05,0) -- (0.05,0.6);
+						\fill[red] (0,0.6) circle (1.2pt) node[above right] {$ih$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$z$};
+					\end{scope}
+					
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Разрез [-h^2, +∞)
+						\draw[white, line width=6pt] (-0.8,0) -- (1.8,0);
+						\draw[thick] (-0.8,0.05) -- (1.8,0.05);
+						\draw[thick] (-0.8,-0.05) -- (1.8,-0.05);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (-0.8,0) circle (1.2pt) node[below] {$-h^2$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = z^2$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Сдвигаем разрез: $w_2 = w_1 + h^2$. Разрез $[-h^2, +\infty)$ переходит в $[0, +\infty)$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (-0.8,0) -- (1.8,0);
+						\draw[thick] (-0.8,0.05) -- (1.8,0.05);
+						\draw[thick] (-0.8,-0.05) -- (1.8,-0.05);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (-0.8,0) circle (1.2pt) node[below] {$-h^2$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						
+						% Разрез [0, +∞)
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.05) -- (1.8,0.05);
+						\draw[thick] (0,-0.05) -- (1.8,-0.05);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = w_1 + h^2$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Наконец, извлекаем корень $w = w_2^{1/2}$. Угол $2\pi$ сворачивается в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.05) -- (1.8,0.05);
+						\draw[thick] (0,-0.05) -- (1.8,-0.05);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						% Обозначение берегов разреза
+						\node[above right] at (0.8,0.15) {$w_2 = r e^{i0}$};
+						\node[below right] at (0.8,-0.15) {$w_2 = r e^{i2\pi}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
+					\end{scope}
+					
+					% --- Область W ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = w_2^{1/2}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \sqrt{z^2 + h^2}$
+	\end{example}
+	\subsection{Отображение полоски с вертикальным разрезом на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение верхней полуплоскости с вертикальным разрезом $[0, ih]$ и ограничением $i\alpha$ ($\alpha > h$) на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка полосы
+					\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+					
+					% Оси
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					% Верхняя граница i\alpha
+					\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$i\alpha$};
+					
+					% Вертикальный разрез от 0 до ih
+					\draw[white, line width=6pt] (0,0) -- (0,0.5);
+					\draw[thick] (-0.05,0) -- (-0.05,0.5);
+					\draw[thick] (0.05,0) -- (0.05,0.5);
+					
+					% Точка ih
+					\fill[red] (0,0.5) circle (1.2pt) node[above right] {$ih$};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$z$};
+				\end{scope}
+				
+				% --- Область W ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Растягиваем полосу: $w_1 = z \cdot \frac{\pi}{\alpha}$. Получаем полосу высоты $\pi$ с разрезом от $0$ до $ic$, где $c = \frac{\pi h}{\alpha}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$i\alpha$};
+						\draw[white, line width=6pt] (0,0) -- (0,0.5);
+						\draw[thick] (-0.05,0) -- (-0.05,0.5);
+						\draw[thick] (0.05,0) -- (0.05,0.5);
+						\fill[red] (0,0.5) circle (1.2pt) node[above right] {$ih$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$z$};
+					\end{scope}
+					
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						% Верхняя граница i\pi
+						\draw[thick] (-1.8,1.5) -- (1.8,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						
+						% Разрез от 0 до ic
+						\draw[white, line width=6pt] (0,0) -- (0,0.7);
+						\draw[thick] (-0.05,0) -- (-0.05,0.7);
+						\draw[thick] (0.05,0) -- (0.05,0.7);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.7) circle (1.2pt) node[above right] {$ic$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = \frac{\pi}{\alpha} z$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Применяем экспоненту: $w_2 = e^{w_1}$. Полоса переходит в верхнюю полуплоскость с разрезом по дуге окружности от $1$ до $e^{ic}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (-1.5,1.5) -- (1.5,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						\draw[white, line width=6pt] (0,0) -- (0,0.7);
+						\draw[thick] (-0.05,0) -- (-0.05,0.7);
+						\draw[thick] (0.05,0) -- (0.05,0.7);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.7) circle (1.2pt) node[above right] {$ic$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						% Верхняя полуплоскость с вырезанным сектором
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							% Вырезаем сектор (белая область)
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							\fill[white] (0,0) -- (1.3,0) arc[start angle=0, end angle=55, radius=1.3] -- cycle;
+						\end{scope}
+						
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						% Границы разреза (две дуги)
+						\draw[thick] (1.3,0) arc[start angle=0, end angle=55, radius=1.3];
+						\draw[thick] (1.3,0.05) arc[start angle=1, end angle=54, radius=1.3];
+						\draw[thick] (1.3,-0.05) arc[start angle=-1, end angle=52, radius=1.3];
+						
+						% Радиальные линии от 0 до дуги (границы сектора)
+						\draw[thick] (0,0) -- (1.3,0);
+						\draw[thick] (0,0) -- (1.3*0.574,1.3*0.819);
+						
+						% Единичная окружность (пунктиром)
+						\draw[gray, dashed] (0,0) circle (1.3);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (1.3,0) circle (1.2pt) node[below right] {$1$};
+						\fill[red] (1.3*0.574,1.3*0.819) circle (1.2pt) node[above right] {$e^{ic}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = e^{w_1}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Дробно-линейное отображение $w_3 = \frac{w_2 - 1}{w_2 + 1}$ переводит разрез в вертикальный отрезок $[0, i\tan\frac{c}{2}]$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							\fill[white] (0,0) -- (1.3,0) arc[start angle=0, end angle=55, radius=1.3] -- cycle;
+						\end{scope}
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (1.3,0) arc[start angle=0, end angle=55, radius=1.3];
+						\draw[thick] (1.3,0.05) arc[start angle=1, end angle=54, radius=1.3];
+						\draw[thick] (1.3,-0.05) arc[start angle=-1, end angle=52, radius=1.3];
+						\draw[thick] (0,0) -- (1.3,0);
+						\draw[thick] (0,0) -- (1.3*0.574,1.3*0.819);
+						\draw[gray, dashed] (0,0) circle (1.3);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (1.3,0) circle (1.2pt) node[below right] {$1$};
+						\fill[red] (1.3*0.574,1.3*0.819) circle (1.2pt) node[above right] {$e^{ic}$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						% Вертикальный разрез (белая полоса с границами)
+						\draw[white, line width=6pt] (0,0) -- (0,0.65);
+						\draw[thick] (-0.05,0) -- (-0.05,0.65);
+						\draw[thick] (0.05,0) -- (0.05,0.65);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.65) circle (1.2pt) node[above right] {$i\tan\frac{c}{2}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.0) {$w_3$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_3 = \frac{w_2-1}{w_2+1}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Сводим к предыдущей задаче: $w = \sqrt{w_3^2 + \tan^2\frac{c}{2}}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (0,0.6);
+						\draw[thick] (-0.05,0) -- (-0.05,0.6);
+						\draw[thick] (0.05,0) -- (0.05,0.6);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.6) circle (1.2pt) node[above right] {$i\tan\frac{c}{2}$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.0) {$w_3$};
+					\end{scope}
+					
+					% --- Область W ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \sqrt{w_3^2 + \tan^2\frac{c}{2}}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \sqrt{\left(\frac{e^{\frac{\pi z}{\alpha}} - 1}{e^{\frac{\pi z}{\alpha}} + 1}\right)^2 + \tan^2\frac{c}{2}}$, где $c = \frac{\pi h}{\alpha}$.
+	\end{example}
+	\newpage
+	\subsection{Отображение полоски с вертикальным разрезом на полоску}
+	\begin{example}
+		Строим отображение полосы высоты $\alpha$ с вертикальным разрезом $[0, ih]$ на полосу высоты $\alpha$ без разреза:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (полоса с разрезом) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка полосы
+					\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+					
+					% Оси
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					% Верхняя граница i\alpha
+					\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$i\alpha$};
+					
+					% Вертикальный разрез от 0 до ih
+					\draw[white, line width=6pt] (0,0) -- (0,0.5);
+					\draw[thick] (-0.05,0) -- (-0.05,0.5);
+					\draw[thick] (0.05,0) -- (0.05,0.5);
+					
+					% Точка ih
+					\fill[red] (0,0.5) circle (1.2pt) node[above right] {$ih$};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$z$};
+				\end{scope}
+				
+				% --- Область W (полоса без разреза) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$i\alpha$};
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$w$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Используем результат предыдущей задачи: $w_1 = \sqrt{\left(\frac{e^{\frac{\pi z}{\alpha}} - 1}{e^{\frac{\pi z}{\alpha}} + 1}\right)^2 + \tan^2\frac{c}{2}}$, где $c = \frac{\pi h}{\alpha}$. Это отображение переводит полосу с разрезом в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$i\alpha$};
+						\draw[white, line width=6pt] (0,0) -- (0,0.5);
+						\draw[thick] (-0.05,0) -- (-0.05,0.5);
+						\draw[thick] (0.05,0) -- (0.05,0.5);
+						\fill[red] (0,0.5) circle (1.2pt) node[above right] {$ih$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$z$};
+					\end{scope}
+					
+					% --- Область W1 (верхняя полуплоскость) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above, font=\footnotesize] {$w_1 = \sqrt{\left(\frac{e^{\frac{\pi z}{\alpha}} - 1}{e^{\frac{\pi z}{\alpha}} + 1}\right)^2 + \tan^2\frac{c}{2}}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Логарифмируем: $w_2 = \ln w_1$. Верхняя полуплоскость переходит в полосу высоты $\pi$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 (полоса высоты \pi) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						\draw[thick] (-1.8,1.5) -- (1.8,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = \ln w_1$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Сжимаем полосу обратно: $w = \frac{\alpha}{\pi} w_2$. Получаем полосу высоты $\alpha$ без разреза:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (-1.8,1.5) -- (1.8,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Область W (полоса высоты \alpha) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.8,0) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						\draw[thick] (-1.8,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$i\alpha$};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.8) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \frac{\alpha}{\pi} w_2$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \frac{\alpha}{\pi} \ln \sqrt{\left(\frac{e^{\frac{\pi z}{\alpha}} - 1}{e^{\frac{\pi z}{\alpha}} + 1}\right)^2 + \tan^2\frac{c}{2}}$, где $c = \frac{\pi h}{\alpha}$.
+	\end{example}
+	\subsection{Отображение полуполосы с горизонтальным на разрезом на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение полуполосы $\{z: \operatorname{Re}z > 0, 0 < \operatorname{Im}z < h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (полуполоса с разрезом) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка полуполосы
+					\fill[blue!20] (0,0) rectangle (1.8,1.2);
+					
+					% Оси
+					\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					% Левая граница (Re z = 0)
+					\draw[thick] (0,0) -- (0,1.2);
+					
+					% Верхняя граница
+					\draw[thick] (0,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$ih$};
+					
+					% Горизонтальный разрез на высоте ih/2
+					\draw[white, line width=6pt] (0,0.6) -- (0.8,0.6);
+					\draw[thick] (0,0.58) -- (0.8,0.58);
+					\draw[thick] (0,0.62) -- (0.8,0.62);
+					
+					% Конец разреза
+					\fill[red] (0.8,0.6) circle (1.2pt) node[above] {$\alpha$};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$z$};
+				\end{scope}
+				
+				% --- Область W (верхняя полуплоскость) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Растягиваем: $w_1 = z \cdot \frac{\pi}{h}$. Получаем полуполосу высоты $\pi$ с разрезом от $0$ до $c = \frac{\pi \alpha}{h}$ на высоте $\frac{i\pi}{2}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (0,0) rectangle (1.8,1.2);
+						\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[thick] (0,0) -- (0,1.2);
+						\draw[thick] (0,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$ih$};
+						\draw[white, line width=6pt] (0,0.6) -- (0.8,0.6);
+						\draw[thick] (0,0.58) -- (0.8,0.58);
+						\draw[thick] (0,0.62) -- (0.8,0.62);
+						\fill[red] (0.8,0.6) circle (1.2pt) node[above] {$\alpha$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$z$};
+					\end{scope}
+					
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (0,0) rectangle (1.8,1.5);
+						\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						\draw[thick] (0,0) -- (0,1.5);
+						\draw[thick] (0,1.5) -- (1.8,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						
+						% Разрез на высоте i\pi/2
+						\draw[white, line width=6pt] (0,0.75) -- (1.0,0.75);
+						\draw[thick] (0,0.73) -- (1.0,0.73);
+						\draw[thick] (0,0.77) -- (1.0,0.77);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (1.0,0.75) circle (1.2pt) node[above] {$c$};
+						
+						\node at (0,0.75) [left] {$\frac{i\pi}{2}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = \frac{\pi}{h} z$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Экспонента: $w_2 = e^{w_1}$. Полуполоса переходит во внешность единичной полуокружности с вертикальным разрезом от $i$ до $ie^c$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (0,0) rectangle (1.5,1.5);
+						\draw[->] (-0.3,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (0,0) -- (0,1.5);
+						\draw[thick] (0,1.5) -- (1.5,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						\draw[white, line width=6pt] (0,0.75) -- (1.0,0.75);
+						\draw[thick] (0,0.73) -- (1.0,0.73);
+						\draw[thick] (0,0.77) -- (1.0,0.77);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (1.0,0.75) circle (1.2pt) node[above] {$c$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.2) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 (внешность полуокружности с вертикальным разрезом) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							% Вырезаем нижний полукруг (единичная полуокружность)
+							\fill[white] (0,0) circle (1.0);
+							% Вырезаем вертикальный разрез от i до i e^C
+							\fill[white] (-0.05,1.0) rectangle (0.05,1.5);
+						\end{scope}
+						
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						% Единичная полуокружность
+						\draw[thick] (0,0) circle (1.0);
+						
+						% Вертикальный разрез от i до i e^C
+						\draw[thick] (0,1.0) -- (0,1.5);
+						\draw[thick] (-0.05,1.0) -- (-0.05,1.5);
+						\draw[thick] (0.05,1.0) -- (0.05,1.5);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,1.0) circle (1.2pt) node[above right] {$i$};
+						\fill[red] (0,1.5) circle (1.2pt) node[above right] {$ie^c$};
+						
+						% Точки -1 и 1 на вещественной оси
+						\fill[black] (-1.0,0) circle (0.8pt) node[below] {$-1$};
+						\fill[black] (1.0,0) circle (0.8pt) node[below] {$1$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = e^{w_1}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Функция Жуковского: $w_3 = \frac{1}{2}\left(w_2 + \frac{1}{w_2}\right)$. Внешность полуокружности с разрезом переходит в верхнюю полуплоскость с вертикальным разрезом $[0, i\sh c]$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							\fill[white] (0,0) circle (1.0);
+							\fill[white] (-0.05,1.0) rectangle (0.05,1.5);
+						\end{scope}
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (0,0) circle (1.0);
+						\draw[thick] (0,1.0) -- (0,1.5);
+						\draw[thick] (-0.05,1.0) -- (-0.05,1.5);
+						\draw[thick] (0.05,1.0) -- (0.05,1.5);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,1.0) circle (1.2pt) node[above right] {$i$};
+						\fill[red] (0,1.5) circle (1.2pt) node[above right] {$ie^c$};
+						\fill[black] (-1.0,0) circle (0.8pt) node[below] {$-1$};
+						\fill[black] (1.0,0) circle (0.8pt) node[below] {$1$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Область W3 (верхняя полуплоскость с вертикальным разрезом) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						% Вертикальный разрез от 0 до i sh C
+						\draw[white, line width=6pt] (0,0) -- (0,0.7);
+						\draw[thick] (-0.05,0) -- (-0.05,0.7);
+						\draw[thick] (0.05,0) -- (0.05,0.7);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.7) circle (1.2pt) node[above right] {$i\sh c$};
+						
+						% Точки -1 и 1 на вещественной оси
+						\fill[black] (-1.0,0) circle (0.8pt) node[below] {$-1$};
+						\fill[black] (1.0,0) circle (0.8pt) node[below] {$1$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.0) {$w_3$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_3 = \frac{1}{2}\left(w_2 + \frac{1}{w_2}\right)$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Используем результат предыдущей задачи: $w = \sqrt{w_3^2 + \sh^2 c}$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (0,0.7);
+						\draw[thick] (-0.05,0) -- (-0.05,0.7);
+						\draw[thick] (0.05,0) -- (0.05,0.7);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,0.7) circle (1.2pt) node[above right] {$i\sh c$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.0) {$w_3$};
+					\end{scope}
+					
+					% --- Область W ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \sqrt{w_3^2 + \sh^2 c}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \sqrt{\ch^2\left(\frac{\pi z}{h}\right) + \sh^2 c}$, где $c = \frac{\pi \alpha}{h}$.
+	\end{example}
+	\subsection{Отображение полуполосы с горизонтальным разрезом на полуполосу без разреза}
+	\begin{example}
+		Строим отображение полуполосы $\{z: \operatorname{Re}z > 0, 0 < \operatorname{Im}z < h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на полуполосу без разреза:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (полуполоса с разрезом) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка полуполосы
+					\fill[blue!20] (0,0) rectangle (1.8,1.2);
+					
+					% Оси
+					\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					% Левая граница (Re z = 0)
+					\draw[thick] (0,0) -- (0,1.2);
+					
+					% Верхняя граница
+					\draw[thick] (0,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$ih$};
+					
+					% Горизонтальный разрез на высоте ih/2
+					\draw[white, line width=6pt] (0,0.6) -- (0.8,0.6);
+					\draw[thick] (0,0.58) -- (0.8,0.58);
+					\draw[thick] (0,0.62) -- (0.8,0.62);
+					
+					% Конец разреза
+					\fill[red] (0.8,0.6) circle (1.2pt) node[above] {$\alpha$};
+					
+					% Обозначение 0
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$z$};
+				\end{scope}
+				
+				% --- Область W (полуполоса без разреза) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (0,0) rectangle (1.8,1.2);
+					\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+					\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+					
+					\draw[thick] (0,0) -- (0,1.2);
+					\draw[thick] (0,1.2) -- (1.8,1.2);
+					\node[above left] at (0,1.2) {$ih$};
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center} 
+		\newpage
+		\begin{enumerate}
+			\item Используем результат предыдущей задачи: $w_1 = \sqrt{\ch^2\left(\frac{\pi z}{h}\right) + \sh^2 c}$, где $c = \frac{\pi \alpha}{h}$. Это отображение переводит полуполосу с разрезом в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (0,0) rectangle (1.8,1.2);
+						\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\draw[thick] (0,0) -- (0,1.2);
+						\draw[thick] (0,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$ih$};
+						\draw[white, line width=6pt] (0,0.6) -- (0.8,0.6);
+						\draw[thick] (0,0.58) -- (0.8,0.58);
+						\draw[thick] (0,0.62) -- (0.8,0.62);
+						\fill[red] (0.8,0.6) circle (1.2pt) node[above] {$\alpha$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$z$};
+					\end{scope}
+					
+					% --- Область W1 (верхняя полуплоскость) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above, font=\footnotesize] {$w_1 = \sqrt{\ch^2\left(\frac{\pi z}{h}\right) + \sh^2 c}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Обратная функция Жуковского: $w_2 = w_1 + \sqrt{w_1^2 - 1}$ (главная ветвь). Верхняя полуплоскость переходит во внешность единичной полуокружности с вертикальным разрезом от $i$ до $ie^c$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							\fill[white] (0,0) circle (1.0);
+							\fill[white] (-0.05,1.0) rectangle (0.05,1.5);
+						\end{scope}
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (0,0) circle (1.0);
+						\draw[thick] (0,1.0) -- (0,1.5);
+						\draw[thick] (-0.05,1.0) -- (-0.05,1.5);
+						\draw[thick] (0.05,1.0) -- (0.05,1.5);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,1.0) circle (1.2pt) node[above right] {$i$};
+						\fill[red] (0,1.5) circle (1.2pt) node[above right] {$ie^c$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_2 = w_1 + \sqrt{w_1^2 - 1}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Логарифмируем: $w_3 = \ln w_2$. Внешность полуокружности с разрезом переходит в полуполосу высоты $\pi$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\begin{scope}
+							\clip (-1.8,0) rectangle (1.8,1.8);
+							\fill[blue!20] (-1.8,0) rectangle (1.8,1.8);
+							\fill[white] (0,0) circle (1.0);
+							\fill[white] (-0.05,1.0) rectangle (0.05,1.5);
+						\end{scope}
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (0,0) circle (1.0);
+						\draw[thick] (0,1.0) -- (0,1.5);
+						\draw[thick] (-0.05,1.0) -- (-0.05,1.5);
+						\draw[thick] (0.05,1.0) -- (0.05,1.5);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0,1.0) circle (1.2pt) node[above right] {$i$};
+						\fill[red] (0,1.5) circle (1.2pt) node[above right] {$ie^c$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.2) {$w_2$};
+					\end{scope}
+					
+					% --- Область W3 (полуполоса высоты \pi) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (0,0) rectangle (1.8,1.5);
+						\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						
+						\draw[thick] (0,0) -- (0,1.5);
+						\draw[thick] (0,1.5) -- (1.8,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.2) {$w_3$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_3 = \ln w_2$};
+				\end{tikzpicture}
+			\end{center}
+			\newpage
+			\item Сжимаем полуполосу: $w = \frac{h}{\pi} w_3$. Получаем полуполосу высоты $h$ без разреза:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (0,0) rectangle (1.5,1.5);
+						\draw[->] (-0.3,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.8) node[above] {};
+						\draw[thick] (0,0) -- (0,1.5);
+						\draw[thick] (0,1.5) -- (1.5,1.5);
+						\node[above left] at (0,1.5) {$i\pi$};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,1.2) {$w_3$};
+					\end{scope}
+					
+					% --- Область W (полуполоса высоты h) ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (0,0) rectangle (1.8,1.2);
+						\draw[->] (-0.3,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-0.3) -- (0,1.5) node[above] {};
+						
+						\draw[thick] (0,0) -- (0,1.2);
+						\draw[thick] (0,1.2) -- (1.8,1.2);
+						\node[above left] at (0,1.2) {$ih$};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,0.9) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \frac{h}{\pi} w_3$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \frac{h}{\pi} \ln\left( \sqrt{\ch^2\left(\frac{\pi z}{h}\right) + \sh^2 c} + \sqrt{\ch^2\left(\frac{\pi z}{h}\right) + \sh^2 c - 1} \right)$, где $c = \frac{\pi \alpha}{h}$.
+	\end{example}
+	\subsection{Отображение единичного круга с разрезом на верхнюю полуплоскость}
+	\begin{example}
+		Строим отображение единичного круга $\{z: |z| < 1\}$ с разрезом по отрезку $[h, 1]$ на верхнюю полуплоскость:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (круг с разрезом) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка круга
+					\begin{scope}
+						\clip (0,0) circle (1.2);
+						\fill[blue!20] (-1.5,-1.2) rectangle (1.5,1.2);
+					\end{scope}
+					
+					% Вырезаем разрез [h, 1]
+					\draw[white, line width=6pt] (0.5,0) -- (1.2,0);
+					\draw[thick] (0.5,0.03) -- (1.2,0.03);
+					\draw[thick] (0.5,-0.03) -- (1.2,-0.03);
+					
+					% Оси
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+					
+					% Окружность
+					\draw[thick] (0,0) circle (1.2);
+					
+					% Точки
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					\fill[red] (0.5,0) circle (1.2pt) node[below] {$h$};
+					\fill[red] (1.2,0) circle (1.2pt) node[below right] {$1$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$z$};
+				\end{scope}
+				
+				% --- Область W (верхняя полуплоскость) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Функция Жуковского: $w_1 = \frac{1}{2}\left(z + \frac{1}{z}\right)$. Отрезок $[h, 1]$ переходит в $[1, \frac{1}{2}(h + \frac{1}{h})]$, а окружность — в отрезок $[-1, 1]$. Получаем плоскость с разрезом $[-1, \frac{1}{2}(h + \frac{1}{h})]$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\begin{scope}
+							\clip (0,0) circle (1.2);
+							\fill[blue!20] (-1.5,-1.2) rectangle (1.5,1.2);
+						\end{scope}
+						\draw[white, line width=6pt] (0.5,0) -- (1.2,0);
+						\draw[thick] (0.5,0.03) -- (1.2,0.03);
+						\draw[thick] (0.5,-0.03) -- (1.2,-0.03);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[thick] (0,0) circle (1.2);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0.5,0) circle (1.2pt) node[below] {$h$};
+						\fill[red] (1.2,0) circle (1.2pt) node[below right] {$1$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$z$};
+					\end{scope}
+					
+					% --- Область W1 (плоскость с разрезом) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						
+						% Разрез [-1, 1.2] (где 1.2 соответствует \frac{1}{2}(h+1/h))
+						\draw[white, line width=6pt] (-1.0,0) -- (1.2,0);
+						\draw[thick] (-1.0,0.03) -- (1.2,0.03);
+						\draw[thick] (-1.0,-0.03) -- (1.2,-0.03);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (-1.0,0) circle (1.2pt) node[below] {$-1$};
+						\fill[red] (1.2,0) circle (1.2pt) node[below] {$\frac{1}{2}(h+\frac{1}{h})$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (0,0.8) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_1 = \frac{1}{2}\left(z + \frac{1}{z}\right)$};
+				\end{tikzpicture}
+			\end{center}
+			\newpage
+			\item Дробно-линейное отображение: $w_2 = \frac{w_1 + 1}{w_1 - \frac{1}{2}(h + \frac{1}{h})}$. Точка $0$ переходит в $-\frac{2}{h + 1/h} < 0$, разрез $[-1, \frac{1}{2}(h + \frac{1}{h})]$ переходит в луч $(-\infty, 0]$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[white, line width=6pt] (-1.0,0) -- (1.2,0);
+						\draw[thick] (-1.0,0.03) -- (1.2,0.03);
+						\draw[thick] (-1.0,-0.03) -- (1.2,-0.03);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (-1.0,0) circle (1.2pt) node[below] {$-1$};
+						\fill[red] (1.2,0) circle (1.2pt) node[below] {$\frac{1}{2}(h+\frac{1}{h})$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (0,0.8) {$w_1$};
+					\end{scope}
+					
+					% --- Область W2 (плоскость с лучом) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						
+						% Луч (-∞, 0]
+						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
+						\draw[thick] (-1.8,0.03) -- (0,0.03);
+						\draw[thick] (-1.8,-0.03) -- (0,-0.03);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (-0.6,0) circle (1.2pt) node[below] {$-\frac{2}{h+1/h}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,0.8) {$w_2$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above, font=\footnotesize] {$w_2 = \frac{w_1 + 1}{w_1 - \frac{1}{2}(h + \frac{1}{h})}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Разворачиваем луч: $w_3 = -w_2$. Луч $(-\infty, 0]$ переходит в $[0, +\infty)$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W2 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
+						\draw[thick] (-1.8,0.03) -- (0,0.03);
+						\draw[thick] (-1.8,-0.03) -- (0,-0.03);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (-0.6,0) circle (1.2pt) node[below] {$-\frac{2}{h+1/h}$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (1.0,0.8) {$w_2$};
+					\end{scope}
+					
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						
+						% Луч [0, +∞)
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.03) -- (1.8,0.03);
+						\draw[thick] (0,-0.03) -- (1.8,-0.03);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (0.6,0) circle (1.2pt) node[below] {$\frac{2}{h+1/h}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.8) {$w_3$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w_3 = -w_2$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Извлекаем корень: $w = \sqrt{w_3}$. Луч $[0, +\infty)$ раскрывается в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W3 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.8,-1.2) rectangle (1.8,1.2);
+						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[white, line width=6pt] (0,0) -- (1.8,0);
+						\draw[thick] (0,0.03) -- (1.8,0.03);
+						\draw[thick] (0,-0.03) -- (1.8,-0.03);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[blue] (0.6,0) circle (1.2pt) node[below] {$\frac{2}{h+1/h}$};
+						
+						% Обозначение берегов
+						\node[above right] at (0.8,0.1) {$w_3 = r e^{i0}$};
+						\node[below right] at (0.8,-0.1) {$w_3 = r e^{i2\pi}$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.8) {$w_3$};
+					\end{scope}
+					
+					% --- Область W ---
+					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.3cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \sqrt{w_3}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \sqrt{-\frac{\frac{1}{2}(z + \frac{1}{z}) + 1}{\frac{1}{2}(z + \frac{1}{z}) - \frac{1}{2}(h + \frac{1}{h})}} = \sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}}$.
+	\end{example}
+	\newpage
+	\subsection{Отображение единичного круга с разрезом на единичный круг}
+	\begin{example}
+		Строим отображение единичного круга $\{z: |z| < 1\}$ с разрезом по отрезку $[h, 1]$ на единичный круг без разреза:
+		\begin{center}
+			\begin{tikzpicture}[scale=1.8]
+				% --- Область Z (круг с разрезом) ---
+				\begin{scope}[local bounding box=scope1]
+					% Заливка круга
+					\begin{scope}
+						\clip (0,0) circle (1.2);
+						\fill[blue!20] (-1.5,-1.2) rectangle (1.5,1.2);
+					\end{scope}
+					
+					% Вырезаем разрез [h, 1]
+					\draw[white, line width=6pt] (0.5,0) -- (1.2,0);
+					\draw[thick] (0.5,0.03) -- (1.2,0.03);
+					\draw[thick] (0.5,-0.03) -- (1.2,-0.03);
+					
+					% Оси
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+					
+					% Окружность
+					\draw[thick] (0,0) circle (1.2);
+					
+					% Точки
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					\fill[red] (0.5,0) circle (1.2pt) node[below] {$h$};
+					\fill[red] (1.2,0) circle (1.2pt) node[below right] {$1$};
+					
+					% Подпись области
+					\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$z$};
+				\end{scope}
+				
+				% --- Область W (круг без разреза) ---
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (0,0) circle (1.2);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+					\draw[thick] (0,0) circle (1.2);
+					
+					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+					
+					\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$w$};
+				\end{scope}
+				
+				% --- Стрелка ---
+				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above] {$f$};
+				
+			\end{tikzpicture}
+		\end{center}
+		\begin{enumerate}
+			\item Используем результат предыдущей задачи: $w_1 = \sqrt{-\frac{\frac{1}{2}(z + \frac{1}{z}) + 1}{\frac{1}{2}(z + \frac{1}{z}) - \frac{1}{2}(h + \frac{1}{h})}} = \sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}}$. Это отображение переводит круг с разрезом в верхнюю полуплоскость:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область Z ---
+					\begin{scope}[local bounding box=scope1]
+						\begin{scope}
+							\clip (0,0) circle (1.2);
+							\fill[blue!20] (-1.5,-1.2) rectangle (1.5,1.2);
+						\end{scope}
+						\draw[white, line width=6pt] (0.5,0) -- (1.2,0);
+						\draw[thick] (0.5,0.03) -- (1.2,0.03);
+						\draw[thick] (0.5,-0.03) -- (1.2,-0.03);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[thick] (0,0) circle (1.2);
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill[red] (0.5,0) circle (1.2pt) node[below] {$h$};
+						\fill[red] (1.2,0) circle (1.2pt) node[below right] {$1$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$z$};
+					\end{scope}
+					
+					% --- Область W1 (верхняя полуплоскость) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=0.3cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above, font=\footnotesize] {$w_1 = \sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}}$};
+				\end{tikzpicture}
+			\end{center}
+			
+			\item Отображаем верхнюю полуплоскость в единичный круг: $w_2 = \frac{w_1 - i}{w_1 + i} \cdot K$, где $K = e^{i\alpha}$, $\alpha = 0$:
+			\begin{center}
+				\begin{tikzpicture}[scale=1.8]
+					% --- Область W1 ---
+					\begin{scope}[local bounding box=scope1]
+						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w_1$};
+					\end{scope}
+					
+					% --- Область W (круг) ---
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (0,0) circle (1.2);
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
+						\draw[thick] (0,0) circle (1.2);
+						
+						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						
+						\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$w$};
+					\end{scope}
+					
+					% --- Стрелка ---
+					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=1.4cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					
+					\draw[->, thick] 
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above] {$w = \frac{w_1 - i}{w_1 + i}$};
+				\end{tikzpicture}
+			\end{center}
+		\end{enumerate}
+		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
+	\end{example}
 \end{document}
