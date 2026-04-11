@@ -117,16 +117,18 @@
 	
 	\begin{proof}
 		\[ 
-			e^s = \sum\limits_{k=1}^{\infty}\frac{s^{\mathrlap{k}}}{k!}, 
-			\ \ \sin s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k-1}}}{(2k-1)!},
-			\ \ \cos s = \sum\limits_{k=1}^{\infty}\frac{(-1)^{\mathrlap{2k}}}{(2k)!}\\ % Делаю степень нулевой длинны
+			e^s = \sum\limits_{k=0}^{\infty}\frac{s^k}{k!}, 
+			\ 
+			\sin s = \sum\limits_{k=0}^{\infty}(-1)^{k}\frac{s^{2k+1}}{(2k+1)!},
+			\ 
+			\cos s = \sum\limits_{k=0}^{\infty}(-1)^{2k}\frac{s^{2k}}{(2k)!}
 		\]
 		\begin{multline*}
-			e^{i\phi} = \sum\limits_{k=1}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m - 1 \} = 
+			e^{i\phi} = \sum\limits_{k=0}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m + 1 \} = 
 			\sum\limits_{m=0}^{\infty} \frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} + 
-			\sum\limits_{m=1}^{\infty} \frac{i^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} = \\
-			= \sum\limits_{m=0}^{\infty} \frac{(-1)^{m}\phi^{\mathrlap{2m}}}{(2m)!} + 
-			i\sum\limits_{m=1}^{\infty} \frac{(-1)^{2m-1}\phi^{\mathrlap{2m-1}}}{(2m-1)!} =
+			\sum\limits_{m=0}^{\infty} \frac{i^{2m+1}\phi^{\mathrlap{2m+1}}}{(2m+1)!} = \\
+			= \sum\limits_{m=0}^{\infty} \frac{(-1)^m\phi^{\mathrlap{2m}}}{(2m)!} + 
+			i\sum\limits_{m=0}^{\infty} \frac{(-1)^m\phi^{\mathrlap{2m+1}}}{(2m+1)!} =
 			\cos{\phi} + i\sin{\phi}
 		\end{multline*}
 	\end{proof}
@@ -163,15 +165,16 @@
 	\subsection{Расширенная комплексная плоскость.}
 	\noindent
 	\begin{align*}
-		&\Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ "--- Комплексная плоскость.} \\
-		&\overline\Cm = \Cm \cup \infty \text{ "--- Расширенная комплексная плоскость.}
+		&\Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ --- Комплексная плоскость.} \\
+		&\overline\Cm = \Cm\cup\infty \text{ --- Расширенная комплексная плоскость.}
 	\end{align*}
-	
+	Наша цель, каждой точки плоскости поставить в соответсвие точку со сферы.\\ 
 	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\frac{1}{2})^2 = \frac{1}{4}\}$\\
 	\includegraphics[width=1\textwidth]{Проекция.png}
 	Из подобия в треугольниках \textit{ABN} и \textit{SZN}: 
 	\[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
-	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$\\
+	(Кажду точку со сферы можно привычно записать через полярную замену)\\
+	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$ \\
 	$\eta = \rho\sin\phi = r(1 - \zeta)\sin\phi = (1 - \zeta)y$\\
 	Подставляем в исходное уравнение:
 	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta-\frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta-1)\zeta = 0 \]
@@ -191,8 +194,9 @@
 	\]
 	
 	\noindent
-	$ S \simeq \overline\Cm$\\
-	$ \overline\Cm \mapsto S $ "--- стереографическая проекция $(\infty \mapsto N)$
+	Уствновили взаимнооднозначное соответствие. $ \overline\Cm \mapsto S $
+	 --- стереографическая проекция.\\
+	При таком отображении: $(\infty \mapsto N)$
 	
 	\begin{statement*}
 		\[ \Cm \text{"--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2|. \]
@@ -203,7 +207,7 @@
 		 $\text{т.е. требуется доказать, что } |z_1+z_2 | \leqslant |z_1|+|z_2|$
 		\begin{flalign*}
 			|z_1+z_2|^2 &=(z_1+z_2)\overline{(z_1+z_2)} = (r_1e^{i\phi_1}+r_2e^{i\phi_2})(r_1e^{-i\phi_1}+r_2e^{-i\phi_2}) =&\\
-			&= r_1^2+r_2^2 + r_1r_2(e^{i(\phi_1-\phi_2)}+e^{-i(\phi_1-\phi_2)}) = r_1^2+r_2^2+2\cos(\phi_1-\phi_2)r_1r_2 = \\
+			&= r_1^2+r_2^2 + r_1r_2(e^{i(\phi_1-\phi_2)}+e^{-i(\phi_1-\phi_2)}) = r_1^2+r_2^2+2\cos(\phi_1-\phi_2)r_1r_2 \leqslant \\
 			&\leqslant r_1^2+r_2^2+2r_1r_2 = (r_1+r_2)^2 = (|z_1|+|z_2|)^2
 		\end{flalign*}
 	\end{proof}
@@ -285,9 +289,9 @@
 	\end{definition}
 	\begin{definition}
 		Точка $z_0 \in \Cm$ называется\\
-		1) \textbf{Внутренней} точкой множества $M\subset\Cm$, если $\ \exists U_\epsilon(z_0)\subset M$.\\
-		2) \textbf {Предельной} точкой множества $M\subset\Cm$, если $\ \forall \mathring U_\epsilon(z_0)\subset M \ \Rightarrow \ \mathring U_\epsilon(z_0)\cap M \ne \varnothing$.\\
-		3) \textbf {Граничной} точкой множества $M\subset\Cm$, если $\ \forall U_\epsilon(z_0) \ \exists$ точки из $M$ и не из $M$.
+		1)\textbf{Внутренней} точкой множества $M\subset\Cm$, если $\ \exists U_\epsilon(z_0)\subset M$.\\
+		2)\textbf {Предельной} точкой множества $M\subset\Cm$, если $\ \forall \mathring U_\epsilon(z_0)\subset M \ \Rightarrow \ \mathring U_\epsilon(z_0)\cap M \ne \varnothing$.\\
+		3)\textbf {Граничной} точкой множества $M\subset\Cm$, если $\ \forall U_\epsilon(z_0) \ \exists$точки, как из $M$, так и не из $M$.
 	\end{definition}
 	\begin{definition}
 		Множество вида: $\gamma =\{\ z \in \Cm : z(t) = x(t) + iy(t),\ t \in [\alpha, \beta]  \ \}$ называют \textbf{кривой} на $\Cm$\\
@@ -302,7 +306,7 @@
 		3) \textbf{Гладкой}, если $\ x(t), y(t) \in C^1[\alpha, \beta] \ $ и $\ \forall t \in [\alpha, \beta] \Rightarrow z'(t) \ne 0$
 	\end{definition}
 	\begin{definition}
-		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha, \beta$.
+		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha,\ \beta$.
 	\end{definition}
 	\begin{definition}
 		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^{N} \gamma_i$, где N "--- конечное число гладких кривых.
@@ -2585,8 +2589,8 @@
 				\draw[dashed] (0.6495,0) -- (0.6495,0.375);
 				\draw[dashed] (-0.6495,0) -- (-0.6495,0.375);
 				\draw[dashed] (-0.6495,0.375) -- (0.6495,0.375);
-				\fill[black] (0.6495,0.375) circle (0.5pt) node[right] {$z_2$};
-				\fill[black] (-0.6495,0.375) circle (0.5pt) node[left] {$z_1$};
+				\fill (0.6495,0.375) circle (0.5pt) node[right] {$z_2$};
+				\fill (-0.6495,0.375) circle (0.5pt) node[left] {$z_1$};
 				\node[above right] at (0,0.75) {$i$};
 				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 			\end{scope}
@@ -2732,118 +2736,96 @@
 		Строим отображение луночки на верхнюю полуплоскость:
 		\begin{center}
 			\begin{tikzpicture}[scale=2]
-				% --- Область Z (луночка) ---
 				\begin{scope}[local bounding box=scope1]
-					% Заливка луночки
 					\begin{scope}
 						\clip (-0.4,0) circle (1.4);
 						\fill[blue!20] (0.4,0) circle (1.4);
 					\end{scope}
-					
-					% Оси
-					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 					
 					% Границы луночки
-					\draw[thick] (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
-					\draw[thick] (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
+					\draw (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
+					\draw (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
 					
 					% Точки пересечения (полюсы)
-					\fill[red] (0,{sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[above right] {$z_1$};
-					\fill[red] (0,{-sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[below right] {$z_2$};
+					\fill (0,{sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
+					\fill (0,{-sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
 					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.6) {$z$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 				\end{scope}
-				
-				% --- Область W ---
+		
 				\begin{scope}[local bounding box=scope2, xshift=5cm]
 					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
 					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-					
-					% Обозначение 0
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					
 					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
 				\end{scope}
 				
-				% --- Стрелка ---
-				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
 				
 				\draw[->, thick] 
 				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-				node[midway, above] {$f$};
+				node[midway, above, yshift=5pt] {$f$};
 				
 			\end{tikzpicture}
 		\end{center}
 		\begin{enumerate}
-			\item Для начала используем дробно-линейное отображение $w_1 = \frac{z - z_1}{z - z_2}$, где один из полюсов отправляем в 0, а другой в $\infty$
+			\item Для начала используем дробно-линейное отображение $w_1 = \dfrac{z - z_1}{z - z_2}$, где один из полюсов отправляем в 0, а другой в $\infty$
 			\begin{center}
 				\begin{tikzpicture}[scale=2]
-					% --- Область Z (луночка) ---
 					\begin{scope}[local bounding box=scope1]
-						% Заливка луночки
 						\begin{scope}
 							\clip (-0.4,0) circle (1.4);
 							\fill[blue!20] (0.4,0) circle (1.4);
 						\end{scope}
-						
-						% Оси
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 						
-						% Границы луночки
-						\draw[thick] (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
-						\draw[thick] (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
+						\draw (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
+						\draw (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
 						
-						% Точки пересечения (полюсы)
-						\fill[red] (0,{sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[above right] {$z_1$};
-						\fill[red] (0,{-sqrt(1.4^2-0.4^2)}) circle (1.2pt) node[below right] {$z_2$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,0.6) {$z$};
+						\fill (0,{sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
+						\fill (0,{-sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
+
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 					\end{scope}
 					
-					% --- Область W (сектор) ---
-					\begin{scope}[local bounding box=scope2, xshift=4cm]
-						% Заливка сектора
-						\fill[blue!20] (0,0) -- (20:1.8) arc[start angle=20, end angle=70, radius=1.8] -- cycle;
+					\begin{scope}[local bounding box=scope2, xshift=5cm]
+						\fill[blue!20] (0,0) -- (20:1.3) arc[start angle=20, end angle=70, radius=1.3] -- cycle;
 						
 						% Оси
-						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
+						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 						
 						% Границы сектора
-						\draw[thick] (0,0) -- (20:1.8);
-						\draw[thick] (0,0) -- (70:1.8);
-						\draw[thick] (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
+						\draw (0,0) -- (20:1.8);
+						\draw (0,0) -- (70:1.8);
+						\draw (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
 						
 						% Обозначение 0 в вершине сектора
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
+						\fill (0,0) circle (0.5pt) node[below left] {$0$};
 						
-						% Обозначение угла альфа
-						\draw[->] (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
+						\draw (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
 						\node at (10:0.75) {$\alpha$};
 						
 						% Обозначение угла бета
-						\draw[->] (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
+						\draw (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
 						\node at (45:0.95) {$\beta$};
 						
 						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (1.1,1.2) {$w_1$};
+						\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
 					\end{scope}
 					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.1cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+					\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+					\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
 					
 					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.2!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_1 = \frac{z-z_1}{z-z_2}$};
+					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+					node[midway, above, yshift=5pt] {$w_1$};
 				\end{tikzpicture}
 			\end{center}
 			\newpage
@@ -4670,4 +4652,45 @@
 		\end{enumerate}
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
 	\end{example}
+	
+	\section{Лекция 14}
+	\subsection{Итегрирование функций комплексного пременного.}
+	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\ z_1, \ldots ,z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1, \ldots ,\xi_n \} $.
+	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
+	\leqslant n}|\Delta z_k| $.
+	Пусть $ f(z) $ --- однозначная функция определенная на прямой $\gamma$.
+	Составим интегральную сумму: $ \sigma(f,\ \xi,\ \tau) = \sum\limits_{k=1}^n f(\xi_k)\Delta z_k $.
+	\begin{definition}
+		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \int\limits_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
+		\[ \int\limits_\gamma f(z)dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
+	\end{definition}
+	
+	Пусть дано параметрическое представление прямой $ \gamma: \begin{cases} x = x(t)\\y = y(t) \end{cases} t \in [a,\ b] $. Тогда\\
+	по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}dt$.\\
+	\textbf{Криволинейный интеграл 1-го рода:}
+	\[ I_1 =  \int\limits_\gamma f(z)ds = \int\limits_\alpha^\beta f(x(t), y(t))\sqrt{x'^2+y'^2}dt \]
+	\textbf{Криволинейный интеграл 2-го рода:}
+	\[ I_2 =  \int\limits_\gamma \bar g(x, y)d\bar s = \int\limits_\gamma Pdx + Qdy = 
+	\int\limits_\alpha^\beta (P(x, y)x' + Q(x, y)y')dt, \]
+	где $ d\bar s = (dx,\ dy),\quad \bar g(x, y) = (P(x, y),\ Q(x, y)) $
+	\begin{theorem}
+		Пусть существуют криволинейные интегралы 2-ог рода: $ \int\limits_\gamma udx + vdy,\ \int\limits_\gamma udx - vdy $. Тогда\\
+		\[ \int\limits_\gamma f(z)dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma udx + vdy \]
+	\end{theorem}
+	\begin{proof}
+		\[ \int\limits_\gamma f(z)dz =  \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
+		\[ = \lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k + v(\xi_k)\Delta y_k) \]
+	\end{proof}
+	\begin{theorem}
+		Пусть $ f(z) \in C(\gamma) $, где $ \gamma $ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\ \beta] $. Тогда
+		\[ \int\limits_\gamma f(z)dz = \int\limits_\alpha^\beta f(z(t))z'(t)dt. \]
+	\end{theorem}
+	\begin{proof}
+		$ f(z) \in C(\gamma) \Rightarrow u(x, y),\ v(x, y) \in C(\gamma) $. По определению кривой Жордана: $ x(t),\ y(t) \in C^1[\alpha,\ \beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt $
+		\begin{align*}
+		J_1 = \int\limits_\gamma udx-vdy = \int\limits_\alpha^\beta u(x(t),\ y(t))x'(t)- v(x(t),\ y(t))y'(t)dt\\
+		J_2 = \int\limits_\gamma udx+vdy = \int\limits_\alpha^\beta u(x(t),\ y(t))x'(t)+ v(x(t),\ y(t))y'(t)dt\\
+		\int\limits_\gamma f(z)dz = J_1 + iJ_2 = \int\limits_\gamma(u+iv)(x'(t) + iy'(t))dt = \int\limits_\alpha^\beta f(z(t))z'(t)dt
+		\end{align*}
+	\end{proof}
 \end{document}
