@@ -1979,7 +1979,7 @@
 	\end{center}
 	Знаем, что вся полоса перейдет на плоскость с разрезом. Выше увидили, что левая половина перешла на круг с разрезом, а значит правая полоса перейдет во внешность окружности с разрезом.
 	\[ D_w = \{ w \in \Cm: |w| > 1\} \setminus \{ w \in \Cm: \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 1 \} \]\newpage
-	\noindent\textbf{3)} Аналогичные примеры с более тонокой полоской.
+	\noindent\textbf{3)} Аналогичные примеры с более тонкой полоской.
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 				% Левый рисунок
@@ -2053,7 +2053,6 @@
 	\end{center}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
-				% Левый рисунок
 				\begin{scope}[local bounding box=scope1]
 					\begin{scope}
 						\fill[blue!20] (0,0) rectangle (1.5,1);
@@ -2061,13 +2060,9 @@
 					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 					\draw (0, 1) -- (1.5,1);
-					%\node at (0.6,-0.15) {$\Gamma_1$};
-					%\node at (0.6,1.15) {$\Gamma_3$};
-					%\node at (-0.15,0.5) {$\Gamma_2$};
 					\fill[black] (0,1) circle (0.5pt) node[above right] {$\pi i$};
 					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 				\end{scope}
-				% Правый рисунок
 				\begin{scope}[local bounding box=scope2, xshift=5cm]
 					\begin{scope}
 						\fill[blue!20, even odd rule] 
@@ -2081,7 +2076,6 @@
 					\fill[black] (0.75,0) circle (0.5pt) node[above right] {$1$};
 					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
 				\end{scope}
-				% Стрелка между рисунками
 				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
 				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
 				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
@@ -4655,30 +4649,30 @@
 	
 	\section{Лекция 14}
 	\subsection{Итегрирование функций комплексного пременного.}
-	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\ z_1, \ldots ,z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1, \ldots ,\xi_n \} $.
+	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
 	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
 	\leqslant n}|\Delta z_k| $.
 	Пусть $ f(z) $ --- однозначная функция определенная на прямой $\gamma$.
-	Составим интегральную сумму: $ \sigma(f,\ \xi,\ \tau) = \sum\limits_{k=1}^n f(\xi_k)\Delta z_k $.
+	Составим интегральную сумму: $ \sigma(f,\, \xi,\, \tau) = \sum\limits_{k=1}^n f(\xi_k)\Delta z_k $.
 	\begin{definition}
 		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \int\limits_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
-		\[ \int\limits_\gamma f(z)dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
+		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
 	\end{definition}
 	
-	Пусть дано параметрическое представление прямой $ \gamma: \begin{cases} x = x(t)\\y = y(t) \end{cases} t \in [a,\ b] $. Тогда\\
-	по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}dt$.\\
+	Пусть дано параметрическое представление прямой $ \gamma: \begin{cases} x = x(t)\\y = y(t) \end{cases} t \in [a,\, b] $. Тогда\\
+	по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
 	\textbf{Криволинейный интеграл 1-го рода:}
-	\[ I_1 =  \int\limits_\gamma f(z)ds = \int\limits_\alpha^\beta f(x(t), y(t))\sqrt{x'^2+y'^2}dt \]
+	\[ I_1 =  \int\limits_\gamma f(z)\,ds = \int\limits_\alpha^\beta f(x(t), y(t))\sqrt{x'^2+y'^2}\,dt \]
 	\textbf{Криволинейный интеграл 2-го рода:}
-	\[ I_2 =  \int\limits_\gamma \bar g(x, y)d\bar s = \int\limits_\gamma Pdx + Qdy = 
-	\int\limits_\alpha^\beta (P(x, y)x' + Q(x, y)y')dt, \]
+	\[ I_2 =  \int\limits_\gamma \bar g(x, y)\,d\bar s = \int\limits_\gamma Pdx + Qdy = 
+	\int\limits_\alpha^\beta (P(x, y)x' + Q(x, y)y')\,dt, \]
 	где $ d\bar s = (dx,\ dy),\quad \bar g(x, y) = (P(x, y),\ Q(x, y)) $
 	\begin{theorem}
 		Пусть существуют криволинейные интегралы 2-ог рода: $ \int\limits_\gamma udx + vdy,\ \int\limits_\gamma udx - vdy $. Тогда\\
-		\[ \int\limits_\gamma f(z)dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma udx + vdy \]
+		\[ \int\limits_\gamma f(z)\,dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma udx + vdy \]
 	\end{theorem}
 	\begin{proof}
-		\[ \int\limits_\gamma f(z)dz =  \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
+		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
 		\[ = \lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k + v(\xi_k)\Delta y_k) \]
 	\end{proof}
 	\begin{theorem}
@@ -4693,4 +4687,88 @@
 		\int\limits_\gamma f(z)dz = J_1 + iJ_2 = \int\limits_\gamma(u+iv)(x'(t) + iy'(t))dt = \int\limits_\alpha^\beta f(z(t))z'(t)dt
 		\end{align*}
 	\end{proof}
+	\begin{example}			
+			\begin{minipage}{0.4\textwidth}
+				\[ 1)\ I = \int\limits_\gamma z \operatorname{Re}z \, dz \]
+			\end{minipage}
+			\begin{minipage}{0.4\textwidth}
+				\begin{tikzpicture}
+					\draw[->] (-1.5,0) -- (3,0) node[below] {$x$};
+					\draw[->] (0,-1.5) -- (0,3) node[left] {$y$};
+					\draw(0,0) -- (2.5,1.7);
+					\draw[dashed] (2.5,1.7) -- (2.5,0);
+					\draw[dashed] (2.5,1.7) -- (0,1.7);
+					\fill (2.5,1.7) circle (1pt);
+					\node[below] at (2.5,0) {$2$};
+					\node[left] at (0,1.7) {$1$};
+					\node[left] at (1.2,1) {$\gamma$};
+				\end{tikzpicture}
+			\end{minipage}
+	\end{example}
+	Выполним параметризацию кривой $ \gamma : z = x + i\dfrac{x}{2},\ x \in [0,\,2] $\\
+	$ dz = 1+\dfrac{i}{2}\,dx $
+	\[ I =  \int\limits_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\int\limits_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i \]
+	\newpage
+	\begin{example}			
+		\begin{minipage}{0.4\textwidth}
+			\[ 2)\ I = \int\limits_\gamma\operatorname{Im}z\,dz \]
+		\end{minipage}
+		\begin{minipage}{0.4\textwidth}
+			\begin{tikzpicture}
+				\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+				\draw[->] (0,-1.5) -- (0,3) node[left] {$y$};
+				\draw (-2,0) arc (180:0:2) -- cycle;
+				\node[left] at (1.6, 2) {$\gamma$};
+				\node[below] at (2, 0) {$1$};
+			\end{tikzpicture}
+		\end{minipage}
+	\end{example}
+	Выполним параметризацию кривой $ \gamma : z = e^{it},\ t \in [0,\, \pi]$\\
+	$ dz = ie^{it}\,dt $
+	\[ I = \int\limits_0^\pi \sin t\,ie^{it}\,dt = \int\limits_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\, dt =  \int\limits_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2} \]
+	\subsection{Свойства интеграла вдоль кривой.}
+	\begin{theorem*}
+		(Линейность)\\
+		\indent Пусть существуют интегралы $ \int\limits_\gamma f(z)\,dz $ и $ \int\limits_\gamma g(z)\,dz $. Тогда
+		\[ \forall c_1,\, c_2 \in \Cm \Rightarrow \exists \int\limits_\gamma c_1f(z) + c_2g(z)\,dz = c_1\int\limits_\gamma f(z)\,dz + c_2\int\limits_\gamma g(z)\,dz  \]
+	\end{theorem*} 
+	\begin{theorem}
+		При изменении направления обхода вдоль кривой, знак интеграла сменится на противоположный.
+		\[ \int\limits_{\gamma^-}f(z)\,dz = -\int\limits_\gamma f(z)\,dz \]
+	\end{theorem}
+	\begin{theorem}
+		Пусть $ \gamma = \gamma_1 \cup \gamma_2 $. Тогда
+		\[ \int\limits_\gamma f(z)\,dz = \int\limits_{\gamma_1}f(z)\,dz + \int\limits_{\gamma_2}f(z)\,dz \]
+	\end{theorem}
+	\begin{theorem*}
+		\[ \left| \int\limits_\gamma f(z)\,dz\right| \leqslant \int\limits_\gamma |f(z)|\,ds \quad |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода})\]
+	\end{theorem*}
+	\begin{proof}
+		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
+		\[ \left| \sum\limits_{k=1}^n f(\xi_k)\Delta z_k\right| \leqslant \sum\limits_{k=1}^n |f(\xi_k)||\Delta z_k| \leqslant \sum\limits_{k=1}^n |f(\xi_k)|\Delta s_k \xrightarrow[\lambda \to 0]{} \text{ Получаем исходное неравенство.} \] 
+	\end{proof}
+	\begin{theorem*}
+		(Замена переменной)\\ \indent
+		Пусть $ z = \psi(\xi) $ взаимнооднозначно переводит Жорданову кривую $ \gamma_\xi $ на $ \gamma_z.\text{ Пусть }\\ \psi(\xi) \in \mathcal{A}(\gamma_\xi),\ f(z) = C(\gamma_z)$. Тогда
+		\[ \int\limits_{\gamma_z} f(z)\,dz =  \int\limits_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi \]
+	\end{theorem*}
+	\subsection{Интегральная теорема Коши}
+	\begin{theorem*}
+		(Интегральная теорема Коши для одосвязной области)\\
+		\indent Пусть $ f(z) \in \mathcal{A}(D)$, где $ D $ --- односвязная область.
+		Тогда для всякой кусочно-гладкой кривой Жордана $ \gamma \subset D \Rightarrow \oint\limits_\gamma f(z) \, dz = 0 $. 
+	\end{theorem*}
+	\begin{proof}
+		\[ \int\limits_\gamma f(z) \, dz = \int\limits_\gamma (udx - vdy) + i\int\limits_\gamma (udx + vdy) \]
+		Применим формулу Грина.$\ P,\,Q \in C^1(\partial G)$
+		\[ \int\limits_{\partial G} Pdx + Qdy = \iint\limits_G Q'_x - P'_y\, dxdy\]
+		$ f(z) \in \mathcal{A}(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда
+		\begin{align*}
+			&\int\limits_\gamma udx - vdy = \iint\limits_G -v'_x - u'_y\, dxdy = 0\\
+			&\int\limits_\gamma vdx + udy = \iint\limits_G u'_x + v'_y\, dxdy = 0 
+		\end{align*}
+		Не закончено 
+	\end{proof}
+	\newpage
+	\section{Лекция 15}
 \end{document}
