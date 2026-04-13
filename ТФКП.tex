@@ -4668,12 +4668,12 @@
 	\int\limits_\alpha^\beta (P(x, y)x' + Q(x, y)y')\,dt, \]
 	где $ d\bar s = (dx,\ dy),\quad \bar g(x, y) = (P(x, y),\ Q(x, y)) $
 	\begin{theorem}
-		Пусть существуют криволинейные интегралы 2-ог рода: $ \int\limits_\gamma udx + vdy,\ \int\limits_\gamma udx - vdy $. Тогда\\
-		\[ \int\limits_\gamma f(z)\,dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma udx + vdy \]
+		Пусть существуют криволинейные интегралы 2-ог рода: $ \int\limits_\gamma vdx + udy,\ \int\limits_\gamma udx - vdy $. Тогда\\
+		\[ \int\limits_\gamma f(z)\,dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma vdx + udy \]
 	\end{theorem}
 	\begin{proof}
 		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
-		\[ = \lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k + v(\xi_k)\Delta y_k) \]
+		\[ = \lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k) \]
 	\end{proof}
 	\begin{theorem}
 		Пусть $ f(z) \in C(\gamma) $, где $ \gamma $ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\ \beta] $. Тогда
@@ -4754,23 +4754,44 @@
 	\end{theorem*}
 	\subsection{Интегральная теорема Коши}
 	\begin{theorem*}
-		(Интегральная теорема Коши для одосвязной области)\\
+		(Интегральная теорема Коши для односвязной области)\\
 		\indent Пусть $ f(z) \in \mathcal{A}(D)$, где $ D $ --- односвязная область.
-		Тогда для всякой кусочно-гладкой кривой Жордана $ \gamma \subset D \Rightarrow \oint\limits_\gamma f(z) \, dz = 0 $. 
+		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $ \gamma \subset D$ \[ \oint\limits_\gamma f(z) \, dz = 0. \] 
 	\end{theorem*}
 	\begin{proof}
 		\[ \int\limits_\gamma f(z) \, dz = \int\limits_\gamma (udx - vdy) + i\int\limits_\gamma (udx + vdy) \]
 		Применим формулу Грина.$\ P,\,Q \in C^1(\partial G)$
-		\[ \int\limits_{\partial G} Pdx + Qdy = \iint\limits_G Q'_x - P'_y\, dxdy\]
+		\[ \oint\limits_\gamma Pdx + Qdy = \iint\limits_G Q'_x - P'_y\, dxdy\]
 		$ f(z) \in \mathcal{A}(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда
 		\begin{align*}
-			&\int\limits_\gamma udx - vdy = \iint\limits_G -v'_x - u'_y\, dxdy = 0\\
-			&\int\limits_\gamma vdx + udy = \iint\limits_G u'_x + v'_y\, dxdy = 0 
+			&\oint\limits_\gamma udx - vdy = \iint\limits_G -v'_x - u'_y\, dxdy = 0\\
+			&\oint\limits_\gamma vdx + udy = \iint\limits_G u'_x + v'_y\, dxdy = 0 
 		\end{align*}
-		Не закончено 
 	\end{proof}
+	\begin{remark}
+		Теорема доказана при доп. предположении о гладкости ф-ий $u,\,v:\ u,\,v\in C^1(D)\\ 
+		u'_x,\,u'_y,\,v'_x,\,v'_y \in C(D). $
+	\end{remark}
 	\newpage
 	\section{Лекция 15}
+	\begin{consequence*}
+		(Альтернативная формулировка)\\
+		\indent Пусть $ f(z)\in\mathcal A(D) \cup C(\partial D),\ D$ --- односвязная область. Тогда
+		\[ \oint\limits_\gamma f(z) \, dz = 0. \]
+	\end{consequence*}
+	\begin{consequence}
+		Пусть $ f(z)\in\mathcal A(D),\ D$ --- односвязная область. Тогда $ \forall\, \gamma_1,\,\gamma_2$ --- гладких или кусочно гладких кривых Жордана имеющих общее начало и конец выполено
+		\[ \oint\limits_{\gamma_1} f(z)\,dz = \oint\limits_{\gamma_2} f(z)\,dz \]
+	\end{consequence}
+	\begin{proof}
+		Если $ \gamma_1,\,\gamma_2 $ не имеют других общих точек, кроме начала и конца. Рассмотрим уривую $ \gamma = \gamma_1\cap\gamma_2^- $ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
+		\[ \oint\limits_\gamma f(z)\,dz = 0\ \Rightarrow\ \oint\limits_{\gamma_1} f(z)\,dz + \oint\limits_{\gamma_2^-} f(z)\,dz = 0\ \Leftrightarrow\ \oint\limits_{\gamma_1} f(z)\,dz = \oint\limits_{\gamma_2} f(z)\,dz. \]
+		Если $ \gamma_1,\,\gamma_2 $ имеют общие точки, отличающеися от начала и конца.\\ 
+		
+		Пусть $ \gamma = \gamma_1 \cap \gamma_2^- = (\bigcup\limits_{j=1}^N \Gamma_j) \cup(\bigcup\limits_{l=1}^M K_l) $, где $ \Gamma_j $ --- замкнутые контуры, $ K_l $ --- остальные кривые.
+	\end{proof}
+	\newpage
+
 	\begin{example}
 		\[\int \limits_{|z-\pi| = \pi} \sin^{n}(z) dz = 0 \text{ --- по теореме Коши для односвязной области}\]
 	\end{example} 
@@ -4802,7 +4823,8 @@
 		Неопределенный интеграл функции $f(z)$ в области $D$ называют множество всех первообразных $f(z)$ в $D$.\\
 		\textbf{Обозначение: } $\int f(z) dz$
 	\end{definition}
-	\begin{theorem} Пусть $f(z) \in C(D), D \text{--- односвязная область и } \forall \gamma \subset D \text{--- замкнутый или СТЕРЛА НАХУЙ БЛЯТЬ}$ \\ 
+	\begin{theorem} 
+		Пусть $f(z) \in C(D), D \text{--- односвязная область и } \forall \gamma \subset D \text{--- замкнутый или СТЕРЛА НАХУЙ БЛЯТЬ}$ \\ 
 	$F(z) = \int_{z_0}^z f(\xi) d\xi \in \mathcal{A(D)}$ и $F(z)$ --- первообразная $f(z)$ в $D$, $z_0 \in D$ - фиксированное.
 	\end{theorem}		
 		\begin{proof}
@@ -4824,44 +4846,39 @@
 			\end{align*}
 		\end{proof}
 		
-		%%%%ВЫРВАН КУСОК
-		
 		\textbf{Формула интегрирования по частям}
 		\begin{theorem}
 			Пусть $f(z), g(z) \in \mathcal{A}(D)$, 
 		\end{theorem}
 		
 		\subsection{Интегральная формула Коши}
-		\textbf{}
 		\begin{theorem}
 			Пусть $f(z) \in \mathcal{A}(D), D$ --- односвязная область. Тогда $\forall z \in D$ и $\forall \gamma \subset D$ --- замкнутая гладкая или кусочно-гладкая кривая Жордана: $z \in G$, где $\gamma = \partial G \implies$ 
 			\[ f(z) = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{f(\xi)}{\xi - z}\, d\xi \]
 		\end{theorem}
-		\begin{proof}
-			\begin{align*}
-				K_r = \{\xi \in \Cm: |\xi - z| < r\} \subset G
-				\tilde{G} = G \setminus \overline{K_r} \\
-				\frac{f(\xi)}{\xi - z} \in \mathcal{A}(\tilde{G})\cap C(\overline{\tilde{G}})\\
-				\text{По интегральной теореме Коши:} \oint \limits_{\partial G} \frac{f(\xi) d\xi}{\xi - z} = 0 \implies \oint \limits_{\partial \tilde{G}} \frac{f(\xi)d\xi}{\xi - z} = \oint \limits_{\gamma} \frac{f(\xi)d\xi}{\xi - z} + \oint \limits_{\overline{K_r^{-}}} \frac{f(\xi)d\xi}{\xi - z} = \oint \limits_{\gamma} \frac{f(\xi)d\xi}{\xi - z} - \oint \limits_{\overline{K_r}} \frac{f(\xi)d\xi}{\xi - z} \\ 
-				\oint \limits_{\gamma} \frac{f(\xi)d\xi}{\xi - z} = \oint \limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} \\
-				K_r: \xi = z + re^{it}, 0 \leq t \leq 2\pi \\
-				\oint \limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}}\\
-				d \xi = r cdot ie^{it}dt \\
-				\oint \limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} = \int_0^{2pi} \frac{f(z + re^{it})}{re^{it} \cdot r \cdot ie^{it}dt \\
-				f(z + re^{it}) - f(z) = f'(z) \cdot re^{it} + \overline{o}(r), r \xrightarrow{} 0+ \\
-				\oint \limits{K_r} \frac{f(\xi)d\xi}{\xi - z} = i(\int_0^{2\pi} f(z)dt + r \int_0^{2pi} f'(z)e^{it}dt + \int_0^{2pi} \overline{o}(r)dt) \\
-				\oint \limits{\gamma} \frac{f(\xi) \xi}{\xi - z} = i f(z) \cdot 2\pi + i r f'(z) \int_0^2\pi e^{it} dt + i \int_0^{2 \pi} \overlint{o}(r) dt \\
-				\oint \gamma \frac{f(\xi)d\xi}{\xi - z} = 2 \pi i \cdot f(z) \\
-			\end{align*}
-		\end{proof}
-		\begin{theorem*} Интегральная теорема Коши для многосвязной области. \\
-		\indent Пусть $f(z) \in mathcal{A}(D)$. Тогда $\forall z \in D$ и $\forall G \subset D$ многосвязная область: $z \in G \implies$
-		\[f(z) = \frac{1}{2\pi i} \oint \limits_{\partial G} \frac{f(\xi)d\xi}{\xi - z}\]
-		\end{theorem*}
-		\begin{remark}
-			$G$ --- $(N+1)$-связная область
-		\end{remark}
-		\begin{example}
+		\[ 
+		K_r: \xi = z + re^{it}, 0 \leq t \leq 2\pi \\
+		\oint\limits_{K_r}\frac{f(\xi) d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}}\\
+		d\xi = r \cdot ie^{it}dt
+		\]
+		
+		\[ \oint\limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} = \int\limits_0^{2pi} \frac{f(z + re^{it})}{re^{it}} \cdot r \cdot ie^{it}dt \\
+			f(z + re^{it}) - f(z) = f'(z) \cdot re^{it} + \uuline o(r), r \rightarrow 0+   \]
+		
+		\[\oint\limits_{K_r} \frac{f(\xi)d\xi}{\xi - z} = i(\int_0^{2\pi} f(z)\,dt + r \int_0^{2pi} f'(z)e^{it}\,dt + \int_0^{2pi} \uuline o(r)\,dt) \\
+		\oint\limits_\gamma\frac{f(\xi) \xi}{\xi - z} = if(z) \cdot 2\pi + i r f'(z) \int_0^2\pi e^{it} dt + i \int_0^{2 \pi} \bar o(r) dt \\
+		\oint\gamma\frac{f(\xi)d\xi}{\xi - z} = 2\pi i\cdot f(z) 
+		K_r = \{ \xi\in\Cm: |\xi - z| < r \} \subset G \tilde G = G \setminus \bar K_r \\
+		\frac{f(\xi)}{\xi - z} \in \mathcal{A}(\tilde G)\cap C(\bar G)\\
+		\text{По интегральной теореме Коши: } \oint\limits_{\partial G} \frac{f(\xi)\, d\xi}{\xi - z} = 0 \implies \oint\limits_{\partial \tilde G} \frac{f(\xi)\,d\xi}{\xi - z} = \oint\limits_\gamma \frac{f(\xi)d\xi}{\xi - z} + \oint\limits_{\bar K_r^-} \frac{f(\xi)d\xi}{\xi - z} = \oint\limits_\gamma \frac{f(\xi)d\xi}{\xi - z} - \oint\limits_{\bar K_r} \frac{f(\xi)d\xi}{\xi - z} \\ 
+		\oint \limits_\gamma \frac{f(\xi)d\xi}{\xi - z} = \oint\limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} \\ \]
+			\begin{theorem*} Интегральная теорема Коши для многосвязной области. \\
+				\indent Пусть $f(z) \in mathcal{A}(D)$. Тогда $\forall z \in D$ и $\forall G \subset D$ многосвязная область: $z \in G \implies$
+				\[f(z) = \frac{1}{2\pi i} \oint \limits_{\partial G} \frac{f(\xi)d\xi}{\xi - z}\]
+			\end{theorem*}
+			\begin{remark}
+				$G$ --- $(N+1)$-связная область
+			\end{remark}
 			\begin{align*}
 				J = \frac{1}{2 \pi i} \oint \frac{d \xi}{\xi^2 + 1}\\
 				J = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi + i} \\
@@ -4870,5 +4887,4 @@
 				J = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi - i} \\
 				J = f(-i) = -\frac{1}{2i} \implies I = \frac{2 \pi i}{2 i} = -\pi
 			\end{align*}
-		\end{example}
 \end{document}
