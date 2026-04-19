@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{article}
-
+\usepackage{extarrows}
 \usepackage{mathtools}
 \usepackage[normalem]{ulem}
 %\usepackage{graphicx}
@@ -28,7 +28,6 @@
 \usepackage[left=25mm, right=10mm, top=20mm, bottom=20mm]{geometry}
 \renewcommand{\baselinestretch}{1.25}
 
-
 \renewcommand{\thesection}{\arabic{section}.} % Для разделов
 \renewcommand{\thesubsection}{\thesection\arabic{subsection}.} % Для подразделов
 \renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.} % Для подподразделов
@@ -56,6 +55,7 @@
 \newtheorem*{example}{Пример \\ \indent}
 \newtheorem*{example*}{Пример}
 \newtheorem*{remark}{Замечание \\ \indent}
+\newtheorem*{remark*}{Замечание}
 \newtheorem*{solve}{Решение \\ \indent}
 
 \usepackage{titleps}
@@ -86,6 +86,8 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\kappa}{\varkappa}
+
+\renewcommand{\iff}{\;\xLeftrightarrow{\hspace{0.25cm}}\;}
 
 \usepackage[
 unicode=true,
