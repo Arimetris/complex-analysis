@@ -113,11 +113,9 @@
 	\end{statement*}
 	\begin{proof}
 		\[ 
-			e^s = \sum\limits_{k=0}^{\infty}\frac{s^k}{k!}, 
-			\ 
-			\sin s = \sum\limits_{k=0}^{\infty}(-1)^{k}\frac{s^{2k+1}}{(2k+1)!},
-			\ 
-			\cos s = \sum\limits_{k=0}^{\infty}(-1)^{2k}\frac{s^{2k}}{(2k)!}
+			e^s = \sum\limits_{k=0}^{\infty}\frac{s^k}{k!}, \
+			\sin s = \sum\limits_{k=0}^{\infty}(-1)^k\frac{s^{2k+1}}{(2k+1)!},\ 
+			\cos s = \sum\limits_{k=0}^{\infty}(-1)^k\frac{s^{2k}}{(2k)!}
 		\]
 		\begin{multline*}
 			e^{i\phi} = \sum\limits_{k=0}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m + 1 \} = 
@@ -341,7 +339,7 @@
 	\subsection{Пределы последовательностей.}
 	\begin{definition}
 		Число $z$ называется \textbf{пределом последовательности} $\{z_n\}$, если
-		\[ \forall\,\epsilon>0 \ \exists \, \delta = \delta(\epsilon)>0 : \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n - z| < \epsilon \iff \lim\limits_{n \to \infty} z_n = z \]
+		\[ \forall\,\epsilon>0 : \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n - z| < \epsilon \iff \lim\limits_{n \to \infty} z_n = z \]
 	\end{definition}
 	\begin{definition}
 		Число $\infty$ называется\textbf{ пределом последовательности} $\{z_n\}$, если
@@ -624,7 +622,7 @@
 	\subsection{Аналитические функции}
 	В следующих определениях $f(z)$ --- однозначная функция.
 	\begin{definition}
-		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если \\ $\exists \ \epsilon > 0 : f(z)$ дифференцируема в $O_{\epsilon}(z_0)$. 
+		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists\,O_\epsilon(z_0)$, в которой функция $f(z)$ дифференцируема. 
 	\end{definition} 
 	\begin{definition}
 		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если \\
@@ -646,8 +644,8 @@
 	
 	\section{Лекция 6}
 	\subsection{Геометрический смысл модуля и аргумента производной}
-	Возьмем функцию $f(z) \in \mathcal{A}(D), z_0 \in D \text{, где } f'(z_0) \neq 0$, а так же рассмотрим гладкую кривую Жордана:
-	\[ \gamma_z = \{ z \in \Cm : z = z(t), \alpha \leq t \leq \beta \}\]
+	Возьмем функцию $f(z) \in \mathcal{A}(D),\ z_0 \in D, \text{ где } f'(z_0) \neq 0$, а так же рассмотрим гладкую кривую Жордана
+	\[ \gamma_z = \{ z \in \Cm : z = z(t),\ t \in [\alpha,\,\beta] \}\]
 	Построим отображение нашей кривой из плоскости $z$ в плоскость $\omega$:
 	\begin{center}
 		\begin{tikzpicture}[
@@ -763,18 +761,20 @@
 	$\begin{cases} \arg (\omega'(t_0)) = \theta \\ 
 		\arg (f'(z_0)) = \alpha \\ 
 		\arg (z'(t_0)) = \beta 
-	\end{cases}$ получаем, что:
+	\end{cases}$ 
+	получаем
 	\[\arg (\omega'(t_0)) = \arg (f'(z_0)) + \arg (z'(t_0)) \Rightarrow \theta = \alpha + \beta\]
 	Тогда $\alpha = \theta - \beta$ --- угол поворота кривой в точке $z_0$
 	\begin{statement*}
 		(Геометрический смысл аргумента производной)\\ \indent
-		Угол между жордановыми кривыми в $z_0$ равен углу между их образами в $\omega_0$.
+		Угол между гладкими Жордановыми кривыми в $z_0$ равен углу между их образами в $\omega_0$.
 	\end{statement*}
-	\vspace{0.5cm}
-	Рассмотрим выражение $|\underbrace{f'(z_0)}_{\mathclap{K \neq 0}}| = \lim\limits_{\Delta t \to 0}\left|\frac{\Delta \omega}{\Delta t}\right|$, откуда следует его представление в виде:
-	\[|\Delta \omega | = K|\Delta z| + \overline{\overline{o}}(|\Delta t|)\]
+	
+	Рассмотрим выражение 
+	\[ K = |\underbrace{f'(z_0)}_{\mathclap{\neq\, 0}}| = \lim\limits_{\Delta z \to 0}\left|\frac{\Delta \omega}{\Delta z}\right| \]
+	Откуда следует его представление в виде
+	\[ |\Delta \omega | = K|\Delta z| + \overline{\overline{o}}(|\Delta t|) \]
 	Из этого следует, что бесконечно малые фигуры преобразуются в подобные им, при этом число $K$ называется \textbf{коэффициентом подобия}.
-	\vspace{0.5cm}
 	\begin{statement*}
 		(Геометрический смысл модуля производной)\\ \indent
 		При отображении кривых сохраняется коэффициент подобия: $|\Delta \omega| \approx k |\Delta z|$.
@@ -786,9 +786,10 @@
 	\begin{theorem}
 		Пусть $f(z) \in \mathcal{A}(D), \ f(z) \ \cancel{\equiv} \ \mathrm{const}, \ t \in D$, тогда $D_\omega = f(D_z)$ --- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
 	\end{theorem}
-	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z_0))$ и $f'(z_0) \neq 0$, тогда $\exists \, \delta > 0$ в $O_\delta(\omega_0),\ \omega_0 = f(z_0)$ определена обратная для $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)) \Rightarrow \psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
-	\end{theorem}
+	\begin{theorem*}
+		(Аналитичность обратной функции)\\ \ \indent
+		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$, тогда $\exists\,O_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
+	\end{theorem*}
 	\begin{statement}
 		Пусть $f(z) \in \mathcal{A}(D_z), f: D_z \longrightarrow D_{\omega}$, гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
 	\end{statement}
@@ -892,7 +893,7 @@
 	Есть некоторая гармоническая функция, как построить аналитическую функцию, для которой она ее вещественная или мнимая часть?
 	
 	\begin{theorem}
-		Пусть $u(x,\,y)$ гармоническая в односвязной области $D$ функция, тогда $\exists$ такая однозначная функция $f(z)$, что $f(z) \in \mathcal{A}(D)$ и $u(x,\,y) = \operatorname{Re}f(z)$, причем $f(z)$ определяется с точностью до аддитивной мнимой постоянной.
+		Пусть $u(x,\,y)$ гармоническая в односвязной области $D$ функция, тогда $\exists$ такая однозначная функция $f(z)$, что $f(z) \in \mathcal{A}(D)$ и $u(x,\,y) = \operatorname{Re}f(z)$, причем $f(z)$ определяется с точностью до мнимой постоянной.
 	\end{theorem}
 	\begin{proof}
 		Построим гармонически-сопряженную функцию.\\ 
@@ -919,8 +920,7 @@
 	\[\begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \Rightarrow v(x, y) = \int\limits_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy)\]
 	
 	\begin{example}
-		Пусть $u = e^{-y}\cos x$, $z = x + iy \in \Cm$.
-		Найти такую $f(z)$, что $Re f = u$.
+		Пусть $u = e^{-y}\cos x$. Найти такую $f(z)$, что $Re f = u$.
 	\end{example}
 	
 	\begin{proof}
@@ -1093,7 +1093,7 @@
 	\end{definition}
 	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D), z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists \, U_\epsilon(z_0) \subset D_z$: отображение $\omega = f(z)$ конформно на $U_\epsilon(z_0)$.
+		Пусть $f(z) \in \mathcal{A}(D),\ z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists$ такая $U_\epsilon(z_0) \subset D_z$, что отображение $\omega = f(z)$ конформно на $U_\epsilon(z_0)$.
 	\end{theorem}
 	
 	\begin{proof}
@@ -1102,19 +1102,19 @@
 	\end{proof}
 	\begin{theorem} 
 		Если функция $f(z) \in \mathcal{A}(D)$ и положим отображение $\omega = f(z)$ однолистно на $D_z$. Тогда отображение $\omega = f(z)$ конформно на $D_z$.
-	\end{theorem}	
+	\end{theorem}
 	Бесконечность: \\ 
 	1) $z_0 \xrightarrow{f} \infty \quad (\frac{1}{\omega} = \frac{1}{f(z)})$
 	\begin{definition}
-		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(z_0)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\xi = \frac{1}{f(z)}$ конформно переводит $\mathcal{U}_\epsilon(z_0)$ на $\mathcal{U}_\mu(0)$
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $U_\epsilon(z_0)$ на $U_\delta(\infty)$, если отображение $\xi = \dfrac{1}{f(z)}$ конформно переводит $U_\epsilon(z_0)$ на $U_\mu(0)$
 	\end{definition}
 	2) $\infty \xrightarrow{f} \omega_0 \quad (\eta = \frac{1}{z})$
 	\begin{definition}
-		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\omega_0)$, если отображение $\omega = f(\frac{1}{z})$ конформно переводит $\mathcal{U}_r(0) \text{ на } \mathcal{U}_\delta(\omega_0)$
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $U_\epsilon(\infty)$ на $U_\delta(\omega_0)$, если отображение $\omega = f(\dfrac{1}{z})$ конформно переводит $U_r(0) \text{ на } U_\delta(\omega_0)$
 	\end{definition}
-	3) $\infty \xrightarrow{f} \infty \quad (\eta = \frac{1}{z}, \xi = \frac{1}{\omega})$
+	3) $\infty \xrightarrow{f} \infty \quad (\eta = \dfrac{1}{z}, \xi = \dfrac{1}{\omega})$
 	\begin{definition}
-		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $\mathcal{U}_\epsilon(\infty)$ на $\mathcal{U}_\delta(\infty)$, если отображение $\frac{1}{f(\frac{1}{z})}$ конформно переводит $\mathcal{U}_\mu (0) \text{ на } \mathcal{U}_\mathcal{M} (0)$
+		Будем говорить, что отображение $\omega = f(z)$ конформно переводит $U_\epsilon(\infty)$ на $U_\delta(\infty)$, если отображение $\dfrac{1}{f(\dfrac{1}{z})}$ конформно переводит $U_\mu (0) \text{ на } U_\mathcal{M}(0)$
 	\end{definition}
 	
 	\newpage
@@ -1489,8 +1489,8 @@
 		\end{tikzpicture}
 	\end{center}
 	В верхней полуплоскости найдется такая точка $ a $, что $a \mapsto 0,\ \operatorname{Im}a > 0$.\\
-	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точки $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \Rightarrow w^* = \frac{1}{w}$)\\
-	\[ f(z) = \frac{Az + B}{Cz + D} = 0 \Rightarrow
+	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точки $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (это берется из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \Rightarrow w^* = \frac{1}{w}$)\\
+	\[ f(z) = \frac{Az + B}{Cz + D} \Rightarrow
 	\begin{cases}
 		Aa + B = 0\\
 		C\bar a + D = 0
@@ -1547,7 +1547,7 @@
 	\[ f(z) = \tilde K\frac{z - a}{z - \frac{1}{\bar a}} = K\frac{z-a}{1-\bar az} \]
 	Точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
 	\[ 1 \mapsto e^{it} \Rightarrow K\frac{1-a}{1-\bar a} = e^{it} \Rightarrow  |K|\frac{|1-a|}{|1-\bar a|} = 1 \Rightarrow |K| = 1 \]
-	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az} e^{i \alpha}, \ |a| > 0, \ \alpha \in \R$\\
+	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az} e^{i \alpha}, \ 0 < |a| < 1, \ \alpha \in \R$\\
 	\begin{example}
 		Найти такое отображение $ f $, что $K_z$ переводит в $K_w$, $w(2) = i,\ \arg w(2) = 0$\\
 		$K_z = \{ z \in \Cm : |z - 2| < 1 \}$, $K_w = \{w \in \Cm : |w - 2i| < 2\}$ 
@@ -4591,9 +4591,8 @@
 		\end{enumerate}
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
 	\end{example}
-	
 	\section{Лекция 14}
-	\subsection{Итегрирование функций комплексного пременного.}
+	\subsection{Интегрирование функций комплексного пременного.}
 	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
 	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
 	\leqslant n}|\Delta z_k| $.
