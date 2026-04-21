@@ -510,7 +510,7 @@
 		Пусть функция $f(z)$ определена на области $D$, $z_0 \in D$. Тогда следующие условия эквивалентны:
 		\begin{enumerate}
 			\item $f(z)$ дифференцируема в точке $z_0$.
-			\item Функции $u(x,y)$ и $v(x,y)$ дифференцируемы в точке $(x_0,\, y_0)$ и удовлетворяют условиям Коши–Римана:
+			\item Функции $u(x,\,y)$ и $v(x,\,y)$ дифференцируемы в точке $(x_0,\, y_0)$ и удовлетворяют условиям Коши–Римана:
 			\[
 			\begin{cases}
 				u'_x(x_0,\,y_0) = v'_y(x_0,\,y_0)\\
@@ -553,6 +553,15 @@
 			&= (a+ib)(\Delta x + i\Delta y) + (\beta + i\delta)\rho = A\Delta z + \alpha(z_0;\,\Delta z)|\Delta z|, \lim\limits_{\Delta z \to 0}\alpha = 0.
 		\end{align*}
 	\end{proof}
+	\begin{consequence*}
+		(Различные выражения для производной функции)
+		\begin{align*}
+			&f'(z_0) = u'_x(x_0,\,y_0) + iv'_x(x_0,\,y_0)\\
+			&f'(z_0) = v'_y(x_0,\,y_0) + iv'_x(x_0,\,y_0)\\
+			&f'(z_0) = u'_x(x_0,\,y_0) - iu'_y(x_0,\,y_0)\\
+			&f'(z_0) = v'_y(x_0,\,y_0) - iu'_y(x_0,\,y_0)
+		\end{align*}
+	\end{consequence*}
 	\newpage
 	\section{Лекция 5}
 	\subsection{Примеры}
