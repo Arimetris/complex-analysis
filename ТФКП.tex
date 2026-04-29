@@ -1,7 +1,6 @@
 \input{preamble}
 
 \begin{document}
-	
 	\begin{titlepage}
 		\begin{center}
 			{\fontsize{16}{18}\selectfont ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ}\\[0.4cm]
@@ -25,15 +24,12 @@
 			{\fontsize{12}{14}\selectfont Москва, 2026 год}
 		\end{center}
 	\end{titlepage}
-	
 	\newpage
 	\thispagestyle{empty}
-	
 	\begin{center}
 		\vspace*{2cm}
 		{\fontsize{16}{18}\selectfont\bfseries Благодарности}\\[1.5cm]
 	\end{center}
-	
 	\begin{flushleft}
 		\setlength{\parindent}{0pt}
 		\setlength{\parskip}{1.2em}
@@ -56,7 +52,6 @@
 			{\fontsize{11}{13}\selectfont Москва, 2026 год}
 		\end{flushright}
 	\end{flushleft}
-	
 	\newpage
 	\pagestyle{main}
 	\tableofcontents
@@ -64,76 +59,67 @@
 
 	\section{Лекция 1}
 	\subsection{Комплексные числа и комплексная плоскость.}
-	
 	\begin{definition}
 		\textbf{Комплексным числом} называют выражение вида: 
 		$z = a+ib, \text{ где } a,b \in \R \\ \text{и } i \text{--- мнимая единица} \ (i^2 = -1)$.
 	\end{definition}
-	
 	\begin{flushleft}
 		\begin{minipage}{0.35\textwidth}
 			\begin{tikzpicture}[>=stealth]
-				% Оси
 				\draw[->] (-0.5,0) -- (4,0) node[below] {$x$};
 				\draw[->] (0,-0.5) -- (0,3) node[left] {$y$};
-				
-				% Вектор
 				\coordinate (O) at (0,0);
 				\coordinate (A) at (3,2);
 				\draw[->, thick, black] (O) -- (A) node[above right] {$z$};
 				\draw[dashed] (A) -- (3,0) node[below] {$x$};
 				\draw[dashed] (A) -- (0,2) node[left] {$y$};
-				
-				% Угол φ
 				\draw (1,0) arc (0:atan2(2,3):1) node[midway, right] {$\phi$};
 			\end{tikzpicture}
 		\end{minipage}
 		\begin{minipage}{0.3\textwidth}
 			\[ 
 			\begin{cases}
-				x = r\cos{\phi}\\
-				y = r\sin{\phi}
+				x = r\cos\phi\\
+				y = r\sin\phi
 			\end{cases} 
 			\]
 		\end{minipage}
 	\end{flushleft}
-	
 	\noindent
-	$ |z| = r = \sqrt{x^2 + y^2}, \ r\geqslant0. $\\
+	$ |z| = r = \sqrt{x^2 + y^2},\ r\geqslant0. $\\
 	$ \arg z = \phi \text{ --- главное значение аргумента } z,\ \phi\in(-\pi, \pi].$\\
-	$ \operatorname{Arg} z = \phi +2\pi k,\ k \in \Z$. \\
-	$ \operatorname{Re} z = x \text{ --- вещественая часть. }$\\
-	$ \operatorname{Im} z = y \text{ --- мнимая часть. }$\\
-	$ z = r (\cos\phi + i\sin\phi) \text{ --- тригонометрическая форма записи. }$\\
-	$ z = re^{i\phi} \text{ --- показательная форма записи. }$
-	
+	$ \operatorname{Arg} z = \phi + 2\pi k,\ k\in\Z$. \\
+	$ \Re z = x \text{ --- вещественная часть. }$\\
+	$ \Im z = y \text{ --- мнимая часть. }$\\
+	$ z = r(\cos\phi + i\sin\phi) \text{ --- тригонометрическая форма записи. }$\\
+	$ z = re^{i\phi}\text{ --- показательная форма записи. }$
 	\begin{statement*}
 		(Формула Эйлера)
-		\[ e^{i\phi} = \cos \phi + i\sin \phi, \ \forall \phi \in \R \]
+		\[ e^{i\phi} = \cos\phi + i\sin\phi,\ \forall\phi\in\R \]
 	\end{statement*}
 	\begin{proof}
 		\[ 
-			e^s = \sum\limits_{k=0}^{\infty}\frac{s^k}{k!}, \
-			\sin s = \sum\limits_{k=0}^{\infty}(-1)^k\frac{s^{2k+1}}{(2k+1)!},\ 
-			\cos s = \sum\limits_{k=0}^{\infty}(-1)^k\frac{s^{2k}}{(2k)!}
+			e^s = \Sum_{k=0}^{\infty}\frac{s^k}{k!}, \
+			\sin s = \Sum_{k=0}^{\infty}(-1)^k\frac{s^{2k+1}}{(2k+1)!},\ 
+			\cos s = \Sum_{k=0}^{\infty}(-1)^k\frac{s^{2k}}{(2k)!}
 		\]
 		\begin{multline*}
-			e^{i\phi} = \sum\limits_{k=0}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m, \ k = 2m + 1 \} = 
-			\sum\limits_{m=0}^{\infty} \frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} + 
-			\sum\limits_{m=0}^{\infty} \frac{i^{2m+1}\phi^{\mathrlap{2m+1}}}{(2m+1)!} = \\
-			= \sum\limits_{m=0}^{\infty} \frac{(-1)^m\phi^{\mathrlap{2m}}}{(2m)!} + 
-			i\sum\limits_{m=0}^{\infty} \frac{(-1)^m\phi^{\mathrlap{2m+1}}}{(2m+1)!} =
-			\cos{\phi} + i\sin{\phi}
+			e^{i\phi} = \Sum_{k=0}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m,\ k = 2m + 1 \} = 
+			\Sum_{m=0}^{\infty}\frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} +
+			\Sum_{m=0}^{\infty}\frac{i^{2m+1}\phi^{\mathrlap{2m+1}}}{(2m+1)!} = \\
+			= \Sum_{m=0}^{\infty}\frac{(-1)^m\phi^{\mathrlap{2m}}}{(2m)!} +
+			i\Sum\_{m=0}^{\infty}\frac{(-1)^m\phi^{\mathrlap{2m+1}}}{(2m+1)!} =
+			\cos\phi + i\sin\phi
 		\end{multline*}
 	\end{proof}
 	\newpage
 	\begin{consequence*}
-		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \ \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i} \]
+		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2},\ \sin\phi = \frac{e^{i\phi}-e^{-i\phi}}{2i} \]
 	\end{consequence*}
 	\begin{proof}
 		\begin{align}
-		&e^{i\phi} = \cos \phi + i\sin \phi \\
-		&e^{-i\phi} = \cos \phi - i\sin \phi
+		&e^{i\phi} = \cos\phi + i\sin\phi \\
+		&e^{-i\phi} = \cos\phi - i\sin\phi
 		\end{align}
 		\begin{flalign*}
 			&\frac{(1) + (2)}{2} \Rightarrow \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
@@ -143,24 +129,24 @@
 	\subsection{Операции над комплексными числами.}
 	\noindent
 	\begin{flalign*}
-		1) \ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2) & \\
-		2) \ &z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1) & \\
-		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} = r_1r_2e^{i(\phi_1+\phi_2)} & \\
-		3) \ &\bar z = x - iy & \\
-		\ & \bar{z} = \overline{re^{i\phi}} = re^{-i\phi} & \\
-		4) \ &\frac{z_1}{z_2} = \frac{z_1 \bar {z_2}}{z_2 \bar {z_2}} = \frac{z_1 \bar {z_2}}{|z_2|^2}, \ z_2 \ne 0 &\\
-		\ &\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)} &\\
-		5) \ & z_1 = z_2 \iff x_1 = x_2 \text{ и } y_1 = y_2 &\\
+		1)\ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2)&\\
+		2)\ &z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1)&\\
+		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} = r_1r_2e^{i(\phi_1+\phi_2)}&\\
+		3)\ &\bar z = x - iy&\\
+		\ & \bar{z} = \overline{re^{i\phi}} = re^{-i\phi} &\\
+		4)\ &\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar {z_2}}{|z_2|^2},\ z_2 \ne 0 &\\
+		\ &\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)}&\\
+		5)\ &z_1 = z_2 \iff x_1 = x_2\text{ и } y_1 = y_2&\\
 	\end{flalign*}
 	\newpage
 	\subsection{Расширенная комплексная плоскость.}
 	\noindent
 	\begin{align*}
-		&\Cm = \{ z = x+iy, \ x,y\in\R, \ i^2 = -1 \} \text{ --- Комплексная плоскость.} \\
-		&\overline\Cm = \Cm\cup\infty \text{ --- Расширенная комплексная плоскость.}
+		&\Cm = \{ z = x+iy,\ x,\,y\in\R,\ i^2 = -1 \} \text{ --- Комплексная плоскость.} \\
+		&\overline\Cm = \Cm\cup\infty\text{ --- Расширенная комплексная плоскость.}
 	\end{align*}
 	Наша цель, каждой точки плоскости поставить в соответсвие точку со сферы.\\ 
-	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\frac{1}{2})^2 = \frac{1}{4}\}$\\
+	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\dfrac{1}{2})^2 = \dfrac{1}{4}\}$\\
 	\includegraphics[width=1\textwidth]{Проекция.png}
 	Из подобия в треугольниках \textit{ABN} и \textit{SZN}: 
 	\[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
@@ -168,13 +154,13 @@
 	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$ \\
 	$\eta = \rho\sin\phi = r(1 - \zeta)\sin\phi = (1 - \zeta)y$\\
 	Подставляем в исходное уравнение:
-	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta-\frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta-1)\zeta = 0 \]
+	\[ (1 - \zeta)^2x^2 + (1 - \zeta)^2y^2 + (\zeta - \frac{1}{2})^2 = \frac{1}{4} \iff (1 - \zeta)^2(x^2 + y^2) + (\zeta - 1)\zeta = 0 \]
 	\[ (1 - \zeta)\bigg((1 - \zeta)(x^2+y^2)-\zeta\bigg) = 0 \]
 	\[
 	\begin{cases}
-		\xi   = \dfrac{x}{x^2+y^2+1} \\
-		\eta  = \dfrac{y}{x^2+y^2+1} \\
-		\zeta = \dfrac{x^2+y^2}{x^2+y^2+1} 
+		\xi   = \dfrac{x}{x^2 + y^2 + 1} \\
+		\eta  = \dfrac{y}{x^2 + y^2 + 1} \\
+		\zeta = \dfrac{x^2 + y^2}{x^2 + y^2 + 1} 
 	\end{cases}
 	\iff
 	\begin{cases}
@@ -189,7 +175,7 @@
 	При таком отображении: $(\infty \mapsto N)$
 	
 	\begin{statement*}
-		\[ \Cm \text{--- Метрическое пространство, где } \rho(z_1, z_2) = |z_1 - z_2|. \]
+		\[ \Cm \text{--- Метрическое пространство, где } \rho(z_1,\, z_2) = |z_1 - z_2|. \]
 	\end{statement*}
 	
 	\begin{proof}
@@ -219,8 +205,8 @@
 	\frac{e^\frac{i(n+1)x}{2} - e^\frac{-i(n+1)x}{2}}{2i}\cdot\frac{1}{\sin\frac{x}{2}}\cdot\frac{e^\frac{-ix}{2}}{e^{-\frac{i(n+1)x}{2}}} = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot e^\frac{inx}{2}
 	\end{flalign*}
 	
-	\[ S_1 = \operatorname{Re}S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2}, \ x \neq 2\pi k \]
-	\[S_2 = \operatorname{Im}S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2}, \ x \neq 2\pi k \]
+	\[ S_1 = \Re S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2}, \ x \neq 2\pi k \]
+	\[S_2 = \Im S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2}, \ x \neq 2\pi k \]
 	
 	\begin{flalign*}
 	\textbf{3)}\quad &\text{Дана рекурентная последовательность: } u_{n+2} = 2(u_{n+1} - u_n), \ u_0 = u_1 = 1&\\
@@ -245,10 +231,10 @@
 	\begin{flalign*}
 		\textbf{4)}\quad &f(x) = \frac{1}{x^2+1} = \frac{A}{x-i} + \frac{B}{x+i}= \frac{i}{2}\left( \frac{1}{x+i} - \frac{1}{x-i}\right) &\\
 		&f^{(k)}(x) = \frac{i(-1)^k k!}{2}\left( \frac{1}{(x+i)^{k+1}} -\frac{1}{(x-i)^{k+1}}\right) = \frac{i(-1)^k k!}{2}\left( \frac{(x-i)^{k+1}}{(x^2-1)^{k+1}} -\frac{(x+i)^{k+1}}{(x^2-1)^{k+1}}\right) &\\ \\
-		&(x-i)^{k+1} - (x+i)^{k+1} = \sum\limits_{j=0}^{k+1}\binom{k+1}{j} (-i)^j x^{k+1-j} - \sum\limits_{j=0}^{k+1}\binom{k+1}{j} i^j x^{k+1-j} = \{ k = 2m\} =&\\ 
-		&= 2i \sum\limits_{l=1}^{m+1}\binom{2m+1}{2l-1} (-1)^l x^{2m+1 - 2l+1}&\\
-		&f^{(2m)}(x) = \frac{-(2m)!}{(x^2+1)^{2m+1}}\sum\limits_{l=1}^{m+1}\binom{2m+1}{2l-1}(-1)^lx^{2(m-l+1)}\\
-		&f^{(2m+1)}(x) = \frac{(2m-1)!}{(x^2+1)^{2m}}\sum\limits_{l=1}^{m}\binom{2m}{2l-1}(-1)^lx^{2(m-l)+1}
+		&(x-i)^{k+1} - (x+i)^{k+1} = \Sum_{j=0}^{k+1}\binom{k+1}{j} (-i)^j x^{k+1-j} - \Sum_{j=0}^{k+1}\binom{k+1}{j} i^j x^{k+1-j} = \{ k = 2m\} =&\\ 
+		&= 2i\Sum_{l=1}^{m+1}\binom{2m+1}{2l-1} (-1)^l x^{2m+1 - 2l+1}&\\
+		&f^{(2m)}(x) = \frac{-(2m)!}{(x^2+1)^{2m+1}}\Sum_{l=1}^{m+1}\binom{2m+1}{2l-1}(-1)^lx^{2(m-l+1)}\\
+		&f^{(2m+1)}(x) = \frac{(2m-1)!}{(x^2+1)^{2m}}\Sum_{l=1}^{m}\binom{2m}{2l-1}(-1)^lx^{2(m-l)+1}
 	\end{flalign*}
 	\subsection{Многочлены и формула Муавра.}
 	\begin{theorem*}
@@ -259,7 +245,7 @@
 	\textbf{Формула Муавра}\\
 	Дано уравнение: $ z^n - A = 0 $ и $A = |A|e^{i(\arg A+2\pi k)}$. Тогда
 	\[ z_n = \sqrt[n]{|A|}e^\frac{i(\arg A+2\pi k)}{n},\  k = 0,\, \ldots,\, n-1. \]
-	Корни такого многочлена распологаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.\\
+	Корни такого многочлена располагаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.\\
 	
 	\begin{theorem*}
 		(Фробениуса)\\ \indent
@@ -269,13 +255,12 @@
 	\section{Лекция 3}
 	\subsection{Кривые и множества.}
 	\noindent
-	
 	\begin{definition}
 		\hspace{-0.93cm}
-		$ U_\epsilon(z_0) = \{\ z \in \Cm : |z-z_0|<\epsilon \ \} $\\
-		$ \mathring U_\epsilon(z_0) = \{\ z \in \Cm : 0<|z-z_0|<\epsilon \ \} $\\
-		$ U_\epsilon(\infty) = \{\ z \in \overline\Cm : |z|>\epsilon \ \} $\\
-		$ \mathring U_\epsilon(\infty) = \{\ z \in \overline\Cm : \epsilon<|z|<\infty \ \} $		
+		$ U_\epsilon(z_0) = \{ z \in \Cm : |z-z_0|<\epsilon \} $\\
+		$ \mathring U_\epsilon(z_0) = \{ z \in \Cm : 0<|z-z_0|<\epsilon \} $\\
+		$ U_\epsilon(\infty) = \{ z \in \overline\Cm : |z|>\epsilon \} $\\
+		$ \mathring U_\epsilon(\infty) = \{ z \in \overline\Cm : \epsilon<|z|<\infty \} $		
 	\end{definition}
 	\begin{definition}
 		Точка $z_0 \in \Cm$ называется\\
@@ -339,44 +324,44 @@
 	\subsection{Пределы последовательностей.}
 	\begin{definition}
 		Число $z$ называется \textbf{пределом последовательности} $\{z_n\}$, если
-		\[ \forall\,\epsilon>0 : \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n - z| < \epsilon \iff \lim\limits_{n \to \infty} z_n = z \]
+		\[ \forall\,\epsilon>0 : \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n - z| < \epsilon \iff \Lim_{n \to \infty} z_n = z \]
 	\end{definition}
 	\begin{definition}
 		Число $\infty$ называется\textbf{ пределом последовательности} $\{z_n\}$, если
-		\[ \forall\,\epsilon>0\ \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n| > \epsilon \iff \lim\limits_{n \to \infty} z_n = \infty \]
+		\[ \forall\,\epsilon>0\ \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n| > \epsilon \iff \Lim_{n \to \infty} z_n = \infty \]
 	\end{definition}
 	\begin{theorem*}
-		\[ \lim\limits_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n\iff \lim\limits_{n \to \infty} x_n = a,\ \lim\limits_{n \to \infty} y_n = b \]
+		\[ \Lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n\iff \Lim_{n \to \infty} x_n = a,\ \Lim_{n \to \infty} y_n = b \]
 	\end{theorem*}
 	\begin{proof}
 		\ \\$\boxed\Rightarrow$ 
 		\[ \forall\,\epsilon>0 \ \exists\,N\in\N : \forall\,n > N \Rightarrow |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
 		\begin{flalign*}
-			&|x_n -a| < \epsilon \Rightarrow \lim\limits_{n \to \infty} x_n = a &\\
-			&|y_n -b| < \epsilon \Rightarrow \lim\limits_{n \to \infty} y_n = b &
+			&|x_n -a| < \epsilon \Rightarrow \Lim_{n \to \infty} x_n = a &\\
+			&|y_n -b| < \epsilon \Rightarrow \Lim_{n \to \infty} y_n = b &
 		\end{flalign*}
 		\noindent$\boxed\Leftarrow$ 
 		\begin{align*}
-			&\lim\limits_{n \to \infty} x_n = a \iff \forall\,\epsilon>0 \ \exists\,N_1\in\N : \forall\,n > N_1 \Rightarrow |x_n -a| < \epsilon &\\
-			&\lim\limits_{n \to \infty} y_n = b \iff\forall\,\epsilon>0 \ \exists\,N_2\in\N : \forall\,n > N_2 \Rightarrow |y_n -b| < \epsilon &
+			&\Lim_{n \to \infty} x_n = a \iff \forall\,\epsilon>0 \ \exists\,N_1\in\N : \forall\,n > N_1 \Rightarrow |x_n -a| < \epsilon &\\
+			&\Lim_{n \to \infty} y_n = b \iff\forall\,\epsilon>0 \ \exists\,N_2\in\N : \forall\,n > N_2 \Rightarrow |y_n -b| < \epsilon &
 		\end{align*}
 		Зафиксируем $ \epsilon > 0,\ N = \max\,\{N_1,\, N_2\} $. Тогда 
 			\[ \forall n>N \Rightarrow |z_n - z|^2 = (x_n -a)^2 + (y_n - b)^2 < 2\epsilon^2\iff |z_n - z| < \sqrt 2 \epsilon \]
 	\end{proof}
 	\newpage
 	\begin{theorem*}
-		(Арифметические св-ва пределов)\\ \indent
-			$\text{Пусть } \exists\lim\limits_{n \to \infty} z_n = z, \ \exists\lim\limits_{n \to \infty} s_n = s$. Тогда
+		(Арифметические свойства пределов)\\ \indent
+			$\text{Пусть } \exists\Lim_{n \to \infty} z_n = z, \ \exists\Lim_{n \to \infty} s_n = s$. Тогда
 		\vspace{-0.25cm}
 		\begin{flalign*}
-			&1)\ \lim\limits_{n \to \infty} (z_n+s_n) = z + s&\\
-			&2)\ \lim\limits_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
-			&3)\ \lim\limits_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\ \forall\,n \in \N, \ s_n \ne 0,\ s \ne 0&
+			&1)\ \Lim_{n \to \infty} (z_n+s_n) = z + s&\\
+			&2)\ \Lim_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
+			&3)\ \Lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\ \forall\,n \in \N, \ s_n \ne 0,\ s \ne 0&
 		\end{flalign*}
 	\end{theorem*}
 	\begin{theorem*}
 		(Единственность)\\ \indent
-		Пусть $\exists\lim\limits_{n \to \infty} z_n = z$. Тогда этот предел единственный.
+		Пусть $\exists\Lim_{n \to \infty} z_n = z$. Тогда этот предел единственный.
 	\end{theorem*}
 	\begin{definition}
 		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ --- \textbf{подпоследовательность} последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$
@@ -391,14 +376,14 @@
 	\end{theorem*}
 	\begin{theorem*}
 		(Критерий Коши)
-		\[ \lim\limits_{n \to \infty} z_n = z\iff \forall\,\epsilon > 0 \ \exists\, N \in \N : \forall\, n,\, m > N \Rightarrow |z_n - z_m| < \epsilon \]
+		\[ \Lim_{n \to \infty} z_n = z\iff \forall\,\epsilon > 0 \ \exists\, N \in \N : \forall\, n,\, m > N \Rightarrow |z_n - z_m| < \epsilon \]
 	\end{theorem*}
 	\begin{example*}
 		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2\]
 	\end{example*}
 	\begin{flalign*}
-		&\lim\limits_{n \to \infty} \sqrt[n]{n} = \lim\limits_{n \to \infty}n^\frac{1}{n} = \lim\limits_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \lim\limits_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1.&\\
-		&\lim\limits_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \lim\limits_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \lim\limits_{n \to \infty} n \frac{2}{n}} = e^2.&
+		&\Lim_{n \to \infty} \sqrt[n]{n} = \Lim_{n \to \infty}n^\frac{1}{n} = \Lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \Lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1.&\\
+		&\Lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \Lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \Lim_{n \to \infty} n \frac{2}{n}} = e^2.&
 	\end{flalign*}
 	\begin{example*}
 		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ ---расходится, т.к. } (-1)^n \text{ расходится.}\]
@@ -411,7 +396,7 @@
 		\textbf{ Однозначная функция} --- отображение $ w = f(z) $, ставящее в соответствие\\ $\forall\,z \in D \subset \Cm$ единственное число $ w \in \overline\Cm $.
 	\end{definition}
 	\begin{definition}
-		\textbf{ Многозначная функция } --- отображение, ставящие в соответсвтие любому $z \in D$
+		\textbf{ Многозначная функция } --- отображение, ставящие в соответствие любому $z \in D$
 		некоторое множество значений $ E(z) \subset \overline\Cm $.
 	\end{definition}
 	\begin{example*}
@@ -441,12 +426,12 @@
 			&\text{Когда } \operatorname{Arccos}z \text{ принимает вещественные значения?}\\
 			&\ln{|z+\sqrt{z^2-1}|} = 0 \iff |z+\sqrt{z^2+1}| = 1 \iff z+\sqrt{z^2+1} = e^{it} &\\
 			&z^2+1 = (e^{it}-z)^2 = e^{2it}- 2ze^{it}+z^2 \iff z = \frac{e^{2it}+1}{2e^{it}} = \frac{e^{it}+e^{-it}}{2} = \cos t &\\ \\
-			&\text{Ответ: } M = \{ z \in \Cm : \operatorname{Im}z = 0, \ \operatorname{Re} \in [-1, 1] \}
+			&\text{Ответ: } M = \{ z \in \Cm:\Im z = 0, \ \Re\in[-1, 1] \}
 		\end{flalign*}
 	\end{proof}
 	\newpage
 	\begin{example*}
-		\[f(z) = z^n, \ n\in\N, \ D_f = \Cm \]
+		\[ f(z) = z^n,\ n\in\N,\ D_f = \Cm \]
 	Функция однозначная
 	\end{example*}
 	\begin{example*}
@@ -460,25 +445,25 @@
 		Функция многозначная
 	\end{example*}
 	\begin{remark*}
-		 	\[ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ \ln z = \ln{|z|} + i\phi \]
+		 	\[ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k),\ \ln z = \ln{|z|} + i\phi \]
 	\end{remark*}
 	\begin{definition}
-		Пусть однозначная функция определена на области $ D,\ z_0 \in D $.\\ Тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если:
-		\[ \forall\, \epsilon > 0 \ \exists\, \delta(\epsilon) > 0 : \forall\, z \in \ \mathring U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \iff \lim\limits_{z \to z_0} z = A  \]
+		Пусть однозначная функция определена на области $ D,\ z_0 \in D $.\\ Тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если
+		\[ \forall\, \epsilon > 0\ \exists\, \delta(\epsilon) > 0 : \forall\, z \in \mathring U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \iff \Lim_{z \to z_0} f(z) = A  \]
 	\end{definition}
 	\begin{theorem*}
 		(Арифметические свойства)\\ \indent
-		Пусть однозначные функции $ f(z),\ g(z)$ определены на области $ D,\ z_0\in D \text{ и}\\ 
-		\lim\limits_{z \to z_0}f(z)= A, \lim\limits_{z \to z_0}g(z)= B$. Тогда
+		Пусть однозначные функции $f(z),\ g(z)$ определены на области $D,\ z_0\in D$ и\\ 
+		$\Lim_{z \to z_0}f(z)= A, \Lim_{z \to z_0}g(z)= B$. Тогда
 		\begin{flalign*}
-		&1)\ \lim\limits_{z \to z_0}(f(z)\pm g(z))= A \pm B&\\
-		&2)\ \lim\limits_{z \to z_0}(f(z)\cdot g(z)) = A\cdot B&\\
-		&3)\ \lim\limits_{z \to z_0}\frac{f(z)}{g(z)} = \frac{A}{B}, \ B\ne 0
+		&1)\ \Lim_{z \to z_0}(f(z)\pm g(z))= A \pm B&\\
+		&2)\ \Lim_{z \to z_0}(f(z)\cdot g(z)) = A\cdot B&\\
+		&3)\ \Lim_{z \to z_0}\frac{f(z)}{g(z)} = \frac{A}{B}, \ B\ne 0
 		\end{flalign*}
 	\end{theorem*}
 	\begin{definition}
-		Пусть однозначная функция $ f(z) $ определена на области D. Тогда $f(z)$ называется \textbf{непрерывной в точке} $ z_0 \in D,\ (f(z)\in C(z_0)) $, если
-		\[ \lim\limits_{z \to z_0}f(z) = f(z_0) \]
+		Пусть однозначная функция $ f(z) $ определена на области D. Тогда $f(z)$ называется \textbf{непрерывной в точке} $ z_0 \in D\ (f(z)\in C(z_0)) $, если
+		\[ \Lim_{z \to z_0}f(z) = f(z_0) \]
 		
 		Функция $ f(z) $\textbf{ непрерывна на D}, если $ f(z) $ непрерывна в каждой точке $ z_0\in D $. 		
 	\end{definition}
@@ -488,22 +473,22 @@
 	\newpage
 	\subsection{Производная. Дифференцируемость. Условия Коши-Римана.}
 	\begin{definition}
-		Пусть функция $ f(z) $ определена на области $ D,\ z_0 \in D $. Тогда, если $ \exists $ конечный предел отношения приращения функции к приращению аргумета, то его называют\\ \textbf{производной функции} $ f(z) $ в точке $ z_0 $.
-		\[ f'(z_0) = \lim\limits_{z \to z_0}\frac{f(z) - f(z_0)}{z - z_0} = \lim\limits_{\Delta z \to 0}\frac{\Delta f(z_0)}{\Delta z} \]
+		Пусть функция $ f(z) $ определена на области $ D,\ z_0 \in D $. Тогда, если $ \exists $ конечный предел отношения приращения функции к приращению аргумента, то его называют\\ \textbf{производной функции} $ f(z) $ в точке $ z_0 $.
+		\[ f'(z_0) = \Lim_{z \to z_0}\frac{f(z) - f(z_0)}{z - z_0} = \Lim_{\Delta z \to 0}\frac{\Delta f(z_0)}{\Delta z} \]
 	\end{definition}
 	\begin{definition}
 		Пусть однозначная функция $ f(z) $  определена на области $D, \ z_0 \in D $. Тогда функция $ f(z) $
 		называется \textbf{дифференцируемой в точке} $ z_0 $, если 
-		\[ \Delta f(z_0) = A\Delta z + \alpha(z;\,\Delta z)\Delta z, \text{ где } \lim\limits_{\Delta z \to 0}\alpha = 0.\]
+		\[ \Delta f(z_0) = A\Delta z + \alpha(z;\,\Delta z)\Delta z, \text{ где } \Lim_{\Delta z \to 0}\alpha = 0.\]
 	\end{definition}
 	\begin{theorem}
 		Функция $ f(z)$ дифференцируема в точке $z_0 \in D \iff f(z)$ имеет производную в $ z_0 $.\\ При этом $ A = f'(z_0),\ df(z_0) = f'(z_0)\,dz $ --- главная линейная часть (дифференциал).\\
 	\end{theorem}
 	Далее будем рассматривать функции вида: 
 	\begin{flalign*}
-		&f(z) = u(x, y) + iv(x, y), \ z = x + iy, \ \operatorname{Re}f(z) = u(x, y),\ \operatorname{Im}f(z) = v(x, y)&\\
-		&\Delta u(x_0, y_0) = u(x,\, y) - u(x_0,\, y_0), \ \Delta x = x - x_0, \ \Delta y = y - y_0,\ \rho =\sqrt{\Delta x^2 + \Delta y^2} &\\
-		&\Delta u(x_0, y_0) = A\Delta x + B\Delta y + \beta(x_0,\, y_0,\, \Delta x,\, \Delta y)\sqrt{\Delta x^2 + \Delta y^2},\ \lim\limits_{\rho \to 0}\beta = 0.
+		&f(z) = u(x, y) + iv(x, y), \ z = x + iy,\ \Re f(z) = u(x, y),\ \Im f(z) = v(x, y)&\\
+		&\Delta u(x_0, y_0) = u(x,\, y) - u(x_0,\, y_0),\ \Delta x = x - x_0, \ \Delta y = y - y_0,\ \rho =\sqrt{\Delta x^2 + \Delta y^2} &\\
+		&\Delta u(x_0, y_0) = A\Delta x + B\Delta y + \beta(x_0,\, y_0,\, \Delta x,\, \Delta y)\sqrt{\Delta x^2 + \Delta y^2},\ \Lim_{\rho \to 0}\beta = 0.
 	\end{flalign*}
 	\newpage
 	\begin{theorem}
@@ -522,7 +507,7 @@
 	\begin{proof}
 		\ \\$\boxed\Rightarrow$\\
 		$ f(z) $ --- дифференцируема в точке $ z_0 $.\\ Тогда 
-		\[ \Delta f(z_0) = f'(z_0)\Delta z + \alpha(z_0;\, \Delta z)\Delta z,\ \lim\limits_{\Delta z \to 0}\alpha(z_0;\,\Delta z) = 0 \]
+		\[ \Delta f(z_0) = f'(z_0)\Delta z + \alpha(z_0;\, \Delta z)\Delta z,\ \Lim_{\Delta z \to 0}\alpha(z_0;\,\Delta z) = 0 \]
 		Распишем это определение
 		\[ \Delta u(x_0,\, y_0) + i\Delta v(x_0,\, y_0) = (a + ib)(\Delta x + i\Delta y) + (\beta +i\delta)(\Delta x + i\Delta y). \]
 		Приравняем вещественные и мнимые части
@@ -531,8 +516,8 @@
 			\Delta u(x_0,\, y_0) = a\Delta x - b\Delta y + \beta\Delta x - \delta\Delta y\\
 			\Delta v(x_0,\, y_0) = a\Delta y + b\Delta x + \beta\Delta y + \delta\Delta x
 		\end{cases}
-		\lim\limits_{(\Delta x,\, \Delta y) \to 0}\beta = 0, 
-		\lim\limits_{(\Delta x,\, \Delta y) \to 0}\delta = 0 \Rightarrow
+		\Lim_{(\Delta x,\, \Delta y) \to 0}\beta = 0, 
+		\Lim_{(\Delta x,\, \Delta y) \to 0}\delta = 0 \Rightarrow
 		\]
 		\[ 
 		\Rightarrow u(x,\, y), \ v(x,\, y) \text{ --- дифференцируемы в } (x_0,\, y_0) \text{ и } 
@@ -550,7 +535,7 @@
 		\begin{align*}
 			&\Delta f(z_0) = \Delta u(x_0,\, y_0) + i\Delta v(x_0,\, y_0) = a\Delta x - b\Delta y + ib\Delta x + ia\Delta y + (\beta + i\delta)\rho =\\
 			&= (a+ib)\Delta x + (-b + ia)\Delta y + (\beta + i\delta)\rho = (a+ib)\Delta x + (a+ib)i\Delta y + (\beta + i\delta)\rho =\\ 
-			&= (a+ib)(\Delta x + i\Delta y) + (\beta + i\delta)\rho = A\Delta z + \alpha(z_0;\,\Delta z)|\Delta z|, \lim\limits_{\Delta z \to 0}\alpha = 0.
+			&= (a+ib)(\Delta x + i\Delta y) + (\beta + i\delta)\rho = A\Delta z + \alpha(z_0;\,\Delta z)|\Delta z|, \Lim_{\Delta z \to 0}\alpha = 0.
 		\end{align*}
 	\end{proof}
 	\begin{consequence*}
@@ -566,7 +551,7 @@
 	\section{Лекция 5}
 	\subsection{Примеры}
 	\begin{example}
-		Исследовать $ f(z) = z^2 - 2\bar z^2$ на дифференцируемость в $\Cm$.
+		Исследовать $f(z) = z^2 - 2\bar z^2$ на дифференцируемость в $\Cm$.
 	\end{example}
 		\[ f(z) = (x + iy)^2 - 2(x - iy)^2 = y^2 - x^2 + 6xyi \]
 		$ u(x,\, y) = y^2 - x^2,\ v(x,\, y) = 6xy $ --- дифференцируемы в $ \R^2 $, т.к. их частные производные непрерывны в $ \R^2 $.
@@ -589,71 +574,73 @@
 	\begin{proof}
 		\[ u = \sqrt{|xy|}, \quad v = 0 \]
 		\[ v'_x = 0, \quad v'_y = 0 \]
-		\[ u'_x(0, 0) = \lim\limits_{x \to 0}\frac{u(x, 0) - u(0, 0)}{x - 0} = 0 \]
-		\[ u'_y(0, 0) = \lim\limits_{y \to 0}\frac{u(0, y) - u(0, 0)}{y - 0} = 0 \]
+		\[ u'_x(0, 0) = \Lim_{x \to 0}\frac{u(x, 0) - u(0, 0)}{x - 0} = 0 \]
+		\[ u'_y(0, 0) = \Lim_{y \to 0}\frac{u(0, y) - u(0, 0)}{y - 0} = 0 \]
 		Покажем, что $u(x,y)$ не дифференцируема в $(0, 0)$:
 		\[ u'_x = v'_y, \quad u'_y = -v'_x, \quad (x_0, y_0) = (0, 0) \]
 		Вопрос в следующем, можем ли мы представить нашу функцию как:
 		\[ \Delta u(0, 0) \stackrel{?}{=} u'_x(0, 0)\Delta x + u'_y(0, 0)\Delta y + \mu \sqrt{\Delta x^2 + \Delta y^2} \text{, где } \mu \text{--- бесконечно малая}\]
 		\[ \Delta u(0, 0) = \mu \sqrt{\Delta x^2 + \Delta y^2} \]
-		\[\lim\limits_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \Rightarrow \lim\limits_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \lim\limits_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \lim\limits_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
+		\[\Lim_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \Rightarrow \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
 		Нам нужно показать, что если такого предела не существует или он не равен 0.
 		\newpage
 		\noindent\textbf{Способ 1:}\\
 		Рассмотрим этот предел вдоль прямой $y = kx$:
-		\[ \lim\limits_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \lim\limits_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \Rightarrow \nexists \lim\limits_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
+		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \Lim_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \Rightarrow \nexists \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
 		\textbf{Способ 2:}\\
 		Перейдем в полярные координаты $x = r \cos \phi$, $y = r \sin \phi$:
-		\[ \lim\limits_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \lim\limits_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \Rightarrow\nexists\lim\limits_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
+		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \Lim_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \Rightarrow\nexists\Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
 		В итоге получили, что предела не существует.
 		\[\Rightarrow u(x, y) \text{ не дифференцируема в } (0, 0) \Rightarrow f(z) \text{ не дифференцируема в } z_0 = 0 \]
 	\end{proof}
 	\newpage
 	\subsection{Условие Коши-Римана в полярной СК}
 	
-	\text{Пусть } $ \Um (r,\, \phi) = u (r \cos \phi,\ r \sin \phi), \ \Vm (r,\, \phi) = v(r \cos \phi,\ r \sin \phi) $
-	\[f(z) = \Um(r,\, \phi) + i \Vm(r,\, \phi)\]
+	\text{Пусть } $ \Um(r,\,\phi) = u(r\cos\phi,\ r\sin\phi),\ \Vm(r,\,\phi) = v(r\cos\phi,\ r\sin\phi) $
+	\[ f(z) = \Um(r,\,\phi) + i\Vm(r,\,\phi) \]
 	\begin{statement*}
-		\[\begin{cases}
-			\Um'_r(r, \phi) = \dfrac{1}{r}\,\Vm'_{\phi}(r, \phi) \\
-			\dfrac{1}{r}\,\Um'_{\phi}(r, \phi) = -\Vm'_r(r, \phi)
-		\end{cases}\]
+		\[
+		\begin{cases}
+			\Um'_r(r,\,\phi) = \dfrac{1}{r}\,\Vm'_\phi(r,\,\phi)\\
+			\dfrac{1}{r}\,\Um'_\phi(r,\,\phi) = -\Vm'_r(r,\,\phi)
+		\end{cases}
+		\]
 	\end{statement*}
 	\begin{proof}
 		\begin{align*}
-			\Um'_r(r, \phi) &= u'_x x'_r + u'_y y'_r = u'_x \cos\phi + u'_y \sin\phi \\
-			\Um'_\phi(r, \phi) &= u'_x x'_\phi + u'_y y'_\phi = u'_x (-r\sin\phi) + u'_y (r\cos\phi) \\
-			\Vm'_r(r, \phi) &= v'_x x'_r + v'_y y'_r = v'_x \cos \phi + v'_y \sin \phi \\
-			\Vm'_\phi(r, \phi) &= v'_x x'_\phi + v'_y y'_\phi = v'_x (-r\sin\phi) + v'_y (r\cos\phi)
+			\Um'_r(r,\,\phi)&= u'_x x'_r + u'_y y'_r = u'_x\cos\phi + u'_y\sin\phi \\
+			\Um'_\phi(r,\,\phi) &= u'_x x'_\phi + u'_y y'_\phi = u'_x(-r\sin\phi) + u'_y (r\cos\phi) \\
+			\Vm'_r(r,\,\phi)&= v'_x x'_r + v'_y y'_r = v'_x \cos \phi + v'_y\sin\phi \\
+			\Vm'_\phi(r,\,\phi)&= v'_x x'_\phi + v'_y y'_\phi = v'_x(-r\sin\phi) + v'_y(r\cos\phi)
 		\end{align*}
 		Знаем, что $\begin{cases}u'_x = v'_y\\ u'_y = -v'_x\end{cases}$, тогда $ \Rightarrow r\Um'_r = \Vm'_{\phi} \text{ и } -r\Vm'_r = \Um'_{\phi}$
 	\end{proof}
 	\subsection{Аналитические функции}
 	В следующих определениях $f(z)$ --- однозначная функция.
 	\begin{definition}
-		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists\,O_\epsilon(z_0)$, в которой функция $f(z)$ дифференцируема. 
+		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists\,U_\epsilon(z_0)$, в которой функция $f(z)$ дифференцируема. 
 	\end{definition} 
 	\begin{definition}
 		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если \\
-		она аналитична во всякой точке области D.
+		она аналитична в каждой точке области D.
 	\end{definition}
 	\begin{remark}
-		Обозначается $f(z) \in \mathcal{A}(z_0)$ и $f(z) \in \mathcal{A}(D)$ cоответственно.
+		Обозначается $f(z) \in \A(z_0)$ и $f(z) \in \A(D)$ cоответственно.
 	\end{remark}
 	\begin{example}
-		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке\\ $z_0 = 0 \Rightarrow f(z) \notin \mathcal{A}(\Cm)$
+		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке\\ $z_0 = 0 \Rightarrow f(z) \notin \A(\Cm)$
 	\end{example}
 	\begin{example}
-		Функция $f(z) = e^z \Rightarrow f(z) \in \mathcal{A}(\Cm)$
+		Функция $f(z) = e^z \Rightarrow f(z) \in \A(\Cm)$
 	\end{example}
 	\begin{example}
-		Функция $f(z) = \frac{1}{z - 1} \Rightarrow f(z) \in \mathcal{A}(\Cm \setminus \{1\})$
+		Функция $f(z)=\frac{1}{z - 1}\Rightarrow f(z)\in\A(\Cm\setminus\{1\})$
 	\end{example}
 	\newpage
 	
 	\section{Лекция 6}
 	\subsection{Геометрический смысл модуля и аргумента производной}
-	Возьмем функцию $f(z) \in \mathcal{A}(D),\ z_0 \in D, \text{ где } f'(z_0) \neq 0$, а так же рассмотрим гладкую кривую Жордана
+	Возьмем функцию $f(z) \in \A(D),\ z_0 \in D, \text{ где } f'(z_0) \neq 0$, а так же рассмотрим гладкую кривую Жордана
 	\[ \gamma_z = \{ z \in \Cm : z = z(t),\ t \in [\alpha,\,\beta] \}\]
 	Построим отображение нашей кривой из плоскости $z$ в плоскость $\omega$:
 	\begin{center}
@@ -765,22 +752,21 @@
 	\end{tikzpicture}\\
 	\end{center}
 	Рассмотрим сложную функцию $\omega(t) = f(z(t))$ и найдем ее производную в точке $t_0$
-	\[\omega'(t_0) = f'(z_0)z'(t_0)\]
+	\[ \omega'(t_0) = f'(z_0)z'(t_0) \]
 	Откуда по свойству аргумента комплексного числа и 
-	$\begin{cases} \arg (\omega'(t_0)) = \theta \\ 
+	$\begin{cases} \arg(\omega'(t_0)) = \theta \\ 
 		\arg (f'(z_0)) = \alpha \\ 
 		\arg (z'(t_0)) = \beta 
 	\end{cases}$ 
 	получаем
-	\[\arg (\omega'(t_0)) = \arg (f'(z_0)) + \arg (z'(t_0)) \Rightarrow \theta = \alpha + \beta\]
+	\[\arg(\omega'(t_0)) = \arg(f'(z_0)) + \arg(z'(t_0)) \Rightarrow\theta = \alpha + \beta \]
 	Тогда $\alpha = \theta - \beta$ --- угол поворота кривой в точке $z_0$
 	\begin{statement*}
 		(Геометрический смысл аргумента производной)\\ \indent
 		Угол между гладкими Жордановыми кривыми в $z_0$ равен углу между их образами в $\omega_0$.
 	\end{statement*}
-	
 	Рассмотрим выражение 
-	\[ K = |\underbrace{f'(z_0)}_{\mathclap{\neq\, 0}}| = \lim\limits_{\Delta z \to 0}\left|\frac{\Delta \omega}{\Delta z}\right| \]
+	\[ K = |\underbrace{f'(z_0)}_{\mathclap{\neq\, 0}}| = \Lim_{\Delta z \to 0}\left|\frac{\Delta \omega}{\Delta z}\right| \]
 	Откуда следует его представление в виде
 	\[ |\Delta \omega | = K|\Delta z| + \overline{\overline{o}}(|\Delta t|) \]
 	Из этого следует, что бесконечно малые фигуры преобразуются в подобные им, при этом число $K$ называется \textbf{коэффициентом подобия}.
@@ -791,26 +777,25 @@
 	\newpage
 	\subsection{Связанные теоремы}
 	В последующих теоремах считаем $f(z)$ --- однозначной функцией, $D$ --- область на которой она определена.
-	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D), \ f(z) \ \cancel{\equiv} \ \mathrm{const}, \ t \in D$, тогда $D_\omega = f(D_z)$ --- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
+		Пусть $f(z) \in \A(D),\ f(z)\ \cancel\equiv\ \mathrm{const},\ t \in D$, тогда $D_\omega = f(D_z)$ --- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
 	\end{theorem}
 	\begin{theorem*}
 		(Аналитичность обратной функции)\\ \ \indent
-		Пусть $f(z) \in \mathcal{A}(O_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$, тогда $\exists\,O_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \mathcal{A}(O_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
+		Пусть $f(z) \in \A(U_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$, тогда $\exists\,U_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \A(U_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
 	\end{theorem*}
 	\begin{statement}
-		Пусть $f(z) \in \mathcal{A}(D_z), f: D_z \longrightarrow D_{\omega}$, гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
+		Пусть $f(z) \in \A(D_z), f: D_z \longrightarrow D_{\omega}$, гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
 	\end{statement}
 	\[\gamma_z = \{ z \in \mathbb{C}: z = \phi(t), \ \alpha \leq t \leq \beta\}\]
 	Предположим существование этих величин:
 	\begin{align*}
-		&S_{D_\omega} = \iint\limits_{D_z}|f'(x)|^2 \, dxdy \text{ --- площадь}\\
-		&L_{\gamma_\omega} = \int\limits_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)| \, dt \text{ --- длина}
+		&S_{D_\omega} = \Iint_{D_z}|f'(x)|^2\, dxdy \text{ --- площадь}\\
+		&L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)| \, dt \text{ --- длина}
 	\end{align*}
 	\begin{proof}
 		\begin{align*}
-		&1)\quad S_{D_\omega} = \iint\limits_{D_\omega} dudv = \left\lbrace  (u, v) \xrightarrow{\text{замена}} (x, y) \right\rbrace  = \iint\limits_{D_z}|\mathcal{J}(x, y)| \, dxdy = \iint\limits_{D_z}
+		&1)\quad S_{D_\omega} = \Iint_{D_\omega} dudv = \left\lbrace  (u, v) \xrightarrow{\text{замена}} (x, y) \right\rbrace  = \Iint_{D_z}|\mathcal{J}(x, y)| \, dxdy = \Iint_{D_z}
 		\begin{vmatrix}
 			u_x & u_y \\
 			v_x & v_y
@@ -819,9 +804,9 @@
 		\begin{vmatrix}
 			u_x & u_y \\
 			v_x & v_y
-		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \Rightarrow S_{D_\omega} = \iint\limits_{D_z} |f'(z)|^2 \, dxdy \\
-		&2)\quad L_{\gamma_z} = \int\limits_{\gamma_z}|d\omega|, \text{ где }\  \omega = f(\psi(t)) \\
-		&d\omega = f'(\psi(t))\psi'(t) \, dt \Rightarrow |d\omega| = |f'(\psi(t))|\cdot|\psi'(t)|\, dt \Rightarrow L_{\gamma_\omega} = \int\limits_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)|\, dt \\
+		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \Rightarrow S_{D_\omega} = \Iint_{D_z} |f'(z)|^2 \, dxdy \\
+		&2)\quad L_{\gamma_z} = \Int_{\gamma_z}|d\omega|, \text{ где }\  \omega = f(\psi(t)) \\
+		&d\omega = f'(\psi(t))\psi'(t) \, dt \Rightarrow |d\omega| = |f'(\psi(t))|\cdot|\psi'(t)|\, dt \Rightarrow L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)|\, dt \\
 		\end{align*}
 	\end{proof}
 	\newpage
@@ -829,19 +814,18 @@
 	\begin{example}
 		Дана функция $f(z) = e^z$, область определения $ D_z $ и кривая Жордана $ \gamma_z $:
 		\begin{align*}
-		&D_z = \{ z \in \mathbb{C} : 1 \leq \operatorname{Re} z \leq 2, \ 0 \leq \operatorname{Im} z \leq 4\}, \\
-		&\gamma_z = \{ z \in \mathbb{C}: \operatorname{Re} z = \operatorname{Im} z, \ 0 \leq \operatorname{Re} z \leq 2\pi \}
+		&D_z = \{ z \in \mathbb{C} : 1 \leq \Re z \leq 2, \ 0 \leq \Im z \leq 4\}, \\
+		&\gamma_z = \{ z \in \mathbb{C}: \Re z = \Im z, \ 0 \leq \Re z \leq 2\pi \}
 		\end{align*}
 		Найти площадь образа области и длину образа этой кривой.
 	\end{example}
 	\begin{proof}
 		\[f: \begin{cases} D_z \longrightarrow D_\omega \\ \gamma_z \longrightarrow \gamma_\omega \end{cases}\]
-		
 		\begin{center}
 			\begin{tikzpicture}[scale=0.8]
 				\begin{scope}[xshift=0cm]
-					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\operatorname{Re} z$};
-					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\operatorname{Im} z$};
+					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\Re z$};
+					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\Im z$};
 					\fill[blue!10, draw=blue, thick] (1,0) rectangle (2,4);
 					\draw[dashed] (1,0) -- (1,-0.2) node[below] {$1$};
 					\draw[dashed] (2,0) -- (2,-0.2) node[below] {$2$};
@@ -850,8 +834,8 @@
 				\end{scope}
 				
 				\begin{scope}[xshift=8cm]
-					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\operatorname{Re} z$};
-					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\operatorname{Im} z$};
+					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\Re z$};
+					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\Im z$};
 					\draw[red, thick] (0,0) -- (4,4);
 					\node[red] at (2.7, 3.2) {$\gamma_z$};
 					\draw[dashed] (4,0) -- (4,-0.2) node[below] {$2\pi$};
@@ -860,8 +844,8 @@
 			\end{tikzpicture}
 		\end{center}
 		\begin{align*}
-		&f(z) = e^z \Rightarrow f'(z) = e^z = e^{x+iy} \Rightarrow |f'(z)| = e^x\\
-		&S_{D_\omega} = \iint\limits_{D_z} |f'(z)|^2 \, dxdy = \int\limits_0^4 \int\limits_1^2 e^{2x} \, dxdy = 4 \cdot \left.\frac{e^{2x}}{2}\right|_1^2 = 2 (e^4 - e^2)
+		&f(z) = e^z\Rightarrow f'(z) = e^z = e^{x+iy}\Rightarrow |f'(z)| = e^x\\
+		&S_{D_\omega} = \Iint_{D_z} |f'(z)|^2 \, dxdy = \Int_0^4 \Int_1^2 e^{2x}\,dxdy = 4 \cdot\left.\frac{e^{2x}}{2}\right|_1^2 = 2(e^4 - e^2)
 		\end{align*}
 		\[ \]
 		Для поиска длины кривой параметризуем ее параметром $x$:
@@ -869,7 +853,7 @@
 		\[|f'(z(x))| = e^x, \quad |z'(x)| = |1 + i| = \sqrt{2}\]
 		
 		Тогда получаем, что:
-		\[L_{\gamma_\omega} = \int\limits_0^{2\pi} |f'(\psi(x))|\cdot |\psi'(x)|\, dx = \int\limits_0^{2\pi} \sqrt{2} e^x\, dx = \sqrt{2} \left. e^x \right |_0^{2\pi} = \sqrt {2}(e^{2\pi} - 1)\]
+		\[L_{\gamma_\omega} = \Int_0^{2\pi} |f'(\psi(x))|\cdot |\psi'(x)|\, dx = \Int_0^{2\pi} \sqrt{2} e^x\, dx = \sqrt{2} \left. e^x \right |_0^{2\pi} = \sqrt {2}(e^{2\pi} - 1)\]
 	\end{proof}
 	\newpage
 	\section{Лекция 7}
@@ -881,10 +865,10 @@
 		Уравнение в частных производных вида $\Delta u = 0$ называется \textbf{уравнением Лапласа}.
 	\end{remark}
 	\begin{theorem}
-		Если $f(z) \in \mathcal{A}(D) \Rightarrow \operatorname{Re} f,\ \operatorname{Im} f$ --- гармонические функции в $D$.
+		Если $f(z) \in \A(D) \Rightarrow \Re f,\ \Im f$ --- гармонические функции в $D$.
 	\end{theorem}
 	\begin{proof}
-		$f(z) = u(x,y) + i v(x,y)$, где $u(x,\,y) = \operatorname{Re} f$,\ $v(x,\,y) = \operatorname{Im} f$.\\
+		$f(z) = u(x,y) + i v(x,y)$, где $u(x,\,y) = \Re f$,\ $v(x,\,y) = \Im f$.\\
 		Функция $ f(z) $ дифференцируема, выполняются условия теоремы К-Р: $u'_x = v'_y,\ u'_y = -v'_x$.\\
 		Дифференцируем первое уравнение по $x$, второе по $y$
 		\[ u''_{xx} = v''_{yx}, \ u''_{yy} = -v''_{xy} \]
@@ -893,48 +877,43 @@
 		Аналогично для $v(x,y)$.
 	\end{proof}
 	\begin{definition}
-		Две гармонические в области $D$ функции, связанные условием Коши-Римана называют \textbf{гармонически сопряженными функциями}.
+		Две гармонические в области $D$ функции, связанные условием Коши-Римана называют \textbf{гармонически сопряжёнными функциями}.
 	\end{definition}
 	\begin{remark}
-		Вещественные и мнимые части аналитической функции являются гармонически сопряженными функциями.
+		Вещественные и мнимые части аналитической функции являются гармонически сопряжёнными функциями.
 	\end{remark}
-
-	Есть некоторая гармоническая функция, как построить аналитическую функцию, для которой она ее вещественная или мнимая часть?
-	
+	Дана некоторая гармоническая функция, как построить аналитическую функцию, для которой она ее вещественная или мнимая часть?
 	\begin{theorem}
-		Пусть $u(x,\,y)$ гармоническая в односвязной области $D$ функция, тогда $\exists$ такая однозначная функция $f(z)$, что $f(z) \in \mathcal{A}(D)$ и $u(x,\,y) = \operatorname{Re}f(z)$, причем $f(z)$ определяется с точностью до мнимой постоянной.
+		Пусть $u(x,\,y)$ гармоническая в односвязной области $D$ функция, тогда $\exists$ такая однозначная функция $f(z)$, что $f(z) \in \A(D)$ и $u(x,\,y) = \Re f(z)$, причем $f(z)$ определяется с точностью до мнимой постоянной.
 	\end{theorem}
 	\begin{proof}
 		Построим гармонически-сопряженную функцию.\\ 
 		Распишем, что такое дифференциал от функции двух переменных и воспользуемся условием теоремы К-Р:  $u'_x = v'_y,\  u'_y = -v'_x$.
 		\[dv = v'_x dx + v'_y dy = -u'_y dx + u'_x dy\]
 		Проинтегрируем данное равенство от $ (x_0,\, y_0) $ до $ (x,\, y) $
-		\[ v(x,y) = \int\limits_{(x_0,\,y_0)}^{(x,\,y)}(-u'_ydx + u'_xdy) + C, \ C \in \R\]
+		\[ v(x,y) = \Int_{(x_0,\,y_0)}^{(x,\,y)}(-u'_ydx + u'_xdy) + C, \ C \in \R\]
 		Проверим независимость интеграла от пути. Пусть $P = -u'_y$, $Q = u'_x$. Условием является равенство перекрестных производных:
 		\[P_y = Q_x \Rightarrow -u''_{yy} = u''_{xx} \Rightarrow \Delta u = 0\]
 		Тогда аналитическая функция $f(z)$ запишется, как
-		\[f(z) = u + iv = u + i\int\limits_{(x_0,\,y_0)}^{(x,\,y)}(-u'_y dx + u'_x dy) + iC, \ C \in \R\]
+		\[f(z) = u + iv = u + i\Int_{(x_0,\,y_0)}^{(x,\,y)}(-u'_y dx + u'_x dy) + iC, \ C \in \R\]
 		Откуда видим, что наша функция определяется чисто мнимой постоянной.
 	\end{proof}
 	\begin{remark}
 		Если --- многосвязная область, тогда
-		\[ \int\limits_{(x_0,\,y_0)}^{(x,\,y)}(-u'_ydx + u'_xdy) + C \text{ --- может быть многозначной функцией.} \]
+		\[ \Int_{(x_0,\,y_0)}^{(x,\,y)}(-u'_ydx + u'_xdy) + C \text{ --- может быть многозначной функцией.} \]
 	\end{remark}
 	\subsection{Примеры}
 	Напоминание:
-	\[u(x, y) \in C^2(D), \Delta u = 0 \text{ --- гармоническая функция}\]
-	\[ f(z) = u(x, y) + i v(x, y), f \in \mathcal{A}(D) \quad u, v \text{ --- гармонически сопряженные функции}\]
+	\[ u(x, y) \in C^2(D), \Delta u = 0 \text{ --- гармоническая функция} \]
+	\[ f(z) = u(x, y) + i v(x, y), f \in \A(D) \quad u, v \text{ --- гармонически сопряженные функции}\]
 	\[\begin{cases} u'_x = v'_y \\ u'_y = - v'_x \end{cases} \quad (x,y) \in D\]
 	Известно $u$. Требуется найти гармонически сопряженную функцию $v$. 
-	\[\begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \Rightarrow v(x, y) = \int\limits_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy)\]
-	
+	\[ \begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \Rightarrow v(x, y) = \Int_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy) \]
 	\begin{example}
 		Пусть $u = e^{-y}\cos x$. Найти такую $f(z)$, что $Re f = u$.
 	\end{example}
-	
 	\begin{proof}
-		\[ 
-		\begin{cases}
+		\[ \begin{cases}
 			u'_x = -e^{-y} \sin x\\
 			u'_y = -e^{-y} \cos x
 		\end{cases}
@@ -942,8 +921,7 @@
 		\begin{cases}
 			v'_x = -u'_y = e^{-y} \cos x \\ 
 			v'_y = u'_x = -e^{-y} \sin x
-		\end{cases} 
-		\]
+		\end{cases} \]
 		\noindent
 		Найдем $v$ из первого уравнения:
 		\[v = e^{-y} \int\cos x \, dx = e^{-y} (\sin x + A(y)), \text{ где } A(y) \text{--- констата зависящая от } y.\]
@@ -951,11 +929,10 @@
 		\[v = e^{-y} \sin x + B(y), \text{ где } B(y) = e^{-y}A(y)\]
 		\noindent
 		Найдем производную по $y$:
-		\[v'_y = -e^{-y} \sin x + B'(y)\]
+		\[ v'_y = -e^{-y} \sin x + B'(y) \]
 		\noindent
 		Подставляем во второе уравнение системы:
-		\[-e^{-y} \sin x + B'(y) = -e^{-y} \sin x \Rightarrow B'(y) = 0 \Rightarrow B(y) = c_0\]
-		
+		\[ -e^{-y}\sin x + B'(y) = -e^{-y}\sin x \Rightarrow B'(y) = 0\Rightarrow B(y) = c_0 \]
 		\noindent
 		Таким образом:
 		\[v = e^{-y} \sin x + c_0 \Rightarrow f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0,\ c_0 \in \R\]
@@ -970,10 +947,8 @@
 		\noindent
 		Ответ: $f(z) = e^{iz} + i c_0,\ c_0 \in \R$
 	\end{proof} 
-	
 	В общем случае не так легко получить результат, чтобы он зависел от $z$, а не от $x$ и $y$. Для этого используем:
-	\[\begin{cases} z = x + iy \\ \overline{z} = x - iy\end{cases} \Rightarrow \begin{cases} x = \frac{z + \overline{z}}{2} \\ y = \frac{z - \overline{z}}{2i} \end{cases}\]
-	
+	\[ \begin{cases} z = x + iy \\ \overline{z} = x - iy\end{cases} \Rightarrow \begin{cases} x = \frac{z + \overline{z}}{2} \\ y = \frac{z - \overline{z}}{2i} \end{cases} \]
 	\begin{example}
 		Существуют ли гармонические функции вида $u(x,y) = \psi(\frac{y}{x})$? Если да, то найти их.
 		\[\Delta u = 0 \Rightarrow u''_{xx} + u''_{yy} = 0\]
@@ -988,42 +963,38 @@
 		\[h'(s^2 + 1) + 2sh = 0 \Rightarrow \frac{dh}{h} = -\frac{2s}{s^2 + 1}ds\]
 		\[\ln|h| = - \ln|s^2 + 1| + \ln c_1 \Rightarrow h = \frac{c_2}{s^2 + 1} \Rightarrow \psi ' = \frac{c_2}{s^2 + 1}\]
 		Решаем ОДУ первого порядка:
-		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \Rightarrow \psi = \arctg{s} \cdot c_2 + c_3\]
+		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \Rightarrow \psi = \arctg s \cdot c_2 + c_3\]
 		Ответ: $u(x, y) = c_2 \cdot \arctg(\frac{y}{x}) + c_3, \quad c_2, c_3 \in \R$
 	\end{example}
-	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D)$ и $\forall z \in D \Rightarrow f'(z) \neq 0$.
-		Тогда $\{ u(x, y) = c_1\} \perp \{v(x,y) = c_2\}$, где $u = Re f, v = Im f$
+		Пусть $f(z) \in \A(D)$ и $\forall z \in D$ выполнено $f'(z) \neq 0$.
+		Тогда\\
+		$\{ u(x,\,y) = c_1\} \perp \{v(x,\,y) = c_2 \}$, где $u = \Re f,\ v = \Im f$.
 	\end{theorem}
-	
 	\begin{proof}
-		\[f(z) \in \mathcal{A}(D) \Rightarrow u, v - \text{гармонически сопряженные в D функции}\]
+		\[f(z) \in \A(D) \Rightarrow u, v - \text{гармонически сопряженные в D функции}\]
 		\[\Rightarrow u'_x = v'_y, \quad u'_y = -v'_x, (x, y) \in D\] 
 		\[\{u = c_1\} \perp \{v = c_2\} \iff \nabla u \perp \nabla v\]
 		\[\nabla u = u'_x \overline{e}_x + u'_y \overline{e}_y\]
 		\[\nabla v = v'_x \overline{e}_x + v'_y \overline{e}_y\]
 		\[(\nabla u, \nabla v) = u'_x v'_x + u'_y v'_y = -u'_x u'_y + u'_y u'_x = 0\]
 	\end{proof}
-	
 	\begin{remark}
 		Если $\exists z_0 \in D: f'(z_0) = 0 \Rightarrow f'(z_0) = u'_x(x_0, y_0) + i v'_x(x_0, y_0) = 0$
-		\[
-			\begin{cases} 
-				u'_x (x_0, y_0) = 0 \\ 
+		\[ \begin{cases} 
+				u'_x (x_0, y_0) = 0\\ 
 				v'_x(x_0, y_0) = 0 
 			\end{cases} 
 			\Rightarrow 
 			\begin{cases} 
-				v'_y (x_0, y_0) = 0 \\ 
+				v'_y (x_0, y_0) = 0\\ 
 				u'_y(x_0, y_0) = 0
 			\end{cases} 
 			\Rightarrow 
 			\begin{cases} 
-				\nabla u(x_0, y_0) = \overline{0} \\ 
+				\nabla u(x_0, y_0) = \overline{0}\\ 
 				\nabla v(x_0, y_0) = \overline{0}
-			\end{cases}
-		\] 
+			\end{cases} \] 
 	\end{remark}
 	\newpage
 	
@@ -1066,10 +1037,6 @@
 			
 		\end{scope}
 		
-		% ===============================
-		% ДУГОВАЯ СТРЕЛКА ОТОБРАЖЕНИЯ
-		% ===============================
-		% Координаты для дуговой стрелки
 		\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
 		\coordinate (endArrow) at ([yshift=0.1cm]scope2.west);
 		\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 2cm)$); % подняли вверх
@@ -1102,7 +1069,7 @@
 	\end{definition}
 	
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D),\ z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists$ такая $U_\epsilon(z_0) \subset D_z$, что отображение $\omega = f(z)$ конформно на $U_\epsilon(z_0)$.
+		Пусть $f(z) \in \A(D),\ z_0 \in D_z$ и $f'(z_0) \neq 0$. Тогда $\exists$ такая $U_\epsilon(z_0) \subset D_z$, что отображение $\omega = f(z)$ конформно на $U_\epsilon(z_0)$.
 	\end{theorem}
 	
 	\begin{proof}
@@ -1110,7 +1077,7 @@
 		Из геометрического смысла модуля и аргумента производной $\Rightarrow$ \textbf{2)}
 	\end{proof}
 	\begin{theorem} 
-		Если функция $f(z) \in \mathcal{A}(D)$ и положим отображение $\omega = f(z)$ однолистно на $D_z$. Тогда отображение $\omega = f(z)$ конформно на $D_z$.
+		Если функция $f(z) \in \A(D)$ и положим отображение $\omega = f(z)$ однолистно на $D_z$. Тогда отображение $\omega = f(z)$ конформно на $D_z$.
 	\end{theorem}
 	Бесконечность: \\ 
 	1) $z_0 \xrightarrow{f} \infty \quad (\frac{1}{\omega} = \frac{1}{f(z)})$
@@ -1138,14 +1105,14 @@
 		Тогда $ f(z) $ конформно отображает $ D_z $ на $ D_w $.
 	\end{theorem*}
 	
-	\subsection{Примеры конформных отображениый}
+	\subsection{Примеры конформных отображений}
 	
 	\begin{example}
 		\[ f(z) = \frac{1}{z}  \]
 		$ D_z = \{z \in \Cm : |z| < 1 \}$\\
 		$ z = re^{i\phi},\ w = \frac{1}{r}e^{-i\phi}, \text{где } \phi\in(-\pi, \pi] $\\
 		$ D_z = \{z \in \Cm : |z| < 1 \} \ \mapsto \ D_w = \{w \in \Cm : |w| > 1 \} $\\
-		Направление обхода можем узать из того, куда переходят точки. А из этого уже узнаем, куда переходит область (Область должна оставаться слева от обхода)\\
+		Направление обхода можем узнать из того, куда переходят точки. А из этого уже узнаем, куда переходит область (Область должна оставаться слева от обхода)\\
 		$ 1 \ \mapsto \ 1$\\
 		$ i \ \mapsto \ -i$
 	\begin{center}
@@ -1188,7 +1155,7 @@
 		$ x^2 - ax + y^2 < 0 \ \iff \ (x-\frac{a}{2})^2 + y^2 < \left ( \frac{a}{2} \right)^2 $\\
 		$ \partial D_z = \{z = \frac{a}{2} + \frac{a}{2}e^{i\phi},\ \phi\in(-\pi, \pi] \} $\\
 		\[ w = \frac{1}{z} = \frac{1}{\frac{a}{2}+ \frac{a}{2}e^{i\phi}} = \frac{2}{a+ae^{i\phi}} = \frac{2e^{-i\frac{\phi}{2}}}{(a+ae^{i\phi})e^{-i\frac{\phi}{2}}} = \frac{\cos\frac{\phi}{2} - i\sin\frac{\phi}{2}}{a\cos\frac{\phi}{2}} = \frac{1}{a} - \frac{i}{a}\tg\frac{\phi}{2} \]
-		Вещественная цасть всегда одинаковая, а мнимая принимает все значения.
+		Вещественная часть всегда одинаковая, а мнимая принимает все значения.
 		\begin{flalign*}
 			&\text{Можем найти, куда переходит область, если отследим, куда переходят точки} :  \frac{a}{2} \mapsto \frac{2}{a} &
 		\end{flalign*}
@@ -1227,13 +1194,13 @@
 				node[midway, above, yshift=5pt] {$f$};
 			\end{tikzpicture}
 		\end{center}
-		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a > 0\} \ \mapsto \ D_w = \{w \in \Cm : \operatorname{Re}w > \frac{1}{a} \} \]
+		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a > 0\} \ \mapsto \ D_w = \{w \in \Cm : \Re w > \frac{1}{a} \} \]
 		Аналогично доказывается для $ a < 0 $
-		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a < 0\} \ \mapsto \ D_w = \{w \in \Cm : \operatorname{Re}w < \frac{1}{a} \} \]
+		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a < 0\} \ \mapsto \ D_w = \{w \in \Cm : \Re w < \frac{1}{a} \} \]
 	\end{example}
 	\begin{theorem*}
 		(Римана)\\ \indent
-		Пусть $ D_z, D_w$ --- односвязные области, границы которых состоят более чем из оодной точки.
+		Пусть $ D_z, D_w$ --- односвязные области, границы которых состоят более чем из одной точки.
 		Тогда $\exists \ f(z)$ --- конформное отображение $ D_z $ на $ D_w $.  
 	\end{theorem*}
 	\begin{remark}
@@ -1305,11 +1272,9 @@
 	\begin{definition}
 		Пусть $w = f(z) : D_z \to D_\omega$. Точка $z_0 \in D_z$ называется \textbf{неподвижной}, если $f(z_0) = z_0$.
 	\end{definition}
-	
 	\begin{theorem}
 		Если дробно-линейное отображение имеет более двух неподвижных точек, тогда оно имеет вид $w = z$.
 	\end{theorem}
-	
 	\begin{proof}
 		\[\frac{az+b}{cz+d} = z \iff cz^2 + (d - a)z - b = 0 \]
 		1) Если $c = 0$, $a = d$, $b \neq 0$, тогда \[w = z + \frac{b}{d}\]
@@ -1328,31 +1293,28 @@
 		Существование:\\
 		(Идея доказательства заключается в том, чтобы использовать вспомогательное множество, и уже по нему склеить точки между двумя исходными множествами.)\\
 		Необходимо доказать, что существует отображение $ f $, которое переводит три различные точки в различные образы:
-			$ z_j \mapsto w_j,\ j = 1, 2, 3 $\\
-			Введем вспомогательную функцию $ g(z) $ и найдем такие $ z $, что $ z_1 \mapsto 0,\ z_2 \mapsto \infty,\ z_3 \mapsto 1 $
-			\[ g(z) = \frac{az+b}{cz+d} \]
-			\vspace{-1cm}
-			\begin{flalign*}
-				1)\ &z_1 \mapsto 0 : az_1 + b = 0 \iff b = -az_1&\\
-				2)\ &z_2 \mapsto \infty : cz_2 + d = 0 \iff d = -cz_2&
-			\end{flalign*}
-			Тогда, 
-			\[ g(z) = \frac{a(z-z_1)}{c(z-z_2)} = K \cdot \frac{z-z_1}{z-z_2} \]
-			\begin{flalign*}
-				3)\ &z_3 \mapsto 1 : K \cdot \frac{z_3 - z_1}{z_3 - z_2} = 1 \iff K = \frac{z_3 - z_2}{z_3 - z_1}&
-			\end{flalign*}
-			Получаем,
-			\[ g(z) = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1} \]
-			Аналогичные преобразования делаем с точками из образа:
-			\[ h(w) = \frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1}, \quad w_1 \mapsto 0,\ w_2 \mapsto \infty,\ w_3 \mapsto 1  \]
-			Рассмотрим отображение:
-			\[ w = f(z) = h^{-1}(g(z)) \text{ --- дробно-линейное отображение} \]
-			Итого имеем, 
-			\[ h(w) = g(z) \Rightarrow \boxed{\frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}} \]
-			Отсюда можно в явном виде найти чему равно $ w $.\\
+		$ z_j \mapsto w_j,\ j = 1, 2, 3 $\\
+		Введем вспомогательную функцию $ g(z) $ и найдем такие $ z $, что $ z_1 \mapsto 0,\ z_2 \mapsto \infty,\ z_3 \mapsto 1 $
+		\[ g(z) = \frac{az+b}{cz+d} \]
+		\vspace{-1cm}
+		\begin{flalign*}
+			1)\ &z_1 \mapsto 0 : az_1 + b = 0 \iff b = -az_1&\\
+			2)\ &z_2 \mapsto \infty : cz_2 + d = 0 \iff d = -cz_2&
+		\end{flalign*}
+		Тогда, \[ g(z) = \frac{a(z-z_1)}{c(z-z_2)} = K \cdot \frac{z-z_1}{z-z_2} \]
+		\begin{flalign*}
+			3)\ &z_3 \mapsto 1 : K \cdot \frac{z_3 - z_1}{z_3 - z_2} = 1 \iff K = \frac{z_3 - z_2}{z_3 - z_1}&
+		\end{flalign*}
+		Получаем, \[ g(z) = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1} \]
+		Аналогичные преобразования делаем с точками из образа:
+		\[ h(w) = \frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1}, \quad w_1 \mapsto 0,\ w_2 \mapsto \infty,\ w_3 \mapsto 1  \]
+		Рассмотрим отображение: \[ w = f(z) = h^{-1}(g(z)) \text{ --- дробно-линейное отображение} \]
+		Итого имеем 
+		\[ h(w) = g(z) \Rightarrow \boxed{\frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}} \]
+		Отсюда можно в явном виде найти чему равно $ w $.\\
 		\noindent
 		2) Единственность:\\
-			Пусть $ \exists \ \tilde f $ --- другое дробно-линейное отображение, которое преводит $ z_j \mapsto w_i, \ j = 1, 2, 3 $\\
+			Пусть $ \exists \ \tilde f $ --- другое дробно-линейное отображение, которое преводит $ z_j \mapsto w_j, \ j = 1, 2, 3 $\\
 		Рассмотрим дробно-линейное отображение $ \psi $:
 		\[ \psi(z) = \tilde f^{-1}(f(z)) \]
 		Такое отображение переводит $ z_j \mapsto z_j $, т.е. оставляет точки неподвижными.\\ 
@@ -1371,8 +1333,8 @@
 		Покажем, что теорема верна для отображения $w = \frac{1}{z}$\\
 		Запишем уравнение обобщенной окружности:
 		\[ A(x^2 + y^2) + Bx + Cy + D = 0, \ A, B, C, D \in \R \]
-		Запишем это уравнение через $ z $:
-		\[ Az \overline{z} + \frac{B}{2}(z + \overline{z}) + \frac{C}{2i}(z - \overline{z}) + D = 0\]
+		Запишем это уравнение через $z$:
+		\[ Az\overline{z} + \frac{B}{2}(z + \overline{z}) + \frac{C}{2i}(z - \overline{z}) + D = 0 \]
 		Под действием отображения, уравнение перепишется в виде: 
 		\[ A \frac{1}{w\overline w} + \frac{B}{2}\left(\frac{1}{w} + \frac{1}{\overline w}\right) + \frac{C}{2i}\left(\frac{1}{w} - \frac{1}{\overline w}\right) + D = 0 \;|\; \cdot w \overline w \]
 		\[Dw \overline w + \frac{B}{2}(w + \overline w) + \frac{C}{2i}(\overline w - w) + A = 0\]
@@ -1381,7 +1343,7 @@
 	\end{proof}
 	\vspace{-0.5cm}
 	\begin{definition}
-		Пусть $\gamma_R = \{ z \in \Cm : |z - z_0| = R\}$ --- окружность радиуса R.\\
+		Пусть $\gamma_R = \{ z \in \Cm : |z - z_0| = R \}$ --- окружность радиуса R.\\
 		Точки $z$, $z^*$ называются \textbf{симметричными относительно окружности} $\gamma_R$, если:\\
 		\textbf{1)} Они лежат на одном луче, выходящем из центра окружности;\\
 		\textbf{2)} $|z-z_0||z^*-z_0| = R^2$.
@@ -1396,24 +1358,21 @@
 		Для всякой окружности $\Gamma$, выполняется $z, z^* \in \Gamma \Rightarrow \Gamma \perp \gamma_R$.
 	\end{statement}
 	\begin{proof}
-		\ \\
-		\boxed \Rightarrow\\ 
+		\ \\ \boxed \Rightarrow\\ 
 		Пусть $z$ и $z^*$ симметричны относительно окружности $\gamma_R$, тогда
 		\[ |z - z_0||z^* - z_0| = R^2 \Rightarrow \text{ длина отрезка касательной равна } R \Rightarrow \gamma_R \perp \Gamma\]
-		\noindent
-		\boxed \Leftarrow\\ 
-		$\Gamma  \perp \gamma_R $, значит $z$ и $z^*$ лежат на одном луче, выходящем из точки $z_0$.\\
-		\textbf{(Тут должа быть картинка)}\\
+		\noindent\boxed \Leftarrow\\ 
+		$\Gamma\perp\gamma_R$, значит $z$ и $z^*$ лежат на одном луче, выходящем из точки $z_0$.\\
+		\textbf{(Тут должна быть картинка)}\\
 		Из школьной геометрии: $ |OB|^2 = |OC||OD| $, тогда
-		\[ R^2 = |z - z_0||z^* - z_0| \Rightarrow z \text{ и } z^* \text{ симметричны относительно окружности}\]
+		\[ R^2 = |z - z_0||z^* - z_0| \Rightarrow z \text{ и } z^* \text{ симметричны относительно окружности} \]
 	\end{proof}
 	\newpage
 	\begin{theorem}
 		При дробно-линейном отображении точки, симметричные относительно обобщенной окружности, переходят в точки, симметричные относительно образа этой обобщенной окружности.
 	\end{theorem}
 	\begin{proof}
-		\ \\
-		Пусть $\gamma_z$ --- обобщенная окружность, и $z$, $z^*$ --- точки, симметричные относительно $\gamma_z$.\\
+		\ \\ Пусть $\gamma_z$ --- обобщенная окружность, и $z$, $z^*$ --- точки, симметричные относительно $\gamma_z$.\\
 		Пусть $ w = f(z)$ --- некоторое дробно-линейное отображение, тогда \\
 		$\gamma_z \xrightarrow{f} \gamma_w$ --- обобщенная окружность перейдет в обобщенную окружность. \\
 		Под действием $ f $ точки перейдут в $z \mapsto w$, $z^* \mapsto w^*$. \\
@@ -1425,7 +1384,7 @@
 	\section{Лекция 10}
 	\subsection{Примеры}
 	\noindent
-	\textbf{1)} Дана область $D_z = \{ z \in \Cm : \operatorname{Re}z < 0,\ \operatorname{Im}z > 0 \}$ и отображение $ f(z) = \dfrac{z - i}{z + i} $\\
+	\textbf{1)} Дана область $D_z = \{ z \in \Cm : \Re z < 0,\ \Im z > 0 \}$ и отображение $ f(z) = \dfrac{z - i}{z + i} $\\
 	Возьмем луч $ \gamma_1 : z = iy, y \geqslant 0 $\\ 
 	Найдем, куда перейдут точки лежащие на $ \gamma_1 $ под действием отображения $ f $:
 	\[ 0 \mapsto -1, \ i \mapsto 0, \ \infty \mapsto 1\]
@@ -1437,9 +1396,9 @@
 		\[|w - w_0| = R \iff (u - u_0)^2 + (v - v_0)^2 = R^2\]
 	Можем определить, куда перейдет сама область, если возьмем внутреннюю точку $-1 + i \in D_z$: 
 		\[ -1 + i \mapsto \frac{1+2i}{5} \]
-	\textbf{Ответ}: $D_w = \{w \in \Cm : |w| < 1, \operatorname{Im}w > 0\}$\\ \ \\
+	\textbf{Ответ}: $D_w = \{w \in \Cm : |w| < 1, \Im w > 0\}$\\ \ \\
 	\noindent
-	\textbf{2)} Дана область $D_z = \{ z \in \Cm : 0 < \operatorname{Re}z < 1\}$ и отображение $ f(z) = \dfrac{z - 1}{z}$\\
+	\textbf{2)} Дана область $D_z = \{ z \in \Cm : 0 < \Re z < 1\}$ и отображение $ f(z) = \dfrac{z - 1}{z}$\\
 	\textbf{(Тут должна быть картинка)}\\
 	Возьмем луч $ \gamma_1 : z = iy, \ y \in \R $\\
 	Найдем, куда перейдут точки лежащие на $ \gamma_1 $ под действием отображения $ f $:
@@ -1454,35 +1413,30 @@
 		(\frac{1}{2} - v_0)^2 = R^2
 	\end{cases} \iff R = \frac{1}{2}, \ v_0 = 0 \]
 	Можем определить, куда перейдет сама область, если возьмем внутреннюю точку $\dfrac{1}{2} \in D_z$.
-	\textbf{Ответ:} $ D_w = \{ w \in \Cm : \operatorname{Re} w < 1, |w - \frac{1}{2}| > \frac{1}{2}\}$
+	\textbf{Ответ:} $ D_w = \{ w \in \Cm : \Re w < 1, |w - \frac{1}{2}| > \frac{1}{2}\}$
 	\newpage
 	\noindent\textbf{Задача 1} \\
-	Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : \operatorname{Im} z > 0 \}$ на $K_w = \{ w \in \Cm : |w| < 1 \}$. 
+	Найти общий вид дробно-линейного отображения, переводящего $D_z = \{ z \in \Cm : \Im z > 0 \}$ на $K_w = \{ w \in \Cm : |w| < 1 \}$. 
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
-			% Левый рисунок
 			\begin{scope}[local bounding box=scope1]
 				\begin{scope}
-					\clip (-1.5,0) rectangle (1.5,1.5); % закрашиваем только y > 0
+					\clip (-1.5,0) rectangle (1.5,1.5);
 					\fill[blue!20] (-1.5,-1.5) rectangle (1.5,1.5);
 				\end{scope}
 				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-				% Стрелка слева направо вдоль оси y=0
 				\draw[->, thick, red] (-1,0) -- (1,0);
-				\fill[black] (-1,1) circle (0.5pt) node[above] {$a$};
-				\fill[black] (-1,-1) circle (0.5pt) node[above] {$\bar a$};
-				% Подпись области
+				\fill (-1,1) circle (0.5pt) node[above] {$a$};
+				\fill (-1,-1) circle (0.5pt) node[above] {$\bar a$};
 				\node at (0,1.8) {$D_z$};
 			\end{scope}
 			
-			% Правый рисунок
 			\begin{scope}[local bounding box=scope2, xshift=5cm]
 				\draw[thick] (0,0) circle (1);
 				\fill[blue!20, even odd rule] (0,0) circle (1);
 				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-				
 				\draw[->, thick, red] (1,0) arc (0:90:1);
 				\node at (0,1.8) {$K_w$};
 				\node at (1.15,-0.15) {$1$};
@@ -1490,15 +1444,15 @@
 			% Стрелка между рисунками
 			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
 			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
-			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
 			
 			\draw[->, ultra thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
 			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	В верхней полуплоскости найдется такая точка $ a $, что $a \mapsto 0,\ \operatorname{Im}a > 0$.\\
-	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точки $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (это берется из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \Rightarrow w^* = \frac{1}{w}$)\\
+	В верхней полуплоскости найдется такая точка $ a $, что $a\mapsto 0,\ \Im a > 0$.\\
+	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точке $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (это берется из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \Rightarrow w^* = \frac{1}{w}$)\\
 	\[ f(z) = \frac{Az + B}{Cz + D} \Rightarrow
 	\begin{cases}
 		Aa + B = 0\\
@@ -1512,7 +1466,7 @@
 	\Rightarrow w = \frac{A(z - a)}{C(z - \bar a)} = K\frac{(z - a)}{(z - \bar a)} \]
 	Знаем, что точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
 	\[ 0 \mapsto e^{it} \Rightarrow \frac{-a}{-\bar a}K = e^{it} \Rightarrow |K| = 1 \Rightarrow K = e^{i\alpha} \] 
-	\textbf{Ответ:} $w = \dfrac{z - a}{z - \bar a} e^{i \alpha}, \ \operatorname{Im} a > 0, \ \alpha \in \R$\\
+	\textbf{Ответ:} $w = \dfrac{z-a}{z-\bar a}e^{i \alpha},\ \Im a > 0,\ \alpha \in \R$\\
 	\newpage
 	\noindent
 	\textbf{Задача 2} \\
@@ -1556,10 +1510,10 @@
 	\[ f(z) = \tilde K\frac{z - a}{z - \frac{1}{\bar a}} = K\frac{z-a}{1-\bar az} \]
 	Точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
 	\[ 1 \mapsto e^{it} \Rightarrow K\frac{1-a}{1-\bar a} = e^{it} \Rightarrow  |K|\frac{|1-a|}{|1-\bar a|} = 1 \Rightarrow |K| = 1 \]
-	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az} e^{i \alpha}, \ 0 < |a| < 1, \ \alpha \in \R$\\
+	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az}e^{i \alpha},\ 0 < |a| < 1,\ \alpha\in\R$\\
 	\begin{example}
-		Найти такое отображение $ f $, что $K_z$ переводит в $K_w$, $w(2) = i,\ \arg w(2) = 0$\\
-		$K_z = \{ z \in \Cm : |z - 2| < 1 \}$, $K_w = \{w \in \Cm : |w - 2i| < 2\}$ 
+		Найти такое отображение $f$, что $K_z$ переводит в $K_w$, $w(2) = i,\ \arg w(2) = 0$\\
+		$K_z = \{ z\in\Cm : |z - 2| < 1 \}$, $K_w = \{w \in \Cm : |w - 2i| < 2\}$ 
 	\end{example}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -1596,7 +1550,7 @@
 			\end{tikzpicture}
 	\end{center}
 	\textbf{Способ 1}\\
-	Сделаем заменну переменных:
+	Сделаем замену переменных:
 	$ \begin{cases}
 		\xi = z - 2\\ 
 		\eta = \dfrac{w - 2i}{2}
@@ -1617,14 +1571,14 @@
 	Далее по трем точкам можем найти искомое дробно-линейное отображение.
 	\newpage
 	\begin{example}
-		Отобразить $ D_z = \{z \in \Cm: \operatorname{Im}z>0\} $ на $ D_w = \{w \in \Cm: \operatorname{Re}w>0\},\\ a \mapsto b,\ \operatorname{Im}a>0,\ \operatorname{Re}b>0. $
+		Отобразить $ D_z = \{z \in \Cm: \Im z>0\} $ на $ D_w = \{w \in \Cm: \Re w>0\},\\ a \mapsto b,\ \Im a>0,\ \Re b>0. $
 	\end{example}
 	\noindent
 	Отображение $ \eta = e^{i\frac{\pi}{2}}w = iw \text{ переведет } b\mapsto ib $\\
 	$ \xi = \dfrac{z-a}{z-a}e^{i\alpha},\ \alpha > 0 $\\
 	$ w = \psi^{-1}h^{-1}g(z) \iff \psi(w) = h^{-1}g(z) \iff h(\psi(w)) = g(z) $\\
 	$ \xi = \dfrac{\eta - ib}{\eta - \overline{(ib)}}e^{i\theta},\ \theta\in\R $
-	\[ \frac{z - a}{z - \bar a}e^{i\alpha} = \frac{\eta - ib}{\eta + i\bar b}e^{i\theta} \iff \frac{z - a}{z - \bar a}e^{i\beta} = \frac{iw - ib}{iw + i\bar b}, \ \beta = \alpha - \theta \iff \frac{w - b}{w + \bar b} = \frac{z - a}{z - \bar a}e^{i\beta},\ \operatorname{Im}a>0, \ \operatorname{Re}b>0 \]
+	\[ \frac{z - a}{z - \bar a}e^{i\alpha} = \frac{\eta - ib}{\eta + i\bar b}e^{i\theta} \iff \frac{z - a}{z - \bar a}e^{i\beta} = \frac{iw - ib}{iw + i\bar b}, \ \beta = \alpha - \theta \iff \frac{w - b}{w + \bar b} = \frac{z - a}{z - \bar a}e^{i\beta},\ \Im a>0,\ \Re b>0 \]
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			% ========== ВЕРХНИЙ РЯД ==========
@@ -1702,11 +1656,11 @@
 		Отображение $w = f(z)$ называется конформным в точке $z_0 \in \overline{\Cm}$, если оно конформно в некоторой окрестности этой точки.
 	\end{definition}
 	\begin{remark}
-		Пусть $f(z) \in \mathcal{A}(U(z_0))$ и $f'(z_0) \neq 0$. Тогда отображение $w = f(z)$ конформно в $z_0$.
+		Пусть $f(z) \in \A(U(z_0))$ и $f'(z_0) \neq 0$. Тогда отображение $w = f(z)$ конформно в $z_0$.
 	\end{remark}\ \\ \indent
 	Рассмотрим отображение $w = z^n,\ n \in \N$, и найдем её производную:
 		$f'(z) = nz ^{n-1}. $\\
-		$ f'(z) \ne 0 \text{ при } z \ne 0, \ f(z) \in \mathcal{A}(\Cm) $\\
+		$ f'(z) \ne 0 \text{ при } z \ne 0, \ f(z) \in \A(\Cm) $\\
 		Отображение $ w = z^n $ конформно в любой точке из $\Cm \setminus \{{0}\}$. 
 	\begin{remark}
 		Отображение $w = z^n$ конформно в любой области, которая не содержит любых двух вершин правильного $n$-угольника с центром в начале координат.
@@ -1749,9 +1703,8 @@
 	\end{center}
 	Чтобы отображение было взаимооднозначным необходимо, чтобы $ 0 < \alpha < \dfrac{2\pi}{n}. $\\
 	$w = z^n \text{--- конформно в $D_z$, где} \ D_z = \{ z \in \Cm : \beta < \arg z < \beta + \dfrac{2\pi}{n}\} $\\
-	
 	Рассмотрим обратное отображение $f(z) = z^\frac{1}{n} \text{ --- $n$-значная функция.}$\\
-	На $\widetilde D = \Cm \setminus \{z \in \Cm: \operatorname{Im} z = 0,\  \operatorname{Re}z \geqslant 0 \}$ можно выделить $n$ однозначных ветвей.
+	На $\widetilde D = \Cm \setminus \{z \in \Cm: \Im z = 0,\ \Re z \geqslant 0 \}$ можно выделить $n$ однозначных ветвей.
 	\[ f_k(z) = \sqrt[n]{|z|} e^\frac{i(\arg z + 2 \pi k)}{n},\ k = 0, 1, \ldots, n-1 \]
 	$w = f_0(z)$ --- конформно на $\widetilde{D}$
 	\newpage
@@ -1792,11 +1745,11 @@
 	\end{center}
 	\subsection{Отображения, задаваемые функциями $f(z) = e^z$, $f(z) = \operatorname{Ln}(z)$}
 	\subsubsection{Функция $ f(z) = e^z $}
-	Её производная $f'(z) = e^z \neq 0, \ \forall z \in \Cm \Rightarrow f(z) \in \mathcal{A}(\Cm)$, она конформна на $\Cm$.\\
+	Её производная $f'(z) = e^z \neq 0, \ \forall z \in \Cm \Rightarrow f(z) \in \A(\Cm)$, она конформна на $\Cm$.\\
 	$e^z = e^{x + iy} \Rightarrow |e^z| = e^x$\\
 	$\forall z \in \Cm \Rightarrow e^z = e^{z + 2\pi i},\ T = 2\pi i$ --- основной период\\
 	Уравнение $e^z = 0$ не имеет решений.
-	\[ D = \{z \in \Cm :\ 0 < \operatorname{Im}z < 2\pi\} \text{ --- область конформности.} \]
+	\[ D = \{z \in \Cm :\ 0 < \Im z < 2\pi\} \text{ --- область конформности.} \]
 	(Любая полоса шириной $ 2\pi $ является облостью конформности.)
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -1846,7 +1799,8 @@
 	\[ D_w = \{ w \in \Cm :\ 0 < \arg w < 2\pi \} \]
 	\newpage
 	\subsection*{Примеры}
-	\noindent\textbf{1)} $ D_z = \{z \in \Cm :\ 0 \leqslant \operatorname{Im}z \leqslant 2\pi,\ \operatorname{Re}z \leqslant 0 \} $
+	\noindent\textbf{1)} 
+	$ D_z = \{z \in \Cm :\ 0 \leqslant \Im z \leqslant 2\pi,\ \Re z \leqslant 0 \} $
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 				% Левый рисунок
@@ -1890,8 +1844,8 @@
 		\Gamma_2: z = yi,\  0 \leqslant y \leqslant 2\pi \Rightarrow w = e^{iy}\\
 		\Gamma_3: z = x + 2\pi i,\ x \leqslant 0 \Rightarrow w = e^x
 	\end{cases} $
-	\[ D_w = \{ w \in \Cm: |w| < 1\} \setminus \{ w \in \Cm: \operatorname{Im} w = 0,\ 0 \leqslant \operatorname{Re} w \leqslant 1 \} \]
-	\noindent\textbf{2)} $ D_z = \{z \in \Cm :\ 0 \leqslant \operatorname{Im}z \leqslant 2\pi,\ \operatorname{Re}z \geqslant 0 \} $
+	\[ D_w = \{ w \in \Cm: |w| < 1\} \setminus \{ w \in \Cm: \Im w = 0,\ 0 \leqslant \Re w \leqslant 1 \} \]
+	\noindent\textbf{2)} $ D_z = \{z \in \Cm :\ 0 \leqslant \Im z \leqslant 2\pi,\ \Re z \geqslant 0 \} $
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 				% Левый рисунок
@@ -1932,7 +1886,7 @@
 			\end{tikzpicture}
 	\end{center}
 	Знаем, что вся полоса перейдет на плоскость с разрезом. Выше увидили, что левая половина перешла на круг с разрезом, а значит правая полоса перейдет во внешность окружности с разрезом.
-	\[ D_w = \{ w \in \Cm: |w| > 1\} \setminus \{ w \in \Cm: \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 1 \} \]\newpage
+	\[ D_w = \{ w \in \Cm: |w| > 1\} \setminus \{ w \in \Cm: \Im w = 0,\ \Re w \geqslant 1 \} \]\newpage
 	\noindent\textbf{3)} Аналогичные примеры с более тонкой полоской.
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -2045,7 +1999,7 @@
 	\[ \operatorname{Ln}z = \ln{|z|} + i(\arg z +2\pi k)\text{ --- бесконечно-значная функция} \]
 	\noindent
 	$w = f_0(z)=\ln z=\ln{|z|} + i \arg z $ --- Главная ветвь.(Оно конформно в $ D_z $)\\
-	$D_z = \Cm \setminus \{z \in \Cm: \operatorname{Im}z = 0,\ \operatorname{Re}z \geqslant 0 \}$
+	$D_z = \Cm \setminus \{z \in \Cm: \Im z = 0,\ \Re z \geqslant 0 \}$
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2081,7 +2035,7 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w= \{ w \in \Cm : 0 < \operatorname{Im}w < 2\pi i \} \]
+	\[ D_w= \{ w \in \Cm : 0 < \Im w < 2\pi i \} \]
 	\subsection{Отображение задаваемые функцией Жуковского}
 	\[ f(z) = \frac{1}{2} (z + \frac{1}{z}) \]
 	Найдем ее производную: $f'(z) = \dfrac{1}{2} (1 - \dfrac{1}{z^2})$. Производная не равна 0, при $z \neq \pm 1.$ \\ \noindent
@@ -2104,7 +2058,7 @@
 	\end{proof}
 	\begin{statement}
 		Отображение $ f(z) = \frac{1}{2} (z + \frac{1}{z})$, конформно в области $ D_z $, если
-		$ D_z $ одовременно не содержит точек $ z_1,\ z_2 : z_1z_2 = 1$ и $ \pm 1 \notin D_z.$
+		$ D_z $ одновременно не содержит точек $ z_1,\ z_2 : z_1z_2 = 1$ и $ \pm 1 \notin D_z.$
 	\end{statement}
 	\begin{proof}
 		Исследуем на взаимооднозначность при $ z_1 \ne z_2. $
@@ -2115,11 +2069,11 @@
 	Параметрически предстваляем границу: $ z = Re^{i\phi},\ -\pi < \phi \leqslant \pi$
 	\[  w = \frac{1}{2}(Re^{i\phi} + \frac{1}{R}e^{-i\phi}) = \frac{1}{2}(R(\cos\phi + i\sin\phi) + \frac{1}{R}(\cos\phi - i\sin\phi)) \] 
 	$ \begin{cases}
-		u(R, \phi) = \dfrac{1}{2}\left( R+\dfrac{1}{R}\right)\cos\phi\\
-		v(R, \phi) = \dfrac{1}{2}\left( R-\dfrac{1}{R}\right)\sin\phi
+		u(R,\, \phi) = \dfrac{1}{2}\left(R+\dfrac{1}{R}\right)\cos\phi\\
+		v(R,\,\phi) = \dfrac{1}{2}\left(R-\dfrac{1}{R}\right)\sin\phi
 	\end{cases} $, геометрическое место этих точек --- эллипс.
-	\[ \dfrac{u^2}{\dfrac{1}{2^2}\left(R +\dfrac{1}{R} \right)^2 } + \dfrac{v^2}{\dfrac{1}{2^2}\left( R-\dfrac{1}{R} \right)^2 } = 1 \]
-	\[ D_w = \{ w \in \Cm: \frac{4(\operatorname{Re} w)^2}{\left( R+\dfrac{1}{R}\right) ^2} + \frac{4(\operatorname{Im} w)^2}{\left( R-\dfrac{1}{R}\right) ^2} > 1 \} \]
+	\[ \dfrac{u^2}{\dfrac{1}{2^2}\left(R +\dfrac{1}{R} \right)^2 } + \dfrac{v^2}{\dfrac{1}{2^2}\left(R-\dfrac{1}{R} \right)^2 } = 1 \]
+	\[ D_w = \{ w \in \Cm: \frac{4(\Re w)^2}{\left( R+\dfrac{1}{R}\right)^2} + \frac{4(\Im w)^2}{\left( R-\dfrac{1}{R}\right)^2} > 1 \} \]
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2132,12 +2086,11 @@
 				\node at (1.1,-0.15) {$R<1$};
 				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 			\end{scope}
-
 			\begin{scope}[local bounding box=scope2, xshift=5cm]
 				\begin{scope}
 					\fill[blue!20, even odd rule] 
-					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
-					(0,0) ellipse (1.2 and 0.75); % луч (вычитается)
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0,0) ellipse (1.2 and 0.75);
 				\end{scope}
 				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
@@ -2146,7 +2099,6 @@
 				\fill[black] (1.2,0) circle (0.5pt) node[below left] {$\frac{1}{2}(R+\frac{1}{R}) $};
 				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
 			\end{scope}
-			% Стрелка между рисунками
 			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
 			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
 			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
@@ -2192,7 +2144,7 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w = \overline\Cm\setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ -1\leqslant\operatorname{Re} \leqslant 1 \} \]
+	\[ D_w = \overline\Cm\setminus \{ w \in \Cm :\Im w = 0,\ -1\leqslant\Re\leqslant 1 \} \]
 	\textbf{3)} $ D_z = \{ z\in \Cm: |z| > R,\ R > 1 \} $
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -2232,9 +2184,9 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w = \{ w \in \Cm: \frac{4(\operatorname{Re} w)^2}{\left( R+\dfrac{1}{R}\right) ^2} + \frac{4(\operatorname{Im} w)^2}{\left( R-\dfrac{1}{R}\right) ^2} > 1 \} \]
+	\[ D_w = \{ w \in \Cm: \frac{4(\Re w)^2}{\left( R+\dfrac{1}{R}\right) ^2} + \frac{4(\Im w)^2}{\left( R-\dfrac{1}{R}\right) ^2} > 1 \} \]
 	\newpage
-	\textbf{4)} $ D_z = \{ z\in \Cm: |z| >1\} $
+	\textbf{4)} $ D_z = \{ z\in \Cm: |z| >1 \} $
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2274,8 +2226,8 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w = \overline\Cm\setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ -1\leqslant\operatorname{Re} \leqslant 1 \} \]
-	\textbf{5)} $ D_z = \{ z\in\Cm: \operatorname{Im} > 0\} $\\
+	\[ D_w =\overline\Cm\setminus\{ w\in\Cm:\Im w = 0,\ -1\leqslant\Re\leqslant 1 \} \]
+	\textbf{5)} $ D_z = \{ z\in\Cm: \Im z > 0\} $\\
 	Выполним анализ графика функции $ f(x) = \dfrac{1}{2}\left(x+\dfrac{1}{x}\right)  $
 	\begin{center}
 		\begin{tikzpicture}[scale=1]
@@ -2342,8 +2294,8 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w = \Cm \setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \leqslant 0 \} \cup \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 0 \} \]
-	\textbf{6)} $ D_z = \{ z\in\Cm: \operatorname{Im} < 0\} $\\
+	\[ D_w = \Cm \setminus \{ w \in \Cm : \Im w = 0,\ \Re w \leqslant 0 \} \cup \{ w \in \Cm : \Im w = 0,\ \Re w \geqslant 0 \} \]
+	\textbf{6)} $ D_z = \{ z\in\Cm: \Im z < 0\} $\\
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2380,14 +2332,14 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\[ D_w = \Cm \setminus \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \leqslant 0 \} \cup \{ w \in \Cm : \operatorname{Im} w = 0,\ \operatorname{Re} w \geqslant 0 \} \]
+	\[ D_w = \Cm \setminus \{ w \in \Cm : \Im w = 0,\ \Re w \leqslant 0 \} \cup \{ w \in \Cm : \Im w = 0,\ \Re w \geqslant 0 \} \]
 	\subsection{Отображение луночек и областей с разрывами}
 	\begin{definition}
 		\textbf{Луночка} --- область, граница которой имеет вид: $ \gamma_1 \cup \gamma_2 $, где  $ \gamma_1, \gamma_2 $ --- дуги обобщенных окружностей и
 		$ \gamma_1 \cap \gamma_2 $ содержит две точки.
 	\end{definition}
 	\begin{example}
-		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1,\ \operatorname{Im} > 0 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1,\ \Im z > 0 \}, \ D_w = \{ w\in\Cm: \Im w > 0 \}$
 	\end{example}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -2521,7 +2473,7 @@
 		&\text{Ответ: } w = \left( \frac{z+1}{z-1}\right)^2&\\
 	\end{flalign*}
 	\begin{example}
-		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1, |z-i| < 1 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \{ z\in\Cm: |z| < 1, |z-i| < 1 \}, \ D_w = \{ w\in\Cm: \Im w > 0 \}$
 	\end{example}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -2636,7 +2588,7 @@
 		$ z_1 $ и $ z_2 $ можно менять местами в выражении $ w_1 = \dfrac{z-z_2}{z-z_1} $
 	\end{remark}
 	\begin{example}
-		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \Cm \setminus \{ z\in\Cm: \operatorname{Im}z = 0,\ x_1\leqslant\operatorname{Re}z \leqslant x_2 \}, \ D_w = \{ w\in\Cm: \operatorname{Im} > 0 \}$
+		Найти отображение, которое переводит $ D_z $ в $ D_w $, где\\ $ D_z = \Cm \setminus \{ z\in\Cm: \Im z = 0,\ x_1\leqslant\Re z \leqslant x_2 \}, \ D_w = \{ w\in\Cm: \Im w > 0 \}$
 	\end{example}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -2680,31 +2632,24 @@
 	
 	\section{Лекция 13}
 	\subsection{Отображение луночки на верхнюю полуплоскость}
-	\begin{example}
-		Строим отображение луночки на верхнюю полуплоскость:
-		\begin{center}
-			\begin{tikzpicture}[scale=2]
-				\begin{scope}[local bounding box=scope1]
-					\begin{scope}
-						\clip (-0.4,0) circle (1.4);
-						\fill[blue!20] (0.4,0) circle (1.4);
-					\end{scope}
-					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-					
-					% Границы луночки
-					\draw (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
-					\draw (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
-					
-					% Точки пересечения (полюсы)
-					\fill (0,{sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
-					\fill (0,{-sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
-					
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+	Строим отображение луночки на верхнюю полуплоскость:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\clip (-0.4,0) circle (1.2);
+					\fill[blue!20] (0.4,0) circle (1.2);
 				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (-0.4,-1.2) arc (-90:90:1.2);
+				\draw (0.4,-1.2) arc (270:90:1.2);
+				\fill (0,{sqrt(1.2^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
+				\fill (0,{-sqrt(1.2^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
 		
-				\begin{scope}[local bounding box=scope2, xshift=5cm]
-					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+			\begin{scope}[local bounding box=scope2, xshift=5cm]					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
 					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
@@ -2719,436 +2664,282 @@
 				node[midway, above, yshift=5pt] {$f$};
 				
 			\end{tikzpicture}
-		\end{center}
-		\begin{enumerate}
-			\item Для начала используем дробно-линейное отображение $w_1 = \dfrac{z - z_1}{z - z_2}$, где один из полюсов отправляем в 0, а другой в $\infty$
-			\begin{center}
-				\begin{tikzpicture}[scale=2]
-					\begin{scope}[local bounding box=scope1]
-						\begin{scope}
-							\clip (-0.4,0) circle (1.4);
-							\fill[blue!20] (0.4,0) circle (1.4);
-						\end{scope}
-						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						\draw (-0.4,0) ++(-90:1.4) arc[start angle=-90, end angle=90, radius=1.4];
-						\draw (0.4,0) ++(270:1.4) arc[start angle=270, end angle=90, radius=1.4];
-						
-						\fill (0,{sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
-						\fill (0,{-sqrt(1.4^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
+	\end{center}
+		Для начала используем дробно-линейное отображение $w_1 = \dfrac{z - z_1}{z - z_2}$, где один из полюсов отправляем в 0, а другой в $\infty$
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\clip (-0.4,0) circle (1.2);
+						\fill[blue!20] (0.4,0) circle (1.2);
+					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (-0.4,-1.2) arc (-90:90:1.2);
+					\draw (0.4,-1.2) arc (270:90:1.2);
+					\fill (0,{sqrt(1.2^2-0.4^2)}) circle (0.5pt) node[above right] {$z_1$};
+					\fill (0,{-sqrt(1.2^2-0.4^2)}) circle (0.5pt) node[below right] {$z_2$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
 
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (0,0) -- (1.4096,0.513) arc (20:70:1.5) -- cycle;
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0,0) -- (1.4096,0.513);
+					\draw (0,0) -- (0.513,1.4096);
+						
+					\fill (0,0) circle (0.5pt) node[below left] {$0$};
+					\draw (0.5,0) arc (0:20:0.5);
+					\node at (10:0.75) {$\alpha$};
+					
+					\draw (0.6578, 0.2394) arc (20:70:0.7);
+					\node at (45:0.95) {$\beta$};
+						
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+				\end{scope}
+					
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
+					
+				\draw[->, thick] 
+				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$w_1$};
+			\end{tikzpicture}
+	\end{center}
+		Далее при помощи $w_2 = e^{-i\alpha} w_1$ поворачиваем на угол $\alpha$ по часовой.
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\fill[blue!20] (0,0) -- (1.4096,0.513) arc (20:70:1.5) -- cycle;
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0,0) -- (1.4096,0.513);
+					\draw (0,0) -- (0.513,1.4096);
+						
+					\draw (0.5,0) arc (0:20:0.5);
+					\node at (10:0.75) {$\alpha$};
+					\draw (0.6578, 0.2394) arc (20:70:0.7);
+					\node at (45:0.95) {$\beta$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
 					\end{scope}
 					
-					\begin{scope}[local bounding box=scope2, xshift=5cm]
-						\fill[blue!20] (0,0) -- (20:1.3) arc[start angle=20, end angle=70, radius=1.3] -- cycle;
-						
-						% Оси
-						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Границы сектора
-						\draw (0,0) -- (20:1.8);
-						\draw (0,0) -- (70:1.8);
-						\draw (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
-						
-						% Обозначение 0 в вершине сектора
-						\fill (0,0) circle (0.5pt) node[below left] {$0$};
-						
-						\draw (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
-						\node at (10:0.75) {$\alpha$};
-						
-						% Обозначение угла бета
-						\draw (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
-						\node at (45:0.95) {$\beta$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
-					\end{scope}
-					
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (0,0) -- (1.5,0) arc (0:50:1.5) -- cycle;
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\draw (0,0) -- (0.9642, 1.149);
+					\draw (0.5,0) arc (0:50:0.5);
+					\node at (0.7,0.25) {$\beta$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+				\end{scope}
 					\coordinate (startArrow) at ([yshift=1cm]scope1.east);
 					\coordinate (endArrow) at ([yshift=1cm]scope2.west);
 					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
 					
 					\draw[->, thick] 
 					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above, yshift=5pt] {$w_1$};
+					node[midway, above, yshift=5pt] {$w_2$};
 				\end{tikzpicture}
-			\end{center}
-			\newpage
-			\item Далее при помощи $w_2 = e^{-i\alpha} w_1$ поворачиваем на угол $\alpha$ по часовой.
-			\begin{center}
-				\begin{tikzpicture}[scale=2]
-					% --- Область W1 (сектор до поворота) ---
-					\begin{scope}[local bounding box=scope1]
-						% Заливка сектора
-						\fill[blue!20] (0,0) -- (20:1.8) arc[start angle=20, end angle=70, radius=1.8] -- cycle;
-						
-						% Оси
-						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
-						
-						% Границы сектора
-						\draw[thick] (0,0) -- (20:1.8);
-						\draw[thick] (0,0) -- (70:1.8);
-						\draw[thick] (20:1.8) arc[start angle=20, end angle=70, radius=1.8];
-						
-						% Обозначение 0 в вершине сектора
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						% Обозначение угла альфа
-						\draw[->] (0.5,0) arc[start angle=0, end angle=20, radius=0.5];
-						\node at (10:0.75) {$\alpha$};
-						
-						% Обозначение угла бета
-						\draw[->] (20:0.7) arc[start angle=20, end angle=70, radius=0.7];
-						\node at (45:0.95) {$\beta$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (1.1,1.2) {$w_1$};
-					\end{scope}
-					
-					% --- Область W2 (повёрнутый сектор) ---
-					\begin{scope}[local bounding box=scope2, xshift=4cm]
-						% Заливка повёрнутого сектора (теперь от 0 до бета)
-						\fill[blue!20] (0,0) -- (0:1.8) arc[start angle=0, end angle=50, radius=1.8] -- cycle;
-						
-						% Оси
-						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
-						
-						% Границы сектора
-						\draw[thick] (0,0) -- (0:1.8);
-						\draw[thick] (0,0) -- (50:1.8);
-						\draw[thick] (0:1.8) arc[start angle=0, end angle=50, radius=1.8];
-						
-						% Обозначение 0 в вершине сектора
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						% Обозначение угла бета
-						\draw[->] (0.5,0) arc[start angle=0, end angle=50, radius=0.5];
-						\node at (25:0.75) {$\beta$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (0.9,0.8) {$w_2$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_2 = e^{-i\alpha} w_1$};
-				\end{tikzpicture}
-			\end{center}
-			\item На последнем шаге нужно раскрыть наш сектор из угла $\beta$ до угла $\pi$, используя отображение $w = w_2^{\frac{\pi}{\beta}}$:
-			\begin{center}
-				\begin{tikzpicture}[scale=2]
-					% --- Область W2 (сектор от 0 до бета) ---
-					\begin{scope}[local bounding box=scope1]
-						% Заливка сектора
-						\fill[blue!20] (0,0) -- (0:1.8) arc[start angle=0, end angle=50, radius=1.8] -- cycle;
-						
-						% Оси
-						\draw[->] (-0.5,0) -- (2.0,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,2.0) node[above] {};
-						
-						% Границы сектора
-						\draw[thick] (0,0) -- (0:1.8);
-						\draw[thick] (0,0) -- (50:1.8);
-						\draw[thick] (0:1.8) arc[start angle=0, end angle=50, radius=1.8];
-						
-						% Обозначение 0 в вершине сектора
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						% Обозначение угла бета
-						\draw[->] (0.5,0) arc[start angle=0, end angle=50, radius=0.5];
-						\node at (25:0.75) {$\beta$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (0.9,0.8) {$w_2$};
-					\end{scope}
-					
-					% --- Область W (верхняя полуплоскость) ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
-						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Обозначение 0
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						% Подпись области
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.05cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w = w_2^{\pi/\beta}$};
-				\end{tikzpicture}
-			\end{center}
-		\end{enumerate}
-	\end{example}
-	\subsection{Отображение плоскости с выколотым отрезком на верхнюю полуплоскость}
-	\begin{example}
-		Строим отображение плоскости с выколотым отрезком $[z_1, z_2]$ на верхнюю полуплоскость:
-		\begin{center}
-			\begin{tikzpicture}[scale=1.8]
-				% --- Область Z (плоскость с выколотым отрезком) ---
+	\end{center}
+	На последнем шаге нужно раскрыть наш сектор из угла $\beta$ до угла $\pi$, используя отображение $w = w_2^{\frac{\pi}{\beta}}$:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
 				\begin{scope}[local bounding box=scope1]
-					% Заливка всей плоскости
-					\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-					
-					% Оси
-					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
+					\fill[blue!20] (0,0) -- (1.5,0) arc (0:50:1.5) -- cycle;
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-					
-					% Выколотый отрезок
-					\draw[white, line width=6pt] (-0.6,0.8) -- (0.8,-0.4);
-					\draw[thick] (-0.62,0.82) -- (0.78,-0.38);
-					\draw[thick] (-0.58,0.78) -- (0.82,-0.42);
-					
-					% Концы отрезка
-					\fill[red] (-0.6,0.8) circle (1.2pt) node[above left] {$z_1$};
-					\fill[red] (0.8,-0.4) circle (1.2pt) node[below right] {$z_2$};
-					
-					% Середина отрезка
-					\fill[blue] (0.1,0.2) circle (1.2pt) node[above right] {$\frac{z_1+z_2}{2}$};
-					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.9) {$z$};
+					\draw (0,0) -- (0.9642, 1.149);						
+					\draw (0.5,0) arc (0:50:0.5);
+					\node at (0.7,0.25) {$\beta$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
 				\end{scope}
-				
-				% --- Область W (верхняя полуплоскость) ---
+
 				\begin{scope}[local bounding box=scope2, xshift=5cm]
 					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
 					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-					
-					% Обозначение 0
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
 				\end{scope}
 				
-				% --- Стрелка ---
-				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-				
-				\draw[->, thick] 
-				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-				node[midway, above] {$f$};
-				
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+					
+				\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$w$};
 			\end{tikzpicture}
-		\end{center}
-		\begin{enumerate}
-			\item Используем дробно-линейное отображение $w_1 = \frac{z - z_1}{z - z_2}$. Отрезок $[z_1, z_2]$ переходит в луч. Проверим середину отрезка:
-			\[
-			\frac{z_1 + z_2}{2} \xrightarrow{w_1} \frac{\frac{z_1+z_2}{2} - z_1}{\frac{z_1+z_2}{2} - z_2} = \frac{z_2 - z_1}{z_1 - z_2} = -1
-			\]
-			Значит, отрезок переходит в луч $(-\infty, 0]$.
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
-					% --- Область Z ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (-0.6,0.8) -- (0.8,-0.4);
-						\draw[thick] (-0.62,0.82) -- (0.78,-0.38);
-						\draw[thick] (-0.58,0.78) -- (0.82,-0.42);
-						\fill[red] (-0.6,0.8) circle (1.2pt) node[above left] {$z_1$};
-						\fill[red] (0.8,-0.4) circle (1.2pt) node[below right] {$z_2$};
-						\fill[blue] (0.1,0.2) circle (1.2pt) node[above right] {$\frac{z_1+z_2}{2}$};
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,0.9) {$z$};
+	\end{center}
+	\subsection{Отображение плоскости с выколотым отрезком на верхнюю полуплоскость}
+	Строим отображение плоскости с выколотым отрезком $[z_1,\,z_2]$ на верхнюю полуплоскость:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						[rotate=-30] (-0.7,-0.05) rectangle (0.9,0.05);
 					\end{scope}
-					
-					% --- Область W1 (плоскость с выколотым лучом) ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Выколотый луч (-∞, 0]
-						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
-						\draw[thick] (-1.8,0.05) -- (0,0.05);
-						\draw[thick] (-1.8,-0.05) -- (0,-0.05);
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[blue] (-1,0) circle (1.2pt) node[below] {$-1$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.0) {$w_1$};
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (-0.6062,0.35) circle (0.5pt)node[above left] {$z_1$};
+					\fill (0.7794,-0.45) circle (0.5pt)node[below right] {$z_2$};
+					\fill (0.087, -0.05) circle (0.5pt)node[above right]{$\frac{z_1+z_2}{2}$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
+				
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+				\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$f$};
+			\end{tikzpicture}
+	\end{center}
+	Используем дробно-линейное отображение $w_1 = \frac{z - z_1}{z - z_2}$. Отрезок $[z_1,\,z_2]$ переходит в луч. Проверим середину отрезка:
+	\[\frac{z_1 + z_2}{2} \mapsto \frac{\frac{z_1+z_2}{2} - z_1}{\frac{z_1+z_2}{2} - z_2} = \frac{z_2 - z_1}{z_1 - z_2} = -1\]
+	Значит, отрезок переходит в луч $(-\infty,\,0]$.
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						[rotate=-30] (-0.7,-0.05) rectangle (0.9,0.05);
 					\end{scope}
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (-0.6062,0.35) circle (0.5pt)node[above left] {$z_1$};
+					\fill (0.7794,-0.45) circle (0.5pt)node[below right] {$z_2$};
+					\fill (0.087, -0.05) circle (0.5pt)node[above right]{$\frac{z_1+z_2}{2}$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+				\end{scope}
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						(-1.5,-0.05) rectangle (0,0.05);
+					\end{scope}						
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (0,0) circle (0.5pt) node[below right] {$0$};
+					\fill (-1,0) circle (0.5pt) node[below] {$-1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+				\end{scope}
 					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+				\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$w_1$};
+			\end{tikzpicture}
+	\end{center}
+	Разворачиваем луч при помощи $w_2 = e^{i\pi} w_1 = -w_1$. Луч $(-\infty, 0]$ переходит в $[0, +\infty)$:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						(-1.5,-0.05) rectangle (0,0.05);
+					\end{scope}						
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (0,0) circle (0.5pt) node[below right] {$0$};
+					\fill (-1,0) circle (0.5pt) node[below] {$-1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+				\end{scope}
 					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_1 = \frac{z-z_1}{z-z_2}$};
-				\end{tikzpicture}
-			\end{center}
-			
-			\item Разворачиваем луч при помощи $w_2 = e^{i\pi} w_1 = -w_1$. Луч $(-\infty, 0]$ переходит в $[0, +\infty)$:
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
-					% --- Область W1 ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (-1.8,0) -- (0,0);
-						\draw[thick] (-1.8,0.05) -- (0,0.05);
-						\draw[thick] (-1.8,-0.05) -- (0,-0.05);
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[blue] (-1,0) circle (1.2pt) node[below] {$-1$};
-						\node[draw, circle, inner sep=2pt, fill=white] at (1.2,1.0) {$w_1$};
-					\end{scope}
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						(0,-0.05) rectangle (1.5,0.05);
+					\end{scope}	
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (0,0) circle (0.5pt) node[below left] {$0$};
+					\fill (1,0) circle (0.5pt) node[below] {$1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+				\end{scope}
 					
-					% --- Область W2 (луч [0, +∞)) ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Выколотый луч [0, +∞)
-						\draw[white, line width=6pt] (0,0) -- (1.8,0);
-						\draw[thick] (0,0.05) -- (1.8,0.05);
-						\draw[thick] (0,-0.05) -- (1.8,-0.05);
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[blue] (1,0) circle (1.2pt) node[below] {$1$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
-					\end{scope}
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+				\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$w_2$};
+			\end{tikzpicture}
+	\end{center}
+	Наконец, извлекаем корень $w = w_2^{1/2}$. Луч $[0, +\infty)$ раскрывается в верхнюю полуплоскость:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+				\begin{scope}[local bounding box=scope1]
+					\begin{scope}
+						\fill[blue!20, even odd rule] 
+						(-1.5,-1.5) rectangle (1.5,1.5)
+						(0,-0.05) rectangle (1.5,0.05);
+					\end{scope}	
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\fill (0,0) circle (0.5pt) node[below left] {$0$};
+					\fill (1,0) circle (0.5pt) node[below] {$1$};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+				\end{scope}
+				\begin{scope}[local bounding box=scope2, xshift=5cm]
+					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+					\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+					\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+				\end{scope}
 					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_2 = -w_1$};
-				\end{tikzpicture}
-			\end{center}
-			
-			\item Наконец, извлекаем корень $w = w_2^{1/2}$. Луч $[0, +\infty)$ раскрывается в верхнюю полуплоскость:
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
-					% --- Область W2 ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (0,0) -- (1.8,0);
-						\draw[thick] (0,0.05) -- (1.8,0.05);
-						\draw[thick] (0,-0.05) -- (1.8,-0.05);
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[blue] (1,0) circle (1.2pt) node[below] {$1$};
-						
-						% Обозначение берегов разреза
-						\node[above right] at (0.8,0.15) {$w_2 = r e^{i0}$};
-						\node[below right] at (0.8,-0.15) {$w_2 = r e^{i2\pi}$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
-					\end{scope}
-					
-					% --- Область W (верхняя полуплоскость) ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
-						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w = w_2^{1/2}$};
-				\end{tikzpicture}
-			\end{center}
-		\end{enumerate}
-		\textbf{Ответ:} $w = \sqrt{\frac{z-z_1}{z_2-z}}$
-	\end{example}
-	
+				\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+				\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+				\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+				node[midway, above, yshift=5pt] {$w$};
+			\end{tikzpicture}
+	\end{center}
+	\textbf{Ответ:} $w = \sqrt{\frac{z-z_1}{z_2-z}}$
 	\newpage
 	\subsection{Отображение верхней полуплоскости с вертикальным разрезом на верхнюю полуплоскость}
-	\begin{example}
-		Строим отображение верхней полуплоскости с вертикальным разрезом на верхнюю полуплоскость:
-		\begin{center}
-			\begin{tikzpicture}[scale=1.8]
-				% --- Область Z (верхняя полуплоскость с разрезом от 0 до ih) ---
-				\begin{scope}[local bounding box=scope1]
-					% Заливка верхней полуплоскости
-					\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
-					
-					% Оси
-					\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-					
-					% Вертикальный разрез от 0 до ih
-					\draw[white, line width=6pt] (0,0) -- (0,0.6);
-					\draw[thick] (-0.05,0) -- (-0.05,0.6);
-					\draw[thick] (0.05,0) -- (0.05,0.6);
-					
-					% Точка ih
-					\fill[red] (0,0.6) circle (1.2pt) node[above right] {$ih$};
-					
-					% Обозначение 0
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$z$};
-				\end{scope}
+	Построить отображение верхней полуплоскости с вертикальным разрезом на верхнюю полуплоскость:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.05,0) rectangle (0.05,0.75);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (0,0.75) circle (0.5pt) node[above right] {$ih$};
+				\fill (0,0) circle (0.5pt) node[below left] {$0$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
 				
-				% --- Область W (верхняя полуплоскость) ---
-				\begin{scope}[local bounding box=scope2, xshift=5cm]
-					\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
-					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-					\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-					
-					% Обозначение 0
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
-				\end{scope}
-				
-				% --- Стрелка ---
-				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-				
-				\draw[->, thick] 
-				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-				node[midway, above] {$f$};
-				
-			\end{tikzpicture}
-		\end{center}
-		\begin{enumerate}
-			\item Первым шагом возводим в квадрат: $w_1 = z^2$. Верхняя полуплоскость переходит в плоскость с разрезом вдоль горизонтальной оси. Вертикальный разрез $[0, ih]$ переходит в горизонтальный $[-h^2, +\infty)$:
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+			\draw[->, thick] (startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+	Первым шагом возводим в квадрат: $w_1 = z^2$. Верхняя полуплоскость переходит в плоскость с разрезом вдоль горизонтальной оси. Вертикальный разрез $[0, ih]$ переходит в горизонтальный $[-h^2, +\infty)$:
+	\begin{center}
+		\begin{tikzpicture}[scale=1.8]
 					% --- Область Z ---
 					\begin{scope}[local bounding box=scope1]
 						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
@@ -3188,11 +2979,11 @@
 					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
 					node[midway, above] {$w_1 = z^2$};
 				\end{tikzpicture}
-			\end{center}
+	\end{center}
 			
-			\item Сдвигаем разрез: $w_2 = w_1 + h^2$. Разрез $[-h^2, +\infty)$ переходит в $[0, +\infty)$:
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
+	Сдвигаем разрез: $w_2 = w_1 + h^2$. Разрез $[-h^2, +\infty)$ переходит в $[0, +\infty)$:
+	\begin{center}
+		\begin{tikzpicture}[scale=1.8]
 					% --- Область W1 ---
 					\begin{scope}[local bounding box=scope1]
 						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
@@ -3231,11 +3022,11 @@
 					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
 					node[midway, above] {$w_2 = w_1 + h^2$};
 				\end{tikzpicture}
-			\end{center}
+	\end{center}
 			
-			\item Наконец, извлекаем корень $w = w_2^{1/2}$. Угол $2\pi$ сворачивается в верхнюю полуплоскость:
-			\begin{center}
-				\begin{tikzpicture}[scale=1.8]
+	Наконец, извлекаем корень $w = w_2^{1/2}$. Угол $2\pi$ сворачивается в верхнюю полуплоскость:
+	\begin{center}
+		\begin{tikzpicture}[scale=1.8]
 					% --- Область W2 ---
 					\begin{scope}[local bounding box=scope1]
 						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
@@ -3273,10 +3064,8 @@
 					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
 					node[midway, above] {$w = w_2^{1/2}$};
 				\end{tikzpicture}
-			\end{center}
-		\end{enumerate}
-		\textbf{Ответ:} $w = \sqrt{z^2 + h^2}$
-	\end{example}
+	\end{center}
+	\textbf{Ответ:} $w = \sqrt{z^2 + h^2}$
 	\subsection{Отображение полоски с вертикальным разрезом на верхнюю полуплоскость}
 	\begin{example}
 		Строим отображение верхней полуплоскости с вертикальным разрезом $[0, ih]$ и ограничением $i\alpha$ ($\alpha > h$) на верхнюю полуплоскость:
@@ -3382,7 +3171,6 @@
 					node[midway, above] {$w_1 = \frac{\pi}{\alpha} z$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Применяем экспоненту: $w_2 = e^{w_1}$. Полоса переходит в верхнюю полуплоскость с разрезом по дуге окружности от $1$ до $e^{ic}$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -3443,7 +3231,6 @@
 					node[midway, above] {$w_2 = e^{w_1}$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Дробно-линейное отображение $w_3 = \frac{w_2 - 1}{w_2 + 1}$ переводит разрез в вертикальный отрезок $[0, i\tan\frac{c}{2}]$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -3495,7 +3282,6 @@
 					node[midway, above] {$w_3 = \frac{w_2-1}{w_2+1}$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Сводим к предыдущей задаче: $w = \sqrt{w_3^2 + \tan^2\frac{c}{2}}$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -3633,7 +3419,6 @@
 					node[midway, above, font=\footnotesize] {$w_1 = \sqrt{\left(\frac{e^{\frac{\pi z}{\alpha}} - 1}{e^{\frac{\pi z}{\alpha}} + 1}\right)^2 + \tan^2\frac{c}{2}}$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Логарифмируем: $w_2 = \ln w_1$. Верхняя полуплоскость переходит в полосу высоты $\pi$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -3670,7 +3455,6 @@
 					node[midway, above] {$w_2 = \ln w_1$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Сжимаем полосу обратно: $w = \frac{\alpha}{\pi} w_2$. Получаем полосу высоты $\alpha$ без разреза:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -3714,7 +3498,7 @@
 	\end{example}
 	\subsection{Отображение полуполосы с горизонтальным на разрезом на верхнюю полуплоскость}
 	\begin{example}
-		Строим отображение полуполосы $\{z: \operatorname{Re}z > 0, 0 < \operatorname{Im}z < h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на верхнюю полуплоскость:
+		Строим отображение полуполосы $\{z: \Re z > 0, 0 < \Im z < h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на верхнюю полуплоскость:
 		\begin{center}
 			\begin{tikzpicture}[scale=1.8]
 				% --- Область Z (полуполоса с разрезом) ---
@@ -3986,7 +3770,7 @@
 	\end{example}
 	\subsection{Отображение полуполосы с горизонтальным разрезом на полуполосу без разреза}
 	\begin{example}
-		Строим отображение полуполосы $\{z: \operatorname{Re}z > 0, 0 < \operatorname{Im}z < h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на полуполосу без разреза:
+		Строим отображение полуполосы $\{z: \Re z > 0,\ 0<\Im z<h\}$ с горизонтальным разрезом $[0, \alpha]$ на высоте $\frac{ih}{2}$ на полуполосу без разреза:
 		\begin{center}
 			\begin{tikzpicture}[scale=1.8]
 				% --- Область Z (полуполоса с разрезом) ---
@@ -4601,48 +4385,47 @@
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
 	\end{example}
 	\section{Лекция 14}
-	\subsection{Интегрирование функций комплексного пременного.}
+	\subsection{Интегрирование функций комплексного переменного.}
 	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
 	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
 	\leqslant n}|\Delta z_k| $.
 	Пусть $ f(z) $ --- однозначная функция определенная на прямой $\gamma$.
-	Составим интегральную сумму: $ \sigma(f,\, \xi,\, \tau) = \sum\limits_{k=1}^n f(\xi_k)\Delta z_k $.
+	Составим интегральную сумму: $ \sigma(f,\, \xi,\, \tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k $.
 	\begin{definition}
-		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \int\limits_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
-		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
+		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \Int_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
+		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
 	\end{definition}
 	
-	Пусть дано параметрическое представление прямой $ \gamma: \begin{cases} x = x(t)\\y = y(t) \end{cases} t \in [a,\, b] $. Тогда\\
-	по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
+	Дано параметрическое представление прямой $ \gamma: (x(t),\,y(t)),\ t \in [a,\,b] $.\\ Тогда по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
 	\textbf{Криволинейный интеграл 1-го рода:}
-	\[ I_1 =  \int\limits_\gamma f(z)\,ds = \int\limits_\alpha^\beta f(x(t), y(t))\sqrt{x'^2+y'^2}\,dt \]
+	\[ I_1 =  \Int_\gamma f(z)\,ds = \Int_\alpha^\beta f(x(t),\,y(t))\sqrt{x'^2+y'^2}\,dt \]
 	\textbf{Криволинейный интеграл 2-го рода:}
-	\[ I_2 =  \int\limits_\gamma \bar g(x, y)\,d\bar s = \int\limits_\gamma Pdx + Qdy = 
-	\int\limits_\alpha^\beta (P(x, y)x' + Q(x, y)y')\,dt, \]
-	где $ d\bar s = (dx,\ dy),\quad \bar g(x, y) = (P(x, y),\ Q(x, y)) $
+	\[ I_2 =  \Int_\gamma \bar g(x,\,y)\,d\bar s = \Int_\gamma Pdx + Qdy = 
+	\Int_\alpha^\beta (P(x,\,y)x' + Q(x,\,y)y')\,dt, \]
+	где $ d\bar s = (dx,\, dy),\quad \bar g(x,\,y) = (P(x,\,y),\ Q(x,\,y)) $
 	\begin{theorem}
-		Пусть существуют криволинейные интегралы 2-ог рода: $ \int\limits_\gamma vdx + udy,\ \int\limits_\gamma udx - vdy $. Тогда\\
-		\[ \int\limits_\gamma f(z)\,dz = \int\limits_\gamma udx - vdy + i\int\limits_\gamma vdx + udy \]
+		Пусть существуют криволинейные интегралы 2-го рода: $\Int_\gamma vdx + udy,\ \Int_\gamma udx - vdy $. Тогда\\
+		\[ \Int_\gamma f(z)\,dz = \Int_\gamma udx - vdy + i\Int_\gamma vdx + udy \]
 	\end{theorem}
 	\begin{proof}
-		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
-		\[ = \lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\lim\limits_{\lambda\rightarrow 0}\ \sum\limits_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k) \]
+		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
+		\[ = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k) \]
 	\end{proof}
 	\begin{theorem}
 		Пусть $ f(z) \in C(\gamma) $, где $ \gamma $ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\ \beta] $. Тогда
-		\[ \int\limits_\gamma f(z)dz = \int\limits_\alpha^\beta f(z(t))z'(t)dt. \]
+		\[ \Int_\gamma f(z)\,dz = \Int_\alpha^\beta f(z(t))z'(t)\,dt. \]
 	\end{theorem}
 	\begin{proof}
 		$ f(z) \in C(\gamma) \Rightarrow u(x, y),\ v(x, y) \in C(\gamma) $. По определению кривой Жордана: $ x(t),\ y(t) \in C^1[\alpha,\ \beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt $
 		\begin{align*}
-		J_1 = \int\limits_\gamma udx-vdy = \int\limits_\alpha^\beta u(x(t),\ y(t))x'(t)- v(x(t),\ y(t))y'(t)dt\\
-		J_2 = \int\limits_\gamma udx+vdy = \int\limits_\alpha^\beta u(x(t),\ y(t))x'(t)+ v(x(t),\ y(t))y'(t)dt\\
-		\int\limits_\gamma f(z)dz = J_1 + iJ_2 = \int\limits_\gamma(u+iv)(x'(t) + iy'(t))dt = \int\limits_\alpha^\beta f(z(t))z'(t)dt
+		J_1 = \Int_\gamma udx-vdy = \Int_\alpha^\beta u(x(t),\ y(t))x'(t)- v(x(t),\ y(t))y'(t)dt\\
+		J_2 = \Int_\gamma udx+vdy = \Int_\alpha^\beta u(x(t),\ y(t))x'(t)+ v(x(t),\ y(t))y'(t)dt\\
+		\Int_\gamma f(z)dz = J_1 + iJ_2 = \Int_\gamma(u+iv)(x'(t) + iy'(t))dt = \Int_\alpha^\beta f(z(t))z'(t)dt
 		\end{align*}
 	\end{proof}
 	\begin{example}			
 			\begin{minipage}{0.4\textwidth}
-				\[ 1)\ I = \int\limits_\gamma z \operatorname{Re}z \, dz \]
+				\[ 1)\ I = \Int_\gamma z \Re z \, dz \]
 			\end{minipage}
 			\begin{minipage}{0.4\textwidth}
 				\begin{tikzpicture}
@@ -4660,11 +4443,11 @@
 	\end{example}
 	Выполним параметризацию кривой $ \gamma : z = x + i\dfrac{x}{2},\ x \in [0,\,2] $\\
 	$ dz = 1+\dfrac{i}{2}\,dx $
-	\[ I =  \int\limits_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\int\limits_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i \]
+	\[ I =  \Int_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\Int_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i \]
 	\newpage
 	\begin{example}			
 		\begin{minipage}{0.4\textwidth}
-			\[ 2)\ I = \int\limits_\gamma\operatorname{Im}z\,dz \]
+			\[ 2)\ I = \Int_\gamma\Im z\,dz \]
 		\end{minipage}
 		\begin{minipage}{0.4\textwidth}
 			\begin{tikzpicture}
@@ -4678,47 +4461,47 @@
 	\end{example}
 	Выполним параметризацию кривой $ \gamma : z = e^{it},\ t \in [0,\, \pi]$\\
 	$ dz = ie^{it}\,dt $
-	\[ I = \int\limits_0^\pi \sin t\,ie^{it}\,dt = \int\limits_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\, dt =  \int\limits_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2} \]
+	\[ I = \Int_0^\pi \sin t\,ie^{it}\,dt = \Int_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\, dt =  \Int_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2} \]
 	\subsection{Свойства интеграла вдоль кривой.}
 	\begin{theorem*}
 		(Линейность)\\
-		\indent Пусть существуют интегралы $ \int\limits_\gamma f(z)\,dz $ и $ \int\limits_\gamma g(z)\,dz $. Тогда
-		\[ \forall c_1,\, c_2 \in \Cm \Rightarrow \exists \int\limits_\gamma c_1f(z) + c_2g(z)\,dz = c_1\int\limits_\gamma f(z)\,dz + c_2\int\limits_\gamma g(z)\,dz  \]
+		\indent Пусть существуют интегралы $ \Int_\gamma f(z)\,dz $ и $ \Int_\gamma g(z)\,dz $. Тогда
+		\[ \forall c_1,\, c_2 \in\Cm\Rightarrow\exists\Int_\gamma c_1f(z) + c_2g(z)\,dz = c_1\Int_\gamma f(z)\,dz + c_2\Int_\gamma g(z)\,dz  \]
 	\end{theorem*} 
 	\begin{theorem}
 		При изменении направления обхода вдоль кривой, знак интеграла сменится на противоположный.
-		\[ \int\limits_{\gamma^-}f(z)\,dz = -\int\limits_\gamma f(z)\,dz \]
+		\[ \Int_{\gamma^-}f(z)\,dz = -\Int_\gamma f(z)\,dz \]
 	\end{theorem}
 	\begin{theorem}
 		Пусть $ \gamma = \gamma_1 \cup \gamma_2 $. Тогда
-		\[ \int\limits_\gamma f(z)\,dz = \int\limits_{\gamma_1}f(z)\,dz + \int\limits_{\gamma_2}f(z)\,dz \]
+		\[ \Int_\gamma f(z)\,dz = \Int_{\gamma_1}f(z)\,dz + \Int_{\gamma_2}f(z)\,dz \]
 	\end{theorem}
 	\begin{theorem*}
-		\[ \left| \int\limits_\gamma f(z)\,dz\right| \leqslant \int\limits_\gamma |f(z)|\,ds \quad |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода})\]
+		\[ \left| \Int_\gamma f(z)\,dz\right| \leqslant \Int_\gamma |f(z)|\,ds \quad |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода})\]
 	\end{theorem*}
 	\begin{proof}
-		\[ \int\limits_\gamma f(z)\,dz = \lim\limits_{\lambda\rightarrow 0} \ \sum\limits_{k=1}^n f(\xi_k)\Delta z_k \]
-		\[ \left| \sum\limits_{k=1}^n f(\xi_k)\Delta z_k\right| \leqslant \sum\limits_{k=1}^n |f(\xi_k)||\Delta z_k| \leqslant \sum\limits_{k=1}^n |f(\xi_k)|\Delta s_k \xrightarrow[\lambda \to 0]{} \text{ Получаем исходное неравенство.} \] 
+		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k \]
+		\[ \left| \Sum_{k=1}^n f(\xi_k)\Delta z_k\right| \leqslant \Sum_{k=1}^n |f(\xi_k)||\Delta z_k| \leqslant \Sum_{k=1}^n |f(\xi_k)|\Delta s_k \xrightarrow[\lambda \to 0]{} \text{ Получаем исходное неравенство.} \] 
 	\end{proof}
 	\begin{theorem*}
 		(Замена переменной)\\ \indent
-		Пусть $ z = \psi(\xi) $ взаимнооднозначно переводит Жорданову кривую $ \gamma_\xi $ на $ \gamma_z.\text{ Пусть }\\ \psi(\xi) \in \mathcal{A}(\gamma_\xi),\ f(z) = C(\gamma_z)$. Тогда
-		\[ \int\limits_{\gamma_z} f(z)\,dz =  \int\limits_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi \]
+		Пусть $ z = \psi(\xi) $ взаимнооднозначно переводит Жорданову кривую $ \gamma_\xi $ на $ \gamma_z.\text{ Пусть }\\ \psi(\xi) \in \A(\gamma_\xi),\ f(z) = C(\gamma_z)$. Тогда
+		\[ \Int_{\gamma_z} f(z)\,dz =  \Int_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi \]
 	\end{theorem*}
 	\subsection{Интегральная теорема Коши}
 	\begin{theorem*}
 		(Интегральная теорема Коши для односвязной области)\\
-		\indent Пусть $ f(z) \in \mathcal{A}(D)$, где $ D $ --- односвязная область.
-		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $ \gamma \subset D$ \[ \oint\limits_\gamma f(z) \, dz = 0. \] 
+		\indent Пусть $ f(z) \in \A(D)$, где $ D $ --- односвязная область.
+		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $ \gamma \subset D$ \[ \Oint_\gamma f(z) \, dz = 0. \] 
 	\end{theorem*}
 	\begin{proof}
-		\[ \int\limits_\gamma f(z) \, dz = \int\limits_\gamma (udx - vdy) + i\int\limits_\gamma (udx + vdy) \]
+		\[ \Int_\gamma f(z) \, dz = \Int_\gamma (udx - vdy) + i\Int_\gamma (udx + vdy) \]
 		Применим формулу Грина.$\ P,\,Q \in C^1(\partial G)$
-		\[ \oint\limits_\gamma Pdx + Qdy = \iint\limits_G Q'_x - P'_y\, dxdy\]
-		$ f(z) \in \mathcal{A}(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда
+		\[ \Oint_\gamma Pdx + Qdy = \Iint_G Q'_x - P'_y\, dxdy\]
+		$ f(z) \in \A(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда
 		\begin{align*}
-			&\oint\limits_\gamma udx - vdy = \iint\limits_G -v'_x - u'_y\, dxdy = 0\\
-			&\oint\limits_\gamma vdx + udy = \iint\limits_G u'_x + v'_y\, dxdy = 0 
+			&\Oint_\gamma udx - vdy = \Iint_G -v'_x - u'_y\, dxdy = 0\\
+			&\Oint_\gamma vdx + udy = \Iint_G u'_x + v'_y\, dxdy = 0 
 		\end{align*}
 	\end{proof}
 	\begin{remark}
@@ -4729,16 +4512,16 @@
 	\section{Лекция 15}
 	\begin{consequence*}
 		(Альтернативная формулировка)\\
-		\indent Пусть $ f(z)\in\mathcal A(D) \cup C(\partial D),\ D$ --- односвязная область. Тогда
-		\[ \oint\limits_\gamma f(z) \, dz = 0. \]
+		\indent Пусть $ f(z)\in\A(D) \cup C(\partial D),\ D$ --- односвязная область. Тогда
+		\[ \Oint_\gamma f(z) \, dz = 0. \]
 	\end{consequence*}
 	\begin{consequence}
-		Пусть $ f(z)\in\mathcal A(D),\ D$ --- односвязная область. Тогда $ \forall\, \gamma_1,\,\gamma_2$ --- гладких или кусочно гладких кривых Жордана имеющих общее начало и конец выполено
-		\[ \oint\limits_{\gamma_1} f(z)\,dz = \oint\limits_{\gamma_2} f(z)\,dz \]
+		Пусть $ f(z)\in\A(D),\ D$ --- односвязная область. Тогда $ \forall\, \gamma_1,\,\gamma_2$ --- гладких или кусочно гладких кривых Жордана имеющих общее начало и конец выполено
+		\[ \Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz \]
 	\end{consequence}
 	\begin{proof}
 		Если $ \gamma_1,\,\gamma_2 $ не имеют других общих точек, кроме начала и конца. Рассмотрим уривую $ \gamma = \gamma_1\cap\gamma_2^- $ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
-		\[ \oint\limits_\gamma f(z)\,dz = 0\ \Rightarrow\ \oint\limits_{\gamma_1} f(z)\,dz + \oint\limits_{\gamma_2^-} f(z)\,dz = 0\iff \oint\limits_{\gamma_1} f(z)\,dz = \oint\limits_{\gamma_2} f(z)\,dz. \]
+		\[ \Oint_\gamma f(z)\,dz = 0\ \Rightarrow\ \Oint_{\gamma_1} f(z)\,dz + \Oint_{\gamma_2^-} f(z)\,dz = 0\iff \Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz. \]
 		Если $ \gamma_1,\,\gamma_2 $ имеют общие точки, отличающеися от начала и конца.\\ 
 		
 		Пусть $ \gamma = \gamma_1 \cap \gamma_2^- = (\bigcup\limits_{j=1}^N \Gamma_j) \cup(\bigcup\limits_{l=1}^M K_l) $, где $ \Gamma_j $ --- замкнутые контуры, $ K_l $ --- остальные кривые.
@@ -4748,37 +4531,37 @@
 	\begin{example}
 		\[\int \limits_{|z-\pi| = \pi} \sin^{n}(z) dz = 0 \text{ --- по теореме Коши для односвязной области}\]
 	\end{example} 
-	\textbf{Интегральная теорема коши для многосвязной области}
+	\textbf{Интегральная теорема Коши для многосвязной области}
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D)$ и возьмем $\forall G \subset D$ - многосвязная область $\implies \oint \limits_{\partial G} f(z) dz = 0$
+		Пусть $f(z) \in \A(D)$ и возьмем $\forall G \subset D$ - многосвязная область $\implies \oint \limits_{\partial G} f(z) dz = 0$
 	\end{theorem}
 	\begin{proof}
 		\begin{align}
 			\partial G = \Gamma_0 \cup (\cup_{j = 1}^N \Gamma_j) \\
 			\gamma = \partial G \cup (\cup_{j = 1}^N l_j) \cup (\cup_{j = 1}^N l_j^{-}) \\ 
 			\oint \limits_{\gamma} f(z) dz = 0 \text{ --- по интегральной теореме Коши для односвязной области} \implies \\
-			\oint \limits_{\gamma} f(z) dz = \oint \limits_{\partial G} f(z) dz + \sum_{j = 1}^N \Big(\int \limits_{l_j} f(z) dz + \int \limits_{l_j^{-}} f(z) dz \Big) = 0 \implies \oint \limits_{\partial G} f(z) dz = 0
+			\oint \limits_{\gamma} f(z) dz = \Oint_{\partial G} f(z) dz + \Sum_{j = 1}^N \Big(\int \limits_{l_j} f(z) dz + \int \limits_{l_j^{-}} f(z) dz \Big) = 0 \implies \Oint_{\partial G} f(z) dz = 0
 		\end{align}
 	\end{proof}
 	\begin{remark}
-		$G - (N+1)$-связная область $\oint \limits_{\partial G} f dz = \oint \limits_{\Gamma_0} f(z) dz + \sum_{j = 1}^N \oint \limits_{\Gamma_j^{-}}f(z)dz = 0$\\
-		$\oint \limits_{\Gamma_0} f(z) dz = \sum_{j=1}^N \oint \limits_{\Gamma_j} f(z) dz$.
+		$G - (N+1)$-связная область $\oint \limits_{\partial G} f dz = \oint \limits_{\Gamma_0} f(z) dz + \Sum_{j = 1}^N \Oint_{\Gamma_j^{-}}f(z)dz = 0$\\
+		$\oint \limits_{\Gamma_0} f(z) dz = \Sum_{j=1}^N \oint \limits_{\Gamma_j} f(z) dz$.
 	\end{remark}
 	\textbf{Альтернативная формулировка}
 	\begin{theorem}
-		Пусть $f(z) \in \mathcal{A}(D) \cap C(\overline{D})$, $D$ --- многосвязная область. Тогда $\oint \limits_{\partial D} f(z) dz = 0$
+		Пусть $f(z) \in \A(D) \cap C(\overline{D})$, $D$ --- многосвязная область. Тогда $\oint \limits_{\partial D} f(z) dz = 0$
 	\end{theorem}
 	\subsection{Первообразная и неопределенный интеграл}
 	\begin{definition}
-		Функция $F(z) \in \mathcal{A}(D)$ называется первообразной функции $f(z)$ в области D, если $\forall z \in D \implies F'(z) = f(z)$.
+		Функция $F(z) \in \A(D)$ называется первообразной функции $f(z)$ в области D, если $\forall z \in D \implies F'(z) = f(z)$.
 	\end{definition}
 	\begin{definition}
 		Неопределенный интеграл функции $f(z)$ в области $D$ называют множество всех первообразных $f(z)$ в $D$.\\
 		\textbf{Обозначение: } $\int f(z) dz$
 	\end{definition}
 	\begin{theorem} 
-		Пусть $f(z) \in C(D), D \text{--- односвязная область и } \forall \gamma \subset D \text{--- замкнутый или СТЕРЛА НАХУЙ БЛЯТЬ}$ \\ 
-	$F(z) = \int_{z_0}^z f(\xi) d\xi \in \mathcal{A(D)}$ и $F(z)$ --- первообразная $f(z)$ в $D$, $z_0 \in D$ - фиксированное.
+		Пусть $f(z) \in C(D), D \text{--- односвязная область и } \forall \gamma \subset D \text{--- замкнутый или ...}$ \\ 
+	$F(z) = \Int_{z_0}^z f(\xi) d\xi \in \A(D)$ и $F(z)$ --- первообразная $f(z)$ в $D$, $z_0 \in D$ - фиксированное.
 	\end{theorem}		
 		\begin{proof}
 			\begin{align*}
@@ -4798,46 +4581,86 @@
 				&\Delta z \to 0 \ \implies\ \xi \to z.
 			\end{align*}
 		\end{proof}
-		
 		\textbf{Формула интегрирования по частям}
 		\begin{theorem}
-			Пусть $f(z), g(z) \in \mathcal{A}(D)$, 
+			Пусть $f(z), g(z) \in \A(D)$, 
 		\end{theorem}
-		
 		\subsection{Интегральная формула Коши}
 		\begin{theorem}
-			Пусть $f(z) \in \mathcal{A}(D), D$ --- односвязная область. Тогда $\forall z \in D$ и $\forall \gamma \subset D$ --- замкнутая гладкая или кусочно-гладкая кривая Жордана: $z \in G$, где $\gamma = \partial G \implies$ 
-			\[ f(z) = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{f(\xi)}{\xi - z}\, d\xi \]
+			Пусть $f(z) \in \A(D), D$ --- односвязная область. Тогда $\forall z \in D$ и $\forall \gamma \subset D$ --- замкнутая гладкая или кусочно-гладкая кривая Жордана: $z \in G$, где $\gamma = \partial G \implies$ 
+			\[ f(z) = \frac{1}{2 \pi i}\Oint\gamma\frac{f(\xi)}{\xi - z}\, d\xi \]
 		\end{theorem}
-		\[ 
-		K_r: \xi = z + re^{it}, 0 \leq t \leq 2\pi \\
-		\oint\limits_{K_r}\frac{f(\xi) d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}}\\
-		d\xi = r \cdot ie^{it}dt
-		\]
+		\[ K_r: \xi = z + re^{it}, 0 \leq t \leq 2\pi \\
+		\Oint_{K_r}\frac{f(\xi) d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}}\\
+		d\xi = r \cdot ie^{it}dt\]
+		\[ \Oint_{K_r} \frac{f(\xi) d\xi}{\xi - z} = \Int_0^{2pi} \frac{f(z + re^{it})}{re^{it}} \cdot r \cdot ie^{it}dt \\
+			f(z + re^{it}) - f(z) = f'(z) \cdot re^{it} + \bar{\bar o}(r), r \rightarrow 0+\]
 		
-		\[ \oint\limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} = \int\limits_0^{2pi} \frac{f(z + re^{it})}{re^{it}} \cdot r \cdot ie^{it}dt \\
-			f(z + re^{it}) - f(z) = f'(z) \cdot re^{it} + \uuline o(r), r \rightarrow 0+   \]
-		
-		\[\oint\limits_{K_r} \frac{f(\xi)d\xi}{\xi - z} = i(\int_0^{2\pi} f(z)\,dt + r \int_0^{2pi} f'(z)e^{it}\,dt + \int_0^{2pi} \uuline o(r)\,dt) \\
-		\oint\limits_\gamma\frac{f(\xi) \xi}{\xi - z} = if(z) \cdot 2\pi + i r f'(z) \int_0^2\pi e^{it} dt + i \int_0^{2 \pi} \bar o(r) dt \\
+		\[\Oint_{K_r} \frac{f(\xi)d\xi}{\xi - z} = i(\int_0^{2\pi} f(z)\,dt + r \int_0^{2pi} f'(z)e^{it}\,dt + \int_0^{2pi} \bar{\bar o}(r)\,dt) \\
+		\Oint_\gamma\frac{f(\xi) \xi}{\xi - z} = if(z) \cdot 2\pi + i r f'(z) \int_0^2\pi e^{it} dt + i \int_0^{2 \pi} \bar o(r) dt \\
 		\oint\gamma\frac{f(\xi)d\xi}{\xi - z} = 2\pi i\cdot f(z) 
 		K_r = \{ \xi\in\Cm: |\xi - z| < r \} \subset G \tilde G = G \setminus \bar K_r \\
-		\frac{f(\xi)}{\xi - z} \in \mathcal{A}(\tilde G)\cap C(\bar G)\\
-		\text{По интегральной теореме Коши: } \oint\limits_{\partial G} \frac{f(\xi)\, d\xi}{\xi - z} = 0 \implies \oint\limits_{\partial \tilde G} \frac{f(\xi)\,d\xi}{\xi - z} = \oint\limits_\gamma \frac{f(\xi)d\xi}{\xi - z} + \oint\limits_{\bar K_r^-} \frac{f(\xi)d\xi}{\xi - z} = \oint\limits_\gamma \frac{f(\xi)d\xi}{\xi - z} - \oint\limits_{\bar K_r} \frac{f(\xi)d\xi}{\xi - z} \\ 
-		\oint \limits_\gamma \frac{f(\xi)d\xi}{\xi - z} = \oint\limits_{K_r} \frac{f(\xi) d\xi}{\xi - z} \\ \]
-			\begin{theorem*} Интегральная теорема Коши для многосвязной области. \\
-				\indent Пусть $f(z) \in mathcal{A}(D)$. Тогда $\forall z \in D$ и $\forall G \subset D$ многосвязная область: $z \in G \implies$
-				\[f(z) = \frac{1}{2\pi i} \oint \limits_{\partial G} \frac{f(\xi)d\xi}{\xi - z}\]
-			\end{theorem*}
-			\begin{remark}
-				$G$ --- $(N+1)$-связная область
-			\end{remark}
-			\begin{align*}
-				J = \frac{1}{2 \pi i} \oint \frac{d \xi}{\xi^2 + 1}\\
-				J = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi + i} \\
-				J = f(i) = \frac{1}{2i} \implies I = \frac{2 \pi i}{2 i} = \pi \\
-				J = \frac{1}{2 \pi i} \oint \frac{d \xi}{\xi^2 + 1}\\
-				J = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi - i} \\
-				J = f(-i) = -\frac{1}{2i} \implies I = \frac{2 \pi i}{2 i} = -\pi
-			\end{align*}
+		\frac{f(\xi)}{\xi - z} \in \A(\tilde G)\cap C(\bar G)\\
+		\text{По интегральной теореме Коши: } \Oint_{\partial G} \frac{f(\xi)\, d\xi}{\xi - z} = 0 \implies \Oint_{\partial \tilde G} \frac{f(\xi)\,d\xi}{\xi - z} = \Oint_\gamma \frac{f(\xi)d\xi}{\xi - z} + \Oint_{\bar K_r^-} \frac{f(\xi)d\xi}{\xi - z} = \Oint_\gamma \frac{f(\xi)d\xi}{\xi - z} - \Oint_{\bar K_r} \frac{f(\xi)d\xi}{\xi - z} \\ 
+		\Oint_\gamma\frac{f(\xi)d\xi}{\xi - z} = \Oint_{K_r} \frac{f(\xi) d\xi}{\xi - z} \\ \]
+		\begin{theorem*} Интегральная теорема Коши для многосвязной области. \\
+				\indent Пусть $f(z) \in \A(D)$. Тогда $\forall z \in D$ и $\forall G \subset D$ многосвязная область: $z \in G \implies$
+				\[f(z) = \frac{1}{2\pi i} \Oint_{\partial G} \frac{f(\xi)d\xi}{\xi - z}\]
+		\end{theorem*}
+		\begin{remark}
+			$G$ --- $(N+1)$-связная область
+		\end{remark}
+		\begin{align*}
+			J = \frac{1}{2 \pi i} \oint \frac{d \xi}{\xi^2 + 1}\\
+			J = \frac{1}{2 \pi i} \Oint_\gamma \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi + i} \\
+			J = f(i) = \frac{1}{2i} \implies I = \frac{2 \pi i}{2 i} = \pi \\
+			J = \frac{1}{2 \pi i} \Oint\frac{d \xi}{\xi^2 + 1}\\
+			J = \frac{1}{2 \pi i} \Oint_\gamma \frac{d \xi}{(\xi + i)(\xi - i)} \text{ и } f(\xi) = \frac{1}{\xi - i} \\
+			J = f(-i) = -\frac{1}{2i} \implies I = \frac{2 \pi i}{2 i} = -\pi
+		\end{align*}
+	\newpage
+	\section{Лекция 19}
+	\[ \Sum_{k=0}^{+\infty}c_n(z-z_0)^n\text{ --- функциональный ряд} \]
+	\begin{theorem*}
+		(единственность)\\ \indent
+		Пусть $ f(z) \in \A(K_R) $ и $ f(z) = \Sum_{k=0}^{+\infty}c_n(z-z_0)^n,\ z\in K_R $. Тогда $ c_n = \dfrac{f^n(z_0)}{n!} $
+	\end{theorem*}
+	\begin{theorem}
+		Пусть степенной ряд $ f(z) = \Sum_{k=0}^{+\infty}c_n(z-z_0)^n$ имеет радиус сходимости $ R > 0$ в $ K_R = \{ z\in\Cm:|z-z_0| < R \} $ сходится к $ f(z) $.
+		Тогда этот ряд можно почленно дифференцировать и интегрировать в $ K_R $, т.е.
+		\begin{align*}
+			f'(z) = &\Sum_{k=0}^{+\infty}nc_n(z-z_0)^{n-1},\ z\in K_R\\
+			\Int_{z_0}^zf(\xi)\,d\xi = &\Sum_{k=0}^{+\infty}\frac{c_n}{n+1}(z-z_0)^{n+1},\ z\in K_R
+		\end{align*}
+	\end{theorem}
+	\begin{proof}
+		Необходимо вычислить радиусы сходимости степенных рядов и по свойствам степенных рядов сходимость будет равномерной.
+		\[ \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} = \{k = n-1\} = \Sum_{k=0}^{+\infty}(k+1)c_{k+1}(z-z_0)^k \]
+		Посчитаем верхний предел, чтобы найти радиус сходимости
+		\begin{align*}
+		&\uplim_{k \to +\infty}\sqrt[k]{(k+1)|c_{k+1}|} = \uplim_{k \to +\infty}\sqrt[k]{k+1} \cdot \uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} = 1\cdot\uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} =\\
+		&= \uplim_{k \to +\infty}|c_{k+1}|^{\frac{1}{k+1}\frac{k+1}{k}} = \uplim_{k \to +\infty}e^{\frac{\ln |c_{k+1}|}{k+1}\frac{k+1}{k}} = \frac{1}{R}
+		\end{align*}
+		Ряд $ \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} $ сходится в $ K_R $, общие члены ряда аналитичны в $ K_R $. Этот ряд сходится равномерно в $ K_R $. Тогда
+		\[ f'(z) = \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} \]
+	\end{proof}
+	\begin{example}
+		Разложить в степенной ряд с центром в точке $ z_0 = 0 $ функцию $\dfrac{1}{1-z^2}$
+	\end{example}
+	\[ \frac{1}{1-z} = \Sum_{n=0}^{+\infty}z^n,\ |z| < 1 \]
+	\[ \frac{1}{(1-z)^2} = \Sum_{n=0}^{+\infty}nz^{n-1},\ |z| < 1 \]
+	\begin{example}
+		Разложить в степенной ряд с центром в точке $ z_0 = 0 $ функцию $\ln(1-z)$
+	\end{example}
+	\[ \frac{1}{1-\xi} = \Sum_{n=0}^{+\infty}\xi^n \]
+	\[ \Int_0^z\frac{d\xi}{1-\xi} = \Sum_{n=0}^{+\infty}\Int_0^z\xi^n\]
+	\[ -\ln(1-z) = \Sum\]
+	\subsection{Табличные ряды Тейлора}
+	\[ e_z  = \Sum_{n=0}^{+\infty}\frac{z_n}{n!},\ z\in \Cm\]
+	\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!},\ z\in \Cm\] 
+	\[ \cos z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!},\ z\in \Cm\]
+	\[ \ln (1+z) = \Sum_{k=0}^{\infty}(-1)^{k-1}\frac{z^k}{k},\ |z| < 1 \]
+	\[ (1+z)^\alpha = 1 + \Sum_{k=1}^{\infty}\frac{\alpha(\alpha-1)\ldots(\alpha-k+1)}{k!} \]
+	\subsection{Степенные ряды с центром $ z_0 = \infty $}
+	\[ \Sum_{k=0}^{+\infty}\frac{c_n}{z_n} = c_0 + \frac{c_1}{z} + \ldots \]
 \end{document}
