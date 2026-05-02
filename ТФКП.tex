@@ -1441,7 +1441,6 @@
 				\node at (0,1.8) {$K_w$};
 				\node at (1.15,-0.15) {$1$};
 			\end{scope}
-			% Стрелка между рисунками
 			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
 			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
 			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
@@ -1762,29 +1761,26 @@
 				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 				\draw (-1.5, 1) -- (1.5,1);
 				
-				\fill[black] (0,1) circle (0.5pt) node[above right] {$2\pi i$};
+				\fill (0,1) circle (0.5pt) node[above right] {$2\pi i$};
 				\node at (0.6,-0.15) {$\Gamma_1$};
 				\node at (0.6,1.15) {$\Gamma_2$};
 				\node at (-0.15,0.5) {$\Gamma_3$};
 				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 			\end{scope}
-			% Правый рисунок
 			\begin{scope}[local bounding box=scope2, xshift=5cm]
 				\begin{scope}
 					\clip (-1.5,-1.5) rectangle (1.5,1.5);
 					\fill[blue!20, even odd rule] 
-					(-1.5,-1.5) rectangle (1.5,1.5) % вся плоскость
-					(0, -0.05) rectangle (1.5, 0.05); % луч (вычитается)
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0, -0.05) rectangle (1.5, 0.05);
 				\end{scope}
 				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
 				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
 				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
 			\end{scope}
-			% Стрелка между рисунками
 			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
 			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
-			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 1cm)$);
-			
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
 			\draw[->, thick] 
 			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
 			node[midway, above, yshift=5pt] {$f$};
@@ -2939,131 +2935,101 @@
 	\end{center}
 	Первым шагом возводим в квадрат: $w_1 = z^2$. Верхняя полуплоскость переходит в плоскость с разрезом вдоль горизонтальной оси. Вертикальный разрез $[0, ih]$ переходит в горизонтальный $[-h^2, +\infty)$:
 	\begin{center}
-		\begin{tikzpicture}[scale=1.8]
-					% --- Область Z ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,0) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (0,0) -- (0,0.6);
-						\draw[thick] (-0.05,0) -- (-0.05,0.6);
-						\draw[thick] (0.05,0) -- (0.05,0.6);
-						\fill[red] (0,0.6) circle (1.2pt) node[above right] {$ih$};
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$z$};
-					\end{scope}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.05,0) rectangle (0.05,0.75);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (0,0.75) circle (0.5pt) node[above right] {$ih$};
+				\fill (0,0) circle (0.5pt) node[below left] {$0$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.8,-0.05) rectangle (1.5,0.05);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (-0.8,0) circle (0.5pt) node[below] {$-h^2$};	
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+			\end{scope}
 					
-					% --- Область W1 ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Разрез [-h^2, +∞)
-						\draw[white, line width=6pt] (-0.8,0) -- (1.8,0);
-						\draw[thick] (-0.8,0.05) -- (1.8,0.05);
-						\draw[thick] (-0.8,-0.05) -- (1.8,-0.05);
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[red] (-0.8,0) circle (1.2pt) node[below] {$-h^2$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_1$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_1 = z^2$};
-				\end{tikzpicture}
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_1$};
+		\end{tikzpicture}
 	\end{center}
-			
 	Сдвигаем разрез: $w_2 = w_1 + h^2$. Разрез $[-h^2, +\infty)$ переходит в $[0, +\infty)$:
 	\begin{center}
-		\begin{tikzpicture}[scale=1.8]
-					% --- Область W1 ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (-0.8,0) -- (1.8,0);
-						\draw[thick] (-0.8,0.05) -- (1.8,0.05);
-						\draw[thick] (-0.8,-0.05) -- (1.8,-0.05);
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						\fill[red] (-0.8,0) circle (1.2pt) node[below] {$-h^2$};
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_1$};
-					\end{scope}
-					
-					% --- Область W2 ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						
-						% Разрез [0, +∞)
-						\draw[white, line width=6pt] (0,0) -- (1.8,0);
-						\draw[thick] (0,0.05) -- (1.8,0.05);
-						\draw[thick] (0,-0.05) -- (1.8,-0.05);
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w_2 = w_1 + h^2$};
-				\end{tikzpicture}
-	\end{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(-0.8,-0.05) rectangle (1.5,0.05);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (-0.8,0) circle (0.5pt) node[below] {$-h^2$};	
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_1$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0,-0.05) rectangle (1.5,0.05);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (0,0) circle (0.5pt) node[below  left] {$0$};	
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+			\end{scope}
 			
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w_2$};
+		\end{tikzpicture}
+	\end{center}
 	Наконец, извлекаем корень $w = w_2^{1/2}$. Угол $2\pi$ сворачивается в верхнюю полуплоскость:
 	\begin{center}
-		\begin{tikzpicture}[scale=1.8]
-					% --- Область W2 ---
-					\begin{scope}[local bounding box=scope1]
-						\fill[blue!20] (-1.8,-1.5) rectangle (1.8,1.5);
-						\draw[->] (-1.8,0) -- (1.8,0) node[right] {};
-						\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
-						\draw[white, line width=6pt] (0,0) -- (1.8,0);
-						\draw[thick] (0,0.05) -- (1.8,0.05);
-						\draw[thick] (0,-0.05) -- (1.8,-0.05);
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						% Обозначение берегов разреза
-						\node[above right] at (0.8,0.15) {$w_2 = r e^{i0}$};
-						\node[below right] at (0.8,-0.15) {$w_2 = r e^{i2\pi}$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.2,1.0) {$w_2$};
-					\end{scope}
-					
-					% --- Область W ---
-					\begin{scope}[local bounding box=scope2, xshift=4.5cm]
-						\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
-						\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-						\draw[->] (0,-0.5) -- (0,1.5) node[above] {};
-						
-						\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-						
-						\node[draw, circle, inner sep=2pt, fill=white] at (-1.0,1.0) {$w$};
-					\end{scope}
-					
-					% --- Стрелка ---
-					\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-					\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-					\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-					
-					\draw[->, thick] 
-					(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-					node[midway, above] {$w = w_2^{1/2}$};
-				\end{tikzpicture}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(-1.5,-1.5) rectangle (1.5,1.5)
+					(0,-0.05) rectangle (1.5,0.05);
+				\end{scope}	
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\fill (0,0) circle (0.5pt) node[below  left] {$0$};	
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w_2$};
+			\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (-1.5,0) rectangle (1.5,1.5);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
+			
+			\coordinate (startArrow) at ([yshift=1cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+			\draw[->, thick] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$w$};
+		\end{tikzpicture}
 	\end{center}
 	\textbf{Ответ:} $w = \sqrt{z^2 + h^2}$
 	\subsection{Отображение полоски с вертикальным разрезом на верхнюю полуплоскость}
@@ -4249,64 +4215,40 @@
 	\end{example}
 	\newpage
 	\subsection{Отображение единичного круга с разрезом на единичный круг}
-	\begin{example}
-		Строим отображение единичного круга $\{z: |z| < 1\}$ с разрезом по отрезку $[h, 1]$ на единичный круг без разреза:
-		\begin{center}
-			\begin{tikzpicture}[scale=1.8]
-				% --- Область Z (круг с разрезом) ---
-				\begin{scope}[local bounding box=scope1]
-					% Заливка круга
-					\begin{scope}
-						\clip (0,0) circle (1.2);
-						\fill[blue!20] (-1.5,-1.2) rectangle (1.5,1.2);
-					\end{scope}
-					
-					% Вырезаем разрез [h, 1]
-					\draw[white, line width=6pt] (0.5,0) -- (1.2,0);
-					\draw[thick] (0.5,0.03) -- (1.2,0.03);
-					\draw[thick] (0.5,-0.03) -- (1.2,-0.03);
-					
-					% Оси
-					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-					\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
-					
-					% Окружность
-					\draw[thick] (0,0) circle (1.2);
-					
-					% Точки
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					\fill[red] (0.5,0) circle (1.2pt) node[below] {$h$};
-					\fill[red] (1.2,0) circle (1.2pt) node[below right] {$1$};
-					
-					% Подпись области
-					\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$z$};
+	Строим отображение единичного круга $\{ z: |z| < 1 \}$ с разрезом по отрезку $[h, 1]$ на единичный круг без разреза:
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+			\begin{scope}[local bounding box=scope1]
+				\begin{scope}
+					\fill[blue!20, even odd rule] 
+					(0,0) circle (1)
+					(0.3,-0.05) rectangle (1,0.05); 
+				\end{scope}
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};
+				\draw (0,0) circle (1);
+				\fill (0.3,0) circle (0.5pt) node[below] {$h$};
+				\fill (1,0) circle (0.5pt) node[below right] {$1$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$z$};
 				\end{scope}
 				
-				% --- Область W (круг без разреза) ---
-				\begin{scope}[local bounding box=scope2, xshift=5cm]
-					\fill[blue!20] (0,0) circle (1.2);
-					\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
-					\draw[->] (0,-1.2) -- (0,1.2) node[above] {};
-					\draw[thick] (0,0) circle (1.2);
-					
-					\fill[red] (0,0) circle (1.2pt) node[below left] {$0$};
-					
-					\node[draw, circle, inner sep=2pt, fill=white] at (-0.8,0.7) {$w$};
-				\end{scope}
+			\begin{scope}[local bounding box=scope2, xshift=5cm]
+				\fill[blue!20] (0,0) circle (1);
+				\draw (0,0) circle (1);
+				\draw[->] (-1.5,0) -- (1.5,0) node[right] {};
+				\draw[->] (0,-1.5) -- (0,1.5) node[above] {};			
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1.3,1.3) {$w$};
+			\end{scope}
 				
-				% --- Стрелка ---
-				\coordinate (startArrow) at ([yshift=0.8cm]scope1.east);
-				\coordinate (endArrow) at ([yshift=0.8cm]scope2.west);
-				\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0, 0.6cm)$);
-				
-				\draw[->, thick] 
-				(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
-				node[midway, above] {$f$};
-				
-			\end{tikzpicture}
-		\end{center}
-		\begin{enumerate}
-			\item Используем результат предыдущей задачи: $w_1 = \sqrt{-\frac{\frac{1}{2}(z + \frac{1}{z}) + 1}{\frac{1}{2}(z + \frac{1}{z}) - \frac{1}{2}(h + \frac{1}{h})}} = \sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}}$. Это отображение переводит круг с разрезом в верхнюю полуплоскость:
+			\coordinate (startArrow) at ([yshift=1.2cm]scope1.east);
+			\coordinate (endArrow) at ([yshift=1.0cm]scope2.west);
+			\coordinate (midArrow) at ($(startArrow)!0.5!(endArrow) + (0,1cm)$);
+			\draw[->,thick, black!60!black, line width=1.2pt, shorten >=2pt, shorten <=-13pt] 
+			(startArrow) .. controls ($(startArrow)!0.4!(midArrow)$) and ($(endArrow)!0.4!(midArrow)$) .. (endArrow)
+			node[midway, above, yshift=5pt] {$f$};
+		\end{tikzpicture}
+	\end{center}
+			Используем результат предыдущей задачи: $w_1 = \sqrt{-\frac{\frac{1}{2}(z + \frac{1}{z}) + 1}{\frac{1}{2}(z + \frac{1}{z}) - \frac{1}{2}(h + \frac{1}{h})}} = \sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}}$. Это отображение переводит круг с разрезом в верхнюю полуплоскость:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
 					% --- Область Z ---
@@ -4347,7 +4289,7 @@
 				\end{tikzpicture}
 			\end{center}
 			
-			\item Отображаем верхнюю полуплоскость в единичный круг: $w_2 = \frac{w_1 - i}{w_1 + i} \cdot K$, где $K = e^{i\alpha}$, $\alpha = 0$:
+			Отображаем верхнюю полуплоскость в единичный круг: $w_2 = \frac{w_1 - i}{w_1 + i} \cdot K$, где $K = e^{i\alpha}$, $\alpha = 0$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
 					% --- Область W1 ---
@@ -4381,9 +4323,7 @@
 					node[midway, above] {$w = \frac{w_1 - i}{w_1 + i}$};
 				\end{tikzpicture}
 			\end{center}
-		\end{enumerate}
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
-	\end{example}
 	\section{Лекция 14}
 	\subsection{Интегрирование функций комплексного переменного.}
 	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
