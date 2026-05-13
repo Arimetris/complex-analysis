@@ -4913,4 +4913,74 @@
 	\[ (1+z)^\alpha = 1 + \Sum_{k=1}^{\infty}\frac{\alpha(\alpha-1)\ldots(\alpha-k+1)}{k!} \]
 	\subsection{Степенные ряды с центром $ z_0 = \infty $}
 	\[ \Sum_{k=0}^{+\infty}\frac{c_n}{z_n} = c_0 + \frac{c_1}{z} + \ldots \]
+	
+	\section{Лекция 20}
+	\subsection{Теорема единственности}
+	\begin{theorem*}
+		(Теорема единственности)\\
+		Пусть $f(z), g(z) \in \A(D), \ \{z_n\} \subset D: \lim \limits_{n \to \infty} z_n = a \in D $. Если $\forall n \in \mathbb{N} \implies f(z_n) = g(z_n)$, то $f(z) \equiv g(z), \ z \in D$.
+	\end{theorem*}
+	\begin{proof}
+		\begin{align*}
+			&\text{1) Покажем, что $f(a) = g(a)$} \\
+			&\lim \limits_{n \to \infty} (f(z_n) - g(z_n)) = f(a) - g(a) = 0, \ f, g \in \A(D) \implies C(D) \\
+			&h(z) = f(z) - g(z), \ a \text{ --- нуль } h(z) \\ 
+			&\text{2) } \exists \dot U_{\epsilon}(a) \subset D \\
+			&h(z) \equiv 0, \ z \in \dot U_{\epsilon}(a), \ h(z_n) = 0 \\
+			&\text{3) } M \text{ --- множество} \\
+			&z \in M \iff h(z) = 0 \\
+			&\text{Если } D \setminus M = \emptyset \text{, то теорема доказана. Пусть } D \setminus M \neq \emptyset \\
+			&\text{$M$ --- замкнутое множество (показываем это как в пункте 1)}\\
+			&z_0 \in \partial M, \ h(z_0) = 0 \\ 
+			&\forall \dot U_{\delta}(z_0) \implies h(z) \not\equiv 0, \ z \in \dot U_{\delta}(z_0) \\
+			&\implies z_0 \text{ --- изолированный нуль } h(z), \ h(z) \in \A(D) \\
+			&\exists \dot U_{\tilde{\delta}}(z_0): \ h(z) \neq 0, \ z \in \dot U_{\tilde{\delta}}(z_0) \text{ --- получаем противоречие} \\
+			&\implies D \setminus M = \emptyset, \ h(z) \equiv 0, \ z \in D
+		\end{align*}
+	\end{proof}
+	
+	\subsection{Ряды Лорана}
+	В прошлый раз нами были разобраны ряды вида: $\sum_{n=0}^{+\infty} c_n z^n, \ |z| < R$, где $R$ --- радиус сходимости. Тогда введем переменную $z = \frac{1}{s}$, тогда известный нам ряд перепишется как $\sum_{n=0}^{\infty} c_n \cdot \frac{1}{s^n}, \ |s| > R$.
+	
+	\begin{definition}
+		Пусть $\{c_n\}_{n = -\infty}^{+\infty} \subset \mathbb{C}$. Тогда выражение вида $\sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n$ называют \textbf{обобщенным степенным рядом} или \textbf{рядом Лорана}. 
+	\end{definition} 
+	Точка $z_0 \in \mathbb{C}$ --- центр обобщенного степенного ряда.
+	\[
+	\sum_{n = -\infty}^{+\infty}c_n (z - z_0)^n = \sum_{n = -\infty}^{-1} c_n(z - z_0)^n + \sum_{n = 0}^{+\infty} c_n(z - z_0)^n =
+	\underbrace{\sum_{n = -\infty}^{-1} c_n(z - z_0)^n}_{\substack{\text{главная часть}\\ r = \frac{1}{\overline{\lim\limits_{n \to +\infty}} \sqrt[n]{|c_n|}}} } 
+	\;+\;
+	\underbrace{\sum_{n = 0}^{+\infty} c_n(z - z_0)^n}_{\substack{\text{правильная часть}\\ R = \frac{1}{\overline{\lim\limits_{n \to +\infty}} \sqrt[n]{|c_n|}}}}
+	\]
+	\[
+	\frac{1}{r} < |z - z_0| < R
+	\]
+	
+	\begin{definition}
+		Считая в рамках определения $R_1 < R_2$, множество вида $K_{R_1, R_2} = \{z \in \mathbb{C}: R_1 < |z - z_0| < R_2\}$ будем называть \textbf{кольцом сходимости}.
+	\end{definition}
+	
+	\begin{remark}
+		$\forall M \subset K_{R_1, R_2}$ --- замкнутое множество, сходимость ряда Лорана на таком множестве --- равномерная.
+	\end{remark}
+	
+	\begin{theorem*}
+		(Теорема Лорана)\\
+		Пусть $f(z) \in \A(K_{R_1, R_2})$. Тогда в этом кольце функцию $f(z)$ можно представить сходящимся рядом Лорана: 
+		\[
+		f(z) = \sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n
+		\]
+		где 
+		\[
+		c_n = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{f(\xi)}{(\xi - z_0)^{n+1}} \, d\xi
+		\]
+	\end{theorem*}
+	
+	\begin{proof}
+		\begin{align*}
+			&\forall z \in K_{R_1, R_2} \implies \exists G \subset K_{R_1, R_2}, \ \partial G = \gamma_2 \cup \gamma_1^{-}: \ z \in G. \\
+			&f(z) = \frac{1}{2 \pi i} \oint \limits_{\partial G} \frac{f(\xi)}{\xi - z} \, d\xi \quad \text{--- интегральная формула Коши для многосвязной области} \\
+			&= \frac{1}{2 \pi i} \oint \limits_{\gamma_2} \frac{f(\xi)}{\xi - z} \, d\xi - \frac{1}{2 \pi i} \oint \limits_{\gamma_1} \frac{f(\xi)}{\xi - z} \, d\xi
+		\end{align*}
+	\end{proof}
 \end{document}
