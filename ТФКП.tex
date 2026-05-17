@@ -148,7 +148,7 @@
 	Наша цель, каждой точки плоскости поставить в соответсвие точку со сферы.\\ 
 	Рассмотрим сферу: $S = \{\xi^2+\eta^2+(\zeta-\dfrac{1}{2})^2 = \dfrac{1}{4}\}$\\
 	\includegraphics[width=1\textwidth]{Проекция.png}
-	Из подобия в треугольниках \textit{ABN} и \textit{SZN}: 
+	Из подобия в треугольниках $ABN$ и $SZN$: 
 	\[\frac{\rho}{r} = \frac{1-\zeta}{1} \iff\\  \rho = r(1-\zeta),\ SZ = r,\ AB = \rho,\ AS = \zeta,\ NS = 1 \]
 	(Кажду точку со сферы можно привычно записать через полярную замену)\\
 	$\xi = \rho\cos\phi = r(1 - \zeta)\cos\phi = (1 - \zeta)x$ \\
@@ -204,10 +204,8 @@
 	&= \frac{1\cdot(1-e^{i(n+1)x})}{(1-e^{ix})} = \frac{(e^{i(n+1)x}-1)}{(e^{ix}-1)}\cdot\frac{e^\frac{-ix}{2}}{e^\frac{-ix}{2}}  = \frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{(e^\frac{ix}{2} - e^\frac{-ix}{2})\cdot\frac{2i}{2i}} =&\\  &=\frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{2i\sin{\frac{x}{2}}}\cdot\frac{e^{-\frac{i(n+1)x}{2}}}{e^{-\frac{i(n+1)x}{2}}} 
 	\frac{e^\frac{i(n+1)x}{2} - e^\frac{-i(n+1)x}{2}}{2i}\cdot\frac{1}{\sin\frac{x}{2}}\cdot\frac{e^\frac{-ix}{2}}{e^{-\frac{i(n+1)x}{2}}} = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot e^\frac{inx}{2}
 	\end{flalign*}
-	
 	\[ S_1 = \Re S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2}, \ x \neq 2\pi k \]
 	\[S_2 = \Im S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2}, \ x \neq 2\pi k \]
-	
 	\begin{flalign*}
 	\textbf{3)}\quad &\text{Дана рекурентная последовательность: } u_{n+2} = 2(u_{n+1} - u_n), \ u_0 = u_1 = 1&\\
 	&\text{Найти общий член этой последовательности.}&\\
@@ -389,7 +387,6 @@
 		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ ---расходится, т.к. } (-1)^n \text{ расходится.}\]
 	\end{example*}
 	\newpage
-	
 	\section{Лекция 4}
 	\subsection{Функции. Предел. Непрерывность.}
 	\begin{definition}
@@ -637,7 +634,6 @@
 		Функция $f(z)=\frac{1}{z - 1}\Rightarrow f(z)\in\A(\Cm\setminus\{1\})$
 	\end{example}
 	\newpage
-	
 	\section{Лекция 6}
 	\subsection{Геометрический смысл модуля и аргумента производной}
 	Возьмем функцию $f(z) \in \A(D),\ z_0 \in D, \text{ где } f'(z_0) \neq 0$, а так же рассмотрим гладкую кривую Жордана
@@ -788,7 +784,7 @@
 		Пусть $f(z) \in \A(D_z), f: D_z \longrightarrow D_{\omega}$, гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
 	\end{statement}
 	\[\gamma_z = \{ z \in \mathbb{C}: z = \phi(t), \ \alpha \leq t \leq \beta\}\]
-	Предположим существование этих величин:
+	$ Предположим  $существование этих величин:
 	\begin{align*}
 		&S_{D_\omega} = \Iint_{D_z}|f'(x)|^2\, dxdy \text{ --- площадь}\\
 		&L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)| \, dt \text{ --- длина}
@@ -4123,7 +4119,6 @@
 					node[midway, above, font=\footnotesize] {$w_2 = \frac{w_1 + 1}{w_1 - \frac{1}{2}(h + \frac{1}{h})}$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Разворачиваем луч: $w_3 = -w_2$. Луч $(-\infty, 0]$ переходит в $[0, +\infty)$:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -4167,7 +4162,6 @@
 					node[midway, above] {$w_3 = -w_2$};
 				\end{tikzpicture}
 			\end{center}
-			
 			\item Извлекаем корень: $w = \sqrt{w_3}$. Луч $[0, +\infty)$ раскрывается в верхнюю полуплоскость:
 			\begin{center}
 				\begin{tikzpicture}[scale=1.8]
@@ -4326,11 +4320,9 @@
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
 	\section{Лекция 14}
 	\subsection{Интегрирование функций комплексного переменного.}
-	Дана кривая $ \gamma $ и её разбиение $ \tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $ \Delta z_k = z_k - z_{k-1}$ берем опорную точку $ \xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
+	Дана гладкая или кусочно-гладкая кривая $ \gamma $ и её разбиение $\tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $\Delta z_k = z_k - z_{k-1}$ берем опорную точку $\xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
 	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
-	\leqslant n}|\Delta z_k| $.
-	Пусть $ f(z) $ --- однозначная функция определенная на прямой $\gamma$.
-	Составим интегральную сумму: $ \sigma(f,\, \xi,\, \tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k $.
+	\leqslant n}|\Delta z_k|$. Пусть $f(z)$ --- однозначная функция, определенная на прямой $\gamma$. Составим интегральную сумму: $\sigma(f,\, \xi,\, \tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k$.
 	\begin{definition}
 		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \Int_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
 		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
@@ -4352,25 +4344,25 @@
 		\[ = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k) \]
 	\end{proof}
 	\begin{theorem}
-		Пусть $ f(z) \in C(\gamma) $, где $ \gamma $ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\ \beta] $. Тогда
+		Пусть $f(z) \in C(\gamma)$, где $\gamma$ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\,\beta] $. Тогда
 		\[ \Int_\gamma f(z)\,dz = \Int_\alpha^\beta f(z(t))z'(t)\,dt. \]
 	\end{theorem}
 	\begin{proof}
-		$ f(z) \in C(\gamma) \Rightarrow u(x, y),\ v(x, y) \in C(\gamma) $. По определению кривой Жордана: $ x(t),\ y(t) \in C^1[\alpha,\ \beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt $
+		$ f(z) \in C(\gamma) \Rightarrow u(x, y),\ v(x, y) \in C(\gamma) $. По определению кривой Жордана: $ x(t),\ y(t) \in C^1[\alpha,\,\beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt $
 		\begin{align*}
-		J_1 = \Int_\gamma udx-vdy = \Int_\alpha^\beta u(x(t),\ y(t))x'(t)- v(x(t),\ y(t))y'(t)dt\\
-		J_2 = \Int_\gamma udx+vdy = \Int_\alpha^\beta u(x(t),\ y(t))x'(t)+ v(x(t),\ y(t))y'(t)dt\\
-		\Int_\gamma f(z)dz = J_1 + iJ_2 = \Int_\gamma(u+iv)(x'(t) + iy'(t))dt = \Int_\alpha^\beta f(z(t))z'(t)dt
+		J_1 = \Int_\gamma udx-vdy = \Int_\alpha^\beta u(x(t),\, y(t))x'(t)- v(x(t),\, y(t))y'(t)\,dt\\
+		J_2 = \Int_\gamma udx+vdy = \Int_\alpha^\beta u(x(t),\, y(t))x'(t)+ v(x(t),\, y(t))y'(t)\,dt\\
+		\Int_\gamma f(z)\,dz = J_1 + iJ_2 = \Int_\gamma(u+iv)(x'(t) + iy'(t))\,dt = \Int_\alpha^\beta f(z(t))z'(t)\,dt
 		\end{align*}
 	\end{proof}
 	\begin{example}			
 			\begin{minipage}{0.4\textwidth}
-				\[ 1)\ I = \Int_\gamma z \Re z \, dz \]
+				\[ 1)\ I = \Int_\gamma z\Re z\,dz \]
 			\end{minipage}
 			\begin{minipage}{0.4\textwidth}
 				\begin{tikzpicture}
-					\draw[->] (-1.5,0) -- (3,0) node[below] {$x$};
-					\draw[->] (0,-1.5) -- (0,3) node[left] {$y$};
+					\draw[->] (-0.5,0) -- (3,0) node[below] {$x$};
+					\draw[->] (0,-0.5) -- (0,3) node[left] {$y$};
 					\draw(0,0) -- (2.5,1.7);
 					\draw[dashed] (2.5,1.7) -- (2.5,0);
 					\draw[dashed] (2.5,1.7) -- (0,1.7);
@@ -4381,10 +4373,8 @@
 				\end{tikzpicture}
 			\end{minipage}
 	\end{example}
-	Выполним параметризацию кривой $ \gamma : z = x + i\dfrac{x}{2},\ x \in [0,\,2] $\\
-	$ dz = 1+\dfrac{i}{2}\,dx $
-	\[ I =  \Int_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\Int_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i \]
-	\newpage
+	Выполним параметризацию кривой $ \gamma : z = x + i\dfrac{x}{2},\ x \in [0,\,2].\ dz = 1+\dfrac{i}{2}\,dx $
+	\[ I =  \Int_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\Int_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i. \]
 	\begin{example}			
 		\begin{minipage}{0.4\textwidth}
 			\[ 2)\ I = \Int_\gamma\Im z\,dz \]
@@ -4392,32 +4382,32 @@
 		\begin{minipage}{0.4\textwidth}
 			\begin{tikzpicture}
 				\draw[->] (-3,0) -- (3,0) node[below] {$x$};
-				\draw[->] (0,-1.5) -- (0,3) node[left] {$y$};
+				\draw[->] (0,-0.5) -- (0,3) node[left] {$y$};
 				\draw (-2,0) arc (180:0:2) -- cycle;
 				\node[left] at (1.6, 2) {$\gamma$};
 				\node[below] at (2, 0) {$1$};
 			\end{tikzpicture}
 		\end{minipage}
 	\end{example}
-	Выполним параметризацию кривой $ \gamma : z = e^{it},\ t \in [0,\, \pi]$\\
-	$ dz = ie^{it}\,dt $
-	\[ I = \Int_0^\pi \sin t\,ie^{it}\,dt = \Int_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\, dt =  \Int_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2} \]
+	Выполним параметризацию кривой $\gamma: z = e^{it},\ t \in [0,\,\pi].\ dz = ie^{it}\,dt$
+	\[ I = \Int_0^\pi \sin t\,ie^{it}\,dt = \Int_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\,dt =  \Int_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2}. \]
+	\newpage
 	\subsection{Свойства интеграла вдоль кривой.}
 	\begin{theorem*}
 		(Линейность)\\
 		\indent Пусть существуют интегралы $ \Int_\gamma f(z)\,dz $ и $ \Int_\gamma g(z)\,dz $. Тогда
-		\[ \forall c_1,\, c_2 \in\Cm\Rightarrow\exists\Int_\gamma c_1f(z) + c_2g(z)\,dz = c_1\Int_\gamma f(z)\,dz + c_2\Int_\gamma g(z)\,dz  \]
+		\[ \forall\,c_1,\,c_2 \in\Cm\Rightarrow\exists\Int_\gamma c_1f(z) + c_2g(z)\,dz = c_1\Int_\gamma f(z)\,dz + c_2\Int_\gamma g(z)\,dz.  \]
 	\end{theorem*} 
 	\begin{theorem}
 		При изменении направления обхода вдоль кривой, знак интеграла сменится на противоположный.
-		\[ \Int_{\gamma^-}f(z)\,dz = -\Int_\gamma f(z)\,dz \]
+		\[ \Int_{\gamma^-}f(z)\,dz = -\Int_\gamma f(z)\,dz. \]
 	\end{theorem}
 	\begin{theorem}
-		Пусть $ \gamma = \gamma_1 \cup \gamma_2 $. Тогда
-		\[ \Int_\gamma f(z)\,dz = \Int_{\gamma_1}f(z)\,dz + \Int_{\gamma_2}f(z)\,dz \]
+		Пусть $ \gamma = \gamma_1 \cup \gamma_2 $ (Они пересекаются в одной концевой точке). Тогда
+		\[ \Int_\gamma f(z)\,dz = \Int_{\gamma_1}f(z)\,dz + \Int_{\gamma_2}f(z)\,dz. \]
 	\end{theorem}
 	\begin{theorem*}
-		\[ \left| \Int_\gamma f(z)\,dz\right| \leqslant \Int_\gamma |f(z)|\,ds \quad |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода})\]
+		\[ \bigg| \Int_\gamma f(z)\,dz\bigg| \leqslant \Int_\gamma |f(z)|\,ds,\ |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода}).\]
 	\end{theorem*}
 	\begin{proof}
 		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k \]
@@ -4425,9 +4415,10 @@
 	\end{proof}
 	\begin{theorem*}
 		(Замена переменной)\\ \indent
-		Пусть $ z = \psi(\xi) $ взаимнооднозначно переводит Жорданову кривую $ \gamma_\xi $ на $ \gamma_z.\text{ Пусть }\\ \psi(\xi) \in \A(\gamma_\xi),\ f(z) = C(\gamma_z)$. Тогда
+		Пусть $z = \psi(\xi)$ взаимнооднозначно переводит кривую $ \gamma_\xi $ на $ \gamma_z$(Гладкие или кусочно-гладкие кривые Жордана). Пусть $\psi(\xi) \in \A(\gamma_\xi),\ f(z)\in C(\gamma_z)$. Тогда
 		\[ \Int_{\gamma_z} f(z)\,dz =  \Int_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi \]
 	\end{theorem*}
+	\newpage
 	\subsection{Интегральная теорема Коши}
 	\begin{theorem*}
 		(Интегральная теорема Коши для односвязной области)\\
@@ -4435,13 +4426,13 @@
 		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $ \gamma \subset D$ \[ \Oint_\gamma f(z) \, dz = 0. \] 
 	\end{theorem*}
 	\begin{proof}
-		\[ \Int_\gamma f(z) \, dz = \Int_\gamma (udx - vdy) + i\Int_\gamma (udx + vdy) \]
-		Применим формулу Грина.$\ P,\,Q \in C^1(\partial G)$
-		\[ \Oint_\gamma Pdx + Qdy = \Iint_G Q'_x - P'_y\, dxdy\]
-		$ f(z) \in \A(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда
+		\[ \Oint_\gamma f(z) \, dz = \Oint_\gamma (udx - vdy) + i\Oint_\gamma (vdx + udy) \]
+		Выпишем формулу Грина, где $G$ --- это область, внутри кривой. $\ P,\,Q \in C^1(\partial G)$.
+		\[ \Oint_{\partial G} Pdx + Qdy = \Iint_G Q'_x - P'_y\, dxdy\]
+		$ f(z) \in \A(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда применим формулу Грина
 		\begin{align*}
 			&\Oint_\gamma udx - vdy = \Iint_G -v'_x - u'_y\, dxdy = 0\\
-			&\Oint_\gamma vdx + udy = \Iint_G u'_x + v'_y\, dxdy = 0 
+			&\Oint_\gamma vdx + udy = \Iint_G u'_x - v'_y\, dxdy = 0 .
 		\end{align*}
 	\end{proof}
 	\begin{remark}
@@ -4450,425 +4441,308 @@
 	\end{remark}
 	\newpage
 	\section{Лекция 15}
+	\subsection{Следствия из интегральной теоремы Коши. Теорема Коши для многосвязной области.}
 	\begin{consequence*}
 		(Альтернативная формулировка)\\
 		\indent Пусть $ f(z)\in\A(D) \cup C(\partial D),\ D$ --- односвязная область. Тогда
 		\[ \Oint_\gamma f(z) \, dz = 0. \]
 	\end{consequence*}
 	\begin{consequence}
-		Пусть $ f(z)\in\A(D),\ D$ --- односвязная область. Тогда $ \forall\, \gamma_1,\,\gamma_2$ --- гладких или кусочно гладких кривых Жордана имеющих общее начало и конец выполено
+		Пусть $ f(z)\in\A(D),\ D$ --- односвязная область. Тогда $ \forall\, \gamma_1,\,\gamma_2$ --- гладких или кусочно гладких кривых Жордана, которые имеют общее начало и конец, выполено
 		\[ \Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz \]
 	\end{consequence}
 	\begin{proof}
-		Если $ \gamma_1,\,\gamma_2 $ не имеют других общих точек, кроме начала и конца. Рассмотрим уривую $ \gamma = \gamma_1\cap\gamma_2^- $ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
-		\[ \Oint_\gamma f(z)\,dz = 0\ \Rightarrow\ \Oint_{\gamma_1} f(z)\,dz + \Oint_{\gamma_2^-} f(z)\,dz = 0\iff \Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz. \]
-		Если $ \gamma_1,\,\gamma_2 $ имеют общие точки, отличающеися от начала и конца.\\ 
-		
-		Пусть $ \gamma = \gamma_1 \cap \gamma_2^- = (\bigcup\limits_{j=1}^N \Gamma_j) \cup(\bigcup\limits_{l=1}^M K_l) $, где $ \Gamma_j $ --- замкнутые контуры, $ K_l $ --- остальные кривые.
+		Предположим $\gamma_1,\,\gamma_2$ не имеют других общих точек, кроме начала и конца. Рассмотрим уривую $ \gamma = \gamma_1\cap\gamma_2^- $ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
+		\[ \Oint_\gamma f(z)\,dz = 0\iff\Oint_{\gamma_1} f(z)\,dz + \Oint_{\gamma_2^-} f(z)\,dz = 0\iff\Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz. \]
+		Предположим $ \gamma_1,\,\gamma_2 $ имеют общие точки, отличающеися от начала и конца.\\ 
+		Пусть $ \gamma = \gamma_1 \cup\gamma_2^- = (\bigcup\limits_{j=1}^N \Gamma_j) \cup(\bigcup\limits_{l=1}^M K_l) $, где $ \Gamma_j $ --- замкнутые контуры, $ K_l $ --- совпадающие контуры (обход будет осуществляться два раза в обе стороны). Тогда
+		\[ \Oint_\gamma f(z)\,dz = \Sum_{j=1}^N\Oint_{\Gamma_j} f(z)\,dz + \Sum_{l=1}^M\bigg(\Int_{K_l} f(z)\,dz + \Int_{K_l^-} f(z)\,dz \bigg) = 0 \]
 	\end{proof}
-
-	\begin{example}
-		\[\int \limits_{|z-\pi| = \pi} \sin^{n}(z) dz = 0 \text{ --- по теореме Коши для односвязной области}\]
-	\end{example} 
-	
+	\begin{example*}
+		\[ \Oint_{|z-\pi|=\pi}\sin^n z\,dz = 0 \text{ --- по теореме Коши для односвязной области.} \]
+	\end{example*}
 	\begin{theorem*}
 		(Интегральная теорема Коши для многосвязной области) \\
-		\indent Пусть $f(z) \in \A(D)$ и возьмём $\forall G \subset D$ --- многосвязная область. Тогда
-		\[
-		\oint\limits_{\partial G} f(z) \, dz = 0.
-		\]
+		\indent Пусть $f(z)\in\A(D)$ и возьмём многосвязную область $G \subset D$. Тогда \[ \Oint_{\partial G} f(z)\,dz = 0. \]
 	\end{theorem*}
-	
 	\begin{proof}
-		Пусть $\partial G = \Gamma_0 \cup \bigl( \bigcup_{j=1}^N \Gamma_j \bigr)$.
-		Рассмотрим вспомогательные разрезы $l_1, \dots, l_N$ и положим
-		\[
-		\gamma = \partial G \;\cup\; \bigl( \bigcup_{j=1}^N l_j \bigr) \;\cup\; \bigl( \bigcup_{j=1}^N l_j^{-} \bigr).
-		\]
+		Пусть $\partial G = \Gamma_0 \cup (\bigcup\limits_{j=1}^N \Gamma_j)$, где $\Gamma_j$ --- дырки внутри области $G$. Рассмотрим новый контур $\gamma$, где $l_j$ и $l_j^-$ --- разрезы, соединяющие область $G$ и $D$.
+		\[\gamma = \partial G\cup\Big(\bigcup_{j=1}^N l_j\Big)\cup\Big(\bigcup_{j=1}^N l_j^-\Big).\]
 		По интегральной теореме Коши для односвязной области
-		\[
-		\oint\limits_{\gamma} f(z) \, dz = 0.
-		\]
-		Расписывая интеграл по $\gamma$, получаем:
-		\[
-		\oint\limits_{\gamma} f(z) \, dz
-		= \oint\limits_{\partial G} f(z) \, dz
-		+ \sum_{j=1}^N \left( \int\limits_{l_j} f(z) \, dz + \int\limits_{l_j^{-}} f(z) \, dz \right)
-		= 0.
-		\]
-		Поскольку интегралы по $l_j$ и $l_j^{-}$ взаимно уничтожаются,
-		\[
-		\oint\limits_{\partial G} f(z) \, dz = 0.
-		\]
+		\[ \Oint_\gamma f(z)\,dz = 0. \]
+		Расписывая интеграл по $\gamma$, получаем
+		\[ \Oint_\gamma f(z)\,dz = \Oint_{\partial G}f(z)\,dz
+		+ \Sum_{j=1}^N\bigg(\Int_{l_j} f(z)\,dz + \Int_{l_j^-}f(z)\,dz\bigg) = 0\implies\Oint_{\partial G}f(z)\,dz = 0. \]
+		Интегралы по $l_j$ и $l_j^-$ взаимно сокращаются.
 	\end{proof}
-	
 	\begin{remark}
-		Если $G$ --- $(N+1)$-связная область, то
-		\[
-		\oint\limits_{\partial G} f(z) \, dz
-		= \oint\limits_{\Gamma_0} f(z) \, dz
-		+ \sum_{j=1}^N \oint\limits_{\Gamma_j^{-}} f(z) \, dz
-		= 0.
-		\]
-		Следовательно,
-		\[
-		\oint\limits_{\Gamma_0} f(z) \, dz
-		= \sum_{j=1}^N \oint\limits_{\Gamma_j} f(z) \, dz.
-		\]
+		Пусть $G$ --- (N+1)-связная область. Тогда
+		\[ \Oint_{\partial G} f(z)\,dz = \Oint_{\Gamma_0}f(z)\,dz + \Sum_{j=1}^N\, \Oint_{\Gamma_j^-}f(z)\,dz = 0\implies\Oint_{\Gamma_0} f(z)\,dz = \Sum_{j=1}^N\,\Oint_{\Gamma_j}f(z)\,dz. \]
+		Интеграл по внешнему контуру равен сумме интегралов по внутренним кускам.
 	\end{remark}
-	
 	\begin{theorem*}
 		(Альтернативная формулировка)\\
-		\indent Пусть $f(z) \in \A(D) \cap C(\overline{D})$, $D$ --- многосвязная область. Тогда
-		\[
-		\oint\limits_{\partial D} f(z) \, dz = 0.
-		\]
+		\indent Пусть $f(z)\in\A(D)\cap C(\partial D)$, где $D$ --- многосвязная область. Тогда
+		\[ \Oint_{\partial D}f(z)\,dz = 0. \]
 	\end{theorem*}
-	
 	\subsection{Первообразная и неопределённый интеграл}
 	\begin{definition}
-		Функция $F(z) \in \A(D)$ называется \textbf{первообразной} функции $f(z)$ в области $D$, если
-		\[
-		\forall z \in D \quad \Longrightarrow \quad F'(z) = f(z).
-		\]
+		Функция $F(z)\in\A(D)$ называется \textbf{первообразной} функции $f(z)$ в области $D$, если $\forall\,z\in D\implies F'(z) = f(z).$
 	\end{definition}
-	
 	\begin{definition}
-		\textbf{Неопределённым интегралом} функции $f(z)$ в области $D$ называют множество всех первообразных $f(z)$ в $D$.
-		
-		\textbf{Обозначение:} $\displaystyle \int f(z) \, dz$.
+		\textbf{Неопределённым интегралом} функции $f(z)$ в области $D$ называют множество всех первообразных $f(z)$ в $D$. Обозначение: $\displaystyle\int f(z)\,dz$.
 	\end{definition}
+	\begin{theorem}
+		Пусть $f(z)\in C(D)$, где $D$ --- односвязная область и для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $\gamma \subset D$ выполняется
+		\[ \Oint_\gamma f(z)\,dz = 0. \]
+		Тогда
+		\[ F(z) = \Int_{z_0}^z f(\xi)\,d\xi \in \A(D)\text{ и } F(z) \text{ является первообразной  } f(z) \text{ в } D. \]
+		$z_0 \in D$ --- фиксированноя точка.
+	\end{theorem}
+	\begin{proof}
+		$F(z) = \displaystyle\Int_{z_0}^z f(\xi)\,d\xi$ --- не зависит от пути интегрирования. Это следует из условия $\forall\,\gamma\subset D\implies\displaystyle\Oint_\gamma f(z)\,dz = 0$.
+		Теперь проверим аналитичность функции $F(z)$.\\
+		Возьмем любую точку $z \in D$ и рассмотрим приращение функции $F(z)$ в этой точке.
+		\[ \frac{F(z+\Delta z) - F(z)}{\Delta z} = \frac{1}{\Delta z}\bigg( \Int_{z_0}^{z+\Delta z} f(\xi)\,d\xi - \Int_{z_0}^z f(\xi)\,d\xi \bigg) = \frac{1}{\Delta z}\Int_z^{z + \Delta z} f(\xi)\,d\xi \]
+		Мы должны показать, что $F'(z) = f(z)$. Рассмотрим следущую разность
+		\begin{multline*}
+			\frac{F(z + \Delta z) - F(z)}{\Delta z} - f(z) 
+			= \frac{1}{\Delta z}\Int_z^{z+\Delta z} f(\xi)\,d\xi - \frac{\Delta z}{\Delta z}f(z)=\\
+			= \frac{1}{\Delta z} \bigg(\Int_z^{z+ \Delta z}f(\xi)\,d\xi - f(z)\Int_z^{z+\Delta z}d\xi\bigg) = \frac{1}{\Delta z} \bigg(\Int_z^{z+ \Delta z}f(\xi)\,d\xi - \Int_z^{z+\Delta z}f(z)\,d\xi\bigg)
+		\end{multline*}
+		Интеграл $\displaystyle\Int_z^{z+\Delta z}d\xi$ не зависит от пути, а под интегралом стоит аналитическая функция 1, значит этот интеграл не зависит от пути. В качестве пути выберем этот отрезок.\\ Параметризуем его: $\xi = z + t \Delta z,\ t\in[0,\,1],\ d\xi = \Delta z\,dt$. Получим
+		\[ \Int_z^{z+\Delta z}d\xi = \Int_0^1\Delta z\,dt = \Delta z \]
+		Теперь оценим модуль исходной разности
+		\[ \left|\frac{F(z+\Delta z)-F(z)}{\Delta z} - f(z)\right| = \left| \frac{1}{\Delta z}\Int_z^{z + \Delta z}\big(f(\xi)-f(z)\big)\,d\xi\right|
+	    \leqslant\max_{\xi\,\in\,l}|f(\xi)-f(z)|\cdot\frac{|\Delta z|}{|\Delta z|} \]
+		При $\Delta z \to 0 \implies \xi \to z$. Тогда $\Lim_{\Delta z\to 0} \max\limits_{\xi\,\in\,l}|f(\xi) - f(z)| = 0$, т.к. $f(z) \in C(D)$\\
+		Итого получаем
+		\[ \Lim_{\Delta z \to 0} \frac{F(z + \Delta z) - F(z)}{\Delta z} = f(z) \]
+		$z \in D$ --- произвольная точка $\implies F(z)\in\A(D)$ и $F'(z) = f(z)$.\\ Тогда $F(z)$ --- первообразная $f(z)$ в $D$.
+	\end{proof}
 	\newpage
-	\begin{theorem}
-		Пусть $f(z) \in C(D)$, $D$ --- односвязная область и $\forall \gamma \subset D$ (замкнутый контур) выполняется
-		\[
-		\int\limits_{\gamma} f(z) \, dz = 0.
-		\]
-		Тогда функция
-		\[
-		F(z) = \int\limits_{z_0}^{z} f(\xi) \, d\xi \quad (z_0 \in D \text{ --- фиксировано})
-		\]
-		принадлежит $\A(D)$ и является первообразной $f(z)$ в $D$.
-	\end{theorem}
-	\begin{proof}
-		\begin{align*}
-			&F(z) = \int_{z_0}^z f(\xi) \, d\xi \quad \text{--- не зависит от пути интегрирования, это следует из условия} \\
-			&\forall \gamma \subset D \implies \int_{\gamma} f(z) \, dz = 0 \\[2mm]
-			&\forall z \in D \implies \\
-			&\frac{F(z + \Delta z) - F(z)}{\Delta z} 
-			= \frac{1}{\Delta z} \left( \int_{z_0}^{z + \Delta z} f(\xi) \, d\xi - \int_{z_0}^{z} f(\xi) \, d\xi \right)
-			= \frac{1}{\Delta z} \int_{z}^{z + \Delta z} f(\xi) \, d\xi, \\[2mm]
-			&\frac{F(z + \Delta z) - F(z)}{\Delta z} - f(z) 
-			= \frac{1}{\Delta z} \left( \int_{z}^{z+ \Delta z} f(\xi) \, d\xi - \int_{z}^{z+ \Delta z} f(z) \, d\xi \right) \\
-			&= \frac{1}{\Delta z} \left( \int_{z}^{z+ \Delta z} f(\xi) \, d\xi - f(z) \int_{z}^{z+ \Delta z} d\xi \right), \quad \text{где } \int_{z}^{z+ \Delta z} d\xi = \Delta z, \\[1mm]
-			&l: \ \xi = z + t \Delta z, \quad 0 \leq t \leq 1, \quad d\xi = \Delta z \, dt, \\[2mm]
-			&\left| \frac{F(z + \Delta z) - F(z)}{\Delta z} - f(z) \right|
-			= \left| \frac{1}{\Delta z} \int_{z}^{z + \Delta z} \bigl( f(\xi) - f(z) \bigr) d\xi \right|
-			\leq \max_{\xi \in l} |f(\xi) - f(z)| \cdot \frac{|\Delta z|}{|\Delta z|}, \\[1mm]
-			&\Delta z \to 0 \ \implies\ \xi \to z.
-			\lim_{\Delta z \to 0} \max_{\xi \in l} |f(\xi) - f(z)| = 0 \quad \bigl(f(z) \in C(D)\bigr) \\[2mm]
-			&\lim_{\Delta z \to 0} \frac{F(z + \Delta z) - F(z)}{\Delta z} = f(z) \\[2mm]
-			&z \in D \text{ --- произвольная точка} \implies F(z) \in \A(D) \\[1mm]
-			&F'(z) = f(z) \implies F(z) \text{ --- первообразная $f(z)$ в $D$}
-		\end{align*}
-	\end{proof}
-	
 	\begin{consequence}
-		В условиях теоремы множество всех первообразных функции $f(z)$ в $D$ имеет вид:
-		\[
-		\int f(z) \, dz = \int\limits_{z_0}^{z} f(\xi) \, d\xi + C, \quad C \in \Cm.
-		\]
+		В условиях теоремы множество всех первообразных функции $f(z)$ в $D$ имеет вид
+		\[ \int f(z)\,dz = \Int_{z_0}^z f(\xi)\,d\xi + C,\ C\in \Cm. \]
 	\end{consequence}
-	
 	\begin{proof}
-		Пусть $F_1(z), F_2(z)$ --- две первообразные $f(z)$ в $D$. Рассмотрим $F(z) = F_1(z) - F_2(z)$. Тогда
-		\[
-		F'(z) = f(z) - f(z) = 0, \quad F(z) \in \A(D).
-		\]
-		Отсюда $F(z) \equiv C$, где $C \in \Cm$.
+		Пусть $F_1(z),\ F_2(z)$ --- две первообразные $f(z)$ в $D$.\\ 
+		Рассмотрим их разность $F(z) = F_1(z) - F_2(z)$. Тогда
+		\[ F'(z) = f(z)-f(z) = 0,\ F(z)\in\A(D). \]
+		Отсюда $F(z) \equiv C$, где $C\in\Cm$.
 	\end{proof}
-	
 	\begin{remark}
-		В условиях теоремы справедлива формула Ньютона-Лейбница:
-		\[
-		\int\limits_{z_1}^{z_2} f(\xi) \, d\xi = F(z)\Big|_{z_1}^{z_2},
-		\]
-		где $z_1, z_2 \in D$, а $F(z)$ --- любая первообразная $f(z)$ в $D$.
+		В условиях теоремы справедлива формула Ньютона-Лейбница
+		\[ \Int_{z_1}^{z_2}f(\xi)\,d\xi = F(z)\bigg|_{z_1}^{z_2},\text{ где } z_1,\,z_2\in D,\ F(z)\text{ --- любая первообразная }f(z)\text{ в } D.\]
 	\end{remark}
-	
-	\subsection{Формула интегрирования по частям}
-	\begin{theorem}
-		Пусть $f(z), g(z) \in \A(D)$, $D$ --- односвязная область. Тогда
-		\[
-		\int\limits_{z_1}^{z_2} f(z) g'(z) \, dz
-		= f(z) g(z) \Big|_{z_1}^{z_2} - \int\limits_{z_1}^{z_2} f'(z) g(z) \, dz.
-		\]
-	\end{theorem}
-	
+	\begin{theorem*}
+		(Формула интегрирования по частям)\\
+		\indent Пусть $f(z),\, g(z)\in\A(D)$, где $D$ --- односвязная область. Тогда
+		\[ \Int_{z_1}^{z_2}f(z)g'(z)\,dz = f(z)g(z)\bigg|_{z_1}^{z_2} - \Int_{z_1}^{z_2} f'(z)g(z)\,dz.\]
+	\end{theorem*}
 	\begin{proof}
 		Следует из равенства $(f(z)g(z))' = f'(z)g(z) + f(z)g'(z)$ и формулы Ньютона-Лейбница.
 	\end{proof}
 	\newpage
+	\section{Лекция 16}
 	\subsection{Интегральная формула Коши}
-		\begin{theorem*}
-			(Интегральная формула Коши для односвязной области)\\
-			\indent Пусть $f(z) \in \A(D), D$ --- односвязная область. Тогда $\forall z \in D$ и $\forall \gamma \subset D$ --- замкнутая гладкая или кусочно-гладкая кривая Жордана: $z \in G$, где $\gamma = \partial G \implies$ 
-			\[ f(z) = \frac{1}{2 \pi i}\Oint_\gamma \frac{f(\xi)}{\xi - z}\, d\xi \]
-		\end{theorem*}
-		\nopagebreak
-		\begin{proof}
-			\begin{align*}
-				&K_r = \{\xi = z + re^{it},\ 0 \leq t \leq 2\pi\} \subset G, \\
-				&\tilde{G} = G \setminus \overline{K_r}, \\
-				&\frac{f(\xi)}{\xi - z} \in \A(\tilde{G}) \cap C(\overline{\tilde{G}}), \quad \partial \tilde{G} = \gamma \cup K_r^- \\
-				&\text{По интегральной теореме Коши: } \Oint_{\partial G} \frac{f(\xi)\, d\xi}{\xi - z} = 0 \\
-				&\implies \Oint_{\partial \tilde G} \frac{f(\xi)\,d\xi}{\xi - z} = \Oint_{\gamma} \frac{f(\xi)\,d\xi}{\xi - z} + \Oint_{\bar K_r^-} \frac{f(\xi)\,d\xi}{\xi - z} = \Oint_{\gamma} \frac{f(\xi)\,d\xi}{\xi - z} - \Oint_{\bar K_r} \frac{f(\xi)\,d\xi}{\xi - z} = 0, \\
-				&\Oint_{\gamma}\frac{f(\xi)\,d\xi}{\xi - z} = \Oint_{K_r} \frac{f(\xi)\, d\xi}{\xi - z}\\
-				&K_r: \ \xi = z + re^{it},\ 0 \leq t \leq 2\pi, \\
-				&\Oint_{K_r}\frac{f(\xi)\, d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}},\qquad d\xi = r \cdot ie^{it}dt, \\[2mm]
-				&\Oint_{K_r} \frac{f(\xi)\, d\xi}{\xi - z} = \int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}} \cdot r \cdot ie^{it}\,dt, \\
-				&f(z + re^{it}) - f(z) = f'(z) \cdot re^{it} + \bar{\bar o}(r),\quad r \rightarrow 0+, \\[2mm]
-				&\Oint_{K_r} \frac{f(\xi)\,d\xi}{\xi - z} = i\left(\int_0^{2\pi} f(z)\,dt + r \int_0^{2\pi} f'(z)e^{it}\,dt + \int_0^{2\pi} \bar{\bar o}(r)\,dt\right), \\
-				&\Oint_{\gamma}\frac{f(\xi)\,d\xi}{\xi - z} = i f(z) \cdot 2\pi + i r f'(z) \int_0^{2\pi} e^{it}\, dt + i \int_0^{2\pi} \bar{\bar o}(r)\, dt, \\
-				&\text{при $r \to 0+0$ }\implies \Oint_{\gamma}\frac{f(\xi)\,d\xi}{\xi - z} = 2\pi i \cdot f(z), \\[2mm]
-				&K_r = \{ \xi \in \Cm: |\xi - z| < r \} \subset G, \quad \tilde G = G \setminus \bar K_r, \\
-				&\frac{f(\xi)}{\xi - z} \in \A(\tilde G) \cap C(\bar G), \\
-			\end{align*}
-		\end{proof}
-		\newpage
-		\section{Лекция 16}
-		\subsection{Интегральная теорема Коши для многосвязной области}
-		\begin{theorem*} Интегральная теорема Коши для многосвязной области. \\
-				\indent Пусть $f(z) \in \A(D)$. Тогда $\forall z \in D$ и $\forall G \subset D$ многосвязная область: $z \in G \implies$
-				\[f(z) = \frac{1}{2\pi i} \Oint_{\partial G} \frac{f(\xi)}{\xi - z}d\xi\]
-		\end{theorem*}
-		\begin{remark}
-			$G$ --- $(N+1)$-связная область, тогда имеем:
-			\[f(z) = \frac{1}{2 \pi} \left(\Oint_{\Gamma_0}\frac{f(\xi)}{\xi - z} d\xi - \sum_{j=1}^n \Oint_{\Gamma_j}\frac{f(\xi)}{\xi - z}d\xi\right)\]
-		\end{remark}
-		\begin{example*}
-			\[
-			I = \Oint_{\gamma}\frac{dz}{z^2 + 1}
-			\]
-			\begin{figure}[h!]
-				\centering
-				\caption{Различные положения контура $\gamma$ относительно особых точек $i$ и $-i$}
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (2.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,1) circle (2pt) node[above right] {$i$};
-						\draw[fill=black] (0,-1) circle (2pt) node[below right] {$-i$};
-						\draw[blue, thick, ->] (1.5,1) arc[start angle=0, end angle=360, x radius=1.3, y radius=1.0];
-						\node[blue] at (1.8,1.2) {$\gamma$};
-						\draw[red, dashed] (0,1) circle (0.4);
-					\end{tikzpicture}
-					\caption{Только $i$ внутри}
-				\end{subfigure}
-				\hfill
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (2.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,1) circle (2pt) node[above right] {$i$};
-						\draw[fill=black] (0,-1) circle (2pt) node[below right] {$-i$};
-						\draw[blue, thick, ->] (1.5,-1) arc[start angle=0, end angle=360, x radius=1.3, y radius=1.0];
-						\node[blue] at (1.8,-0.8) {$\gamma$};
-						\draw[red, dashed] (0,-1) circle (0.4);
-					\end{tikzpicture}
-					\caption{Только $-i$ внутри}
-				\end{subfigure}
-				\\[1cm]
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (2.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,1) circle (2pt) node[above right] {$i$};
-						\draw[fill=black] (0,-1) circle (2pt) node[below right] {$-i$};
-						\draw[blue, thick, ->] (0,0) ellipse[x radius=2.0, y radius=1.6];
-						\node[blue] at (2.2,0.5) {$\gamma$};
-						\draw[red, dashed] (0,1) circle (0.3) node[below right] {$\Gamma_1$};
-						\draw[red, dashed] (0,-1) circle (0.3) node[above right] {$\Gamma_2$};
-					\end{tikzpicture}
-					\caption{Обе точки внутри}
-				\end{subfigure}
-				\hfill
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (2.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,1) circle (2pt) node[above right] {$i$};
-						\draw[fill=black] (0,-1) circle (2pt) node[below right] {$-i$};
-						\draw[blue, thick, ->] (0,0) circle[radius=0.7];
-						\node[blue] at (1,0.2) {$\gamma$};
-					\end{tikzpicture}
-					\caption{Ни одной точки внутри}
-				\end{subfigure}
-			\end{figure}
-			
-			\textbf{а)} Только $i$ внутри контура $\gamma$:
-			\begin{align*}
-				J &= \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi^2 + 1}, \\
-				J &= \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{(\xi + i)(\xi - i)}, \quad f(\xi) = \frac{1}{\xi + i}, \\
-				J &= f(i) = \frac{1}{2i} \quad\Longrightarrow\quad I = 2\pi i \cdot J = 2\pi i \cdot \frac{1}{2i} = \pi.
-			\end{align*}
-			
-			\textbf{б)} Только $-i$ внутри контура $\gamma$:
-			\begin{align*}
-				J &= \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi^2 + 1}, \\
-				J &= \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{(\xi + i)(\xi - i)}, \quad f(\xi) = \frac{1}{\xi - i}, \\
-				J &= f(-i) = -\frac{1}{2i} \quad\Longrightarrow\quad I = 2\pi i \cdot J = 2\pi i \cdot \left(-\frac{1}{2i}\right) = -\pi.
-			\end{align*}
-			
-			\textbf{в)} Обе точки $i$ и $-i$ внутри контура $\gamma$:\\
-			\text{(способ 1):}
-			\begin{align*}
-				J &= \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi^2 + 1}, \\
-				\frac{1}{\xi^2 + 1} &= \frac{A}{\xi + i} + \frac{B}{\xi - i} \\
-				A(\xi - i) + B(\xi + i) &= 1, \\
-				\xi = i &\implies B(2i) = 1 \implies B = \frac{1}{2i} = -\frac{i}{2}, \\
-				\xi = -i &\implies A(-2i) = 1 \implies A = -\frac{1}{2i} = \frac{i}{2}, \\
-				J &= \frac{1}{2\pi i} \left( \frac{i}{2} \Oint_{\gamma} \frac{d\xi}{\xi + i} - \frac{i}{2} \Oint_{\gamma} \frac{d\xi}{\xi - i} \right), \\
-				J &= \frac{i}{2} \left( \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi + i} - \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi - i} \right)
-			\end{align*}
-			В первом интеграле $z_0 = -i$, $f(\xi) = 1$; во втором $z_0 = i$, $f(\xi) = 1$. По интегральной формуле Коши:
-			\[
-			\frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi + i} = 1, \qquad 
-			\frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi - i} = 1,
-			\]
-			следовательно,
-			\[
-			J = \frac{i}{2} (1 - 1) = 0 \quad\Longrightarrow\quad I = 2\pi i \cdot 0 = 0.
-			\]
-			\text{(способ 2):}
-			\begin{align*}
-				\partial G &= \gamma \cup \Gamma_1^- \cup \Gamma_2^-, \\
-				\Oint_{\partial G} \frac{d\xi}{\xi^2 + 1} &= 0 
-				\implies \Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = 0, \\
-				\frac{1}{2\pi i} \Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} 
-				&= \frac{1}{2\pi i} \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} + \frac{1}{2\pi i} \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = \\
-				&= \frac{1}{2\pi i} \cdot \pi - \frac{1}{2\pi i} \cdot \pi = 0.
-			\end{align*}
-			
-			\textbf{г)} Ни одной точки внутри контура $\gamma$:
-			По интегральной теореме Коши для односвязной области $I = 0$.
-			\end{example*}
+	\begin{theorem*}
+		(Интегральная формула Коши для односвязной области)\\
+		\indent Пусть $f(z)\in \A(D)$, где $D$ --- односвязная область. Тогда для всякой точки $z\in D$ и всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $\gamma\subset D$, ограничивающей область $G$ (т.е. $\gamma = \partial G$) и такой $z\in G$, что справедлива формула:
+		\[ f(z) = \frac{1}{2\pi i}\Oint_\gamma \frac{f(\xi)}{\xi - z}\,d\xi. \]
+	\end{theorem*}
+	\begin{proof}
+		Рассмотрим окрестность с центром в точке $z$ и радиуса $r$\\
+		$K_r = \{\xi\in\Cm:|\xi - z| < r\} \subset G$.
+		Пусть $\tilde{G} = G \setminus \partial K_r$. Тогда
+		$\dfrac{f(\xi)}{\xi - z} \in \A(\tilde G)\cap C(\tilde G)$.
+		Применим интегральную теорему Коши для двусвязной области $\tilde G$:
+		\[ \Oint_{\partial\tilde G}\frac{f(\xi)}{\xi - z}\,d\xi = 0. \]
+		С другой стороны, если обозначить $\partial\tilde G = \gamma\cup K_r^-$, получим
+		\[  \Oint_{\partial\tilde G}\frac{f(\xi)\,d\xi}{\xi - z} = \Oint_\gamma \frac{f(\xi)\,d\xi}{\xi - z} + \Oint_{\bar K_r^-}\frac{f(\xi)\,d\xi}{\xi - z} = \Oint_\gamma\frac{f(\xi)\,d\xi}{\xi - z} - \Oint_{\bar K_r} \frac{f(\xi)\,d\xi}{\xi - z} = 0 \]
+		Параметризуем границу: $K_r = \{\xi = z + re^{it}\ 0 \leqslant t \leqslant 2\pi \}$. Тогда
+		\[ \Oint_{K_r}\frac{f(\xi)\,d\xi}{\xi - z} = \Int_0^{2\pi} \frac{f(z + re^{it})}{re^{it}}rie^{it}\,dt \]
+		Функция $f(z)$ аналитическая, значит можно представить её приращение в виде 
+		\[ f(z + re^{it}) - f(z) = f'(z)re^{it} + \bar{\bar o}(r),\text{ при } r\to 0+ \]
+		Подставим это выражение в интеграл
+		\begin{multline*}
+			\Oint_{K_r}\frac{f(\xi)\,d\xi}{\xi - z} = i\Int_0^{2\pi}f(z)+f'(z)re^{it} + \bar{\bar o}(r)\,dt =\\=i\bigg(\Int_0^{2\pi} f(z)\,dt + r \Int_0^{2\pi} f'(z)e^{it}\,dt + \Int_0^{2\pi} \bar{\bar o}(r)\,dt\bigg) = f(z)2\pi i + irf'(z)\Int_0^{2\pi}e^{it}\,dt + i\Int_0^{2\pi} \bar{\bar o}(r)\,dt = 0
+		\end{multline*}
+		При $r\to 0+$ получаем
+		\[ f(z) = \frac{1}{2\pi i}\Oint_\gamma \frac{f(\xi)}{\xi - z}\,d\xi. \]
+	\end{proof}
+	\subsection{Интегральная теорема Коши для многосвязной области}
+	\begin{theorem*} 
+		(Интегральная теорема Коши для многосвязной области)\\
+		\indent Пусть $f(z)\in\A(D)$. Тогда $\forall\,z\in D$ и $\forall\, G \subset D$ --- многосвязная область, $z \in G$. Справедлива формула
+		\[f(z) = \frac{1}{2\pi i}\Oint_{\partial G} \frac{f(\xi)}{\xi - z}\,d\xi\]
+	\end{theorem*}
+	\begin{remark}
+		Пусть $G$ --- (N+1)-связная область. Тогда
+		\[ f(z) = \frac{1}{2 \pi} \bigg(\Oint_{\Gamma_0}\frac{f(\xi)}{\xi - z}\,d\xi -\Sum_{j=1}^n\,\Oint_{\Gamma_j}\frac{f(\xi)}{\xi - z}\,d\xi\bigg),\ \partial G = \Gamma_0 \cup \bigcup_{j=1}^N\Gamma_j^-,\text{ где } \Gamma_j \text{ --- контуры дырок.} \]
+	\end{remark}
+	\begin{example*}
+	\[ I = \Oint_\gamma \frac{dz}{z^2 + 1} \]
+	\end{example*}
+	\begin{center}
+		\begin{tikzpicture}[scale=1.5]
+			\begin{scope}[local bounding box=scope1]
+				\draw[->] (-1,0) -- (1,0) node[below] {$\Re$};
+				\draw[->] (0,-1) -- (0,1) node[right] {$\Im$};
+				\fill (0,0.5) circle (0.6pt) node[above right] {$i$};
+				\fill (0,-0.5) circle (0.6pt) node[below right] {$-i$};
+				\draw[thin,dashed] (0,0.5) circle (0.1);
+				\draw[thick, blue] (0,0.5) circle (0.35);
+				\node[blue] at (0.5,0.4) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$a$};
+			\end{scope}
+			\begin{scope}[xshift=3cm, local bounding box=scope2]
+				\draw[->] (-1,0) -- (1,0) node[below] {$\Re$};
+				\draw[->] (0,-1) -- (0,1) node[right] {$\Im$};
+				\fill (0,0.5) circle (0.6pt) node[above right] {$i$};
+				\fill (0,-0.5) circle (0.6pt) node[below right] {$-i$};
+				\draw[thin,dashed] (0,-0.5) circle (0.1);
+				\draw[thick, blue] (0,-0.5) circle (0.3);
+				\node[blue] at (0.45,-0.4) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$b$};
+			\end{scope}
+			\begin{scope}[xshift=6cm, local bounding box=scope3]
+				\draw[->] (-1,0) -- (1,0) node[below] {$\Re$};
+				\draw[->] (0,-1) -- (0,1) node[right] {$\Im$};
+				\fill (0,0.5) circle (0.6pt) node[above right] {$i$};
+				\fill (0,-0.5) circle (0.6pt) node[below right] {$-i$};
+				\draw[thin,dashed] (0,0.5) circle (0.1);
+				\draw[thin,dashed] (0,-0.5) circle (0.1);
+				\draw[thick, blue] (0,0) circle (0.85);
+				\node[blue] at (0.8,0.8) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$c$};
+			\end{scope}
+			\begin{scope}[xshift=9cm, local bounding box=scope4]
+				\draw[->] (-1,0) -- (1,0) node[below] {$\Re$};
+				\draw[->] (0,-1) -- (0,1) node[right] {$\Im$};
+				\fill (0,0.5) circle (0.6pt) node[above right] {$i$};
+				\fill (0,-0.5) circle (0.6pt) node[below right] {$-i$};
+				\draw[thick, blue] (0,0) circle (0.3);
+				\node[blue] at (0.35,0.35) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$d$};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+	\textbf{а)} Внутри контура $\gamma$ находится только точка $i$. Рассмотрим следующий интеграл
+	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi - i)} = f(z) \]
+	В слагаемом \((\xi - i)\) аналитичность нарушается, поэтому возьмем аналитичную функцию
+	\[ f(\xi) = \frac{1}{\xi + i} \]
+	Тогда
+	\[ 	J = f(i) = \frac{1}{2i} \implies I = 2\pi i\cdot J= \frac{2\pi i}{2i} = \pi \]
+	\textbf{б)} Внутри контура $\gamma$ находится только точка $i$. Рассмотрим следующий интеграл
+	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi + i)} = f(z) \]
+	В слагаемом \((\xi - i)\) аналитичность нарушается, поэтому возьмем аналитичную функцию
+	\[ f(\xi) = \frac{1}{\xi - i} \]
+	Тогда
+	\[ J = f(-i) = -\frac{1}{2i} \implies I = 2\pi i \cdot J = 2\pi i \cdot \left(-\frac{1}{2i}\right) = -\pi \]
+	\textbf{в)} Внутри контура $\gamma$ лежат обе точки $i$ и $-i$.\\
+	Способ 1. Рассмотрим следующий интеграл
+	\begin{multline*}
+		J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \bigg(\frac{i}{2} \Oint_\gamma\frac{d\xi}{\xi + i} - \frac{i}{2}\Oint_\gamma \frac{d\xi}{\xi - i} \bigg)=\\= \frac{i}{2} \bigg(\frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi + i} - \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi - i}\bigg) = \frac{i}{2}(f(\xi) - f(\xi)) = \frac{i}{2}(1 - 1)\iff I = J\cdot2\pi i = 0
+	\end{multline*}
+	В первом интеграле $z_0 = -i$, $f(\xi) = 1$; во втором $z_0 = i$, $f(\xi) = 1$. По интегральной формуле Коши:
+	\[ \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi + i} = 1, \qquad \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi - i} = 1 \]
+	Cпособ 2. Рассмотрим границу трехсвязной области: $\partial G = \gamma\cup\Gamma_1^- \cup \Gamma_2^-$. Тогда
+	\[ \Oint_{\partial G} \frac{d\xi}{\xi^2 + 1} =\Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = 0 \]
+	Если воспользоваться уже полученными результатами, имеем 
+	\[ \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi^2 + 1} 
+	= \frac{1}{2\pi i}\Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} + \frac{1}{2\pi i} \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i}\pi - \frac{1}{2\pi i}\pi = 0. \]
+	\textbf{г)} Внутри контура $\gamma$ не лежат точки $i$ и $-i$.\\
+	По интегральной теореме Коши для односвязной области $I = 0$.
 	\begin{theorem*}
 		(Теорема о среднем) \\
-		\indent Пусть $f(z) \in \A(D)$ и рассмотрим $\overline{K_R} =\{z \in \Cm: |z - z_0| < \R \} \subset D$. Тогда $f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + Re^it) dt$
+		\indent Пусть $f(z)\in\A(D)$ и рассмотрим $\overline K_R =\{z \in \Cm: |z - z_0|\leqslant\R \} \subset D$. Тогда
+		\[ f(z_0) = \frac{1}{2\pi}\Int_0^{2\pi}f(z_0 + Re^it) dt \]
 	\end{theorem*}
 	\begin{proof}
 		По интегральной формуле Коши:
-		\[f(z_0) = \frac{1}{2\pi i} \Oint_{\partial K_R} \frac{f(\xi)}{\xi - z_0} d\xi = \frac{i}{2\pi i} \int_0^{2\pi} f(z_0 + Re^{it})dt\]
-		\[\partial K_R: \ \xi = z_0 + Re^{it}, \ d\xi = iRe^{it}dt\]
+		\[ f(z_0) = \frac{1}{2\pi i}\Oint_{\partial K_R}\frac{f(\xi)}{\xi - z_0}\,d\xi = \frac{i}{2\pi i} \Int_0^{2\pi} f(z_0 + Re^{it})\,dt, \]
+		где $\partial K_R: \xi = z_0 + Re^{it},\ d\xi = iRe^{it}dt$
 	\end{proof}
+	\newpage
 	\subsection{Интеграл типа Коши. Бесконечная дифференцируемость аналитической функции}
 	\begin{definition}
-		Пусть $\gamma$ --- гладкая или кусочно-непрерывная кривая Жордана, $f(z) \in C(\gamma)$. Тогда интеграл вида
-		\[
-		F(z) = \frac{1}{2\pi i} \Oint_{\gamma} \frac{f(\xi)}{\xi - z} \, d\xi
-		\]
+		Пусть $f(z)\in C(\gamma)$, где $\gamma$ --- гладкая или кусочно-гладкая кривая Жордана.\\ Тогда интеграл вида
+		\[ F(z) = \frac{1}{2\pi i}\Oint_\gamma \frac{f(\xi)}{\xi - z}\,d\xi \]
 		называется \textbf{интегралом типа Коши}.
 	\end{definition}
-	
 	\begin{remark}
-		Если $\gamma$ --- замкнутая кривая и $f(z) \in \A(G)$, то $F(z) = f(z)$ для $z \in G$.
+		Если $\gamma$ --- замкнутая кривая и $f(z)\in\A(G)$, то $F(z) = f(z)$ для $z \in G$.
 	\end{remark}
-	
 	\begin{theorem}
-		$\forall z \in \Cm \setminus \gamma$ и $\forall n \in \N$ существует $F^{(n)}(z)$, причём
-		\[
-		F^{(n)}(z) = \frac{n!}{2\pi i} \Oint_{\gamma} \frac{f(\xi)}{(\xi - z)^{n+1}} \, d\xi,
-		\]
-		и для любой области $D$ такой, что $\gamma \not\subset D$, выполняется $F(z) \in \A(D)$.
+		$\forall\,z\in\Cm\setminus\gamma$ и $\forall\,n\in\N,\ \exists\,F^{(n)}(z)$, причём
+		\[ F^{(n)}(z) = \frac{n!}{2\pi i} \Oint_\gamma \frac{f(\xi)}{(\xi - z)^{n+1}} \,d\xi, \] и для всякой такой области $D$, что $\gamma \not\subset D$, выполняется $F(z)\in\A(D)$.
 	\end{theorem}
-	
-	\begin{proof}
-		Без доказательства.
-	\end{proof}
-	
 	\begin{theorem}
-		Пусть $f(z) \in \A(D)$. Тогда $\forall n \in \N$ и $\forall z \in D$ существует $f^{(n)}(z)$ и $f^{(n)} \in \A(D)$.
+		Пусть $f(z)\in\A(D)$. Тогда $\forall\,n\in\N$ и $\forall\,z\in D\ \exists\,f^{(n)}(z)$ и $f^{(n)}\in\A(D)$.
 	\end{theorem}
-	
 	\begin{proof}
-		\begin{align*}
-			&\forall z \in D \ \exists G \subset D \text{ --- односвязная область}, \ z \in G,\ \partial G = \gamma, \\
-			&f(z) = \frac{1}{2\pi i} \Oint_{\gamma} \frac{f(\xi)}{\xi - z} \, d\xi, \\[2mm]
-			&\forall n \in \N \ \exists f^{(n)}(z), \\
-			&f^{(n)}(z) = \frac{n!}{2\pi i} \Oint_{\gamma} \frac{f(\xi)}{(\xi - z)^{n+1}} \, d\xi, \\[2mm]
-			&z \text{ --- произвольная точка области } \implies f^{(n)}(z) \in \A(D).
-		\end{align*}
+		$\forall\,z \in D$ существует такая односвязная область $G,\ G \subset D$, что
+		$z\in G$. Обозначим $\partial G = \gamma$. Тогда можем записать интегральную формулу Коши
+		\[ f(z) = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)}{\xi - z}\,d\xi \text{ --- интеграл типа Коши.} \]
+		Применим предыдущую теорему. Получим
+		\[ \forall\,n\in\N\ \exists\,f^{(n)}(z) : f^{(n)}(z) = \frac{n!}{2\pi i} \Oint_\gamma \frac{f(\xi)}{(\xi - z)^{n+1}}\,d\xi \implies f^{(n)}(z) \in \A(D), \] где $z$ --- произвольная точка области. 
 	\end{proof}
+	\newpage
 	\begin{example*}
-		\[I = 2\pi i \Oint_{\gamma} \frac{e^z}{z(z-1)^3} \, dz\]
-			\begin{figure}[h!]
-				\centering
-				\caption{Различные положения контура $\gamma$ относительно особых точек $0$ и $1$}
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (3.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,0) circle (2pt) node[below left] {$0$};
-						\draw[fill=black] (1,0) circle (2pt) node[below right] {$1$};
-						\draw[blue, thick, ->] (0,0.9) arc[start angle=90, end angle=450, x radius=0.8, y radius=0.8];
-						\node[blue] at (0.6, 1.0) {$\gamma$};
-						\draw[red, dashed] (0,0) circle (0.4);
-					\end{tikzpicture}
-					\caption{Только $0$ внутри}
-				\end{subfigure}
-				\hfill
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (3.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,0) circle (2pt) node[below left] {$0$};
-						\draw[fill=black] (1,0) circle (2pt) node[below right] {$1$};
-						\draw[blue, thick, ->] (1.2, 0.6) arc[start angle=90, end angle=450, x radius= 0.8, y radius= 0.8];
-						\node[blue] at (1, 1.1) {$\gamma$};
-						\draw[red, dashed] (1,0) circle (0.4);
-					\end{tikzpicture}
-					\caption{Только $1$ внутри}
-				\end{subfigure}
-				\\[1cm]
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (3.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,0) circle (2pt) node[below left] {$0$};
-						\draw[fill=black] (1,0) circle (2pt) node[below right] {$1$};
-						\draw[blue, thick, ->] (0.5,0) ellipse[x radius=2.0, y radius=1.6];
-						\node[blue] at (2.2,1.2) {$\gamma$};
-						\draw[red, dashed] (0,0) circle (0.2) node[above left] {$\Gamma_1$};
-						\draw[red, dashed] (1,0) circle (0.2) node[above right] {$\Gamma_2$};
-					\end{tikzpicture}
-					\caption{Обе точки внутри}
-				\end{subfigure}
-				\hfill
-				\begin{subfigure}{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[scale=0.7, >={Stealth[length=4pt]}]
-						\draw[->] (-2.5,0) -- (3.5,0) node[right] {$\operatorname{Re}$};
-						\draw[->] (0,-2) -- (0,2) node[above] {$\operatorname{Im}$};
-						\draw[fill=black] (0,0) circle (2pt) node[below left] {$0$};
-						\draw[fill=black] (1,0) circle (2pt) node[below right] {$1$};
-						\draw[blue, thick, ->] (2.0,0.5) circle[radius=0.6];
-						\node[blue] at (1.2,0.9) {$\gamma$};
-					\end{tikzpicture}
-					\caption{Ни одной точки внутри}
-			\end{subfigure}
-		\end{figure}
-		
-		
+		\[I = \frac{1}{2\pi i}\Oint_\gamma \frac{e^z}{z(z-1)^3}\,dz\]
 	\end{example*}
-	
+	\begin{center}
+		\begin{tikzpicture}[scale=1.5]
+			\begin{scope}[local bounding box=scope1]
+				\draw[->] (-1,0) -- (1,0) node[below] {};
+				\draw[->] (0,-1) -- (0,1) node[right] {};
+				\fill (0,0) circle (0.6pt) node[below left] {$0$};
+				\fill (0.5,0) circle (0.6pt) node[below right] {$1$};
+				\draw[thin,dashed] (0.5,0) circle (0.1);
+				\draw[thick, blue] (0,0) circle (0.35);
+				\node[blue] at (0.3,0.35) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$a$};
+			\end{scope}
+			\begin{scope}[xshift=3cm, local bounding box=scope2]
+				\draw[->] (-1,0) -- (1,0) node[below] {};
+				\draw[->] (0,-1) -- (0,1) node[right] {};
+				\fill (0,0) circle (0.6pt) node[below left] {$0$};
+				\fill (0.5,0) circle (0.6pt) node[below right] {$1$};
+				\draw[thin,dashed] (0,0) circle (0.1);
+				\draw[thick, blue] (0.5,0) circle (0.3);
+				\node[blue] at (0.8,0.35) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$b$};
+			\end{scope}
+			\begin{scope}[xshift=6cm, local bounding box=scope3]
+				\draw[->] (-1,0) -- (1,0) node[below] {};
+				\draw[->] (0,-1) -- (0,1) node[right] {};
+				\fill (0,0) circle (0.6pt) node[below left] {$0$};
+				\fill (0.5,0) circle (0.6pt) node[below right] {$1$};
+				\draw[thin,dashed] (0,0) circle (0.1);
+				\draw[thin,dashed] (0.5,0) circle (0.1);
+				\draw[thick, blue] (0,0) circle (0.8);
+				\node[blue] at (0.7,0.7) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$c$};
+			\end{scope}
+			\begin{scope}[xshift=9cm, local bounding box=scope4]
+				\draw[->] (-1,0) -- (1,0) node[below] {};
+				\draw[->] (0,-1) -- (0,1) node[right] {};
+				\fill (0,0) circle (0.6pt) node[below left] {$0$};
+				\fill (0.7,0) circle (0.6pt) node[below right] {$1$};
+				\draw[thick, blue] (0.35,0) circle (0.25);
+				\node[blue] at (0.5,0.35) {$\gamma$};
+				\node[draw, circle, inner sep=2pt, fill=white] at (-1,1) {$d$};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+	\textbf{а)} Внутри контура $\gamma$ находится только точка $0$. Рассмотрим следующий интеграл
+	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{e^\xi\,d\xi}{\xi(\xi-1)^3} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{\xi} = f(z). \]
+	В слагаемом $\xi$ аналитичность нарушается, поэтому возьмем аналитическую функцию
+	\[ f(\xi) = \frac{e^\xi\,d\xi}{(\xi-1)^3}. \]
+	Тогда
+	\[ 	J = f(0) = -1 \implies I = J = -1. \]
+	\newpage
 	\section{Лекция 19}
 	\[ \Sum_{k=0}^{+\infty}c_n(z-z_0)^n\text{ --- функциональный ряд} \]
 	\begin{theorem*}
