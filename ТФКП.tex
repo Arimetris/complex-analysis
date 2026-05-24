@@ -254,16 +254,16 @@
 	\subsection{Кривые и множества.}
 	\noindent
 	\begin{definition}
-		\hspace{-0.93cm}
+		\hspace{-0.94cm}
 		$ U_\epsilon(z_0) = \{ z \in \Cm : |z-z_0|<\epsilon \} $\\
-		$ \mathring U_\epsilon(z_0) = \{ z \in \Cm : 0<|z-z_0|<\epsilon \} $\\
+		$ \dot U_\epsilon(z_0) = \{ z \in \Cm : 0<|z-z_0|<\epsilon \} $\\
 		$ U_\epsilon(\infty) = \{ z \in \overline\Cm : |z|>\epsilon \} $\\
-		$ \mathring U_\epsilon(\infty) = \{ z \in \overline\Cm : \epsilon<|z|<\infty \} $		
+		$ \dot U_\epsilon(\infty) = \{ z \in \overline\Cm : \epsilon<|z|<\infty \} $		
 	\end{definition}
 	\begin{definition}
 		Точка $z_0 \in \Cm$ называется\\
 		1)\textbf{ Внутренней} точкой мн-ва $M\subset\Cm$, если $\ \exists\, U_\epsilon(z_0)\subset M$.\\
-		2)\textbf { Предельной} точкой мн-ва $M\subset\Cm$, если $\ \forall \, \mathring U_\epsilon(z_0)\subset M \ \Rightarrow \ \mathring U_\epsilon(z_0)\cap M \ne \varnothing$.\\
+		2)\textbf { Предельной} точкой мн-ва $M\subset\Cm$, если $\ \forall\,\dot U_\epsilon(z_0)\subset M\implies\dot U_\epsilon(z_0)\cap M \ne \varnothing$.\\
 		3)\textbf { Граничной} точкой мн-ва $M\subset\Cm$, если $\ \forall \, U_\epsilon(z_0) \ \exists \,$точки, как из $M$, так и не из $M$.
 	\end{definition}
 	\begin{definition}
@@ -403,7 +403,7 @@
 		Функция однозначная
 	\end{example*}
 	\begin{example*}
-		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus\{0 \} \]
+		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus \{0 \} \]
 		$ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ k \in \Z $\\
 		Функция многозначная
 	\end{example*}
@@ -446,7 +446,7 @@
 	\end{remark*}
 	\begin{definition}
 		Пусть однозначная функция определена на области $ D,\ z_0 \in D $.\\ Тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если
-		\[ \forall\, \epsilon > 0\ \exists\, \delta(\epsilon) > 0 : \forall\, z \in \mathring U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \iff \Lim_{z \to z_0} f(z) = A  \]
+		\[ \forall\, \epsilon > 0\ \exists\,\delta(\epsilon) > 0 : \forall\,z\in \dot U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \iff \Lim_{z \to z_0} f(z) = A  \]
 	\end{definition}
 	\begin{theorem*}
 		(Арифметические свойства)\\ \indent
@@ -781,12 +781,12 @@
 		Пусть $f(z) \in \A(U_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$, тогда $\exists\,U_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \A(U_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
 	\end{theorem*}
 	\begin{statement}
-		Пусть $f(z) \in \A(D_z), f: D_z \longrightarrow D_{\omega}$, гладкая кривая Жордана $\gamma_z \in D_z \longrightarrow \gamma_{\omega} \in D_{\omega}$
+		Пусть $f(z)\in\A(D_z),\ f: D_z\to D_\omega$, гладкая кривая Жордана $\gamma_z \in D_z\to\gamma_\omega\in D_\omega$
 	\end{statement}
-	\[\gamma_z = \{ z \in \mathbb{C}: z = \phi(t), \ \alpha \leq t \leq \beta\}\]
-	$ Предположим  $существование этих величин:
+	\[ \gamma_z = \{ z\in\Cm: z = \phi(t),\ \alpha \leqslant t \leqslant \beta\} \]
+	Предположим существование этих величин:
 	\begin{align*}
-		&S_{D_\omega} = \Iint_{D_z}|f'(x)|^2\, dxdy \text{ --- площадь}\\
+		&S_{D_\omega} = \Iint_{D_z}|f'(x)|^2\,dxdy \text{ --- площадь}\\
 		&L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)| \, dt \text{ --- длина}
 	\end{align*}
 	\begin{proof}
@@ -800,9 +800,9 @@
 		\begin{vmatrix}
 			u_x & u_y \\
 			v_x & v_y
-		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \Rightarrow S_{D_\omega} = \Iint_{D_z} |f'(z)|^2 \, dxdy \\
+		\end{vmatrix} = v_y u_x - u_y v_x = u_x^2 + v_x^2 = |f'(z)|^2 \implies S_{D_\omega} = \Iint_{D_z} |f'(z)|^2\,dxdy \\
 		&2)\quad L_{\gamma_z} = \Int_{\gamma_z}|d\omega|, \text{ где }\  \omega = f(\psi(t)) \\
-		&d\omega = f'(\psi(t))\psi'(t) \, dt \Rightarrow |d\omega| = |f'(\psi(t))|\cdot|\psi'(t)|\, dt \Rightarrow L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)|\, dt \\
+		&d\omega = f'(\psi(t))\psi'(t) \, dt \implies |d\omega| = |f'(\psi(t))|\cdot|\psi'(t)|\,dt \implies L_{\gamma_\omega} = \Int_\alpha^\beta |f'(\psi(t))|\cdot |\psi'(t)|\, dt \\
 		\end{align*}
 	\end{proof}
 	\newpage
@@ -828,7 +828,6 @@
 					\draw[dashed] (0,4) -- (-0.2,4) node[left] {$4$};
 					\node[blue] at (2.4, 4.2) {$D_z$};
 				\end{scope}
-				
 				\begin{scope}[xshift=8cm]
 					\draw[->, thick] (-0.5,0) -- (5,0) node[right] {$\Re z$};
 					\draw[->, thick] (0,-0.5) -- (0,5) node[above] {$\Im z$};
@@ -4630,13 +4629,13 @@
 	\end{center}
 	\textbf{а)} Внутри контура $\gamma$ находится только точка $i$. Рассмотрим следующий интеграл
 	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi - i)} = f(z) \]
-	В слагаемом \((\xi - i)\) аналитичность нарушается, поэтому возьмем аналитичную функцию
+	В слагаемом \((\xi - i)\) нарушается аналитичность, поэтому возьмем аналитичную функцию
 	\[ f(\xi) = \frac{1}{\xi + i} \]
 	Тогда
 	\[ 	J = f(i) = \frac{1}{2i} \implies I = 2\pi i\cdot J= \frac{2\pi i}{2i} = \pi \]
 	\textbf{б)} Внутри контура $\gamma$ находится только точка $i$. Рассмотрим следующий интеграл
 	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi + i)} = f(z) \]
-	В слагаемом \((\xi - i)\) аналитичность нарушается, поэтому возьмем аналитичную функцию
+	В слагаемом $(\xi - i)$ нарушается аналитичность, поэтому возьмем аналитичную функцию
 	\[ f(\xi) = \frac{1}{\xi - i} \]
 	Тогда
 	\[ J = f(-i) = -\frac{1}{2i} \implies I = 2\pi i \cdot J = 2\pi i \cdot \left(-\frac{1}{2i}\right) = -\pi \]
@@ -4645,8 +4644,6 @@
 	\begin{multline*}
 		J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \bigg(\frac{i}{2} \Oint_\gamma\frac{d\xi}{\xi + i} - \frac{i}{2}\Oint_\gamma \frac{d\xi}{\xi - i} \bigg)=\\= \frac{i}{2} \bigg(\frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi + i} - \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi - i}\bigg) = \frac{i}{2}(f(\xi) - f(\xi)) = \frac{i}{2}(1 - 1)\iff I = J\cdot2\pi i = 0
 	\end{multline*}
-	В первом интеграле $z_0 = -i$, $f(\xi) = 1$; во втором $z_0 = i$, $f(\xi) = 1$. По интегральной формуле Коши:
-	\[ \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi + i} = 1, \qquad \frac{1}{2\pi i} \Oint_{\gamma} \frac{d\xi}{\xi - i} = 1 \]
 	Cпособ 2. Рассмотрим границу трехсвязной области: $\partial G = \gamma\cup\Gamma_1^- \cup \Gamma_2^-$. Тогда
 	\[ \Oint_{\partial G} \frac{d\xi}{\xi^2 + 1} =\Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = 0 \]
 	Если воспользоваться уже полученными результатами, имеем 
@@ -4738,10 +4735,162 @@
 	\end{center}
 	\textbf{а)} Внутри контура $\gamma$ находится только точка $0$. Рассмотрим следующий интеграл
 	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{e^\xi\,d\xi}{\xi(\xi-1)^3} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{\xi} = f(z). \]
-	В слагаемом $\xi$ аналитичность нарушается, поэтому возьмем аналитическую функцию
-	\[ f(\xi) = \frac{e^\xi\,d\xi}{(\xi-1)^3}. \]
+	В слагаемом $\xi$ нарушается аналитичность, поэтому возьмем аналитическую функцию
+	\[ f(\xi) = \frac{e^\xi}{(\xi-1)^3}. \]
 	Тогда
-	\[ 	J = f(0) = -1 \implies I = J = -1. \]
+	\[ J = f(0) = -1 \implies I = J = -1. \]
+	\textbf{б)} Внутри контура $\gamma$ находится только точка $1$. Рассмотрим следующий интеграл
+	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{e^\xi\,d\xi}{\xi(\xi-1)^3} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi-1)^3} = f(z). \]
+	В слагаемом $(\xi-1)^3$  нарушается аналитичность, поэтому возьмем аналитическую функцию
+	\[ f(\xi) = \frac{e^\xi}{\xi}. \]
+	Ранее доказали, что $f(z)$ можно дифференцировать сколько угодно раз, при этом будет получаться аналитическая функция. Тогда
+	\[ f' = \frac{e^\xi}{\xi} - \frac{e^\xi}{\xi^2},\quad f'' = \frac{e^\xi}{\xi} - \frac{2e^\xi}{\xi^2} + \frac{2e^\xi}{\xi^3}\implies I = \frac{f^{(2)}(1)}{2!} = \frac{e}{2}. \]
+	\textbf{в)} Внутри контура $\gamma$ находятся обе точки $0$ и $1$. Обозначим $\partial G = \gamma\cup\Gamma_1^-\cup\Gamma_2^-$. Тогда
+	\[ \Oint_\gamma f(\xi)\,d\xi - \Oint_{\Gamma_1}f(\xi)\,d\xi - \Oint_{\Gamma_2}f(\xi)\,d\xi = \Oint_{\partial G}f(\xi)\,d\xi = 0\implies I = \Oint_{\Gamma_1}f(\xi)\,d\xi + \Oint_{\Gamma_2}f(\xi)\,d\xi = \frac{e}{2} - 1.\]
+	\textbf{г)} Внутри контура $\gamma$ не лежат точки $1$ и $0$.\\
+	По интегральной теореме Коши для односвязной области $I = 0$.
+	\newpage
+	\section{Лекция 17}
+	\subsection{Теоремы Морера и Лиувилля}
+	\begin{theorem*}
+		(Лиувилль)\\
+		\indent Пусть $f(z)\in\A(\Cm)$ и ограничена, т.е. $\exists\,M>0: \forall\,z\in\Cm\implies f(z)\leqslant M$.\\ Тогда $f(z)\equiv\mathrm{const}$.
+	\end{theorem*}
+	\begin{proof}
+		$\forall\,z\in\Cm$ рассмотрим круг радиуса $R$: $K_R = \{ \xi\in\Cm:|\xi-z|<R \}$.\\
+		Для каждой точки внутри круга имеем
+		\[ f(z) = \frac{1}{2\pi i}\Oint_{\partial K_R}\frac{f(\xi)\,d\xi}{\xi - z}. \]
+		Ранее доказали, что при дифференцировании на каждом шаге получаем аналитическую функции. Параметризуем границу $\partial K_R: \xi = z+Re^{it},\ 0 \leqslant t\leqslant 2\pi$. $d\xi = Rie^{iz}\,dt$. Тогда
+		\[ f'(z) = \frac{1}{2\pi i}\Oint_{K_R}\frac{f(\xi)\,d\xi}{(\xi - z)^2} = \Int_0^{2\pi}\frac{f(z+Re^{it})i\,dt}{Re^{it}}. \]
+		Оценим модуль $f'(z)$
+		\[ |f'(z)|\leqslant \frac{M}{2\pi R}\Int_0^{2\pi}dt = \frac{M}{R} \]
+		Функция аналитична на всей плоскости, $R$ можем брать любым.\\ Тогда
+		при $R\to+\infty\implies|f'(z)| = 0\implies f'(z) = 0 \implies f(z) \equiv \mathrm{const}$.
+	\end{proof}
+	\begin{theorem*}
+		(Морер)\\
+		\indent Пусть $f(z)\in С(D)$, где $D$--- односвязная область. $\gamma\subset D$ ---  замкнутая гладкая или кусочно-гладкая кривая Жордана. Если $\displaystyle\Oint_\gamma f(\xi)\,d\xi = 0 $, то $f(z)\in\A(D)$.
+	\end{theorem*}
+	\begin{proof}
+		Рассмотрим следущую функцию
+		\[ F(z) = \Int_{z_0}^z f(\xi)\,d\xi. \]
+		Он не зависит от пути. Также ранее доказали, что этот интеграл является аналитической функцией в $D$ и $F(z)$ --- первообразная для $f(z)$ в $D$.
+		\[ \forall\,z\in D F'(z) = f(z) \]
+		Но при диффференцировании на каждом шаге получится имеем аналитическую функцию. Получается, что $f(z)\in\A(D)$.
+	\end{proof}
+	\subsection{Числовые ряды.}
+	\begin{definition}
+		Пусть дана последовательность $\{z_n\}_{n=1}^{+\infty}$, $z_n\in\Cm$. Тогда выражение вида
+		\[ z_1 + \ldots + z_n + \ldots = \Sum_{k=1}^{+\infty}z_k \]
+		называется \textbf{числовым рядом}.
+	\end{definition}
+	\begin{definition}
+		Числовой ряд сходится, если последовательность его частичных сумм сходится.
+		\[\exists\,S\in\Cm: \Lim_{n\to\infty}S_n = S, \text{ где } S_n = \Sum_{k = 1}^{n}z_k. \]	
+	\end{definition}
+	\begin{theorem*}
+		(Критерий Коши)
+		\[ \text{Числовой ряд } \Sum_{k=1}^{+\infty}z_k\text{ сходится } \iff \forall\,\epsilon>0,\exists\,N\in\N : \forall\,n,\,m > N\implies \left|\Sum_{k=n+1}^{m+n}z_k\right|<\epsilon. \]
+	\end{theorem*}
+	\begin{theorem*}
+		(Необходимое условие сходимости)
+		\[\text{Числовой ряд сходится} \implies \text{ общий член ряда } z_k\to 0.\]
+	\end{theorem*}
+	\begin{proof}
+		Следует из критерия Коши.
+	\end{proof}
+	\begin{definition}
+		Числовой ряд $\Sum_{k=1}^{+\infty}z_k$ сходится абослютно, если ряд $ \Sum_{k=1}^{+\infty}|z_k|$ сходится.
+	\end{definition}
+	\begin{statement}
+		Если числовой ряд $\Sum_{k=1}^{+\infty}z_k$ сходится абослютно, то ряд сходится условно.
+	\end{statement}
+	\begin{theorem*}
+		(Радикальный признак Коши)\\
+		\indent Пусть $\exists\Lim_{n\to\infty}\sqrt[n]{|z_n|} = k$. Если $k>1$, то ряд $\Sum_{k=1}^{+\infty}|z_k|$ расходится.\\ Если $k<1$, то ряд $\Sum_{k=1}^{+\infty}|z_k|$ сходится. 
+	\end{theorem*}
+	\begin{theorem*}
+		(Признак Даламбера)\\
+		\indent Пусть $\exists\Lim_{n\to\infty}\left|\dfrac{z_{n+1}}{z_n}\right|  = k$. Если $k>1$, то ряд $\Sum_{k=1}^{+\infty}|z_k|$ расходится.\\ Если $k<1$, то ряд $\Sum_{k=1}^{+\infty}|z_k|$ сходится. 
+	\end{theorem*}
+	\newpage
+	\subsection{Функциональные последовательности и ряды.\\ Равномерная сходимость.}
+	\begin{definition}
+		Пусть функции $f_n(z)$ определены в области $D,\ n\in\N$. Назовем 
+	$\{f_n(z)\}_{n=1}^{+\infty}$ --- \textbf{функциональной последовательностью},
+	$\Sum_{k=1}^{+\infty}f_n(z)$ --- \textbf{функциональным рядом}.
+	\end{definition}
+	\begin{definition}
+		Функциональная последовательность $\{f_n(z)\}$ или функциональный ряд $\Sum_{k=1}^{+\infty}f_n(z)$ сходятся в точке $z_0\in D$, если сходятся $\{f_n(z_0)\}$ или $\Sum_{k=1}^{+\infty}f_n(z_0)$.
+	\end{definition}
+	\begin{definition}
+		Функциональная последовательность $\{f_n(z)\}$ или функциональный ряд $\Sum_{k=1}^{+\infty}f_n(z)$ сходятся на множестве $G\subseteq D$, если они сходятся в каждой точке $G$.
+		\begin{align*}
+			\Lim_{n\to\infty}f_n(z) = f(z)\iff\forall\,z\in G\ \forall\,\epsilon>0\ \exists N(\epsilon,z)\in\N: \forall\,n>N\implies |f_n(z)- f(z)|<\epsilon\\
+			\Sum_{n=1}^{+\infty}f_n(z) = S(z)\iff \forall\,z\in G\ \forall\,\epsilon>0\ \exists N(\epsilon,z)\in\N: \forall\,n>N\implies |S_n(z)- S(z)|<\epsilon
+		\end{align*} 
+	\end{definition}
+	\begin{definition}
+		Функциональная последовательность $\{f_n(z)\}$ или функциональный ряд $\Sum_{k=1}^{+\infty}f_n(z)$ сходятся на множестве $G\subseteq D$ равномерно, если 
+		\begin{align*}
+			f_n\overset{D}\rightrightarrows f\iff \forall\,\epsilon>0\ \exists N(\epsilon)\in\N: \forall\,n>N\ \forall\,z\in G\implies |f_n(z)- f(z)|<\epsilon.\\
+			\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows S(z)\iff\forall\,\epsilon>0\ \exists N(\epsilon)\in\N: \forall\,n>N\ \forall\,z\in G\implies |S_n(z)- S(z)|<\epsilon.
+		\end{align*}
+	\end{definition}
+	\begin{statement*}
+		\[ \Sum_{n=0}^{+\infty}z^n = \frac{1}{1-z},\ |z|<1 \]
+	\end{statement*}
+	\begin{example*}
+		\[ \Sum_{n=0}^{+\infty}z^n \overset{K_r}\rightrightarrows \frac{1}{1-z}, \text{ где } K_r = \{ z\in\Cm:|z|\leq r \},\ r<1. \]
+	\end{example*}
+	\begin{theorem*}
+		(Критерий Коши равномерной сходимости ряда)
+		\[ \Sum_{n=0}^{+\infty}f_n(z) \overset{G}\rightrightarrows f(z)\iff \forall\,\epsilon>0\ \exists N(\epsilon)\in\N: \forall\,n>N\ \forall\,m\in\N\ \forall\,z\in G\implies |\Sum_{k = n+1}^{n+m}f_k(z)|<\epsilon.\]
+	\end{theorem*}
+	\begin{theorem*}
+		(Признак Вейерштрасса)\\
+		\indent Пусть $\forall\,z\in G \implies |f_n(z)|\leqslant a_n,\ a_n\geqslant0,\ n\in\N$ и $\Sum_{n=1}^{+\infty}a_n$ --- сходится. Тогда
+		$\Sum_{n=0}^{+\infty}f_n(z)$ сходится абсолютно и равномерно на $G$. $\Sum_{n=1}^{+\infty}a_n$ --- мажорирующий ряд для $\Sum_{n=0}^{+\infty}f_n(z)$.
+	\end{theorem*}
+	\newpage
+	\section{Лекция 18}
+	\subsection{Ряды с аналитическими членами.}
+	\begin{theorem}
+		Пусть $\forall n\in\N\ f_n(z)\in C(D)$, где $D$ --- односвязная область. И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$. Тогда
+		$\forall\,\gamma\subset D$ --- гладкая или кусочно-гладкая кривая Жордана, верно
+		\[ \Int_\gamma f(z)\,dz = \Sum_{n=1}^{+\infty}\Int_\gamma f_n(z)\,dz. \]
+	\end{theorem}
+	\begin{proof}
+		Ряд сходится раномерно, значит выполняется критерий Коши
+		\[\forall\,\epsilon>0\ \exists N(\epsilon)\in\N: \forall\,n>N\ \forall\,m\in\N\ \forall\,z\in G\implies \left|\Sum_{k = n+1}^{n+m}f_k(z)\right|<\frac{\epsilon}{2L}, \text{ где } L = \Int_\gamma |dz|.\]
+		При $m\to+\infty$
+		\[ \left|\Sum_{k = n+1}^{+\infty}f_k(z)\right| =\left|f(z)-\Sum_{k=1}^nf_k(z) \right|. \]
+		Тогда
+		\begin{multline*}
+			\bigg|\Int_\gamma\bigg(f(z)-\Sum_{k=1}^nf_k(z)\bigg)\,dz\bigg|= \bigg|\Int_\gamma f(z)\,dz-\Int_\gamma\Sum_{k=1}^nf_k(z)\,dz\bigg|=\\=\bigg| \Int_\gamma\Sum_{k = n+1}^{+\infty}f_k(z)\,dz \bigg| \leqslant \Int_\gamma\frac{\epsilon}{2L}|dz| = \frac{\epsilon}{2L}\cdot L = \frac{\epsilon}{2}.
+		\end{multline*}
+		Итоого имеем
+		\[ \Lim_{n\to\infty}\Sum_{k=1}^n\Int_\gamma f_k(z)\,dz = \Int_\gamma f(z)\,dz. \]
+	\end{proof}
+	\begin{theorem}
+		Пусть $\forall n\in\N\ f_n(z)\in \A(D)$, где $D$ --- односвязная область. 
+		И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		Тогда $f(z)\in\A(D).$
+	\end{theorem}
+	\begin{proof}
+		Рассмотрим $\gamma\subset D$ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
+		\[ \Oint_\gamma f(z)\,dz = \Oint_\gamma\Sum_{k=1}^{+\infty}f_k(z)\,dz = \Sum_{k=1}^{+\infty}\Oint_\gamma f_k(z)\,dz = 0\]
+		Из условия следует, что $f(z)\in C(D)$. Итого получим, что по теореме Морера $f(z)\in\A(D)$.
+	\end{proof}
+	\begin{theorem}
+		Пусть $\forall n\in\N\ f_n(z)\in \A(D)$, где $D$ --- односвязная область. 
+		И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		Тогда ряд можно почленно дифференцировать.
+		\[ \forall\,m>0\ f^{(m)}(z) = \Sum_{k=1}^{+\infty}f_k^{(m)}(z). \]
+	\end{theorem}
+	\begin{proof}
+		21:00
+	\end{proof}
 	\newpage
 	\section{Лекция 19}
 	\[ \Sum_{k=0}^{+\infty}c_n(z-z_0)^n\text{ --- функциональный ряд} \]
@@ -4787,74 +4936,166 @@
 	\[ (1+z)^\alpha = 1 + \Sum_{k=1}^{\infty}\frac{\alpha(\alpha-1)\ldots(\alpha-k+1)}{k!} \]
 	\subsection{Степенные ряды с центром $ z_0 = \infty $}
 	\[ \Sum_{k=0}^{+\infty}\frac{c_n}{z_n} = c_0 + \frac{c_1}{z} + \ldots \]
-	
+	\newpage
 	\section{Лекция 20}
-	\subsection{Теорема единственности}
 	\begin{theorem*}
 		(Теорема единственности)\\
-		Пусть $f(z), g(z) \in \A(D), \ \{z_n\} \subset D: \lim \limits_{n \to \infty} z_n = a \in D $. Если $\forall n \in \mathbb{N} \implies f(z_n) = g(z_n)$, то $f(z) \equiv g(z), \ z \in D$.
+		\indent Пусть $f(z),\ g(z)\in\A(D)$, где $D$ --- область. В ней есть такая последовательность $\{z_n\}$, что она сходится в $D$, т.е.$\Lim_{n\to\infty} z_n = a$. Если $\forall\,n\in\N \implies f(z_n) = g(z_n)$, то\mbox{ $f(z)\equiv g(z),\ z\in D$.} % Принудительный запрет переноса.
 	\end{theorem*}
 	\begin{proof}
-		\begin{align*}
-			&\text{1) Покажем, что $f(a) = g(a)$} \\
-			&\lim \limits_{n \to \infty} (f(z_n) - g(z_n)) = f(a) - g(a) = 0, \ f, g \in \A(D) \implies C(D) \\
-			&h(z) = f(z) - g(z), \ a \text{ --- нуль } h(z) \\ 
-			&\text{2) } \exists \dot U_{\epsilon}(a) \subset D \\
-			&h(z) \equiv 0, \ z \in \dot U_{\epsilon}(a), \ h(z_n) = 0 \\
-			&\text{3) } M \text{ --- множество} \\
-			&z \in M \iff h(z) = 0 \\
-			&\text{Если } D \setminus M = \emptyset \text{, то теорема доказана. Пусть } D \setminus M \neq \emptyset \\
-			&\text{$M$ --- замкнутое множество (показываем это как в пункте 1)}\\
-			&z_0 \in \partial M, \ h(z_0) = 0 \\ 
-			&\forall \dot U_{\delta}(z_0) \implies h(z) \not\equiv 0, \ z \in \dot U_{\delta}(z_0) \\
-			&\implies z_0 \text{ --- изолированный нуль } h(z), \ h(z) \in \A(D) \\
-			&\exists \dot U_{\tilde{\delta}}(z_0): \ h(z) \neq 0, \ z \in \dot U_{\tilde{\delta}}(z_0) \text{ --- получаем противоречие} \\
-			&\implies D \setminus M = \emptyset, \ h(z) \equiv 0, \ z \in D
-		\end{align*}
+		Покажем, что $f(a) = g(a)$. Рассмотрим следующий предел
+		\[ \Lim_{n\to\infty} (f(z_n) - g(z_n)) = f(a) - g(a) = 0.\]
+		Это следует из того, что функции дифференцируемы в $D$, а значит и непрерывны.
+		Рассмотрим функцию $h(z) = f(z) - g(z)$, где $a$ --- нуль $h(z)$.\\
+		2) По предыдущей теореме об изолированности нуля, найдется такая окрестность $\dot U_{\epsilon}(a)\subset D$, в которой функция $h(z) \equiv 0,\ z\in\dot U_{\epsilon}(a)$.\\
+		3) Пусть $M$ такое множество, что если $z\in M \iff h(z) = 0$. Это множество нулей функции $h$, причем оно максимально по включению. Рассмотрим множество $D\setminus M$.\\
+		Если $D \setminus M = \varnothing$, то теорема доказана.\\
+		Если $D \setminus M\ne\varnothing$. $M$ --- замкнутое множество (показываем, как в 1 пункте). Возьмем точку $z_0\in\partial M$, тогда $h(z_0) = 0$. По предыдущей теореме об изолированных нулях, в любой окрестности точки $z_0$ существуют точки, в которой $h(z) \ne 0$. \textbf{Не понял. Потом допишу.}
 	\end{proof}
-	
 	\subsection{Ряды Лорана}
-	В прошлый раз нами были разобраны ряды вида: $\sum_{n=0}^{+\infty} c_n z^n, \ |z| < R$, где $R$ --- радиус сходимости. Тогда введем переменную $z = \frac{1}{s}$, тогда известный нам ряд перепишется как $\sum_{n=0}^{\infty} c_n \cdot \frac{1}{s^n}, \ |s| > R$.
-	
+	В прошлый раз нами были разобраны ряды вида: $\sum_{n=0}^{+\infty} c_n z^n, \ |z| < R$, где $R$ --- радиус сходимости. Тогда введем переменную $z = \frac{1}{s}$, тогда известный нам ряд перепишется как $\sum_{n=0}^{\infty} c_n \cdot \frac{1}{s^n},\ |s| > R$.
 	\begin{definition}
-		Пусть $\{c_n\}_{n = -\infty}^{+\infty} \subset \mathbb{C}$. Тогда выражение вида $\sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n$ называют \textbf{обобщенным степенным рядом} или \textbf{рядом Лорана}. 
+		Пусть $\{c_n\}_{n = -\infty}^{+\infty} \subset\Cm$. Тогда выражение вида $\Sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n$ называют \textbf{обобщенным степенным рядом} или \textbf{рядом Лорана}. Точка $z_0\in\Cm$ --- центр обобщенного степенного ряда.
 	\end{definition} 
-	Точка $z_0 \in \mathbb{C}$ --- центр обобщенного степенного ряда.
-	\[
-	\sum_{n = -\infty}^{+\infty}c_n (z - z_0)^n = \sum_{n = -\infty}^{-1} c_n(z - z_0)^n + \sum_{n = 0}^{+\infty} c_n(z - z_0)^n =
-	\underbrace{\sum_{n = -\infty}^{-1} c_n(z - z_0)^n}_{\substack{\text{главная часть}\\ r = \frac{1}{\overline{\lim\limits_{n \to +\infty}} \sqrt[n]{|c_n|}}} } 
-	\;+\;
-	\underbrace{\sum_{n = 0}^{+\infty} c_n(z - z_0)^n}_{\substack{\text{правильная часть}\\ R = \frac{1}{\overline{\lim\limits_{n \to +\infty}} \sqrt[n]{|c_n|}}}}
-	\]
-	\[
-	\frac{1}{r} < |z - z_0| < R
-	\]
-	
+	Такой ряд можем представить в виде
+	\[ \Sum_{n = -\infty}^{+\infty}c_n(z - z_0)^n =
+	\underbrace{\Sum_{n = -\infty}^{-1} c_n(z - z_0)^n}_{\substack{\text{Главная часть}}} +
+	\underbrace{\Sum_{n = 0}^{+\infty} c_n(z - z_0)^n}_{\substack{\text{Правильная часть}}} \]
+	\begin{align*}
+		&R_1 = \uplim_{n\to +\infty}\sqrt[n]{|c_{-n}|} \text{ --- радиус сходимости главной части.}\\
+		&R_2 = \frac{1}{\uplim\limits_{n\to +\infty}\sqrt[n]{|c_n|}} \text{ --- радиус сходимости правильной части.}
+	\end{align*}
+	\[ R_1 < |z - z_0| < R_2 \]
 	\begin{definition}
-		Считая в рамках определения $R_1 < R_2$, множество вида $K_{R_1, R_2} = \{z \in \mathbb{C}: R_1 < |z - z_0| < R_2\}$ будем называть \textbf{кольцом сходимости}.
+		Считая в рамках определения $R_1 < R_2$, множество вида\\
+		$K_{R_1,\,R_2} = \{z\in\Cm: R_1 < |z - z_0| < R_2 \}$ будем называть \textbf{кольцом сходимости}.
 	\end{definition}
-	
 	\begin{remark}
-		$\forall M \subset K_{R_1, R_2}$ --- замкнутое множество, сходимость ряда Лорана на таком множестве --- равномерная.
+		Для всекого замкнутого множества $M \subset K_{R_1,\,R_2}$, сходимость ряда Лорана на нем --- равномерная сходимость.
 	\end{remark}
-	
 	\begin{theorem*}
 		(Теорема Лорана)\\
-		Пусть $f(z) \in \A(K_{R_1, R_2})$. Тогда в этом кольце функцию $f(z)$ можно представить сходящимся рядом Лорана: 
-		\[
-		f(z) = \sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n
-		\]
-		где 
-		\[
-		c_n = \frac{1}{2 \pi i} \oint \limits_{\gamma} \frac{f(\xi)}{(\xi - z_0)^{n+1}} \, d\xi
-		\]
+		\indent Пусть $f(z)\in\A(K_{R_1,R_2})$. Тогда в этом кольце функцию $f(z)$ можно представить сходящимся рядом Лорана
+		\[ f(z) = \Sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n, \text{ где }\ c_n = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{(\xi - z_0)^{n+1}},\]
+		$\gamma$ --- замкнутая гладкая кривая Жордана, которая целиком лежит в кольце $K_{R_1,R_2}$.
 	\end{theorem*}
-	
 	\begin{proof}
-		\begin{align*}
-			&\forall z \in K_{R_1, R_2} \implies \exists G \subset K_{R_1, R_2}, \ \partial G = \gamma_2 \cup \gamma_1^{-}: \ z \in G. \\
-			&f(z) = \frac{1}{2 \pi i} \oint \limits_{\partial G} \frac{f(\xi)}{\xi - z} \, d\xi \quad \text{--- интегральная формула Коши для многосвязной области} \\
-			&= \frac{1}{2 \pi i} \oint \limits_{\gamma_2} \frac{f(\xi)}{\xi - z} \, d\xi - \frac{1}{2 \pi i} \oint \limits_{\gamma_1} \frac{f(\xi)}{\xi - z} \, d\xi
-		\end{align*}
+		Возьмем точку $z\in K_{R_1, R_2}$. Рассмотрим такое множество $G$ между кривыми $\gamma_1$ и $\gamma_2$, чтобы $z$ лежала между этими кривыми: $G \subset K_{R_1, R_2},\ \partial G = \gamma_2\cup\gamma_1^-,\ z\in G.$
+		Запишем интегральную формулу Коши для многосвязной области $G$
+		\[ f(z) = \frac{1}{2\pi i}\Oint_{\partial G}\frac{f(\xi)\,d\xi}{\xi - z} = \frac{1}{2\pi i}\Oint_{\gamma_2} \frac{f(\xi)\,d\xi}{\xi-z}-\frac{1}{2\pi i}\Oint_{\gamma_1}\frac{f(\xi)\,d\xi}{\xi - z} \]
+		Рассмотрим первый интеграл
+		\[\Oint_{\gamma_2} \frac{f(\xi)\,d\xi}{\xi-z}= \frac{1}{2\pi i}\Oint_{\gamma_2}\frac{f(\xi)\,d\xi}{\xi-z_0-(z-z_0)}=\Oint_{\gamma_2}\frac{f(\xi)\,d\xi}{(\xi-z_0)\big(1-\frac{z-z_0}{\xi-z_0}\big)}=\Oint_{\gamma_2}f(\xi)\Sum_{n=0}^{+\infty}\frac{(z-z_0)^n}{(\xi-z_0)^{n+1}},\]
+		из геометрических соображений $\left|\dfrac{z - z_0}{\xi - z_0}\right| < 1.$\\
+		Ряд сходится равномерно на $\gamma_2$. Тогда
+		\[\Oint_{\gamma_2}f(\xi)\Sum_{n=0}^{+\infty}\frac{(z-z_0)^n}{(\xi-z_0)^{n+1}} =\Sum_{n=0}^{+\infty}(z-z_0)^n\Oint_{\gamma_2}\frac{f(\xi)\,d\xi}{(\xi-z_0)^{n+1}} \]
+		Рассмотрим второй интеграл
+		\begin{multline*}
+			\Oint_{\gamma_1} \frac{f(\xi)\,d\xi}{\xi-z}=\Oint_{\gamma_1}\frac{f(\xi)\,d\xi}{\xi-z_0-(z-z_0)}=-\Oint_{\gamma_1}\frac{f(\xi)\,d\xi}{(z-z_0)\big(1-\frac{\xi-z_0}{z-z_0}\big)}=\\=-\Oint_{\gamma_1}f(\xi)\Sum_{n=0}^{+\infty}\frac{(\xi-z_0)^n}{(z-z_0)^{n+1}} = -\Sum_{n=0}^{+\infty}(z-z_0)^{-n-1}\Oint_{\gamma_1}f(\xi)(\xi - z_0)^n\,d\xi
+		\end{multline*}
+		Также можем сказать, что кривые $\gamma_1$ и $\gamma_2$ лежат в кольце. Тогда любой контур $\gamma_i$ можем заменить на $\gamma$, \textbf{Не понял.}\\
+		Итого получаем
+		\begin{multline*}
+			f(z) = \Sum_{n=0}^{+\infty}(z-z_0)^n\frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{(\xi-z_0)^{n+1}} + \Sum_{n=0}^{+\infty}(z-z_0)^{-n-1}\frac{1}{2\pi i}\Oint_\gamma f(\xi)(\xi - z_0)^n\,d\xi =\\= \Sum_{n=0}^{+\infty}c_n(z-z_0)^n + \Sum_{m=-\infty}^{-1}(z-z_0)^m\frac{1}{2\pi i}\Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi-z_0)^{m+1}} =\\= \Sum_{n=0}^{+\infty}c_n(z-z_0)^n + \Sum_{m=-\infty}^{-1}c_m(z-z_0)^m = \Sum_{n = -\infty}^{+\infty} c_n(z - z_0)^n
+		\end{multline*}
 	\end{proof}
+	\begin{statement}
+		Пусть в условиях теоремы Лорана функция $f(z)$ ограничена на окружности, которая целиком лежит в кольце, т.е. 
+		\[ \exists\, M > 0: \forall\,\gamma_\rho \implies |f(z)| \leqslant M, \text{ где } \gamma_\rho = \{ z\in\Cm : |z-z_0|=\rho \}\subset K_{R_1,R_2}. \]
+		Тогда $\forall\,n\in\Z\implies|c_n|\leqslant\dfrac{M}{\rho^n}$.
+	\end{statement}
+	\begin{proof}
+		 По условию окружность лежит в кольце, значит можем считать, что 
+		 \[ c_n = \frac{1}{2\pi i}\Oint_{\gamma_\rho}\frac{f(\xi)\,d\xi}{(\xi-z_0)^{n+1}} \]
+		 Параметризуем кривую $\gamma_\rho : \xi = z_0+\rho e^{it},\ t\in[0,\,2\pi]$ и оценим модуль коэффициента $c_n$ 
+		 \[ |c_n| = \bigg|\frac{1}{2\pi}\Int_0^{2\pi}\frac{f(z_0+\rho e^{it}) \,dt}{(\rho e^{it})^n}\bigg| \leqslant \frac{M}{2\pi\rho^n}\Int_0^{2\pi}dt = \frac{M}{\rho^n} \]
+	\end{proof}
+	\begin{example*}
+		\[ \text{Посчитать интеграл: } I = \frac{1}{2\pi i}\Oint_{\gamma_r}(z-z_0)^k\,dz,\text{ где } k\in\Z,\ \gamma_r = \{ z\in\Cm:|z-z_0|=r \}\]
+	\end{example*}
+	\[ I = \frac{1}{2\pi i}\Int_0^{2\pi}r^k e^{ikt} rie^{it}\,dt = \frac{r^{k+1}}{2\pi}\Int_0^{2\pi}e^{i(k+1)t}\,dt =\left. \frac{r^{k+1}}{2\pi}\frac{e^{i(k+1)t}}{i(k+1)}\right|_{0}^{2\pi} = 0,\text{ при } k\ne -1, \]
+	\[ I = \left. \frac{r^{k+1}}{2\pi}t\,\right|_{0}^{2\pi} = 1,\text{ при } k = 1. \]
+	\newpage
+	\begin{theorem*}
+		(Единственность)\\
+		\indent Пусть обобщенный степенной ряд сходится в некотором кольце $K_{R_1,R_2}$ к функции $f(z)$, $\Sum_{k = -\infty}^{+\infty}c_k(z-z_0)^k \to f(z)$. Тогда $c_n$ имеет единственное представление
+		\[ c_n = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{(\xi-z_0)^{n+1}},\text{ где } \gamma\subset K_{R_1,R_2}. \]
+	\end{theorem*}
+	\begin{proof}
+		\begin{multline*}
+			f(z)=\Sum_{m=-\infty}^{+\infty}c_m(z-z_0)^m\iff\frac{1}{2\pi i}\Oint_{\gamma_r}\frac{f(\xi)\,dz}{(z-z_0)^{n+1}} = \frac{1}{2\pi i}\Oint_{\gamma_r}\Sum_{m=-\infty}^{+\infty}c_m(z-z_0)^{m-n-1}\,dz=\\= \Sum_{m=-\infty}^{+\infty}c_m\frac{1}{2\pi i}\Oint_{\gamma_r}(z-z_0)^{m-n-1}\,dz = \Sum_{m=-\infty}^{+\infty}c_m\delta_{m\,n}
+		\end{multline*}
+		Из всей суммы останется только дно слагаемое при $n = m$. Не теряя общности можем сказать, что в силу аналитичности $f(z)$ окружность радиуса $r$ можем заменить на любую кривую, которая лежит в области ограниченной контуром. Итого получаем
+		\[ c_n = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{(\xi-z_0)^{n+1}}. \]
+	\end{proof}
+	\newpage
+	\section{Лекция 21}
+	\subsection{Изолированные особые точки.}
+	\begin{definition}
+		Точка $z_0\in\Cm$ называется \textbf{изолированной особой точкой} однозначной функции $f(z)$, если $\exists\,\epsilon>0: f(z)\in\A(\dot U_\epsilon(z_0))$.
+	\end{definition}
+	\begin{definition}
+		Пусть $f(z)\in\A(\dot U_\epsilon(z_0))$ и $f(z) = \Sum_{k =-\infty}^{+\infty}c_k(z-z_0)^k$ --- ряд Лорана. Тогда\\
+		1) Точка $z_0$ называется \textbf{устранимой особой точкой}, если ряд Лорана представим в виде\[ f(z)=\Sum_{k=0}^{+\infty}c_k(z-z_0)^k, \]
+		т.е. ряд Лорана можно представить в виде рядя Телора.\\
+		2) Точка $z_0$ называется \textbf{полюсом порядка} $m\in\N$, если 
+		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m} + \frac{c_{-(-m-1)}}{(z-z_0)^{m-1}} + \ldots + \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ c_{-m}\ne 0, \]
+		т.е. ряд Лорана имеет конечное число членов с отрицательными степенями и главная стпень имеет порядок $-m$.\\
+		3) Точка $z_0$ называется \textbf{существенно особой точкой}, если главная часть ряда Лорана содержит бесконечное число членов
+		\[ f(z) = \Sum_{k=-\infty}^{-1} c_k(z-z_0)^k + \Sum_{k=0}^{+\infty} c_k(z-z_0)^k. \]
+	\end{definition}
+	\begin{example}
+		\hspace{-0.94cm}
+		1) $f(z) = \dfrac{\sin z}{z},\ z_0 = 0$ --- устранимая особая точка.\\
+		\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!} \implies f(z) = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k+1)!}. \]
+		2) $f(z) = \dfrac{1}{z^m},\ z_0 = 0$ --- полюс порядка $m$.\\[2mm]
+		3) $f(z) = \dfrac{\sin z}{z^2},\ z_0 = 0$ --- полюс первого порядка.\\[2mm]
+		4) $f(z) = e^{\frac{1}{z}},\ z_0 = 0$ --- существенная особая точка.
+		\[ f(z) = \Sum_{k=0}^{+\infty}\frac{1}{k!\,z^k},\ |z| > 0 \] 
+	\end{example}
+	\newpage
+	\begin{theorem}
+		Точка $z_0$ --- является устранимой особой точкой функции $f(z)\in\A(\dot U_\delta(z_0))$ тогда и только тогда, когда $\exists$ конечный $\Lim_{z\to z_0}f(z)$
+	\end{theorem}
+	\begin{proof}
+		Необходимость\\
+		$z_0$ --- устранимая особая точка, тогда
+		\[ f(z) = \Sum c_k(z-z_0)^k,\ 0<|z-z_0|<\epsilon \]
+		Достаточность\\
+		Пусть $\exists\, \epsilon > 0$ и $\exists M > 0 : \forall\,z\in\dot U_\delta(z_0)\implies|f(z)| \leqslant M $\\
+		$f(z) = \Sum_{k = 0}^{+\infty}c_k(z-z_0),\ \gamma_\rho =\{ z\in\Cm: |z_-z_0| =\rho \},\ c_k \leqslant \frac{M}{\rho^k},\ \rho\to 0+$
+	\end{proof}
+	\begin{remark}
+		Если положить $f(z_0) = c_0$, то $f(z)\in\A(U_\delta (z_0))$
+	\end{remark}
+	\begin{theorem}
+		Точка $z_0\in\Cm$ --- является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))$ тогда и только тогда, когда $\exists$ конечный $\Lim_{z\to z_0}f(z) = +\infty$
+	\end{theorem}
+	\begin{consequence}
+		ТОчка $z_0$ является полюсом порядка $m\in\N$ функции $f(z) \iff $ эта же точка является нулем кратности $m\in\N$ функции $\frac{1}{f(z)}$. 
+	\end{consequence}
+	\begin{theorem}
+		Точка $z_0$ является существенной точкой функции $f(z)\in\A(\dot U_\delta(z_0)) \iff \ne\exists$ конечный или бесконечный $\Lim_{z\to z_0}f(z)$
+	\end{theorem}
+	\begin{example}
+		$f(z) = e^{\frac{1}{z}},\ z_0 = 0$
+		\[ \Lim_{z_\gamma\to z_0}e^{\frac{1}{z}} = \infty,\ \Lim_{z_\gamma\to z_0}e^{-\frac{1}{z}} = 0 \]
+	\end{example}
+	\begin{theorem*}
+		(Теорема Сохоцкого-Вейерштрасса)\\
+		\indent Пусть $z_0$ --- существенная особая точка функции$f(z)$. Тогда
+		\[ \forall\,a\in\overline\Cm\implies\exists\,\{z_n\}: \Lim_{n\to\infty}z_n = z_0 : \Lim_{n\to\infty}f(z_n) = a \]
+	\end{theorem*}
+	\begin{definition}
+		Пусть однозначная функция $f(z)\in \A(\dot U_\epsilon(\infty))$. Тогда точку $\infty$ называют изолированной особой точкой функции $f(z)$. $U_\epsilon(\infty) = \{ \epsilon < |z|<\infty \}$
+	\end{definition}
+	\begin{definition}
+		Точку $\infty$ назовем утсранимой особой точкой, полюсом порядка $m\in\N$
+		 \textbf{Не успел(}
+	\end{definition}
+	\begin{example}
+		1) $f(z) = \dfrac{1}{(z-a)(z-b)}$. Найти особую точку. Разложить в ряд Лорана с центром в точке $a, \infty$ в кольце $|a| < |z| < |b|$
+	\end{example}
+	$a,\,b$ --- полюсы первого порядка. $\infty$ --- устранимая особая точка.
+	Рассмотрим функцию $g(z) = \dfrac{1}{z-b}$, сделаем замену $z-a = s$. Получим
+	\[ h(s) = \frac{1}{s+a-b} = \frac{1}{(a-b)(1+\frac{s}{a-b})} = \frac{1}{(b-a)(1-\frac{s}{b-a})} \]
 \end{document}
