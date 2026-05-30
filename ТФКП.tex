@@ -618,21 +618,21 @@
 		Функция $f(z)$ называется \textbf{аналитической функцией} в $z_0$, если $\exists\,U_\epsilon(z_0)$, в которой функция $f(z)$ дифференцируема. 
 	\end{definition} 
 	\begin{definition}
-		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если \\
+		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если
 		она аналитична в каждой точке области D.
 	\end{definition}
 	\begin{remark}
-		Обозначается $f(z) \in \A(z_0)$ и $f(z) \in \A(D)$ cоответственно.
+		Обозначается $f(z) \in \A(z_0)$ и $f(z)\in\A(D)$ cоответственно.
 	\end{remark}
 	\begin{example}
-		Выше доказали, что функция $f(z) = z^2 - 2(\overline z)^2$ дифференцируема только в точке\\ $z_0 = 0 \Rightarrow f(z) \notin \A(\Cm)$
+		Выше доказали, что функция $f(z) = z^2 - 2(\bar z)^2$ дифференцируема только в точке\\ $z_0 = 0 \Rightarrow f(z)\notin\A(\Cm)$.
 	\end{example}
-	\begin{example}
-		Функция $f(z) = e^z \Rightarrow f(z) \in \A(\Cm)$
-	\end{example}
-	\begin{example}
-		Функция $f(z)=\frac{1}{z - 1}\Rightarrow f(z)\in\A(\Cm\setminus\{1\})$
-	\end{example}
+	\begin{example*}
+		\[ f(z) = e^z\in\A(\Cm) \]
+	\end{example*}
+	\begin{example*}
+		\[ f(z)=\frac{1}{z-1}\in\A(\Cm\setminus\{1\}) \]
+	\end{example*}
 	\newpage
 	\section{Лекция 6}
 	\subsection{Геометрический смысл модуля и аргумента производной}
@@ -774,11 +774,11 @@
 	\subsection{Связанные теоремы}
 	В последующих теоремах считаем $f(z)$ --- однозначной функцией, $D$ --- область на которой она определена.
 	\begin{theorem}
-		Пусть $f(z) \in \A(D),\ f(z)\ \cancel\equiv\ \mathrm{const},\ t \in D$, тогда $D_\omega = f(D_z)$ --- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$
+		Пусть $f(z) \in \A(D),\ f(z)\ \cancel\equiv\ \mathrm{const},\ t \in D$, тогда $D_\omega = f(D_z)$ --- область и любая кривая Жордана $\gamma_z \in D_z$ $\xlongrightarrow{f}$ в кривую Жордана $\gamma_\omega \in D_\omega$.
 	\end{theorem}
 	\begin{theorem*}
-		(Аналитичность обратной функции)\\ \ \indent
-		Пусть $f(z) \in \A(U_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$, тогда $\exists\,U_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \A(U_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$
+		(Аналитичность обратной функции)\\ \indent
+		Пусть $f(z)\in\A(U_{\epsilon}(z_0))$ и $f'(z_0) \neq 0, \ \omega_0 = f(z_0)$. Тогда $\exists\,U_\delta(\omega_0),$ в которой определена обратная функция, причем $\psi(\omega) \in \A(U_{\delta}(\omega_0)),$ и верно, что $\psi'(\omega_0) = \dfrac{1}{f'(z_0)}$.
 	\end{theorem*}
 	\begin{statement}
 		Пусть $f(z)\in\A(D_z),\ f: D_z\to D_\omega$, гладкая кривая Жордана $\gamma_z \in D_z\to\gamma_\omega\in D_\omega$
@@ -810,8 +810,8 @@
 	\begin{example}
 		Дана функция $f(z) = e^z$, область определения $ D_z $ и кривая Жордана $ \gamma_z $:
 		\begin{align*}
-		&D_z = \{ z \in \mathbb{C} : 1 \leq \Re z \leq 2, \ 0 \leq \Im z \leq 4\}, \\
-		&\gamma_z = \{ z \in \mathbb{C}: \Re z = \Im z, \ 0 \leq \Re z \leq 2\pi \}
+		&D_z = \{ z\in\Cm:1 \leqslant q \Re z \leqslant 2,\ 0\leqslant\Im z\leqslant 4\},\\
+		&\gamma_z = \{ z\in\Cm:\Re z = \Im z,\ 0\leqslant\Re z \leqslant 2\pi\}.
 		\end{align*}
 		Найти площадь образа области и длину образа этой кривой.
 	\end{example}
@@ -5013,7 +5013,7 @@
 		\[ \text{Посчитать интеграл: } I = \frac{1}{2\pi i}\Oint_{\gamma_r}(z-z_0)^k\,dz,\text{ где } k\in\Z,\ \gamma_r = \{ z\in\Cm:|z-z_0|=r \}\]
 	\end{example*}
 	\[ I = \frac{1}{2\pi i}\Int_0^{2\pi}r^k e^{ikt} rie^{it}\,dt = \frac{r^{k+1}}{2\pi}\Int_0^{2\pi}e^{i(k+1)t}\,dt =\left. \frac{r^{k+1}}{2\pi}\frac{e^{i(k+1)t}}{i(k+1)}\right|_{0}^{2\pi} = 0,\text{ при } k\ne -1, \]
-	\[ I = \left. \frac{r^{k+1}}{2\pi}t\,\right|_{0}^{2\pi} = 1,\text{ при } k = 1. \]
+	\[ I = \left. \frac{r^{k+1}}{2\pi}t\,\right|_{0}^{2\pi} = 1,\text{ при } k = -1. \]
 	\newpage
 	\begin{theorem*}
 		(Единственность)\\
@@ -5031,14 +5031,14 @@
 	\section{Лекция 21}
 	\subsection{Изолированные особые точки.}
 	\begin{definition}
-		Точка $z_0\in\Cm$ называется \textbf{изолированной особой точкой} однозначной функции $f(z)$, если $\exists\,\epsilon>0: f(z)\in\A(\dot U_\epsilon(z_0))$.
+		Точка $z_0\in\Cm$ называется \textbf{изолированной особой точкой} однозначной функции $f(z)$, если $\exists\,\dot U_\epsilon(z_0): f(z)\in\A(\dot U_\epsilon(z_0))$.
 	\end{definition}
 	\begin{definition}
 		Пусть $f(z)\in\A(\dot U_\epsilon(z_0))$ и $f(z) = \Sum_{k =-\infty}^{+\infty}c_k(z-z_0)^k$ --- ряд Лорана. Тогда\\
 		1) Точка $z_0$ называется \textbf{устранимой особой точкой}, если ряд Лорана представим в виде\[ f(z)=\Sum_{k=0}^{+\infty}c_k(z-z_0)^k, \]
 		т.е. ряд Лорана можно представить в виде рядя Телора.\\
 		2) Точка $z_0$ называется \textbf{полюсом порядка} $m\in\N$, если 
-		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m} + \frac{c_{-(-m-1)}}{(z-z_0)^{m-1}} + \ldots + \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ c_{-m}\ne 0, \]
+		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m} + \frac{c_{-( m-1)}}{(z-z_0)^{m-1}} + \ldots + \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ c_{-m}\ne 0, \]
 		т.е. ряд Лорана имеет конечное число членов с отрицательными степенями и главная стпень имеет порядок $-m$.\\
 		3) Точка $z_0$ называется \textbf{существенно особой точкой}, если главная часть ряда Лорана содержит бесконечное число членов
 		\[ f(z) = \Sum_{k=-\infty}^{-1} c_k(z-z_0)^k + \Sum_{k=0}^{+\infty} c_k(z-z_0)^k. \]
@@ -5046,56 +5046,238 @@
 	\begin{example}
 		\hspace{-0.94cm}
 		1) $f(z) = \dfrac{\sin z}{z},\ z_0 = 0$ --- устранимая особая точка.\\
-		\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!} \implies f(z) = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k+1)!}. \]
+		\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!} \implies f(z) = \frac{\sin z}{z} = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k+1)!}. \]
 		2) $f(z) = \dfrac{1}{z^m},\ z_0 = 0$ --- полюс порядка $m$.\\[2mm]
 		3) $f(z) = \dfrac{\sin z}{z^2},\ z_0 = 0$ --- полюс первого порядка.\\[2mm]
-		4) $f(z) = e^{\frac{1}{z}},\ z_0 = 0$ --- существенная особая точка.
-		\[ f(z) = \Sum_{k=0}^{+\infty}\frac{1}{k!\,z^k},\ |z| > 0 \] 
+		4) $f(z) = e^{\frac{1}{z}},\ z_0 = 0$ --- существенно особая точка.
+		\[ f(z) = \Sum_{k=0}^{+\infty}\frac{1}{k!\,z^k},\ |z| > 0.\] 
 	\end{example}
 	\newpage
 	\begin{theorem}
-		Точка $z_0$ --- является устранимой особой точкой функции $f(z)\in\A(\dot U_\delta(z_0))$ тогда и только тогда, когда $\exists$ конечный $\Lim_{z\to z_0}f(z)$
+		Точка $z_0\in\Cm$ --- устранимая особая точка функции $f(z)\in\A(\dot U_\delta(z_0))\iff \exists\Lim_{z\to z_0}f(z)$.
 	\end{theorem}
 	\begin{proof}
-		Необходимость\\
-		$z_0$ --- устранимая особая точка, тогда
-		\[ f(z) = \Sum c_k(z-z_0)^k,\ 0<|z-z_0|<\epsilon \]
-		Достаточность\\
-		Пусть $\exists\, \epsilon > 0$ и $\exists M > 0 : \forall\,z\in\dot U_\delta(z_0)\implies|f(z)| \leqslant M $\\
-		$f(z) = \Sum_{k = 0}^{+\infty}c_k(z-z_0),\ \gamma_\rho =\{ z\in\Cm: |z_-z_0| =\rho \},\ c_k \leqslant \frac{M}{\rho^k},\ \rho\to 0+$
+		\ \\$\boxed\Rightarrow$ Пусть $z_0$ --- устранимая особая точка. Тогда в проколотой окрестности функция $f(z)$ представима в виде ряда
+		\[ f(z) = \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\epsilon. \]
+		Переходя к пределу слева и справа видем, что 
+		\[ \lim_{z\to z_0}f(z) = c_0. \]
+		$\boxed\Leftarrow$ Пусть $\exists\,\Lim_{z\to z_0}f(z) = a\in\Cm$. Из анализа знаем, что если предел существует, то найдется такая проколотая окрестность, в которой функция ограничена.
+		\[ \exists\dot U_\epsilon(z_0) \text{ и } \exists\,M > 0 : \forall\,z\in\dot U_\epsilon(z_0)\implies|f(z)| \leqslant M. \]
+		Если функция аналитична в проколотой окрестности точки $z_0$, то она представляется в виде сходящегося ряда Лорана в ней.
+		\[ f(z) = \Sum_{k = 0}^{+\infty}c_k(z-z_0). \]
+		Необходимо показать, что все члены с отрицательными степенями равны $0$. Возьмем любую окружность: $\gamma_\rho =\{ z\in\Cm: |z-z_0|=\rho \}$.
+		В окрестности функция ограничена, значит и в окружности лежащей внутри окрестности функция ограничена, т.е. для любой окружности верна оценка: $|c_k| \leqslant \dfrac{M}{\rho^k}$. Если устримим $\rho\to 0+$, получим, что $c_k = 0$, при $k = -1, -2, \ldots$.
 	\end{proof}
 	\begin{remark}
-		Если положить $f(z_0) = c_0$, то $f(z)\in\A(U_\delta (z_0))$
+		Если положить $f(z_0) = c_0$, то $f(z)\in\A(U_\delta (z_0)).$
 	\end{remark}
 	\begin{theorem}
-		Точка $z_0\in\Cm$ --- является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))$ тогда и только тогда, когда $\exists$ конечный $\Lim_{z\to z_0}f(z) = +\infty$
+		Точка $z_0\in\Cm$ --- является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))\iff\Lim_{z\to z_0}f(z) = +\infty.$
 	\end{theorem}
+	\begin{proof}
+		\ \\$\boxed\Rightarrow$ Пусть $z_0$ --- полюс функции $f(z)$. Тогда
+		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m} + \frac{c_{-( m-1)}}{(z-z_0)^{m-1}} + \ldots + \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\delta. \]
+		\[ f(z) = \frac{c_{-m} + c_{-( m-1)}(z-z_0) + \ldots}{(z-z_0)^m}+ \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\delta. \]
+		Рассмотрим функцию $\psi(z) = c_{-m} + c_{-(m-1)}(z-z_0) + \ldots$, причем $\psi(z_0) = c_{-m}$. Если $f(z)\in\A(\dot U_\delta(z_0))$, то $\psi(z)\in\A(U_\delta(z_0))$. Тогда
+		\[ \Lim_{z\to z_0}\psi(z) = c_{-m}\ne 0. \]
+		Итого функция $f(z)$ представима в виде
+		\[ f(z) = \frac{\psi(z)}{(z-z_0)^m}\implies\Lim_{z\to z_0}f(z) = \infty. \]
+		$\boxed\Leftarrow$ Пусть $\Lim_{z\to z_0} = \infty$. Тогда
+		\[ \exists\,\epsilon>0: \forall\,z\in U_\epsilon(z_0)\subset U_\delta(z_0)\implies f(z)\ne 0. \]
+		Рассмотрим функцию $g(z) = \dfrac{1}{f(z)}$. Тогда
+		\[ \Lim_{z\to z_0}g(z) = 0 \]
+		Положим $g(z_0) = 0 \implies g(z)\in\A(U_\epsilon(z_0))$.
+		Получается, что $z_0$ --- нуль $g(z)$. 
+		\[ \exists\,m\in\N : g(z) = (z-z_0)^m\psi(z),\text{где } \psi(z)\in\A(U_\epsilon(z_0)): \psi(z) = \Sum_{k=0}^{+\infty}b_k(z-z_0)^k,\ b_0\ne 0 \]
+		По сути дела получили, что $m$ --- кратность нуля функции $g(z)$. Вернемся к функции $f(z)$ 
+		\[ f(z) = \frac{1}{(z-z_0)^m\psi(z)} = \frac{1}{(z-z_0)^m(b_0 + b_1(z-z_0) + \ldots)} = \frac{c_{-m}+c_{-(m-1)}(z-z_0)+\ldots}{(z-z_0)^m }. \]
+		Получаем, что $z_0$ --- полюс функции $f(z)$ кратности $m$.
+		Последнее преобразование сделали при помощи формулы $\frac{1}{1-s} = \Sum_{k =0}^{+\infty}s_k$, и положив $c_{-m} = \frac{1}{b_0}$.
+	\end{proof}
 	\begin{consequence}
-		ТОчка $z_0$ является полюсом порядка $m\in\N$ функции $f(z) \iff $ эта же точка является нулем кратности $m\in\N$ функции $\frac{1}{f(z)}$. 
+		Точка $z_0$ является полюсом порядка $m\in\N$ функции $f(z). \iff $ Эта же точка является нулем кратности $m\in\N$ функции $\frac{1}{f(z)}$. 
 	\end{consequence}
 	\begin{theorem}
-		Точка $z_0$ является существенной точкой функции $f(z)\in\A(\dot U_\delta(z_0)) \iff \ne\exists$ конечный или бесконечный $\Lim_{z\to z_0}f(z)$
+		Точка $z_0$ является существенной точкой функции $f(z)\in\A(\dot U_\delta(z_0))\iff\nexists\Lim_{z\to z_0}f(z)$.
 	\end{theorem}
 	\begin{example}
-		$f(z) = e^{\frac{1}{z}},\ z_0 = 0$
-		\[ \Lim_{z_\gamma\to z_0}e^{\frac{1}{z}} = \infty,\ \Lim_{z_\gamma\to z_0}e^{-\frac{1}{z}} = 0 \]
+		$f(z) = e^{\frac{1}{z}},\ z_0 = 0$.
+		\[ \text{Стремление справа:} \Lim_{z_{\gamma_1}\to z_0}e^{\frac{1}{z}} = \infty,\ \text{ Стремление слева:} \Lim_{z_{\gamma_2}\to z_0}e^{-\frac{1}{z}} = 0. \]
 	\end{example}
 	\begin{theorem*}
 		(Теорема Сохоцкого-Вейерштрасса)\\
-		\indent Пусть $z_0$ --- существенная особая точка функции$f(z)$. Тогда
-		\[ \forall\,a\in\overline\Cm\implies\exists\,\{z_n\}: \Lim_{n\to\infty}z_n = z_0 : \Lim_{n\to\infty}f(z_n) = a \]
+		\indent Пусть $z_0$ --- существенно особая точка функции $f(z)$. Тогда
+		\[ \forall\,a\in\overline\Cm\implies\exists\,\{z_n\}: \Lim_{n\to\infty}z_n = z_0 : \Lim_{n\to\infty}f(z_n) = a. \]
 	\end{theorem*}
 	\begin{definition}
-		Пусть однозначная функция $f(z)\in \A(\dot U_\epsilon(\infty))$. Тогда точку $\infty$ называют изолированной особой точкой функции $f(z)$. $U_\epsilon(\infty) = \{ \epsilon < |z|<\infty \}$
+		Пусть однозначная функция $f(z)\in \A(\dot U_\epsilon(\infty))$. Тогда точку $\infty$ называют изолированной особой точкой функции $f(z)$.
 	\end{definition}
 	\begin{definition}
-		Точку $\infty$ назовем утсранимой особой точкой, полюсом порядка $m\in\N$
-		 \textbf{Не успел(}
+		Точку $\infty$ назовем устранимой особой точкой / полюсом порядка $m\in\N$ / существенно особой точкой функции $f(z)$, если точка $s_0 = 0$ является
+		устранимой особой точкой / полюсом порядка $m\in\N$ / существенно особой точкой функции $g(s) = f(\frac{1}{s})$.
+		\begin{align*}
+			&\infty \text{ --- устранимая особая точка. } f(z) = \Sum_{k=0}^{+\infty}\frac{b_k}{z^k},\ \epsilon <|z| < +\infty.\\
+			&\infty\text{ --- полюс порядка } m\in\N.\ f(z) = b_{-m}z^{m} + b_{-(m-1)}z^{m-1}+\ldots+\Sum_{k=0}^{+\infty}\frac{b_k}{z^k},\ \epsilon <|z| < +\infty.\\
+			&\infty\text{ --- существенно особая точка. }f(z) = \underbrace{\Sum_{k=-\infty}^{-1}b_kz^{-k}}_{\substack{\text{Бесконечное число членов}}}+\Sum_{k=0}^{+\infty}\frac{b_k}{z^k}.
+		\end{align*}
 	\end{definition}
 	\begin{example}
-		1) $f(z) = \dfrac{1}{(z-a)(z-b)}$. Найти особую точку. Разложить в ряд Лорана с центром в точке $a, \infty$ в кольце $|a| < |z| < |b|$
+		Найти особую точку $f(z)$. Разложить в ряд Лорана с центром в точках $a,\ \infty$,\\ в кольце $|a| < |z| < |b|$.
+		\[ f(z) = \frac{1}{(z-a)(z-b)}. \]
 	\end{example}
-	$a,\,b$ --- полюсы первого порядка. $\infty$ --- устранимая особая точка.
-	Рассмотрим функцию $g(z) = \dfrac{1}{z-b}$, сделаем замену $z-a = s$. Получим
-	\[ h(s) = \frac{1}{s+a-b} = \frac{1}{(a-b)(1+\frac{s}{a-b})} = \frac{1}{(b-a)(1-\frac{s}{b-a})} \]
+	Точки $a,\,b$ --- простые полюса. Точка $\infty$ --- устранимая особая точка.
+	Рассмотрим функцию $g(z) = \dfrac{1}{z-b}$ и сделаем замену $z-a = s$. Получим
+	\[ h(s) = \frac{1}{s+a-b} = \frac{1}{(a-b)(1+\frac{s}{a-b})} = -\frac{1}{(b-a)(1-\frac{s}{b-a})} = -\frac{1}{b-a}\cdot\Sum_{n=0}^{+\infty}\frac{s^n}{(b-a)^n} \]
+	Этот ряд сходится при $\left|\dfrac{s^n}{(b-a)^n}\right| < 1$. Вернемся к функции $g(z)$
+	\[ g(z) = -\frac{1}{b-a}\Sum_{n=0}^{+\infty}\frac{(z-a)^n}{(b-a)^n},\ 0<|z-a|<|b-a|. \]
+	Тогда
+	\[ f(z) = \frac{g(z)}{(z-a)}= -\frac{1}{b-a}\Sum_{n=0}^{+\infty}\frac{(z-a)^{n-1}}{(b-a)^n},\ 0<|z-a|<|b-a|. \]
+	Теперь разложим $f(z)$ в ряд Лорана в точке $\infty$. Представим $f(z)$ в виде суммы двух простейших дробей
+	\[ f(z) = \frac{1}{(z-a)(z-b)} = \frac{1}{(a-b)(z-a)} - \frac{1}{(a-b)(z-b)} \]
+	Сделаем замену $z = \dfrac{1}{s}$. И рассмотрим ту же функцию $g(z)$. Получим
+	\[ h(s) = \frac{s}{1-bs} = s\cdot\Sum_{n=0}^{+\infty}(bs)^n,\text{ при } s\to 0. \]
+	Этот ряд сходится при $|bs| < 1$. Итого получим
+	\[ f(z) = \frac{1}{a-b}\Sum_{n=0}^{+\infty}\frac{a_n}{z^{n+1}} - \frac{1}{a-b}\Sum_{n=0}^{+\infty}\frac{b_n}{z^{n+1}},\ |z|>\max\{|a|,\,|b|\}. \]
+	2) Разложим функцию $f(z)$ в кольце $|a| < |z| < |b|$.
+	\[ \frac{1}{z-a} = \frac{1}{z(z-\frac{a}{z})} = \Sum_{n=0}^{+\infty}\frac{a^n}{z^{n+1}}, \]
+	\[ \frac{1}{z-b} = -\frac{1}{b(1-\frac{z}{b})} = -\Sum_{n=0}^{+\infty}\frac{z^n}{b^{n+1}}. \]
+	Подставим эти выражения в функцию $f(z)$
+	\[ f(z) = \frac{1}{(a-b)(z-a)} - \frac{1}{(a-b)(z-b)} = \frac{1}{a-b}\cdot\Sum_{n=0}^{+\infty}\frac{a^n}{z^{n+1}} + \frac{1}{a-b}\cdot\Sum_{n=0}^{+\infty}\frac{z^n}{b^{n+1}},\ |a| < |z| < |b|. \]
+	\newpage
+	\section{Лекция 22}
+	\subsection{Примеры на особые точки.}
+	\begin{example}
+		Разложить функцию $f(z)$ в круге $|z-1| < R$ и указать радиус сходимости.
+		\[ f(z) = \frac{1}{(z-2)^2}. \]
+	\end{example}
+	\noindent Сделаем замену: $z-1 = s$. Тогда
+	\[ g(s) = \frac{1}{(s-1)^2}. \]
+	Продифференцируем стандартный ряд
+	\[ \frac{1}{1-s} = \Sum_{n=0}^{+\infty}s^n,\ |s| < 1.\]
+	Получим
+	\[ g(s) = \frac{1}{(s-1)^2} = \Sum_{n=0}^{+\infty}ns^{n-1},\ |s| < 1. \]
+	Сделаем обратную замену
+	\[ f(z) = \Sum_{n=0}^{+\infty}n(z-1)^{n-1},\ |z-1| < 1. \]
+	Радиус сходимости такого ряда равен 1.
+	\begin{example}
+		Найти особые точки функции $f(z)$.
+		\[ f(z) = \frac{z-\frac{\pi}{2}}{\cos^2 z}. \]
+	\end{example}
+	\noindent Найдем нули знаменателя
+	\[ \cos z = 0 \iff z_k = \frac{\pi}{2} + \pi k,\ k\in\Z. \]
+	Для функции $g(z) = \cos^2z$ эти точки являются нулями кратности 2. Это можно проверить, если посчитать производные.
+	\[ g(z_k) = \cos^2z_k = 0,\quad g'(z_k) = -\sin 2z_k = 0, \quad g''(z_k) = -2\cos(2z)\ne0. \]
+	Т.е. для функции $\dfrac{1}{g(z)}$ это полюсы второго порядка. А значит, $z_k = \frac{\pi}{2} + \pi k,\ k\in\Z\setminus\{0\}$ --- полюсы второго порядка для $f(z)$.\\
+	Теперь рассмотрим точку $z = \frac{\pi}{2}$. По определению нуля второго порядка верно тождество 
+	\[ \cos^2z = \left( z-\frac{\pi}{2}\right)^2\psi(z),\ \psi\left( \frac{\pi}{2}\right) \ne 0. \]
+	При подстановке в исходную $f(z)$ получаем, что $z=\frac{\pi}{2}$ --- полюс первого порядка.
+	\subsection{Вычеты.}
+	\begin{definition}
+		Пусть $f(z)\in\A(\dot U_\epsilon(z_0))$,\ $\gamma\subset\dot U_\epsilon(z_0)$ --- замкнутая кривая Жордана, внутри которой лежит точка $z_0$. Тогда число, которое считается по правилу
+		\[ \Res_{z=z_0} f(z) = \frac{1}{2\pi i}\Oint_\gamma f(z)\,dz \]
+		называется \textbf{вычетом функции} $f(z)$ в точке $z_0$.
+	\end{definition}
+	\begin{definition}
+		Пусть $f(z)\in\A(\dot U_\epsilon(\infty))$,\ $\gamma\subset\dot U_\epsilon(\infty)$ --- замкнутая кривая Жордана. Тогда число, которое считается по правилу
+		\[ \Res_{z=\infty} f(z) = \frac{1}{2\pi i}\Oint_{\gamma^-} f(z)\,dz \]
+		называется \textbf{вычетом функции} $f(z)$ в точке $\infty$.
+	\end{definition}
+	\begin{statement}
+		Пусть $f(z)\in\A(\dot U_\epsilon(z_0))$. Тогда $\Res_{z=z_0}f(z) = c_{-1}$, где $c_{-1}$ --- коэффициент ряда Лорана.
+	\end{statement}
+	\begin{proof}
+		Используем формулу для коэффициентов из Теоремы Лорана.
+		\[ c_n = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\, d\xi}{(\xi - z_0)^{n+1}}\implies c_{-1} = \frac{1}{2\pi i}\Oint_\gamma f(\xi)\, d\xi. \]
+	\end{proof}
+	\begin{statement}
+		Пусть $f(z)\in\A(\dot U_\epsilon(\infty))$. Тогда $\Res_{z=\infty}f(z) = -b_{-1}$, где $b_{-1}$ --- коэффициент ряда Лорана с центром в бесконечно удаленной точке.
+	\end{statement}
+	\begin{proof}
+		В конце лекции 20 мы считали интеграл.
+		\[ \frac{1}{2\pi i}\Oint_{\gamma_r}z^k\,dz = \begin{cases} 1,\ k = -1\\0,\ k\ne-1 \end{cases},\ \gamma_r = \{ |z|=r \}. \]
+		Проинтегрируем левую и правую часть ряда Лорана с центром в бесконечно удаленной точке по окружности $\gamma_r$ и поделим на $2\pi i$.
+		\[ f(z) = \Sum_{n=-\infty}^{+\infty}b_nz^n \implies \frac{1}{2\pi i}\Oint_{\gamma_r}f(z)\,dz = \Sum_{n=-\infty}^{+\infty}b_n\frac{1}{2\pi i}\Oint_{\gamma_r}z^n\,dz = b_{-1}. \]
+		В силу аналитичности можем продеформировать $\gamma_r$, чтобы интегрировать по окружности.
+	\end{proof}
+	\begin{remark}
+		Пусть $z_0$ --- конечная устранимая особая точка $f(z)$. Тогда $\Res_{z=z_0}f(z) = 0$.\\
+		Если $\infty$ --- устранимая особая точка $f(z)$, то функцию $f(z)$ в этой точке можем представить в виде 
+		\[ f(z) = b_0 + \frac{b_{-1}}{z} + \frac{b_{-2}}{z^2} + \ldots\ ,\ R<|z|<+\infty. \]
+	\end{remark}
+	\begin{statement}
+		Пусть $z_0\in\Cm$ --- полюс функции $f(z)$ порядка $m\in\N$. Тогда
+		\[ \Res_{z=z_0}f(z) = \Lim_{z\to z_0}\frac{1}{(m-1)!}\cdot\frac{d^{m-1}}{dz^{m-1}}\Big(f(z)\cdot(z-z_0)^m\Big).\]
+	\end{statement}
+	\begin{proof}
+		Если $z_0$ --- полюс порядка $m$, то в окрестности этой точки функцию можно разложить в ряд Лорана
+		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m}+\ldots+\frac{c_{-1}}{z-z_0} + \Sum_{n=0}^{+\infty}c_n(z-z_0)^n,\ 0<|z-z_0|<\epsilon. \]
+		Домножим левую и правую часть на $(z-z_0)^m$, получим
+		\begin{multline*}
+			f(z)(z-z_0)^m = c_{-m}+\ldots+c_{-1}(z-z_0)^{m-1} + \ldots\implies \\ \implies \frac{d^{m-1}}{dz^{m-1}}\Big(f(z)\cdot(z-z_0)^m\Big) = (m-1)!c_{-1} + A\cdot (z-z_0) + \ldots
+		\end{multline*}
+		Переходя к пределу при $z\to z_0$, получим требуемую формулу.
+	\end{proof}
+	\begin{statement}
+		Пусть $z_0\in\Cm$ --- простой полюс функции $f(z)$ и $f(z)$ можно представить в виде\\
+		$f(z) = \dfrac{h(z)}{g(z)}$, где $h(z_0)\ne0,\ g(z_0)=0,\ g'(z_0)\ne0$ и $h(z),\, g(z)\in\A(U_\epsilon(z_0))$. Тогда
+		\[ \Res_{z=z_0}f(z) =  \Lim_{z\to z_0}\frac{h(z)}{g'(z)}.\]
+	\end{statement}
+	\begin{proof}
+		Легко получается из предыдущего утверждения.
+	\end{proof}
+	\begin{example}
+		Найти вычет $\Res_{\frac{\pi}{2} + \pi k} \tg z$.
+	\end{example}
+	\[ \Res_{\frac{\pi}{2} + \pi k} \tg z = \Res_{\frac{\pi}{2} + \pi k}\frac{\sin z}{\cos z} = \Lim_{z\to \frac{\pi}{2} + \pi k}\frac{\sin z}{(\cos z)'} = -1. \]
+	\begin{theorem}
+		Пусть $\infty$ --- устранимая особая точка $f(z)$. Тогда 
+		\[ \Res_{z=\infty}f(z) = \Lim_{z\to\infty}z(f(\infty) - f(z)),\text{ где } f(\infty) =\Lim_{z\to\infty}f(z). \]
+	\end{theorem}
+	\begin{proof}
+		Если $\infty$ --- устранимая особая точка, то в её проколотой окрестности функцию можно записать в виде
+		\[ f(z) = b_0 + \frac{b_{-1}}{z} + \frac{b_{-2}}{z^2} + \ldots\ ,\ \epsilon<|z|<+\infty. \]
+		Тогда 
+		\[ \Lim_{z\to\infty}f(z) = b_0. \]
+		Сделаем преобразование
+		\[ (f(z)-b_0)z = b_{-1}+\frac{b_{-2}}{z}+\ldots \]
+		При $z\to\infty$ получим
+		\[ b_{-1} = \Res_{z=\infty}f(z) = \Lim_{z\to\infty} z(b_0-f(z))= \Lim_{z\to\infty} z(f(\infty)-f(z)). \]
+	\end{proof}
+	\begin{theorem*}
+		(Коши о вычетах)\\
+		\indent Пусть $f(z)\in\A(\overline D\setminus \{ z_1,\ldots,z_N \})$, где $\overline D$ --- замкнутая односвязная область. Тогда 
+		\[ \frac{1}{2\pi i}\Oint_{\partial D}f(z)\,dz = \Sum_{n=1}^N \Res_{z=z_n}f(z). \]
+	\end{theorem*}
+	\begin{proof}
+		Возьмем каждую точку в $D$ и окружим ее замкнутым контуром. Эти контуры не пересекаются с границей и между собой.
+		\[ \widetilde D = D\setminus(\bigcup_{j=1}^N\overline G_j),\ \overline G_j\cap\overline G_k=\varnothing,\ \partial G_j
+		\cap\partial D=\varnothing. \] 
+		Тогда $f(z)\in\A(\overline{\widetilde D})$. По интегральной Теореме Коши 
+		\begin{multline*}
+			\Oint_{\partial\widetilde D} f(z)\,dz = \Oint_{\partial D} f(z)\,dz + \Sum_{n=1}^N\Oint_{\partial G_n^-}f(z)\,dz = 0\implies\\ \implies \frac{1}{2\pi i}\Oint_{\partial D}f(z)\,dz = \Sum_{n=1}^{N}\frac{1}{2\pi i}\Oint_{\partial G_n}f(z)\,dz = \Sum_{n=1}^{N}\Res_{z=z_n}f(z).
+		\end{multline*}
+	\end{proof}
+	\begin{theorem}
+		Пусть $f(z)\in\A(\Cm\setminus\{ z_1,z_2,\ldots,z_N \})$, где $z_i$ --- изолированная особая точка $f(z)$. Тогда
+		\[ \Sum_{n = 1}^{N}\Res_{z=z_n} + \Res_{z=\infty} f(z) = 0. \]	
+	\end{theorem}
+	\begin{proof}
+		Выберем область так, чтобы все изолированные особые точки были в ней, $\gamma$ --- контур этой области. По предыдущей теореме Коши
+		\setcounter{equation}{0}
+		\begin{equation}
+			\frac{1}{2\pi i}\Oint_\gamma f(z)\,dz = \Sum_{n=1}^N \Res_{z=z_n} f(z).
+		\end{equation}
+		Рассмотрим окрестность точки $\infty$. Тогда
+		\[ \frac{1}{2\pi i}\Oint_{\gamma^-}f(z)\,dz = \Res_{z = \infty}f(z). \]
+		Если поменяем направление обхода, то поменяется знак
+		\[ -\frac{1}{2\pi i}\Oint_\gamma f(z)\,dz = \Res_{z = \infty}f(z). \]
+		Подставив эту формулу в (1), получим нужный результат.
+	\end{proof}
+	\begin{example*}
+		\[ \text{ Вычислить интеграл } I = \Oint_{|z| = 2}\frac{dz}{z^3(z^6-1)}. \]
+	\end{example*}
+	\noindent $z = 0$ --- полюс третьего порядка. $z_k = \sqrt[6]{1}$ --- простые полюсы. Все особые точки лежат внутри контура $|z| = 2$. Тогда
+	\[ I = \Oint_{|z| = 2}\frac{dz}{z^3(z^6-1)} = 2\pi i\left( \Res_{z=0}f(z) +\Sum_{k=1}^{6}\Res_{z_k}f(z)\right) = -2\pi i \left(\Res_{\infty}f(z)\right) = 0.\]
+	\newpage
+	\section{Лекция 23}
 \end{document}
