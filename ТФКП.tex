@@ -4634,18 +4634,18 @@
 	Тогда
 	\[ 	J = f(i) = \frac{1}{2i} \implies I = 2\pi i\cdot J= \frac{2\pi i}{2i} = \pi \]
 	\textbf{б)} Внутри контура $\gamma$ находится только точка $i$. Рассмотрим следующий интеграл
-	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi + i)} = f(z) \]
+	\[ J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{(\xi + i)(\xi - i)} = \frac{1}{2\pi i} \Oint_\gamma \frac{f(\xi)\,d\xi}{(\xi + i)} = f(z). \]
 	В слагаемом $(\xi - i)$ нарушается аналитичность, поэтому возьмем аналитичную функцию
 	\[ f(\xi) = \frac{1}{\xi - i} \]
 	Тогда
-	\[ J = f(-i) = -\frac{1}{2i} \implies I = 2\pi i \cdot J = 2\pi i \cdot \left(-\frac{1}{2i}\right) = -\pi \]
+	\[ J = f(-i) = -\frac{1}{2i} \implies I = 2\pi i \cdot J = 2\pi i \cdot \left(-\frac{1}{2i}\right) = -\pi. \]
 	\textbf{в)} Внутри контура $\gamma$ лежат обе точки $i$ и $-i$.\\
 	Способ 1. Рассмотрим следующий интеграл
 	\begin{multline*}
-		J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \bigg(\frac{i}{2} \Oint_\gamma\frac{d\xi}{\xi + i} - \frac{i}{2}\Oint_\gamma \frac{d\xi}{\xi - i} \bigg)=\\= \frac{i}{2} \bigg(\frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi + i} - \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi - i}\bigg) = \frac{i}{2}(f(\xi) - f(\xi)) = \frac{i}{2}(1 - 1)\iff I = J\cdot2\pi i = 0
+		J = \frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i} \bigg(\frac{i}{2} \Oint_\gamma\frac{d\xi}{\xi + i} - \frac{i}{2}\Oint_\gamma \frac{d\xi}{\xi - i} \bigg)=\\= \frac{i}{2} \bigg(\frac{1}{2\pi i} \Oint_\gamma \frac{d\xi}{\xi + i} - \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi - i}\bigg) = \frac{i}{2}(f(\xi) - f(\xi)) = \frac{i}{2}(1 - 1)\iff I = J\cdot2\pi i = 0.
 	\end{multline*}
 	Cпособ 2. Рассмотрим границу трехсвязной области: $\partial G = \gamma\cup\Gamma_1^- \cup \Gamma_2^-$. Тогда
-	\[ \Oint_{\partial G} \frac{d\xi}{\xi^2 + 1} =\Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = 0 \]
+	\[ \Oint_{\partial G} \frac{d\xi}{\xi^2 + 1} =\Oint_{\gamma}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} - \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = 0. \]
 	Если воспользоваться уже полученными результатами, имеем 
 	\[ \frac{1}{2\pi i}\Oint_\gamma\frac{d\xi}{\xi^2 + 1} 
 	= \frac{1}{2\pi i}\Oint_{\Gamma_1}\frac{d\xi}{\xi^2 + 1} + \frac{1}{2\pi i} \Oint_{\Gamma_2}\frac{d\xi}{\xi^2 + 1} = \frac{1}{2\pi i}\pi - \frac{1}{2\pi i}\pi = 0. \]
@@ -4654,12 +4654,12 @@
 	\begin{theorem*}
 		(Теорема о среднем) \\
 		\indent Пусть $f(z)\in\A(D)$ и рассмотрим $\overline K_R =\{z \in \Cm: |z - z_0|\leqslant\R \} \subset D$. Тогда
-		\[ f(z_0) = \frac{1}{2\pi}\Int_0^{2\pi}f(z_0 + Re^it) dt \]
+		\[ f(z_0) = \frac{1}{2\pi}\Int_0^{2\pi}f(z_0 + Re^it)\,dt. \]
 	\end{theorem*}
 	\begin{proof}
 		По интегральной формуле Коши:
 		\[ f(z_0) = \frac{1}{2\pi i}\Oint_{\partial K_R}\frac{f(\xi)}{\xi - z_0}\,d\xi = \frac{i}{2\pi i} \Int_0^{2\pi} f(z_0 + Re^{it})\,dt, \]
-		где $\partial K_R: \xi = z_0 + Re^{it},\ d\xi = iRe^{it}dt$
+		где $\partial K_R: \xi = z_0 + Re^{it}\,d\xi = iRe^{it}dt$.
 	\end{proof}
 	\newpage
 	\subsection{Интеграл типа Коши. Бесконечная дифференцируемость аналитической функции}
@@ -5031,7 +5031,7 @@
 	\section{Лекция 21}
 	\subsection{Изолированные особые точки.}
 	\begin{definition}
-		Точка $z_0\in\Cm$ называется \textbf{изолированной особой точкой} однозначной функции $f(z)$, если $\exists\,\dot U_\epsilon(z_0): f(z)\in\A(\dot U_\epsilon(z_0))$.
+		Точка $z_0\in\Cm$ называется \textbf{изолированной особой точкой} однозначной функции $f(z)$, если $\exists\,\dot U_\epsilon(z_0): f(z)\in\A(\dot U_\epsilon(z_0))$, причем в самой точке функция либо не определена, либо теряет аналитичность.
 	\end{definition}
 	\begin{definition}
 		Пусть $f(z)\in\A(\dot U_\epsilon(z_0))$ и $f(z) = \Sum_{k =-\infty}^{+\infty}c_k(z-z_0)^k$ --- ряд Лорана. Тогда\\
@@ -5046,7 +5046,7 @@
 	\begin{example}
 		\hspace{-0.94cm}
 		1) $f(z) = \dfrac{\sin z}{z},\ z_0 = 0$ --- устранимая особая точка.\\
-		\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!} \implies f(z) = \frac{\sin z}{z} = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k+1)!}. \]
+		\[ \sin z = \Sum_{k=0}^{+\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!} \implies f(z) = \frac{\sin z}{z} = \Sum_{k=0}^{+\infty}(-1)^k\frac{z^{2k}}{(2k+1)!}. \]
 		2) $f(z) = \dfrac{1}{z^m},\ z_0 = 0$ --- полюс порядка $m$.\\[2mm]
 		3) $f(z) = \dfrac{\sin z}{z^2},\ z_0 = 0$ --- полюс первого порядка.\\[2mm]
 		4) $f(z) = e^{\frac{1}{z}},\ z_0 = 0$ --- существенно особая точка.
@@ -5072,7 +5072,7 @@
 		Если положить $f(z_0) = c_0$, то $f(z)\in\A(U_\delta (z_0)).$
 	\end{remark}
 	\begin{theorem}
-		Точка $z_0\in\Cm$ --- является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))\iff\Lim_{z\to z_0}f(z) = +\infty.$
+		Точка $z_0\in\Cm$ является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))\iff\Lim_{z\to z_0}f(z) = +\infty.$
 	\end{theorem}
 	\begin{proof}
 		\ \\$\boxed\Rightarrow$ Пусть $z_0$ --- полюс функции $f(z)$. Тогда
@@ -5098,7 +5098,7 @@
 		Точка $z_0$ является полюсом порядка $m\in\N$ функции $f(z). \iff $ Эта же точка является нулем кратности $m\in\N$ функции $\frac{1}{f(z)}$. 
 	\end{consequence}
 	\begin{theorem}
-		Точка $z_0$ является существенной точкой функции $f(z)\in\A(\dot U_\delta(z_0))\iff\nexists\Lim_{z\to z_0}f(z)$.
+		Точка $z_0$ является существенно особой точкой функции $f(z)\in\A(\dot U_\delta(z_0))\iff\nexists\Lim_{z\to z_0}f(z)$.
 	\end{theorem}
 	\begin{example}
 		$f(z) = e^{\frac{1}{z}},\ z_0 = 0$.
@@ -5118,7 +5118,7 @@
 		\begin{align*}
 			&\infty \text{ --- устранимая особая точка. } f(z) = \Sum_{k=0}^{+\infty}\frac{b_k}{z^k},\ \epsilon <|z| < +\infty.\\
 			&\infty\text{ --- полюс порядка } m\in\N.\ f(z) = b_{-m}z^{m} + b_{-(m-1)}z^{m-1}+\ldots+\Sum_{k=0}^{+\infty}\frac{b_k}{z^k},\ \epsilon <|z| < +\infty.\\
-			&\infty\text{ --- существенно особая точка. }f(z) = \underbrace{\Sum_{k=-\infty}^{-1}b_kz^{-k}}_{\substack{\text{Бесконечное число членов}}}+\Sum_{k=0}^{+\infty}\frac{b_k}{z^k}.
+			&\infty\text{ --- существенно особая точка. }f(z) = \underbrace{\Sum_{k=1}^{+\infty}b_kz^k}_{\substack{\text{Бесконечное число членов}}}+\Sum_{k=0}^{+\infty}\frac{b_k}{z^k}.
 		\end{align*}
 	\end{definition}
 	\begin{example}
@@ -5280,4 +5280,65 @@
 	\[ I = \Oint_{|z| = 2}\frac{dz}{z^3(z^6-1)} = 2\pi i\left( \Res_{z=0}f(z) +\Sum_{k=1}^{6}\Res_{z_k}f(z)\right) = -2\pi i \left(\Res_{\infty}f(z)\right) = 0.\]
 	\newpage
 	\section{Лекция 23}
+	\subsection{Определенные и собственные интегралы.}
+	\subsubsection{Первый тип интегралов.}
+	\[ I_1 = \Int_{0}^{2\pi}R(\cos\phi,\,\sin\phi)\,d\phi.\]
+	Где $R(x,\,y)$ --- рациональная функция, не имеющая особые точки на окружности $x^2+y^2=1$
+	Сделаем замену $z = e^{i\pi}$. Перепишем интеграл через представление синуса и косинуса через экспоненты. Получим
+	\[ I = -i\Oint_{|z|=1}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{dz}{z} = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{1}{z}  \]
+	\begin{example}
+		\[ I  =\Int_0^{2\pi}\frac{d\phi}{a+\cos\phi},\ a>1 \]
+	\end{example}
+	Сделав замену получим
+	\[ I_2 = -\Oint_{|z|=1}\frac{i\,dz}{z\left( a+\frac{z+\frac{1}{z}}{2}\right)} =-i\Oint_{|z|=1}\frac{z\,dz}{z^2+2az+1} \]
+	Разложим знаменатель на множители
+	\[ z_{1,2} = -a\pm\sqrt{a^2-1},\ |z_1| < 1,\ |z_2|>1 \]
+	Тогда
+	\[ I = -i\cdot2\pi i \Res_{z=z_1}\frac{2}{z^2+2az+1} = 2\pi\Lim_{z\to z_1}\frac{g(z)}{h'(z)} = 2\pi\Lim_{z\to z_1}\frac{2}{2z+2a} = \frac{2\pi}{\sqrt{a^2-1}} \]
+	\subsubsection{Второй тип интегралов.}
+	Пусть $P(x),\, Q(x)$ --- многочлены и выполнены следующие условия\\
+	1) $deg Q \geqslant deg P + 2$.\\
+	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
+	3) $Q(x)$ --- не имеет корней над $\R$.\\
+	Тогда
+	\[ I_2 = \Int_{-\infty}^{+\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}\frac{P(z)}{Q(z)}. \]
+	\begin{theorem}
+		Пусть $f(z\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\}))$, где $z_i$ --- изолированные особые точки $f(z)$ : $\Im z_j > 0, 1\leqslant j\leqslant N$.
+		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$
+		$M(R) = \max\limits_{z \in \gamma_R}|f(z)|$.\\
+		Если $\Lim_{R\to+\infty} M(R)\cdot R = 0$, то
+		\[ \Int_{-\infty}^{+\infty}f(z)\,dx = 2\pi i \Sum_{k=1}^{N}\Res_{z = z_k}f(z). \]
+	\end{theorem}
+	\begin{proof}
+		Очевидно.
+	\end{proof}
+	\subsubsection{Третий тип интегралов.}
+	Пусть $P(z),\ Q(x)$ -- многочлены и выполнены следующие условия\\
+	1) $deg Q \geqslant deg P + 1$.\\
+	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
+	3) $\lambda > 0$.\\
+	4) $Q(x)$ --- не имеет корней над $\R$.\\
+	Тогда
+	\[ I_3 = \Int_{-\infty}^{+\infty}\frac{P(x)e^{i\lambda x}}{Q(x)}dx = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}\frac{P(z)e^{i\lambda z}}{Q(z)},\]\\ 
+	где $z_k$ --- особые точки, лежащие в верхней полуплоскости.
+	\[ I_4 = \Int_{-\infty}^{+\infty}\frac{P(x)\cos(\lambda x)}{Q(x)}dx = \Re I_3. \]
+	\[ I_5 = \Int_{-\infty}^{+\infty}\frac{P(x)\sin(\lambda x)}{Q(x)}dx = \Im I_3. \]
+	\begin{lemma*}
+		(Жордан)\\ \indent\
+		Пусть $f(z\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\}))$, где $z_i$ --- изолированные особые точки $f(z)$ : $\Im z_j > 0, 1\leqslant j\leqslant N$.
+		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$
+		$M(R) = \max\limits_{z \in \gamma_R}|f(z)|$.\\
+		Если $\Lim_{R\to+\infty} M(R) = 0$, то
+		\[\forall\,\lambda>0 \Lim_{R\to+\infty}\Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = 0 \]
+	\end{lemma*}
+	\begin{proof}
+		\[ \Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = |z = Re^{i\phi}| = \Int_{0}^{2\pi}f(Re^{i\phi})e^{i\lambda R(cos\phi+i\sin\phi)}Rie^{i\phi}\,d\phi \]
+	\end{proof}
+	\begin{theorem}
+		В условиях Леммы Жордана
+		\[ \Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx = 2\pi i \Sum_{k=1}^N \Res_{z=z_k}\left(f(z)e^{i\lambda z}\right)  \]
+	\end{theorem}
+	\begin{example}
+		\[ I  =\Int_0^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{(x^2+i)(z^2-i)} \]
+	\end{example}
 \end{document}
