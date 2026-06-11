@@ -4323,10 +4323,9 @@
 	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
 	\leqslant n}|\Delta z_k|$. Пусть $f(z)$ --- однозначная функция, определенная на прямой $\gamma$. Составим интегральную сумму: $\sigma(f,\, \xi,\, \tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k$.
 	\begin{definition}
-		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \Int_{\gamma}f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
+		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \int_\gamma f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
 		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
 	\end{definition}
-	
 	Дано параметрическое представление прямой $ \gamma: (x(t),\,y(t)),\ t \in [a,\,b] $.\\ Тогда по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
 	\textbf{Криволинейный интеграл 1-го рода:}
 	\[ I_1 =  \Int_\gamma f(z)\,ds = \Int_\alpha^\beta f(x(t),\,y(t))\sqrt{x'^2+y'^2}\,dt \]
@@ -4769,14 +4768,14 @@
 	\end{proof}
 	\begin{theorem*}
 		(Морер)\\
-		\indent Пусть $f(z)\in С(D)$, где $D$--- односвязная область. $\gamma\subset D$ ---  замкнутая гладкая или кусочно-гладкая кривая Жордана. Если $\displaystyle\Oint_\gamma f(\xi)\,d\xi = 0 $, то $f(z)\in\A(D)$.
+		\indent Пусть $f(z)\in C(D)$, где $D$ --- односвязная область. $\gamma\subset D$ ---  замкнутая гладкая или кусочно-гладкая кривая Жордана. Если $\displaystyle\oint_\gamma f(\xi)\,d\xi = 0 $, то $f(z)\in\A(D)$.
 	\end{theorem*}
 	\begin{proof}
 		Рассмотрим следущую функцию
 		\[ F(z) = \Int_{z_0}^z f(\xi)\,d\xi. \]
 		Он не зависит от пути. Также ранее доказали, что этот интеграл является аналитической функцией в $D$ и $F(z)$ --- первообразная для $f(z)$ в $D$.
-		\[ \forall\,z\in D F'(z) = f(z) \]
-		Но при диффференцировании на каждом шаге получится имеем аналитическую функцию. Получается, что $f(z)\in\A(D)$.
+		\[ \forall\,z\in D\quad F'(z) = f(z). \]
+		Но при диффференцировании на каждом шаге имеем аналитическую функцию. Получается, что $f(z)\in\A(D)$.
 	\end{proof}
 	\subsection{Числовые ряды.}
 	\begin{definition}
@@ -4854,50 +4853,132 @@
 	\end{theorem*}
 	\newpage
 	\section{Лекция 18}
-	\subsection{Ряды с аналитическими членами.}
+	\subsection{Ряды с аналитическими членами}
 	\begin{theorem}
-		Пусть $\forall n\in\N\ f_n(z)\in C(D)$, где $D$ --- односвязная область. И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$. Тогда
-		$\forall\,\gamma\subset D$ --- гладкая или кусочно-гладкая кривая Жордана, верно
+		Пусть выполнены следующие условия
+		\begin{enumerate}
+			\item $\forall\,n\in\N\ f_n(z)\in C(D)$, где $D$ --- односвязная область;
+			\item $\displaystyle\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		\end{enumerate}
+		Тогда $\forall\,\gamma\subset D$ --- гладкая или кусочно-гладкая кривая Жордана, верно
 		\[ \Int_\gamma f(z)\,dz = \Sum_{n=1}^{+\infty}\Int_\gamma f_n(z)\,dz. \]
+		Т.е. ряд можно почленно проинтегрировать.
 	\end{theorem}
 	\begin{proof}
-		Ряд сходится раномерно, значит выполняется критерий Коши
-		\[\forall\,\epsilon>0\ \exists N(\epsilon)\in\N: \forall\,n>N\ \forall\,m\in\N\ \forall\,z\in G\implies \left|\Sum_{k = n+1}^{n+m}f_k(z)\right|<\frac{\epsilon}{2L}, \text{ где } L = \Int_\gamma |dz|.\]
-		При $m\to+\infty$
-		\[ \left|\Sum_{k = n+1}^{+\infty}f_k(z)\right| =\left|f(z)-\Sum_{k=1}^nf_k(z) \right|. \]
+		Ряд сходится равномерно, значит, выполняется критерий Коши
+		\[\forall\,\epsilon>0\ \exists\,N(\epsilon)\in\N: \forall\,n>N\ \forall\,m\in\N\ \forall\,z\in D\quad \left|\Sum_{k = n+1}^{n+m}f_k(z)\right|<\frac{\epsilon}{2L}, \]
+		где $L = \int_\gamma |dz|$ --- длина кривой $\gamma$. При $m\to+\infty$
+		\[ \left|\Sum_{k = n+1}^{+\infty}f_k(z)\right| =\left|f(z)-\Sum_{k=1}^nf_k(z) \right|.\]
 		Тогда
 		\begin{multline*}
-			\bigg|\Int_\gamma\bigg(f(z)-\Sum_{k=1}^nf_k(z)\bigg)\,dz\bigg|= \bigg|\Int_\gamma f(z)\,dz-\Int_\gamma\Sum_{k=1}^nf_k(z)\,dz\bigg|=\\=\bigg| \Int_\gamma\Sum_{k = n+1}^{+\infty}f_k(z)\,dz \bigg| \leqslant \Int_\gamma\frac{\epsilon}{2L}|dz| = \frac{\epsilon}{2L}\cdot L = \frac{\epsilon}{2}.
+			\bigg|\Int_\gamma f(z)\,dz-\Int_\gamma\Sum_{k=1}^nf_k(z)\,dz\bigg|=\bigg|\Int_\gamma\bigg(f(z)-\Sum_{k=1}^nf_k(z)\bigg)dz\bigg|=\\=\bigg| \Int_\gamma\Sum_{k = n+1}^{+\infty}f_k(z)\,dz \bigg| \leqslant \Int_\gamma\frac{\epsilon}{2L}|dz| = \frac{\epsilon}{2L}\cdot L = \frac{\epsilon}{2} < \epsilon.
 		\end{multline*}
-		Итоого имеем
+		Итого имеем
 		\[ \Lim_{n\to\infty}\Sum_{k=1}^n\Int_\gamma f_k(z)\,dz = \Int_\gamma f(z)\,dz. \]
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{theorem}
-		Пусть $\forall n\in\N\ f_n(z)\in \A(D)$, где $D$ --- односвязная область. 
-		И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		Пусть выполнены следующие условия
+		\begin{enumerate}
+			\item $\forall\,n\in\N\ f_n(z)\in\A(D)$, где $D$ --- односвязная область;
+			\item $\displaystyle\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		\end{enumerate}
 		Тогда $f(z)\in\A(D).$
 	\end{theorem}
+	\newpage
 	\begin{proof}
-		Рассмотрим $\gamma\subset D$ --- замкнутая гладкая или кусочно гладкая кривая Жордана. Тогда
-		\[ \Oint_\gamma f(z)\,dz = \Oint_\gamma\Sum_{k=1}^{+\infty}f_k(z)\,dz = \Sum_{k=1}^{+\infty}\Oint_\gamma f_k(z)\,dz = 0\]
-		Из условия следует, что $f(z)\in C(D)$. Итого получим, что по теореме Морера $f(z)\in\A(D)$.
+		Рассмотрим $\gamma\subset D$ --- замкнутая гладкая или кусочно-гладкая кривая Жордана. Тогда
+		\[ \Oint_\gamma f(z)\,dz = \Oint_\gamma\Sum_{k=1}^{+\infty}f_k(z)\,dz = \Sum_{k=1}^{+\infty}\Oint_\gamma f_k(z)\,dz = 0.\]
+		Из условия следует, что $f(z)\in C(D)$. По теореме Морера $f(z)\in\A(D)$.
 	\end{proof}
 	\begin{theorem}
-		Пусть $\forall n\in\N\ f_n(z)\in \A(D)$, где $D$ --- односвязная область. 
-		И пусть $\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		Пусть выполнены следующие условия
+		\begin{enumerate}
+			\item $\forall\,n\in\N\ f_n(z)\in\A(D)$, где $D$ --- односвязная область;
+			\item $\displaystyle\Sum_{n=1}^{+\infty}f_n(z)\overset{D}\rightrightarrows f(z)$.
+		\end{enumerate}
 		Тогда ряд можно почленно дифференцировать.
-		\[ \forall\,m>0\ f^{(m)}(z) = \Sum_{k=1}^{+\infty}f_k^{(m)}(z). \]
+		\[ \forall\,m\in\N\quad f^{(m)}(z) = \Sum_{k=1}^{+\infty}f_k^{(m)}(z). \]
 	\end{theorem}
 	\begin{proof}
-		21:00
+		По предыдущей теореме можем сказать, что $f(z)\in\A(D)$. Возьмём $z\in D$ и замкнутый контур $\gamma$, содержащий её внутри себя. Тогда по интегральной теореме Коши
+		\[ f(z) = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{\xi - z}. \]
+		Интеграл можно дифференцировать любое число раз по параметру. Итого получим
+		\[ f^{(m)}(z) = \frac{m!}{2\pi i}\Oint_\gamma\frac{f(\xi)\,d\xi}{(\xi - z)^{m+1}} = \frac{m!}{2\pi i}\Oint_\gamma\frac{\Sum_{n=1}^{+\infty}f_n(\xi)\,d\xi}{(\xi - z)^{m+1}} = \Sum_{n=1}^{+\infty}\frac{m!}{2\pi i}\Oint_\gamma\frac{f_n(\xi)\,d\xi}{(\xi - z)^{m+1}} = \Sum_{n=1}^{+\infty}f_n^{(m)}(z). \]
+	\end{proof}
+	\vspace{-\baselineskip}
+	\subsection{Степенные ряды и ряды Тейлора}
+	Выражение вида $\Sum_{n=0}^{+\infty}c_n(z-z_0)^n$ назовем \textbf{степенным рядом} с центром в точке $z_0$.\\ 
+	$\{c_n\}_{n=0}^{+\infty},\ c_n\in\Cm$.
+	\begin{theorem*}
+		(Абель)\\ \indent
+		Пусть степенной ряд $\Sum_{n=0}^{+\infty}c_nz^n$ сходится в точке $z=z_1\in\Cm\setminus\{0\}$. Тогда этот ряд сходится абсолютно в круге $K = \{ z\in\Cm:|z| < |z_1| \}.$\\ \indent
+		Пусть степенной ряд $\Sum_{n=0}^{+\infty}c_nz^n$ расходится в точке $z=z_2\in\Cm$. Тогда этот ряд расходится в области $P=\{ z\in\Cm:|z|>|z_2| \}.$
+	\end{theorem*}
+	\begin{definition}
+		Для всякого степенного ряда $\Sum_{n=0}^{+\infty}c_n(z-z_0)^n$ существует такое число $R\geqslant 0$, что этот ряд сходится в круге $K = \{ z\in\Cm:|z-z_0| < R \}$ и расходится вне его. Такое число назовем \textbf{радиусом сходимости}.
+	\end{definition}
+	Как его найти?
+	\[ R = \frac{1}{\uplim\limits_{n\to+\infty}\sqrt[n]{|c_n|}} \]
+	\begin{remark}
+		Если существует (конечный или бесконечный) предел
+		$\Lim_{n\to+\infty}\sqrt[n]{|c_n|}$, то $R = \frac{1}{\Lim_{n\to+\infty}\sqrt[n]{|c_n|}}$.
+		Если существует (конечный или бесконечный) предел
+		$\Lim_{n\to+\infty}\left|\frac{c_n}{c_{n+1}}\right|$, то
+		$R = \Lim_{n\to+\infty}\left|\frac{c_n}{c_{n+1}}\right|$.
+	\end{remark}
+	Область сходимости степенного ряда $\Sum_{n=0}^{+\infty}c_n(z-z_0)^n$ может быть одного из трёх типов:
+	\begin{enumerate}
+		\item $\{z_0\}$ при $R = 0$;
+		\item $\{z \in \Cm: |z - z_0| < R\}
+		\cup \{\text{некоторые точки на окружности }|z - z_0| = R\}$
+		при $0 < R < +\infty$;
+		\item $\Cm$ при $R = +\infty$.
+	\end{enumerate}
+	\begin{example}
+		\leavevmode\vspace{-0.5cm}
+		\begin{enumerate}
+			\item $\displaystyle\sum_{n=0}^{+\infty} n!\,z^n$,\quad $R = 0$, область сходимости~--- $\{0\}$.
+			\item $\displaystyle\sum_{n=1}^{+\infty} \frac{z^n}{n^2}$,\quad $R = 1$, область сходимости~--- $\{ |z|\leqslant 1 \}$.
+			\item $\displaystyle\sum_{n=0}^{+\infty} \frac{z^n}{n!}$,\quad $R = +\infty$, область сходимости~--- $\Cm$.
+		\end{enumerate}
+	\end{example}
+	\begin{remark}
+		Пусть $R>0$ --- радиус сходимости степенного ряда $\Sum_{n=0}^{+\infty}c_n(z-z_0)^n$. Тогда
+		\[ f(z) = \Sum_{n=0}^{+\infty}c_n(z-z_0)^n\in\A(K_R),\quad K_R = \{z\in\Cm: |z-z_0| < R\}. \]
+	\end{remark}
+	\begin{definition}
+		\textbf{Рядом Тейлора} функции $f(z)\in\A(U_\epsilon(z_0))$ в точке $z_0$ называют степенной ряд
+		\[ f(z)\sim\Sum_{n=0}^{+\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n. \]
+	\end{definition}
+	\begin{theorem}
+		Пусть $f(z)\in\A(K_R),\ K_R = \{ z\in\Cm:|z-z_0|<R \}$. Тогда 
+		\[ f(z) = \Sum_{n=0}^{+\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n,\ z\in K_R. \]
+		Причем сходимость этого ряда в любой замкнутой подобласти равномерная.
+	\end{theorem}
+	\begin{proof}
+		Возьмем любую точку $z$ из $K_R$ и замкнутый контур $\gamma$, в котором она лежит. Тогда 
+		\[ f(z) = \frac{1}{2\pi i}\Int_\gamma\frac{f(\xi)\,d\xi}{\xi-z} = \frac{1}{2\pi i}\Int_\gamma\frac{f(\xi)\,d\xi}{\xi-z_0-(z-z_0)} = \frac{1}{2\pi i}\Int_\gamma\frac{f(\xi)}{\xi-z_0}\cdot\frac{1}{\left(1 - \frac{z-z_0}{\xi-z_0} \right)}\,d\xi.  \]
+		Из геометрических соображений $\left|\dfrac{z - z_0}{\xi - z_0}\right| < 1$. Переменная $\xi$ расположена на границе, точка $z$ внутри контура. Воспользуемся формулой для бесконечно убывающей геометрической прогрессии. Тогда 
+		\[ \frac{1}{2\pi i}\Int_\gamma\frac{f(\xi)}{\xi-z_0}\cdot\frac{1}{\left(1 - \frac{z-z_0}{\xi-z_0} \right)}\,d\xi = \frac{1}{2\pi i}\Int_\gamma f(\xi)\Sum_{n=0}^{+\infty}\frac{(z-z_0)^n}{(\xi-z_0)^{n+1}} \,d\xi = \Sum_{n=0}^{+\infty}\frac{(z-z_0)^n}{n!} \frac{n!}{2\pi i}\Int_\gamma\frac{f(\xi)\,d\xi}{(\xi - z_0)^{n+1}}. \]
+		Итого получили 
+		\[ f(z) = \Sum_{n=0}^{+\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n. \]
+	\end{proof}
+	\vspace{-\baselineskip}
+	\begin{theorem*}
+		(Единственность)\\ \indent
+		Пусть $f(z)\in\A(K_R)$ и $f(z) = \Sum_{n=0}^{+\infty}c_n(z-z_0)^n,\ z\in K_R$. Тогда $c_n=\dfrac{f^{(n)}(z_0)}{n!}$.
+	\end{theorem*}
+	\begin{proof}
+		\[ f(z) = c_0 + c_1(z-z_0) + c_2(z-z_0)^2 + \ldots \]
+		При $z\to z_0$ получим $c_0 = \dfrac{f(z_0)}{0!}$.\\
+		Возьмем первую производную
+		\[ f'(z) = c_1 + 2c_2(z-z_0) + 3c_3(z-z_0)^2 + \ldots \]
+		При $z\to z_0$ получим $c_1 = \dfrac{f'(z_0)}{1!}$. И т.д.
+		Получаем на каждом шаге $c_n = \dfrac{f^{(n)}(z_0)}{n!}$.
 	\end{proof}
 	\newpage
 	\section{Лекция 19}
-	\[ \Sum_{k=0}^{+\infty}c_n(z-z_0)^n\text{ --- функциональный ряд} \]
-	\begin{theorem*}
-		(единственность)\\ \indent
-		Пусть $ f(z) \in \A(K_R) $ и $ f(z) = \Sum_{k=0}^{+\infty}c_n(z-z_0)^n,\ z\in K_R $. Тогда $ c_n = \dfrac{f^n(z_0)}{n!} $
-	\end{theorem*}
 	\begin{theorem}
 		Пусть степенной ряд $ f(z) = \Sum_{k=0}^{+\infty}c_n(z-z_0)^n$ имеет радиус сходимости $ R > 0$ в $ K_R = \{ z\in\Cm:|z-z_0| < R \} $ сходится к $ f(z) $.
 		Тогда этот ряд можно почленно дифференцировать и интегрировать в $ K_R $, т.е.
@@ -5189,6 +5270,7 @@
 		Используем формулу для коэффициентов из Теоремы Лорана.
 		\[ c_n = \frac{1}{2\pi i}\Oint_\gamma\frac{f(\xi)\, d\xi}{(\xi - z_0)^{n+1}}\implies c_{-1} = \frac{1}{2\pi i}\Oint_\gamma f(\xi)\, d\xi. \]
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{statement}
 		Пусть $f(z)\in\A(\dot U_\epsilon(\infty))$. Тогда $\Res_{z=\infty}f(z) = -b_{-1}$, где $b_{-1}$ --- коэффициент ряда Лорана с центром в бесконечно удаленной точке.
 	\end{statement}
@@ -5197,7 +5279,7 @@
 		\[ \frac{1}{2\pi i}\Oint_{\gamma_r}z^k\,dz = \begin{cases} 1,\ k = -1\\0,\ k\ne-1 \end{cases},\ \gamma_r = \{ |z|=r \}. \]
 		Проинтегрируем левую и правую часть ряда Лорана с центром в бесконечно удаленной точке по окружности $\gamma_r$ и поделим на $2\pi i$.
 		\[ f(z) = \Sum_{n=-\infty}^{+\infty}b_nz^n \implies \frac{1}{2\pi i}\Oint_{\gamma_r}f(z)\,dz = \Sum_{n=-\infty}^{+\infty}b_n\frac{1}{2\pi i}\Oint_{\gamma_r}z^n\,dz = b_{-1}. \]
-		В силу аналитичности можем продеформировать $\gamma_r$, чтобы интегрировать по окружности.
+		В силу аналитичности можем продеформировать $\gamma_r$, чтобы интегрировать по окр-ти.~
 	\end{proof}
 	\begin{remark}
 		Пусть $z_0$ --- конечная устранимая особая точка $f(z)$. Тогда $\Res_{z=z_0}f(z) = 0$.\\
@@ -5284,7 +5366,7 @@
 	\subsubsection{Первый тип интегралов.}
 	\[ I_1 = \Int_{0}^{2\pi}R(\cos\phi,\,\sin\phi)\,d\phi.\]
 	Где $R(x,\,y)$ --- рациональная функция, не имеющая особые точки на окружности $x^2+y^2=1$
-	Сделаем замену $z = e^{i\pi}$. Перепишем интеграл через представление синуса и косинуса через экспоненты. Получим
+	Сделаем замену $z = e^{i\pi}$. Перепишем интеграл через представление синуса и косинуса через экспоненту. Получим
 	\[ I = -i\Oint_{|z|=1}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{dz}{z} = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{1}{z}  \]
 	\begin{example}
 		\[ I  =\Int_0^{2\pi}\frac{d\phi}{a+\cos\phi},\ a>1 \]
@@ -5297,7 +5379,7 @@
 	\[ I = -i\cdot2\pi i \Res_{z=z_1}\frac{2}{z^2+2az+1} = 2\pi\Lim_{z\to z_1}\frac{g(z)}{h'(z)} = 2\pi\Lim_{z\to z_1}\frac{2}{2z+2a} = \frac{2\pi}{\sqrt{a^2-1}} \]
 	\subsubsection{Второй тип интегралов.}
 	Пусть $P(x),\, Q(x)$ --- многочлены и выполнены следующие условия\\
-	1) $deg Q \geqslant deg P + 2$.\\
+	1) $\deg Q \geqslant \deg P + 2$.\\
 	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
 	3) $Q(x)$ --- не имеет корней над $\R$.\\
 	Тогда
@@ -5314,7 +5396,7 @@
 	\end{proof}
 	\subsubsection{Третий тип интегралов.}
 	Пусть $P(z),\ Q(x)$ -- многочлены и выполнены следующие условия\\
-	1) $deg Q \geqslant deg P + 1$.\\
+	1) $\deg Q \geqslant \deg P + 1$.\\
 	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
 	3) $\lambda > 0$.\\
 	4) $Q(x)$ --- не имеет корней над $\R$.\\
@@ -5341,4 +5423,54 @@
 	\begin{example}
 		\[ I  =\Int_0^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{(x^2+i)(z^2-i)} \]
 	\end{example}
+	\newpage
+	\section{Лекция 24}
+	\begin{example}
+		\[I = \Int_{-\infty}^{+\infty}\frac{\cos(\lambda x)dx}{x^2 + b^2} = \Re\{2 \pi i\ \cdot \Res_{z = z_1} \frac{e^{i \lambda z}}{z^2 + b^2}\} = \Re \{2 \pi i \cdot \Lim_{z \to z_1} \frac{e^i \lambda z}{2z} = \Re \{2 \pi i \cdot \frac{e^{-\lambda b}}{2 i b}\} = \frac{\pi}{b} e^{- \lambda b}\}\] 
+		\[\lambda > 0, b > 0, F(z) = \frac{e^{i \lambda z}}{z^2 + b^2}\]
+		Особые точки: $z_{1, 2} = \pm ib,\ \Im z_1 > 0$
+		Ответ: $I = \frac{\pi}{b} e^{- \lambda b}$
+		\[e^{i \lambda z} = \cos(\lambda x )+ i\sin(\lambda x) \]
+	\end{example}
+	$\lambda > 0, \ (P, Q) = 1, \deg Q \geqslant \deg P + 1$ \\
+	Если $Q(x)$ имеет нули на $\R$, то эти нули простые. 
+	\[J_1 = 2 \pi i \cdot \{\Sum_{k=1}^{N} \Res_{z = z_k} \frac{P(z)}{Q(z)} \cdot e^{i \lambda z} + \frac{1}{2} \cdot \Sum_{k = 1}^{M} \Res_{z = a_k} \frac{P(z)}{Q(z)} e^{i \lambda z}\}, \ J_2 = \Re J_1,\ J_3 = \Im J_1\]
+	\[Q(z_k) = 0,\ Q(a_k) = 0\]
+	\begin{theorem}
+		Пусть $f(z) \in \A(\{z \in \Cm : \Im z \geqslant 0\} \setminus (\{z_1, ..., z_N\} \cup \{a_1, ..., a_M\}))$, где $z_k : \Im z_k > 0$ - особая точка $f(z), \ a_k: \Im a_k = 0$ - простой полюс $f(z)$. 
+	\end{theorem}
+	\[R > \max\limits_{|\varepsilon \leq N| \\ 1 \leq j \leq M}\{|z_k|, |a_j|\}\]
+	\[\gamma_R = \{z \in \Cm: z = Re^{i\phi}, 0 \leqslant\phi\leqslant\pi\}\] 
+	\[M(R) = \max\limits_{z \in \gamma_R}|f(z)|\]
+	Если $\Lim_{R \to +\inf} M(R) = 0$, то $\forall > 0 \implies \frac{1}{2 \pi i}$ 
+	
+	\subsection{Операционное исчисление.}
+	Пусть $f(t)$ --- вещественнозначная функция. Её будем называть \textbf{функцией-оригиналом}. Выполним над ней следующее преобразование:
+	\[ F(p) = \Int_0^{+\infty}f(t)e^{-pt}\,dt, \ p\in\Cm \text{ --- преобразование Лапласа.} \]
+	Мы можем найти $f(t)$, зная $F(p)$.
+	\[ f(t) = \frac{1}{2\pi i}\Int_{\sigma-i\infty}^{\sigma+i\infty}F(p)e^{pt}\,dp, \ \sigma\in\R. \]
+	Интегрирование происходит по вертикальной прямой $\sigma$. Пусть выполнены условия:
+	\begin{enumerate}
+		\item $F(p) = \dfrac{P(p)}{Q(p)}$;
+		\item $(P,\,Q) = 1$;
+		\item $\deg Q \geqslant \deg P + 1$.
+	\end{enumerate}
+	Тогда 
+	\[ f(t) = \Sum_{k=1}^N\Res_{p=p_k}\frac{P(p)}{Q(p)}e^{pt},\ p_k: Q(p_k) = 0. \]
+	$F(p)$ называется \textbf{функцией-изображением}. $f(t)\risingdotseq F(p)$.\\
+	Вычислим изображения производных $f'(t)$ и $f''(t)$
+	\begin{align*}
+		&f'(t)\risingdotseq\Int_{0}^{+\infty}f'(t)e^{-pt}\,dt =\left. f(t)e^{-pt}\right|_0^{+\infty} + p\Int_0^{+\infty}f(t)e^{-pt}\,dt=pF(p)-f(0).\\
+		&f''(t)\risingdotseq\Int_{0}^{+\infty}f''(t)e^{-pt}\,dt =\left. f'(t)e^{-pt}\right|_0^{+\infty} + p\Int_0^{+\infty}f'(t)e^{-pt}\,dt = p^2F(p)-pf(0)-f'(0).
+	\end{align*}
+	\begin{example}
+		\[ \begin{cases} x''_{tt}-x'_t-2x=e^t\\x(0)=-1\\x'_t(0)=0 \end{cases} \]
+	\end{example}
+	\noindent
+	Пусть $x(t)\risingdotseq F(p)$ --- преобразование Лапласа. Тогда
+	\[ p^2F(p) + p - pF(p)-1 - 2F(p) = \Int_0^{+\infty}e^{t(1-p)}\,dt = \left.\frac{e^{t(1-p)}}{1-p}\right|_0^{+\infty} = \frac{1}{p-1}. \]
+	Отсюда выразим $F(p)$
+	\[ F(p) = \frac{1}{(p-1)(p^2-p-2)} - \frac{p-1}{p^2-p-2}. \]
+	Итого получим
+	\[ x(t) = \Sum_{k=1}^N\Res_{p=p_k}F(p)e^{pt}. \]
 \end{document}
