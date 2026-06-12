@@ -4967,7 +4967,7 @@
 	\vspace{-\baselineskip}
 	\begin{theorem*}
 		(Единственность)\\ \indent
-		Пусть $f(z)\in\A(K_R)$ и $f(z) = \Sum_{n=0}^{+\infty}c_n(z-z_0)^n,\ z\in K_R$. Тогда $c_n=\dfrac{f^{(n)}(z_0)}{n!}$.
+		Пусть $f(z)\in\A(K_R)$ и $f(z) = \displaystyle\Sum_{n=0}^{+\infty}c_n(z-z_0)^n,\ z\in K_R$. Тогда $c_n=\dfrac{f^{(n)}(z_0)}{n!}$.
 	\end{theorem*}
 	\begin{proof}
 		\[ f(z) = c_0 + c_1(z-z_0) + c_2(z-z_0)^2 + \ldots \]
@@ -4979,44 +4979,137 @@
 	\end{proof}
 	\newpage
 	\section{Лекция 19}
+	\subsection{Степенные ряды и ряды Тейлора}
 	\begin{theorem}
-		Пусть степенной ряд $ f(z) = \Sum_{k=0}^{+\infty}c_n(z-z_0)^n$ имеет радиус сходимости $ R > 0$ в $ K_R = \{ z\in\Cm:|z-z_0| < R \} $ сходится к $ f(z) $.
+		Пусть степенной ряд $\displaystyle\Sum_{n=0}^{+\infty}c_n(z-z_0)^n$ имеет радиус сходимости $R > 0$ и в круге $K_R = \{ z\in\Cm:|z-z_0| < R \}$ сходится к $f(z)$.
 		Тогда этот ряд можно почленно дифференцировать и интегрировать в $ K_R $, т.е.
 		\begin{align*}
-			f'(z) = &\Sum_{k=0}^{+\infty}nc_n(z-z_0)^{n-1},\ z\in K_R\\
-			\Int_{z_0}^zf(\xi)\,d\xi = &\Sum_{k=0}^{+\infty}\frac{c_n}{n+1}(z-z_0)^{n+1},\ z\in K_R
+			f'(z) = &\Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1},\ z\in K_R.\\
+			\Int_{z_0}^zf(\xi)\,d\xi = &\Sum_{n=0}^{+\infty}\frac{c_n}{n+1}(z-z_0)^{n+1},\ z\in K_R.
 		\end{align*}
 	\end{theorem}
 	\begin{proof}
 		Необходимо вычислить радиусы сходимости степенных рядов и по свойствам степенных рядов сходимость будет равномерной.
-		\[ \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} = \{k = n-1\} = \Sum_{k=0}^{+\infty}(k+1)c_{k+1}(z-z_0)^k \]
+		\[ \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} = \{k = n-1\} = \Sum_{k=0}^{+\infty}(k+1)c_{k+1}(z-z_0)^k. \]
 		Посчитаем верхний предел, чтобы найти радиус сходимости
-		\begin{align*}
-		&\uplim_{k \to +\infty}\sqrt[k]{(k+1)|c_{k+1}|} = \uplim_{k \to +\infty}\sqrt[k]{k+1} \cdot \uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} = 1\cdot\uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} =\\
-		&= \uplim_{k \to +\infty}|c_{k+1}|^{\frac{1}{k+1}\frac{k+1}{k}} = \uplim_{k \to +\infty}e^{\frac{\ln |c_{k+1}|}{k+1}\frac{k+1}{k}} = \frac{1}{R}
-		\end{align*}
-		Ряд $ \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} $ сходится в $ K_R $, общие члены ряда аналитичны в $ K_R $. Этот ряд сходится равномерно в $ K_R $. Тогда
-		\[ f'(z) = \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1} \]
+		\begin{multline*}
+			\uplim_{k \to +\infty}\sqrt[k]{(k+1)|c_{k+1}|} = \uplim_{k \to +\infty}\sqrt[k]{k+1} \cdot \uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} = 1\cdot\uplim_{k \to +\infty}\sqrt[k]{|c_{k+1}|} =\\
+			= \uplim_{k \to +\infty}|c_{k+1}|^{\frac{1}{k+1}\frac{k+1}{k}} = \uplim_{k \to +\infty}e^{\frac{\ln |c_{k+1}|}{k+1}\frac{k+1}{k}} = \frac{1}{R}.
+		\end{multline*}
+		Ряд $\Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1}$ сходится в $K_R$, общие члены ряда аналитичны в $K_R$. В любой замкнутой подобласти $K_r$, $r<R$ сходимость этого ряда равномерная. Тогда
+		\[ f'(z) = \Sum_{n=1}^{+\infty}nc_n(z-z_0)^{n-1}. \]
+		Теперь рассмотрим другой степенной ряд
+		\[ \Sum_{n=0}^{+\infty}\frac{c_n}{n+1}(z-z_0)^{n+1} = \{n+1 = k\} = \Sum_{k=1}^{+\infty}\frac{c_{k-1}}{k}(z-z_0)^k. \]
+		Его радиус сходимости равен
+		\[ \uplim_{k\to+\infty}\sqrt[k]{\frac{|c_{k-1}|}{k}} = \uplim_{k\to+\infty}\frac{|c_{k-1}|^\frac{1}{k}}{k^\frac{1}{k}} = \frac{1}{R}.\]
+		Аналогичные рассуждения, как и с предыдущим рядом.
 	\end{proof}
+	\newpage
 	\begin{example}
-		Разложить в степенной ряд с центром в точке $ z_0 = 0 $ функцию $\dfrac{1}{1-z^2}$
+		Разложить в степенной ряд с центром в точке $z_0 = 0$ функцию $\dfrac{1}{(1-z)^2}.$
 	\end{example}
-	\[ \frac{1}{1-z} = \Sum_{n=0}^{+\infty}z^n,\ |z| < 1 \]
-	\[ \frac{1}{(1-z)^2} = \Sum_{n=0}^{+\infty}nz^{n-1},\ |z| < 1 \]
+	\[ \frac{1}{1-z} = \Sum_{n=0}^{+\infty}z^n,\ |z| < 1\implies\left( \frac{1}{1-z}\right)'=\frac{1}{(1-z)^2}=\Sum_{n=1}^{+\infty}nz^{n-1},\ |z|<1.\]
 	\begin{example}
-		Разложить в степенной ряд с центром в точке $ z_0 = 0 $ функцию $\ln(1-z)$
+		Разложить в степенной ряд с центром в точке $z_0 = 0$ функцию $\ln(1-z)$.
 	\end{example}
-	\[ \frac{1}{1-\xi} = \Sum_{n=0}^{+\infty}\xi^n \]
-	\[ \Int_0^z\frac{d\xi}{1-\xi} = \Sum_{n=0}^{+\infty}\Int_0^z\xi^n\]
-	\[ -\ln(1-z) = \Sum\]
+	\[ \frac{1}{1-\xi} = \Sum_{n=0}^{+\infty}\xi^n\implies\Int_0^z\frac{d\xi}{1-\xi} = \Sum_{n=0}^{+\infty}\Int_0^z\xi^n\,d\xi. \]
+	Итого получаем
+	\[ \ln(1-z) = -\Sum_{n=0}^{+\infty}\frac{z^{n+1}}{n+1},\ |z|<1. \]
 	\subsection{Табличные ряды Тейлора}
-	\[ e_z  = \Sum_{n=0}^{+\infty}\frac{z_n}{n!},\ z\in \Cm\]
-	\[ \sin z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!},\ z\in \Cm\] 
-	\[ \cos z = \Sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!},\ z\in \Cm\]
-	\[ \ln (1+z) = \Sum_{k=0}^{\infty}(-1)^{k-1}\frac{z^k}{k},\ |z| < 1 \]
-	\[ (1+z)^\alpha = 1 + \Sum_{k=1}^{\infty}\frac{\alpha(\alpha-1)\ldots(\alpha-k+1)}{k!} \]
-	\subsection{Степенные ряды с центром $ z_0 = \infty $}
-	\[ \Sum_{k=0}^{+\infty}\frac{c_n}{z_n} = c_0 + \frac{c_1}{z} + \ldots \]
+	\vspace{0.5cm}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Функция} & \textbf{Разложение в ряд} & \textbf{Область} \\[8pt]
+		\hline
+		$e^z$ &
+		$\displaystyle 1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\ldots = \Sum_{n=0}^{+\infty}\frac{z^n}{n!}$ & $z\in\Cm$ \\[12pt]
+		\hline
+		$\sin z$ &
+		$\displaystyle z-\frac{z^3}{3!} + \frac{z^5}{5!} -\ldots = \Sum_{n=0}^{+\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}$ &
+		$z\in\Cm$ \\[12pt]
+		\hline
+		$\cos z$ &
+		$\displaystyle 1-\frac{z^2}{2!} + \frac{z^4}{4!} - \ldots = \Sum_{n=0}^{+\infty}(-1)^n\frac{z^{2n}}{(2n)!}$ &
+		$z\in\Cm$ \\[12pt]
+		\hline
+		$\sh z$ &
+		$\displaystyle z + \frac{z^3}{3!}+\frac{z^5}{5!}+ \ldots = \Sum_{n=0}^{+\infty}\frac{z^{2n+1}}{(2n+1)!}$ &
+		$z\in\Cm$ \\[12pt]
+		\hline
+		$\ch z$ &
+		$\displaystyle 1 + \frac{z^2}{2!}+\frac{z^4}{4!}+ \ldots = \Sum_{n=0}^{+\infty}\frac{z^{2n}}{(2n)!}$ &
+		$z\in\Cm$ \\[12pt]
+		\hline
+		$\ln(1+z)$ &
+		$\displaystyle z-\frac{z^2}{2}+\frac{z^3}{3}-\ldots = \Sum_{n=1}^{+\infty}(-1)^{n-1}\frac{z^n}{n}$ &
+		$|z| < 1$ \\[12pt]
+		\hline
+		$(1+z)^\alpha$ &
+		$\displaystyle 1 + \alpha z + \frac{\alpha(\alpha-1)}{2!}z^2+ \ldots = 1+ \Sum_{n=1}^{+\infty}\frac{\alpha(\alpha-1)\ldots(\alpha-n+1)}{n!}z^n$ &
+		$|z|< 1$ \\[12pt]
+		\hline
+	\end{tabular}
+	\newpage
+	\subsection{Степенные ряды с центром $z_0 = \infty$}
+	Пусть дан степенной ряд с центром в точке $z_0 = \infty$.
+	\[ \Sum_{n=0}^{+\infty}\frac{c_n}{z^n} = c_0 + \frac{c_1}{z} +\frac{c_2}{z^2} + \frac{c_3}{z^3} + \ldots \]
+	Сделаем замену $z = \dfrac{1}{s}$. Получим
+	\[ \Sum_{n=0}^{+\infty}c_ns^n = c_0 + c_1s +c_2s^2 + c_3s^3 + \ldots,\ |s|<R. \]
+	Тогда исходный ряд сходится при $|z| > \dfrac{1}{R}$.
+	\begin{example}
+		Разложить в степенной ряд с центром в точке $z_0 = \infty$ функцию $f(z) = \dfrac{1}{1-z}$.
+	\end{example}
+	\noindent
+	Сделаем замену $z = \dfrac{1}{s}$. Тогда
+	\[ g(s) = \frac{1}{1-\frac{1}{s}} = -s\cdot\frac{1}{1-s} = -s\Sum_{n=0}^{+\infty}s^n = -\Sum_{n=0}^{+\infty}s^{n+1},\ |s|<1 \]
+	Делаем обратную замену. Получим
+	\[ f(z) = -\Sum_{n=0}^{+\infty}\frac{1}{z^{n+1}},\ |z|>1. \]
+	\subsection{Нули аналитических функций}
+	\begin{definition}
+		Пусть $f(z)\in\A(D)$, $D$ --- область, $z_0\in D$. Точку $z_0$ называют \textbf{нулем кратности $k\in\N$} функции $f(z)$, если
+		\[ f(z_0) = 0,\ f'(z_0) = 0,\,\dots,\, f^{(k-1)}(z_0) = 0,\ f^{(k)}(z_0)\ne0. \]
+		\textbf{Простым нулем} называют нуль кратности $1$.
+	\end{definition}
+	\begin{remark}
+		В окрестности нуля кратности $k$ функцию $f(z)$ можно представить в виде
+		\[ f(z) = \Sum_{n=k}^{+\infty}\frac{f^{(n)}(z_0)}{n!}(z-z_0)^n,\ |z-z_0|<\epsilon. \]
+	\end{remark}
+	\newpage
+	\begin{example}
+		Определить кратность нуля в точке $z_0 = 0$ функции $f(z) = \left(e^{z^2}-1 \right) \sin^2(z^3)$.
+	\end{example}
+	\noindent
+	Разложим функции в ряд Тейлора 
+	\begin{align*}
+		&\sin z^3 = z^3-\frac{z^9}{3!}+\ldots\\
+		&e^{z^2} = 1 + z^2 + \frac{z^4}{2}+ \ldots
+	\end{align*}
+	Тогда получим
+	\[ f(z) = \left( z^3-\frac{z^9}{3!}+\ldots\right)^2\cdot\left( z^2 + \frac{z^4}{2}+ \ldots\right) = z^8 + \ldots \]
+	Ответ: $z_0 = 0 $ --- нуль кратности 8.
+	\begin{example}
+		Найти нули и их кратности функции $f(z) = (z^n-1)^2$.
+	\end{example}
+	\[ f(z) = 0\iff z_m = e^\frac{2\pi mi}{n},\ m = 0,\,1,\,\ldots\,n-1. \]
+	\begin{align*}
+		&f'(z) = 2n(z^n-1)z^{n-1}\\
+		&f''(z) = 2n\left((z^n-1)z^{n-1}\right)' = 2n\left((z^n-1)'z^{n-1} + (z^n-1)(z^{n-1})'\right) = 2n^2z^{2n-2}\Big|_{z_m}\ne 0.
+	\end{align*}
+	Ответ: $z_m=e^\frac{2\pi mi}{n},\ m = 0,\,1,\,\ldots\,n-1$ --- нули кратности 2.
+	\begin{theorem}
+		Пусть $f(z)\in\A(D)$, где $D$ --- область и найдется такая точка $z_0\in D$, в которой $f(z_0)=0$, причём
+		\[\forall\,U_\epsilon(z_0)\ f(z)\not\equiv0,\, z\in U_\epsilon(z_0)\cap D. \]
+		Тогда $z_0$ --- изолированный нуль, т.е.
+		\[ \exists\,\dot U_\delta(z_0)\subset D : f(z)\ne 0,\, z\in\dot  U_\delta(z_0). \]
+	\end{theorem}
+	\begin{proof}
+		Пусть $z_0$ --- нуль кратности $k$. Тогда функция $f(z)$ представима в виде
+		\[ f(z) = \Sum_{n=k}^{+\infty}c_n(z-z_0)^n,
+		 z\in K_R\subset D,\ c_k\ne 0. \]
+		Вынесем слагаемое $(z-z_0)^k$. Получим
+		\[ f(z) = (z-z_0)^k\Sum_{n=k}^{+\infty}c_n(z-z_0)^{n-k} = (z-z_0)^k\psi(z),\ \psi(z)\in\A(K_R). \]
+		$\psi(z) = u(x,\,y) + iv(x,\,y)$. В точке $(x_0,\,y_0)$ --- хотя бы одно слагаемое не обращается в $0$, т.к. $\psi(z_0) = c_k\ne 0$. Пусть, например, $u(x,y)\ne 0$. Тогда число $u(x_0,y_0)$ имеет какой-то фиксированный знак. По теореме о сохранении знака $\exists\, U_\delta(z_0)\subset D$, где $u(x,\,y)$ сохранит знак. А значит, и функция $\psi(z)$ там же не обращается в 0. Тогда и функция $f(z)$ не обращается в $0$, но уже в проколотой $\delta$-окрестности.
+	\end{proof}
 	\newpage
 	\section{Лекция 20}
 	\begin{theorem*}
