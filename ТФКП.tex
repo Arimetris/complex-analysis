@@ -5455,67 +5455,108 @@
 	\[ I = \Oint_{|z| = 2}\frac{dz}{z^3(z^6-1)} = 2\pi i\left( \Res_{z=0}f(z) +\Sum_{k=1}^{6}\Res_{z_k}f(z)\right) = -2\pi i \left(\Res_{\infty}f(z)\right) = 0.\]
 	\newpage
 	\section{Лекция 23}
-	\subsection{Определенные и собственные интегралы.}
-	\subsubsection{Первый тип интегралов.}
-	\[ I_1 = \Int_{0}^{2\pi}R(\cos\phi,\,\sin\phi)\,d\phi.\]
-	Где $R(x,\,y)$ --- рациональная функция, не имеющая особые точки на окружности $x^2+y^2=1$
-	Сделаем замену $z = e^{i\pi}$. Перепишем интеграл через представление синуса и косинуса через экспоненту. Получим
-	\[ I = -i\Oint_{|z|=1}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{dz}{z} = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{1}{z}  \]
-	\begin{example}
-		\[ I  =\Int_0^{2\pi}\frac{d\phi}{a+\cos\phi},\ a>1 \]
-	\end{example}
-	Сделав замену получим
-	\[ I_2 = -\Oint_{|z|=1}\frac{i\,dz}{z\left( a+\frac{z+\frac{1}{z}}{2}\right)} =-i\Oint_{|z|=1}\frac{z\,dz}{z^2+2az+1} \]
+	\subsection{Определенные и собственные интегралы}
+	\subsubsection{Первый тип интегралов}
+	\[ I_1 = \Int_{0}^{2\pi}R(\cos\phi,\,\sin\phi)\,d\phi,\]
+	где $R(x,\,y)$ --- рациональная функция, не имеющая особых точек на окружности $x^2+y^2=1$.
+	Сделаем замену $z = e^{i\phi}$, $dz = i e^{i\phi}\,d\phi$. Перепишем интеграл через представление синуса и косинуса через экспоненту. Получим
+	\[ I = -i\Oint_{|z|=1}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\frac{1}{2i}\left( z-\frac{1}{z}\right)\right)\frac{dz}{z} = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}R\left( \frac{1}{2}\left( z+\frac{1}{z}\right) ,\frac{1}{2i}\left( z-\frac{1}{z}\right)  \right)\frac{1}{z},\ |z_k|<1.\]
+	\begin{example*}
+		\[ I =\Int_0^{2\pi}\frac{d\phi}{a+\cos\phi},\ a>1. \]
+	\end{example*}
+	\noindent 
+	Сделаем замену $z = e^{i\phi}$. Получим
+	\[ I = -\Oint_{|z|=1}\frac{i\,dz}{z\left( a+\frac{z+\frac{1}{z}}{2}\right)} =-i\Oint_{|z|=1}\frac{2\,dz}{z^2+2az+1}. \]
 	Разложим знаменатель на множители
-	\[ z_{1,2} = -a\pm\sqrt{a^2-1},\ |z_1| < 1,\ |z_2|>1 \]
+	\[ z_{1,2} = -a\pm\sqrt{a^2-1}\implies |z_1| < 1,\ |z_2|>1. \]
+	$z_1$ --- простой полюс. Тогда
+	\[ I = -i\cdot2\pi i \Res_{z=z_1}\frac{2}{z^2+2az+1} = 2\pi\Lim_{z\to z_1}\frac{g(z)}{h'(z)} = 2\pi\Lim_{z\to z_1}\frac{2}{2z+2a} = \frac{2\pi}{\sqrt{a^2-1}}. \]
+	\subsubsection{Второй тип интегралов}
+	Пусть $P(x),\, Q(x)$ --- многочлены и выполнены следующие условия
+	\begin{enumerate}
+		\item $\deg Q \geqslant \deg P + 2$;
+		\item $(P,\,Q) = 1$ (многочлены не имеют общих делителей, кроме 1);
+		\item $Q(x)$ --- не имеет корней над $\R$.
+	\end{enumerate}
 	Тогда
-	\[ I = -i\cdot2\pi i \Res_{z=z_1}\frac{2}{z^2+2az+1} = 2\pi\Lim_{z\to z_1}\frac{g(z)}{h'(z)} = 2\pi\Lim_{z\to z_1}\frac{2}{2z+2a} = \frac{2\pi}{\sqrt{a^2-1}} \]
-	\subsubsection{Второй тип интегралов.}
-	Пусть $P(x),\, Q(x)$ --- многочлены и выполнены следующие условия\\
-	1) $\deg Q \geqslant \deg P + 2$.\\
-	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
-	3) $Q(x)$ --- не имеет корней над $\R$.\\
-	Тогда
-	\[ I_2 = \Int_{-\infty}^{+\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}\frac{P(z)}{Q(z)}. \]
+	\[ I_2 = \Int_{-\infty}^{+\infty}\frac{P(x)}{Q(x)}\,dx = 2\pi i \Sum_{k=1}^N\Res_{z=z_k}\frac{P(z)}{Q(z)},\ \Im z_k>0,\ Q(z_k) = 0. \]
 	\begin{theorem}
-		Пусть $f(z\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\}))$, где $z_i$ --- изолированные особые точки $f(z)$ : $\Im z_j > 0, 1\leqslant j\leqslant N$.
-		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$
-		$M(R) = \max\limits_{z \in \gamma_R}|f(z)|$.\\
-		Если $\Lim_{R\to+\infty} M(R)\cdot R = 0$, то
-		\[ \Int_{-\infty}^{+\infty}f(z)\,dx = 2\pi i \Sum_{k=1}^{N}\Res_{z = z_k}f(z). \]
+		Пусть $f(z)\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\})$, где $z_j$ --- изолированные особые точки $f(z),\ \Im z_j > 0, 1\leqslant j\leqslant N$. Введем такое число $R$, что
+		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$. Рассмотрим полуокружность $\gamma_R= \{z\in\Cm:z = Re^{i\phi}, \phi\in[0,\,\pi]\}$. И обозначим $M(R) = \max\limits_{z \in\gamma_R}|f(z)|$.
+		\[ \text{Если } \Lim_{R\to+\infty} M(R)\cdot R = 0, \text{ то } \Int_{-\infty}^{+\infty}f(x)\,dx = 2\pi i \Sum_{k=1}^{N}\Res_{z = z_k}f(z). \]
 	\end{theorem}
 	\begin{proof}
-		Очевидно.
+		Берем радиус настолько большим, чтобы все особые точки оказывались внутри полуокружности. $R > \max\limits_{1\leqslant j\leqslant N}|z_j|$.
+			\begin{center}
+				\begin{minipage}[c]{0.45\textwidth}
+					\centering
+					\begin{tikzpicture}[baseline={(0,0)}]  % скобки вокруг координаты обязательны
+						\begin{scope}[local bounding box=scope1]
+							\draw[->] (-3,0) -- (3,0) node[right] {};
+							\draw[->] (0,-0.5) -- (0,3) node[above] {};
+							\fill (-2.25,0) circle (1pt) node[below] {$-R$};
+							\fill (2.25,0) circle (1pt) node[below] {$R$};
+							\fill (1.25,1) circle (1pt) node[below] {$z_1$};
+							\fill (0.7,1.6) circle (1pt) node[below] {$z_2$};
+							\fill (-1,1.75) circle (1pt) node[below] {$z_N$};
+							\draw[red] (-2.25,0) -- (2.25,0);
+							\node[blue] at (2,2) {$\gamma_R$};
+							\node[red] at (1,-0.25) {$l$};
+							\draw[blue] (-2.25,0) arc (180:0:2.25);
+						\end{scope}
+					\end{tikzpicture}
+				\end{minipage}%
+				\begin{minipage}[c]{0.45\textwidth}
+					Рассмотрим границу $\partial D = l \cup \gamma_R$.\\
+					По теореме Коши о вычетах
+					\[ \Oint_{\partial D}f(z)\,dz = 2\pi i\Sum_{k=1}^N\Res_{z=z_k}f(z).\]
+				\end{minipage}
+			\end{center}
+		\[ \Oint_{\partial D}f(z)\,dz = \Int_{-R}^Rf(x)\,dx + \Int_{\gamma_R}f(z)\,dz = 2\pi i\Sum_{k=1}^N\Res_{z=z_k}f(z). \]
+		Нужно показать, что $\displaystyle\Lim_{R\to+\infty}\int_{\gamma_R}f(z)\,dz = 0$. Оценим его.
+		\[ \bigg|\Int_{\gamma_R}f(z)\,dz \bigg|\leqslant M(R)\Int_0^\pi |Rie^{i\phi}|\,d\phi\leqslant \pi\cdot M(R)R\to 0, \text{ при } R\to+\infty. \] 
 	\end{proof}
-	\subsubsection{Третий тип интегралов.}
-	Пусть $P(z),\ Q(x)$ -- многочлены и выполнены следующие условия\\
-	1) $\deg Q \geqslant \deg P + 1$.\\
-	2) $(P,\,Q) = 1$ (Многочлены не имеют общих делителей кроме 1).\\
-	3) $\lambda > 0$.\\
-	4) $Q(x)$ --- не имеет корней над $\R$.\\
+	\vspace{-\baselineskip}
+	\subsubsection{Третий тип интегралов}
+	Пусть $P(x),\ Q(x)$ --- многочлены и выполнены следующие условия
+	\begin{enumerate}
+		\item $\deg Q \geqslant \deg P + 1$;
+		\item $(P,\,Q) = 1$ (многочлены не имеют общих делителей, кроме 1);
+		\item $Q(x)$ --- не имеет корней над $\R$;
+		\item $\lambda>0$.
+	\end{enumerate}
 	Тогда
-	\[ I_3 = \Int_{-\infty}^{+\infty}\frac{P(x)e^{i\lambda x}}{Q(x)}dx = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}\frac{P(z)e^{i\lambda z}}{Q(z)},\]\\ 
-	где $z_k$ --- особые точки, лежащие в верхней полуплоскости.
-	\[ I_4 = \Int_{-\infty}^{+\infty}\frac{P(x)\cos(\lambda x)}{Q(x)}dx = \Re I_3. \]
-	\[ I_5 = \Int_{-\infty}^{+\infty}\frac{P(x)\sin(\lambda x)}{Q(x)}dx = \Im I_3. \]
+	\[ I_3 = \Int_{-\infty}^{+\infty}\frac{P(x)e^{i\lambda x}}{Q(x)}dx = 2\pi i \Sum_{k=1}^{N}\Res_{z=z_k}\frac{P(z)e^{i\lambda z}}{Q(z)},\ \Im z_k>0,\ Q(z_k) = 0.\]
+	\[ I_4 = \Int_{-\infty}^{+\infty}\frac{P(x)\cos(\lambda x)}{Q(x)}dx = \Re I_3,\quad I_5 = \Int_{-\infty}^{+\infty}\frac{P(x)\sin(\lambda x)}{Q(x)}dx = \Im I_3. \]
 	\begin{lemma*}
-		(Жордан)\\ \indent\
-		Пусть $f(z\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\}))$, где $z_i$ --- изолированные особые точки $f(z)$ : $\Im z_j > 0, 1\leqslant j\leqslant N$.
-		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$
-		$M(R) = \max\limits_{z \in \gamma_R}|f(z)|$.\\
-		Если $\Lim_{R\to+\infty} M(R) = 0$, то
-		\[\forall\,\lambda>0 \Lim_{R\to+\infty}\Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = 0 \]
+		(Жордан)\\ \indent
+		Пусть $f(z)\in\A(\{z\in\Cm: \Im z\leqslant0\}\setminus\{z_1, \ldots, z_N\})$, где $z_j$ --- изолированные особые точки $f(z),\ \Im z_j > 0, 1\leqslant j\leqslant N$. Введем такое число $R$, что
+		$R > \max\limits_{1\leqslant j\leqslant N}|z_j|$. Рассмотрим полуокружность $\gamma_R= \{z\in\Cm:z = Re^{i\phi}, \phi\in[0,\,\pi]\}$. И обозначим $M(R) = \max\limits_{z \in\gamma_R}|f(z)|$.
+		\[ \text{Если }\Lim_{R\to+\infty} M(R) = 0, \text{ то }\forall\,\lambda>0 \Lim_{R\to+\infty}\Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = 0. \]
 	\end{lemma*}
 	\begin{proof}
-		\[ \Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = |z = Re^{i\phi}| = \Int_{0}^{2\pi}f(Re^{i\phi})e^{i\lambda R(cos\phi+i\sin\phi)}Rie^{i\phi}\,d\phi \]
+		\noindent
+		Сделаем замену переменных
+		\[ \Int_{\gamma_R}f(z)e^{i\lambda z}\,dz = \{z = Re^{i\phi}\} = \Int_0^\pi f(Re^{i\phi})e^{i\lambda R(\cos\phi+i\sin\phi)}Rie^{i\phi}\,d\phi. \]
+		Оценим модуль этого интеграла. Воспользуемся оценкой, что $\sin\phi\geqslant\frac{2\phi}{\pi},\ \phi\in[0,\,\frac{\pi}{2}]$. Тогда
+		\begin{multline*}
+			\bigg|\Int_{\gamma_R}f(z)e^{i\lambda z}\,dz \bigg|\leqslant M(R)\cdot R\Int_0^\pi e^{-\lambda R\sin\phi}d\phi\leqslant 2M(R)\cdot R\Int_0^\frac{\pi}{2} e^\frac{-\lambda R2\phi}{\pi}d\phi =\\= \frac{\pi M(R)}{\lambda}\left(1-e^{-\lambda R}\right) \to 0, \text{ при } R\to+\infty.
+		\end{multline*}
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{theorem}
 		В условиях Леммы Жордана
-		\[ \Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx = 2\pi i \Sum_{k=1}^N \Res_{z=z_k}\left(f(z)e^{i\lambda z}\right)  \]
+		\[ \Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx = 2\pi i \Sum_{k=1}^N \Res_{z=z_k}\left(f(z)e^{i\lambda z}\right),\ \Im z_k>0,\ z_k \text{--- особые точки }f(z). \]
 	\end{theorem}
-	\begin{example}
-		\[ I  =\Int_0^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{(x^2+i)(z^2-i)} \]
-	\end{example}
+	\begin{proof}
+		Повторяет доказательство предыдущей теоремы.
+	\end{proof}
+	\begin{example*}
+		\begin{multline*}
+			I =\Int_0^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{x^4+1} = \frac{1}{2}\Int_{-\infty}^{+\infty}\frac{dx}{(x^2+i)(x^2-i)} = \pi i\left( \Res_{z=z_1}\frac{1}{z^4+1} + \Res_{z=z_2}\frac{1}{z^4+1}\right) =\\=
+			\pi i \left(\Lim_{z\to z_1}\frac{1}{4z^3}+\Lim_{z\to z_2}\frac{1}{4z^3} \right) = \frac{\pi i}{4}\left(\frac{1}{z_1^3}+\frac{1}{z_2^3} \right) = \frac{\pi i}{4}\left(\frac{z_1}{z_1^4}+\frac{z_2}{z_2^4}\right) =\\= -\frac{\pi i}{4}(z_1+z_2) = -\frac{\pi i}{4}\left( \frac{\sqrt{2}}{2}(1+i)+\frac{\sqrt{2}}{2}(-1+i)\right)  = \frac{\sqrt 2 \pi}{4}. 
+		\end{multline*}
+	\end{example*}
 	\newpage
 	\section{Лекция 24}
 	\begin{example}
@@ -5537,7 +5578,7 @@
 	\[M(R) = \max\limits_{z \in \gamma_R}|f(z)|\]
 	Если $\Lim_{R \to +\inf} M(R) = 0$, то $\forall > 0 \implies \frac{1}{2 \pi i}$ 
 	
-	\subsection{Операционное исчисление.}
+	\subsection{Операционное исчисление}
 	Пусть $f(t)$ --- вещественнозначная функция. Её будем называть \textbf{функцией-оригиналом}. Выполним над ней следующее преобразование:
 	\[ F(p) = \Int_0^{+\infty}f(t)e^{-pt}\,dt, \ p\in\Cm \text{ --- преобразование Лапласа.} \]
 	Мы можем найти $f(t)$, зная $F(p)$.
@@ -5556,9 +5597,9 @@
 		&f'(t)\risingdotseq\Int_{0}^{+\infty}f'(t)e^{-pt}\,dt =\left. f(t)e^{-pt}\right|_0^{+\infty} + p\Int_0^{+\infty}f(t)e^{-pt}\,dt=pF(p)-f(0).\\
 		&f''(t)\risingdotseq\Int_{0}^{+\infty}f''(t)e^{-pt}\,dt =\left. f'(t)e^{-pt}\right|_0^{+\infty} + p\Int_0^{+\infty}f'(t)e^{-pt}\,dt = p^2F(p)-pf(0)-f'(0).
 	\end{align*}
-	\begin{example}
+	\begin{example*}
 		\[ \begin{cases} x''_{tt}-x'_t-2x=e^t\\x(0)=-1\\x'_t(0)=0 \end{cases} \]
-	\end{example}
+	\end{example*}
 	\noindent
 	Пусть $x(t)\risingdotseq F(p)$ --- преобразование Лапласа. Тогда
 	\[ p^2F(p) + p - pF(p)-1 - 2F(p) = \Int_0^{+\infty}e^{t(1-p)}\,dt = \left.\frac{e^{t(1-p)}}{1-p}\right|_0^{+\infty} = \frac{1}{p-1}. \]
