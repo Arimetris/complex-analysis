@@ -2045,26 +2045,28 @@
 		$w_1 = \dfrac{z - 1}{z + 1}$ и $w_2 = w_1^2$.
 	\end{statement}
 	\begin{proof}
-		\[ w = \frac{1 + w_2}{1 - w_2} = \frac{1 + \left( \dfrac{z - 1}{z + 1}\right) ^2}{1 - \left( \dfrac{z - 1}{z + 1}\right) ^2} = \frac{2z^2 + 2}{4z} = \frac{1}{2}\left( z + \frac{1}{z}\right)  \]
+		\[ w = \frac{1 + w_2}{1 - w_2} = \frac{1 + \left( \dfrac{z - 1}{z + 1}\right) ^2}{1 - \left( \dfrac{z - 1}{z + 1}\right) ^2} = \frac{2z^2 + 2}{4z} = \frac{1}{2}\left( z + \frac{1}{z}\right). \]
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{statement}
 		Отображение $ f(z) = \frac{1}{2} (z + \frac{1}{z})$, конформно в области $ D_z $, если
-		$ D_z $ одновременно не содержит точек $ z_1,\ z_2 : z_1z_2 = 1$ и $ \pm 1 \notin D_z.$
+		$ D_z $ одновременно не содержит точек $ z_1,\ z_2 : z_1z_2 = 1$ и $\pm 1 \notin D_z$.
 	\end{statement}
 	\begin{proof}
-		Исследуем на взаимооднозначность при $ z_1 \ne z_2. $
-		\[w_1 - w_2 = \frac{1}{2}\left( z_1 + \frac{1}{z_1}\right)  - \frac{1}{2}\left( z_2 + \frac{1}{z_2}\right) = \frac{z_1-z_2}{2}\left( 1-\frac{1}{z_1z_2} \right) \Rightarrow w_1 \ne w_1 \iff z_1z_2 \ne 1 \]
+		Исследуем на взаимооднозначность при $z_1\ne z_2$.
+		\[w_1 - w_2 = \frac{1}{2}\left(z_1 + \frac{1}{z_1}\right)-\frac{1}{2}\left(z_2+\frac{1}{z_2}\right) = \frac{z_1-z_2}{2}\left(1-\frac{1}{z_1z_2}\right)\Rightarrow w_1\ne w_1\iff z_1z_2\ne 1. \]
 	\end{proof}
+	\vspace{-\baselineskip}
 	\subsection{Примеры}
-	\noindent \textbf{1)} $ D_z = \{ z\in \Cm: |z| < R, R < 1 \} $\\
-	Параметрически предстваляем границу: $ z = Re^{i\phi},\ -\pi < \phi \leqslant \pi$
-	\[  w = \frac{1}{2}(Re^{i\phi} + \frac{1}{R}e^{-i\phi}) = \frac{1}{2}(R(\cos\phi + i\sin\phi) + \frac{1}{R}(\cos\phi - i\sin\phi)) \] 
+	\noindent \textbf{1)} $D_z = \{ z\in\Cm: |z| < R, R < 1 \}$\\
+	Параметрически предстваляем границу: $z = Re^{i\phi},\ -\pi < \phi\leqslant\pi$
+	\[  w = \frac{1}{2}(Re^{i\phi} + \frac{1}{R}e^{-i\phi}) = \frac{1}{2}(R(\cos\phi + i\sin\phi) + \frac{1}{R}(\cos\phi - i\sin\phi)). \] 
 	$ \begin{cases}
-		u(R,\, \phi) = \dfrac{1}{2}\left(R+\dfrac{1}{R}\right)\cos\phi\\
+		u(R,\,\phi) = \dfrac{1}{2}\left(R+\dfrac{1}{R}\right)\cos\phi\\
 		v(R,\,\phi) = \dfrac{1}{2}\left(R-\dfrac{1}{R}\right)\sin\phi
 	\end{cases} $, геометрическое место этих точек --- эллипс.
-	\[ \dfrac{u^2}{\dfrac{1}{2^2}\left(R +\dfrac{1}{R} \right)^2 } + \dfrac{v^2}{\dfrac{1}{2^2}\left(R-\dfrac{1}{R} \right)^2 } = 1 \]
-	\[ D_w = \{ w \in \Cm: \frac{4(\Re w)^2}{\left( R+\dfrac{1}{R}\right)^2} + \frac{4(\Im w)^2}{\left( R-\dfrac{1}{R}\right)^2} > 1 \} \]
+	\[ \dfrac{u^2}{\dfrac{1}{2^2}\left(R +\dfrac{1}{R} \right)^2 }+\dfrac{v^2}{\dfrac{1}{2^2}\left(R-\dfrac{1}{R} \right)^2 } = 1 \]
+	\[ D_w = \{ w \in \Cm: \frac{4(\Re w)^2}{\left(R+\dfrac{1}{R}\right)^2} + \frac{4(\Im w)^2}{\left( R-\dfrac{1}{R}\right)^2} > 1 \} \]
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2099,7 +2101,7 @@
 			node[midway, above, yshift=5pt] {$f$};
 		\end{tikzpicture}
 	\end{center}
-	\textbf{2)} $ D_z = \{ z\in \Cm: |z| \leqslant 1 \} $
+	\textbf{2)} $ D_z = \{z\in\Cm: |z|\leqslant1 \} $
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
 			\begin{scope}[local bounding box=scope1]
@@ -2570,11 +2572,7 @@
 	&\text{Ответ: } w = -\left( \frac{2z+\sqrt 3 - i}{2z - \sqrt 3 - i}\right)^\frac{3}{2}&
 	\end{flalign*}
 	Общая схема:
-	\begin{flalign*}
-		&w_1 = \frac{z-z_1}{z-z_2}&\\
-		&w_2 = e^{i\phi}w_1,\ \phi \in \R&\\
-		&w = w_2^l,\ l \in \R&
-	\end{flalign*}
+	\[ w_1 = \frac{z-z_1}{z-z_2},\quad w_2 = e^{i\phi}w_1,\ \phi\in\R,\quad w = w_2^l,\ l\in\R.\]
 	\begin{remark}
 		$ z_1 $ и $ z_2 $ можно менять местами в выражении $ w_1 = \dfrac{z-z_2}{z-z_1} $
 	\end{remark}
@@ -2613,14 +2611,12 @@
 		\end{tikzpicture}
 	\end{center}
 	Отобразим точку $ x_1 $ в $ 0 $, а точку $ x_2 $ в $ \infty $. Получим $ w_1 = \dfrac{z - x_1}{z - x_2} $.\\ Третью точку: $ \dfrac{x_1+x_2}{2} \mapsto -1 $.
-	\newpage 
 	Получится левый вырез, его повернем на $ \pi $ отображением: $ w_2 = e^{i\phi}w_1,\ \phi = \pi. $
 	В конце, развернем угол в два раза отображением: $ w = w_2^\frac{1}{2}$.
 	\begin{flalign*}
 		&\text{Ответ: } w = \left( \frac{z - x_1}{x_2 - z}\right)^\frac{1}{2}&
 	\end{flalign*}
 	\newpage
-	
 	\section{Лекция 13}
 	\subsection{Отображение луночки на верхнюю полуплоскость}
 	Строим отображение луночки на верхнюю полуплоскость:
@@ -5487,31 +5483,31 @@
 	\end{theorem}
 	\begin{proof}
 		Берем радиус настолько большим, чтобы все особые точки оказывались внутри полуокружности. $R > \max\limits_{1\leqslant j\leqslant N}|z_j|$.
-			\begin{center}
-				\begin{minipage}[c]{0.45\textwidth}
-					\centering
-					\begin{tikzpicture}[baseline={(0,0)}]  % скобки вокруг координаты обязательны
-						\begin{scope}[local bounding box=scope1]
-							\draw[->] (-3,0) -- (3,0) node[right] {};
-							\draw[->] (0,-0.5) -- (0,3) node[above] {};
-							\fill (-2.25,0) circle (1pt) node[below] {$-R$};
-							\fill (2.25,0) circle (1pt) node[below] {$R$};
-							\fill (1.25,1) circle (1pt) node[below] {$z_1$};
-							\fill (0.7,1.6) circle (1pt) node[below] {$z_2$};
-							\fill (-1,1.75) circle (1pt) node[below] {$z_N$};
-							\draw[red] (-2.25,0) -- (2.25,0);
-							\node[blue] at (2,2) {$\gamma_R$};
-							\node[red] at (1,-0.25) {$l$};
-							\draw[blue] (-2.25,0) arc (180:0:2.25);
-						\end{scope}
-					\end{tikzpicture}
-				\end{minipage}%
-				\begin{minipage}[c]{0.45\textwidth}
-					Рассмотрим границу $\partial D = l \cup \gamma_R$.\\
-					По теореме Коши о вычетах
-					\[ \Oint_{\partial D}f(z)\,dz = 2\pi i\Sum_{k=1}^N\Res_{z=z_k}f(z).\]
-				\end{minipage}
-			\end{center}
+		\begin{center}
+			\begin{minipage}[c]{0.45\textwidth}
+				\centering
+				\begin{tikzpicture}[baseline={(0,0)}]  % скобки вокруг координаты обязательны
+					\begin{scope}[local bounding box=scope1]
+						\draw[->] (-3,0) -- (3,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,3) node[above] {};
+						\fill (-2.25,0) circle (1pt) node[below] {$-R$};
+						\fill (2.25,0) circle (1pt) node[below] {$R$};
+						\fill (1.25,1) circle (1pt) node[below] {$z_1$};
+						\fill (0.7,1.6) circle (1pt) node[below] {$z_2$};
+						\fill (-1,1.75) circle (1pt) node[below] {$z_N$};
+						\draw[red] (-2.25,0) -- (2.25,0);
+						\node[blue] at (2,2) {$\gamma_R$};
+						\node[red] at (1,-0.25) {$l$};
+						\draw[blue] (-2.25,0) arc (180:0:2.25);
+					\end{scope}
+				\end{tikzpicture}
+			\end{minipage}%
+			\begin{minipage}[c]{0.45\textwidth}
+				Рассмотрим границу $\partial D = l \cup \gamma_R$.\\
+				По теореме Коши о вычетах
+				\[ \Oint_{\partial D}f(z)\,dz = 2\pi i\Sum_{k=1}^N\Res_{z=z_k}f(z).\]
+			\end{minipage}
+		\end{center}
 		\[ \Oint_{\partial D}f(z)\,dz = \Int_{-R}^Rf(x)\,dx + \Int_{\gamma_R}f(z)\,dz = 2\pi i\Sum_{k=1}^N\Res_{z=z_k}f(z). \]
 		Нужно показать, что $\displaystyle\Lim_{R\to+\infty}\int_{\gamma_R}f(z)\,dz = 0$. Оценим его.
 		\[ \bigg|\Int_{\gamma_R}f(z)\,dz \bigg|\leqslant M(R)\Int_0^\pi |Rie^{i\phi}|\,d\phi\leqslant \pi\cdot M(R)R\to 0, \text{ при } R\to+\infty. \] 
@@ -5557,27 +5553,93 @@
 			\pi i \left(\Lim_{z\to z_1}\frac{1}{4z^3}+\Lim_{z\to z_2}\frac{1}{4z^3} \right) = \frac{\pi i}{4}\left(\frac{1}{z_1^3}+\frac{1}{z_2^3} \right) = \frac{\pi i}{4}\left(\frac{z_1}{z_1^4}+\frac{z_2}{z_2^4}\right) =\\= -\frac{\pi i}{4}(z_1+z_2) = -\frac{\pi i}{4}\left( \frac{\sqrt{2}}{2}(1+i)+\frac{\sqrt{2}}{2}(-1+i)\right)  = \frac{\sqrt 2 \pi}{4}. 
 		\end{multline*}
 	\end{example*}
+	\begin{example*}
+		\[ I = \Int_{-\infty}^{+\infty}\frac{\cos(\lambda x)\,dx}{x^2 + b^2} = \Re\{2\pi i\Res_{z = z_1} \frac{e^{i\lambda z}}{z^2 + b^2}\} = \Re\{2\pi i\Lim_{z\to z_1}\frac{e^{i\lambda z}}{2z}\} = \Re\{2 \pi i\frac{e^{-\lambda b}}{2ib}\} = \frac{\pi}{b}e^{-\lambda b}. \]
+	\end{example*}
 	\newpage
 	\section{Лекция 24}
-	\begin{example}
-		\[I = \Int_{-\infty}^{+\infty}\frac{\cos(\lambda x)dx}{x^2 + b^2} = \Re\{2 \pi i\ \cdot \Res_{z = z_1} \frac{e^{i \lambda z}}{z^2 + b^2}\} = \Re \{2 \pi i \cdot \Lim_{z \to z_1} \frac{e^i \lambda z}{2z} = \Re \{2 \pi i \cdot \frac{e^{-\lambda b}}{2 i b}\} = \frac{\pi}{b} e^{- \lambda b}\}\] 
-		\[\lambda > 0, b > 0, F(z) = \frac{e^{i \lambda z}}{z^2 + b^2}\]
-		Особые точки: $z_{1, 2} = \pm ib,\ \Im z_1 > 0$
-		Ответ: $I = \frac{\pi}{b} e^{- \lambda b}$
-		\[e^{i \lambda z} = \cos(\lambda x )+ i\sin(\lambda x) \]
-	\end{example}
-	$\lambda > 0, \ (P, Q) = 1, \deg Q \geqslant \deg P + 1$ \\
-	Если $Q(x)$ имеет нули на $\R$, то эти нули простые. 
-	\[J_1 = 2 \pi i \cdot \{\Sum_{k=1}^{N} \Res_{z = z_k} \frac{P(z)}{Q(z)} \cdot e^{i \lambda z} + \frac{1}{2} \cdot \Sum_{k = 1}^{M} \Res_{z = a_k} \frac{P(z)}{Q(z)} e^{i \lambda z}\}, \ J_2 = \Re J_1,\ J_3 = \Im J_1\]
-	\[Q(z_k) = 0,\ Q(a_k) = 0\]
+	\subsection{Определенные и собственные интегралы}
+	\subsubsection{Модифицированный третий тип интегралов}
+		Пусть $P(x),\ Q(x)$ --- многочлены и выполнены следующие условия
+	\begin{enumerate}
+		\item $\deg Q \geqslant \deg P + 1$;
+		\item $(P,\,Q) = 1$ (многочлены не имеют общих делителей, кроме 1);
+		\item $Q(x)$ --- имеет простые корни над $\R$;
+		\item $\lambda>0$.
+	\end{enumerate}
+	Тогда
+	\[ J_3 = \Int_{-\infty}^{+\infty}\frac{P(x)e^{i\lambda x}}{Q(x)}dx = 2\pi i\left(  \Sum_{k=1}^N\Res_{z=z_k}\frac{P(z)e^{i\lambda z}}{Q(z)}+ \frac{1}{2}\Sum_{k=1}^M\Res_{z = a_k} \frac{P(z)e^{i\lambda z}}{Q(z)}\right). \]
+	$\Im z_k>0,\ \Im a_k=0,\ Q(a_k)=Q(z_k)=0$.
+	\[ J_4 = \Int_{-\infty}^{+\infty}\frac{P(x)\cos(\lambda x)}{Q(x)}dx = \Re J_3,\quad J_5 = \Int_{-\infty}^{+\infty}\frac{P(x)\sin(\lambda x)}{Q(x)}dx = \Im J_3. \]
 	\begin{theorem}
-		Пусть $f(z) \in \A(\{z \in \Cm : \Im z \geqslant 0\} \setminus (\{z_1, ..., z_N\} \cup \{a_1, ..., a_M\}))$, где $z_k : \Im z_k > 0$ - особая точка $f(z), \ a_k: \Im a_k = 0$ - простой полюс $f(z)$. 
+		Пусть $f(z) \in \A(\{z \in \Cm : \Im z \geqslant 0\} \setminus (\{z_1, ..., z_N\} \cup \{a_1, ..., a_M\}))$, где $z_k:\Im z_k > 0$ --- особая точка $f(z),\ a_k:\Im a_k = 0$ --- простой полюс $f(z)$. Введем такое число $R$, что $R > \max\limits_{\substack{1\leqslant k\leqslant N\\ 1\leqslant j\leqslant M}}\{|z_k|,\,|a_j|\}$. Рассмотрим полуокружность $\gamma_R = \{z \in \Cm: z = Re^{i\phi},\ 0\leqslant\phi\leqslant\pi\}$.\\ И обозначим $M(R) = \max\limits_{z\in\gamma_R}|f(z)|$.
+		\[ \text{Если }\Lim_{R\to+\infty} M(R) = 0, \text{ то } \frac{1}{2\pi i}\Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx = \Sum_{k=1}^N\Res_{z=z_k}f(z)e^{i\lambda z} + \frac{1}{2}\Sum_{k=1}^M\Res_{z=a_k}f(z)e^{i\lambda z}. \]
 	\end{theorem}
-	\[R > \max\limits_{|\varepsilon \leq N| \\ 1 \leq j \leq M}\{|z_k|, |a_j|\}\]
-	\[\gamma_R = \{z \in \Cm: z = Re^{i\phi}, 0 \leqslant\phi\leqslant\pi\}\] 
-	\[M(R) = \max\limits_{z \in \gamma_R}|f(z)|\]
-	Если $\Lim_{R \to +\inf} M(R) = 0$, то $\forall > 0 \implies \frac{1}{2 \pi i}$ 
-	
+	\begin{proof}\
+		\begin{center}
+			\begin{minipage}[c]{0.4\textwidth}
+				\centering
+				\begin{tikzpicture}[baseline={(0,0)}]  % скобки вокруг координаты обязательны
+					\begin{scope}[local bounding box=scope1]
+						\draw[->] (-3,0) -- (3,0) node[right] {};
+						\draw[->] (0,-0.5) -- (0,3) node[above] {};
+						\fill (-2.25,0) circle (1pt) node[below left] {$-R$};
+						\fill (2.25,0) circle (1pt) node[below right] {$R$};
+						\fill (1.65,1) circle (1pt) node[below] {$z_1$};
+						\fill (0.7,1.6) circle (1pt) node[below] {$z_2$};
+						\fill (-1,1.75) circle (1pt) node[below] {$z_N$};
+						\fill (1,0) circle (1pt) node[below] {$a_M$};
+						\fill (-1,0) circle (1pt) node[below] {$a_1$};
+						\node[red] at (-1, 0.6) {$\gamma_1^-$};
+						\node[red] at (1, 0.6) {$\gamma_M^-$};
+						\draw[red,<-] (-1,0)++(0.3,0) arc(0:180:0.3);
+						\draw[red,<-] (1,0)++(0.3,0) arc(0:180:0.3);
+						\draw[red] (-2.25,0) -- (2.25,0);
+						\node[blue] at (2,2) {$\gamma_R$};
+						\node[red] at (-1.75,-0.25) {$l_1$};
+						\node[red] at (1.85,-0.25) {$l_{M+1}$};
+						\draw[blue,<-] (-2.25,0) arc (180:0:2.25);
+					\end{scope}
+				\end{tikzpicture}
+			\end{minipage}%
+			\begin{minipage}[c]{0.6\textwidth}
+				Рассмотрим границу $\Gamma = \gamma_R \cup(\bigcup\limits_{j=1}^{M}\gamma_{j,r}^-)\cup(\bigcup\limits_{k=1}^{M+1}l_k)$.\\
+				Тогда
+				\[ \frac{1}{2\pi i}\Oint_\Gamma f(z)e^{i\lambda z}\,dz=\Sum_{k=1}^N\Res_{z=z_k}f(z)e^{i\lambda z}. \]
+			\end{minipage}
+		\end{center}
+		\[ \frac{1}{2\pi i}\Oint_\Gamma f(z)e^{i\lambda z}\,dz = \frac{1}{2\pi i}\Bigg[ \Int_{\gamma_R} f(z)e^{i\lambda z}\,dz + \Sum_{j=1}^{M+1}\Int_{l_j}f(x)e^{i\lambda x}\,dx + \Sum_{k=1}^M\Int_{\gamma^-_{k,r}}f(z)e^{i\lambda z}\,dz\Bigg]. \]
+		Устремим $R\to+\infty$ и $r\to0+$. Получим
+		\[ \Lim_{R\to+\infty}\Int_{\gamma_R} f(z)e^{i\lambda z}\,dz = 0 \text{ (Лемма Жордана).} \]
+		\[ \Lim_{R\to+\infty}\Sum_{j=1}^{M+1}\Int_{l_j}f(x)e^{i\lambda x}\,dx = \Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx. \]
+		Оценим последний интеграл
+		\[ \Sum_{k=1}^{M}\Lim_{r\to0+}\Int_{\gamma^-_{k,r}}f(z)e^{i\lambda z}\,dz. \]
+		Точка $a_k$ --- простой полюс $f(z)e^{i\lambda z}$.
+		\[ f(z)e^{i\lambda z} = \frac{c_{-1}}{z-a_k} + c_0 + \ldots,\ 0<|z-a_k|<\epsilon_k. \]
+		$c_{-1} = \Res_{z=a_k}f(z)e^{i\lambda z}$, а $\gamma_{k,r}^- = \{z\in\Cm: z = a_k+re^{i\phi},\ \phi\in[\pi,\,0]\}$.
+		Значит подынтегральную функцию можно представить в виде
+		\[ f(z)e^{i\lambda z} = \frac{c_{-1}}{r}e^{-i\phi}+\underline{\underline O}(1),\ r\to0+. \]
+		Сделаем замену переменной. $dz = re^{i\phi}i\,d\phi$. Итого интеграл примет вид 
+		\[ \Sum_{k=1}^{M}\Lim_{r\to0+}\Int_{\gamma^-_{k,r}}f(z)e^{i\lambda z}\,dz = \Sum_{k=1}^M\Lim_{r\to0+}\Bigg[ c_{-1}\Int_\pi^0i\,d\phi + \underline{\underline O}(r)\Bigg] = \Sum_{k=1}^M\Bigg[ -i\pi\Res_{z=a_k}f(z)e^{i\lambda z}\Bigg]. \]
+		Итого получаем 
+		\[ \Sum_{k=1}^N\Res_{z=z_k}f(z)e^{i\lambda z}=\frac{1}{2\pi i}\Bigg[ \Int_{-\infty}^{+\infty}f(x)e^{i\lambda x}\,dx - \Sum_{k=1}^M i\pi\Res_{z=a_k}f(z)e^{i\lambda z} \Bigg]. \]
+		После переноса слагаемых получаем требуемое выражение.
+	\end{proof}
+	\begin{remark}
+		Так надо вычислять несобственные интегралы в вещественном анализе
+		\[ \Int_{-\infty}^{+\infty}f(x)\,dx = \lim_{A\to-\infty}\Int_A^0f(x)\,dx + \lim_{B\to+\infty}\Int_0^Bf(x)\,dx. \]
+		Мы же рассматривали интегралы в смысле главного значения
+		\[ \operatorname{v.p.}\Int_{-\infty}^{+\infty}f(x)\,dx = \Lim_{R\to+\infty}\Int_{-R}^R f(x)\,dx. \]
+		Если интеграл сходится в классическом смысле, тогда он совпадает с главным значением. В обратную сторону неверно.
+	\end{remark}
+	\begin{example*}
+		\begin{multline*}
+			I = \Int_{-\infty}^{+\infty}\frac{\sin x\,dx}{(x^2+4)(x-1)} = \Im\Int_{-\infty}^{+\infty}\frac{e^{ix}\,dx}{(x^2+4)(x-1)} =\\= \Im\{2\pi i\left(  \Res_{z=z_1}\frac{e^{iz}}{(z^2+4)(z-1)} + \frac{1}{2}\Res_{z=z_3}\frac{e^{iz}}{(z^2+4)(z-1)}\right) \} =\\= \Im\{2\pi i\Lim_{z\to2i}\frac{\frac{e^{iz}}{z-1}}{2z} + \pi i\Lim_{z\to 1}\frac{e^{iz}}{z^2+4} \} = -\frac{\pi}{5e^2} + \frac{\pi}{5}\cos1.
+		\end{multline*}
+	\end{example*}
+	\begin{example*}
+		\[ \operatorname{v.p.}\Int_{-\infty}^{+\infty}\frac{e^{i\lambda x}}{x}\,dx = \pi i\Res_{z=0}\frac{e^{i\lambda z}}{z} = \pi i,\ \lambda>0. \]
+	\end{example*}
 	\subsection{Операционное исчисление}
 	Пусть $f(t)$ --- вещественнозначная функция. Её будем называть \textbf{функцией-оригиналом}. Выполним над ней следующее преобразование:
 	\[ F(p) = \Int_0^{+\infty}f(t)e^{-pt}\,dt, \ p\in\Cm \text{ --- преобразование Лапласа.} \]
