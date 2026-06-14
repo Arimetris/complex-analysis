@@ -56,7 +56,6 @@
 	\pagestyle{main}
 	\tableofcontents
 	\newpage
-
 	\section{Лекция 1}
 	\subsection{Комплексные числа и комплексная плоскость.}
 	\begin{definition}
@@ -95,50 +94,42 @@
 	$ z = re^{i\phi}\text{ --- показательная форма записи. }$
 	\begin{statement*}
 		(Формула Эйлера)
-		\[ e^{i\phi} = \cos\phi + i\sin\phi,\ \forall\phi\in\R \]
+		\[ e^{i\phi} = \cos\phi + i\sin\phi,\ \forall\,\phi\in\R. \]
 	\end{statement*}
 	\begin{proof}
-		\[ 
-			e^s = \Sum_{k=0}^{\infty}\frac{s^k}{k!}, \
-			\sin s = \Sum_{k=0}^{\infty}(-1)^k\frac{s^{2k+1}}{(2k+1)!},\ 
-			\cos s = \Sum_{k=0}^{\infty}(-1)^k\frac{s^{2k}}{(2k)!}
-		\]
+		\[ e^s = \Sum_{k=0}^{+\infty}\frac{s^k}{k!},\quad\sin s = \Sum_{k=0}^{+\infty}(-1)^k\frac{s^{2k+1}}{(2k+1)!},\quad\cos s = \Sum_{k=0}^{+\infty}(-1)^k\frac{s^{2k}}{(2k)!}.\]
 		\begin{multline*}
-			e^{i\phi} = \Sum_{k=0}^{\infty}\frac{(i\phi)^{\mathrlap{k}}}{k!} = \{ k = 2m,\ k = 2m + 1 \} = 
-			\Sum_{m=0}^{\infty}\frac{i^{2m}\phi^{\mathrlap{2m}}}{(2m)!} +
-			\Sum_{m=0}^{\infty}\frac{i^{2m+1}\phi^{\mathrlap{2m+1}}}{(2m+1)!} = \\
-			= \Sum_{m=0}^{\infty}\frac{(-1)^m\phi^{\mathrlap{2m}}}{(2m)!} +
-			i\Sum\_{m=0}^{\infty}\frac{(-1)^m\phi^{\mathrlap{2m+1}}}{(2m+1)!} =
-			\cos\phi + i\sin\phi
+			e^{i\phi} = \Sum_{k=0}^{\infty}\frac{(i\phi)^k}{k!} = \{k = 2m,\,k = 2m + 1\} = 
+			\Sum_{m=0}^{+\infty}\frac{i^{2m}\phi^{2m}}{(2m)!} +
+			\Sum_{m=0}^{+\infty}\frac{i^{2m+1}\phi^{2m+1}}{(2m+1)!} = \\
+			=\Sum_{m=0}^{+\infty}\frac{(-1)^m\phi^{2m}}{(2m)!} +
+			i\Sum_{m=0}^{+\infty}\frac{(-1)^m\phi^{2m+1}}{(2m+1)!} = \cos\phi + i\sin\phi.
 		\end{multline*}
 	\end{proof}
-	\newpage
+	\vspace{-\baselineskip}
 	\begin{consequence*}
-		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2},\ \sin\phi = \frac{e^{i\phi}-e^{-i\phi}}{2i} \]
+		\[ \cos\phi = \frac{e^{i\phi}+e^{-i\phi}}{2},\quad \sin\phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}. \]
 	\end{consequence*}
 	\begin{proof}
 		\begin{align}
-		&e^{i\phi} = \cos\phi + i\sin\phi \\
-		&e^{-i\phi} = \cos\phi - i\sin\phi
+			&e^{i\phi} = \cos\phi + i\sin\phi \\
+			&e^{-i\phi} = \cos\phi - i\sin\phi
 		\end{align}
-		\begin{flalign*}
-			&\frac{(1) + (2)}{2} \Rightarrow \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2}, \quad
-			\frac{(1) - (2)}{2} \Rightarrow \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}&
-		\end{flalign*}
+		\[ \frac{(1) + (2)}{2} \Rightarrow \cos \phi = \frac{e^{i\phi}+e^{-i\phi}}{2},\quad
+		\frac{(1) - (2)}{2} \Rightarrow \sin \phi = \frac{e^{i\phi}-e^{-i\phi}}{2i}. \]
 	\end{proof}
 	\subsection{Операции над комплексными числами.}
 	\noindent
-	\begin{flalign*}
-		1)\ &z_1+z_2 = (x_1+x_2) + i(y_1+y_2)&\\
-		2)\ &z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1)&\\
-		& z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} = r_1r_2e^{i(\phi_1+\phi_2)}&\\
-		3)\ &\bar z = x - iy&\\
-		\ & \bar{z} = \overline{re^{i\phi}} = re^{-i\phi} &\\
-		4)\ &\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar {z_2}}{|z_2|^2},\ z_2 \ne 0 &\\
-		\ &\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)}&\\
-		5)\ &z_1 = z_2 \iff x_1 = x_2\text{ и } y_1 = y_2&\\
-	\end{flalign*}
-	\newpage
+	\begin{enumerate}
+		\item $z_1+z_2 = (x_1+x_2) + i(y_1+y_2)$.
+		\item $z_1\cdot z_2 = (x_1+iy_1)(x_2+iy_2) = x_1x_2-y_1y_2 + i(x_1y_2+x_2y_1)$;\\
+		$z_1\cdot z_2 = r_1e^{i\phi_1}\cdot r_2e^{i\phi_2} = r_1r_2e^{i(\phi_1+\phi_2)}$.
+		\item $\bar z = x - iy$;\\
+		$\bar{z} = \overline{re^{i\phi}} = re^{-i\phi}$.
+		\item $\displaystyle\frac{z_1}{z_2} = \frac{z_1\bar{z_2}}{z_2\bar{z_2}} = \frac{z_1\bar {z_2}}{|z_2|^2},\ z_2 \ne 0$;\\
+		$\displaystyle\frac{z_1}{z_2} = \frac{r_1}{r_2} e^{i(\phi_1 - \phi_2)}$.
+		\item $z_1 = z_2 \iff x_1 = x_2\text{ и } y_1 = y_2$.
+	\end{enumerate}
 	\subsection{Расширенная комплексная плоскость.}
 	\noindent
 	\begin{align*}
@@ -168,12 +159,10 @@
 		v = \dfrac{y}{|z|^2+1} \\
 		w = \dfrac{|z|^2}{|z|^2+1}
 	\end{cases}
-	\]
-	
+	\]	
 	\noindent
 	Уствновили взаимнооднозначное соответствие. $ \overline\Cm \mapsto S $ --- стереографическая проекция.\\
 	При таком отображении: $(\infty \mapsto N)$
-	
 	\begin{statement*}
 		\[ \Cm \text{--- Метрическое пространство, где } \rho(z_1,\, z_2) = |z_1 - z_2|. \]
 	\end{statement*}
@@ -204,8 +193,8 @@
 	&= \frac{1\cdot(1-e^{i(n+1)x})}{(1-e^{ix})} = \frac{(e^{i(n+1)x}-1)}{(e^{ix}-1)}\cdot\frac{e^\frac{-ix}{2}}{e^\frac{-ix}{2}}  = \frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{(e^\frac{ix}{2} - e^\frac{-ix}{2})\cdot\frac{2i}{2i}} =&\\  &=\frac{(e^{i(n+1)x}-1)(e^\frac{-ix}{2})}{2i\sin{\frac{x}{2}}}\cdot\frac{e^{-\frac{i(n+1)x}{2}}}{e^{-\frac{i(n+1)x}{2}}} 
 	\frac{e^\frac{i(n+1)x}{2} - e^\frac{-i(n+1)x}{2}}{2i}\cdot\frac{1}{\sin\frac{x}{2}}\cdot\frac{e^\frac{-ix}{2}}{e^{-\frac{i(n+1)x}{2}}} = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot e^\frac{inx}{2}
 	\end{flalign*}
-	\[ S_1 = \Re S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2}, \ x \neq 2\pi k \]
-	\[S_2 = \Im S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2}, \ x \neq 2\pi k \]
+	\[ S_1 = \Re S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\cos\frac{nx}{2},\ x\neq 2\pi k. \]
+	\[S_2 = \Im S = \frac{\sin\frac{(n+1)x}{2}}{\sin\frac{x}{2}}\cdot\sin\frac{nx}{2},\ x\neq 2\pi k. \]
 	\begin{flalign*}
 	\textbf{3)}\quad &\text{Дана рекурентная последовательность: } u_{n+2} = 2(u_{n+1} - u_n), \ u_0 = u_1 = 1&\\
 	&\text{Найти общий член этой последовательности.}&\\
@@ -241,10 +230,9 @@
 	\end{theorem*}
 	\noindent
 	\textbf{Формула Муавра}\\
-	Дано уравнение: $ z^n - A = 0 $ и $A = |A|e^{i(\arg A+2\pi k)}$. Тогда
+	\indent Дано уравнение: $ z^n - A = 0 $ и $A = |A|e^{i(\arg A+2\pi k)}$. Тогда
 	\[ z_n = \sqrt[n]{|A|}e^\frac{i(\arg A+2\pi k)}{n},\  k = 0,\, \ldots,\, n-1. \]
-	Корни такого многочлена располагаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.\\
-	
+	Корни такого многочлена располагаются в вершинах правильного n-угольника, с центром в начале координат, радиуса $\sqrt[n]{|A|}$.
 	\begin{theorem*}
 		(Фробениуса)\\ \indent
 		Не существует других расширений систем и чисел, кроме $\ \R\ $ и $ \ \Cm$, чтобы новая система образовывала поле.\ (Нестрогая формулировка)
@@ -255,47 +243,47 @@
 	\noindent
 	\begin{definition}
 		\hspace{-0.94cm}
-		$ U_\epsilon(z_0) = \{ z \in \Cm : |z-z_0|<\epsilon \} $\\
-		$ \dot U_\epsilon(z_0) = \{ z \in \Cm : 0<|z-z_0|<\epsilon \} $\\
-		$ U_\epsilon(\infty) = \{ z \in \overline\Cm : |z|>\epsilon \} $\\
-		$ \dot U_\epsilon(\infty) = \{ z \in \overline\Cm : \epsilon<|z|<\infty \} $		
+		$U_\epsilon(z_0) = \{ z\in\Cm : |z-z_0|<\epsilon \}$.\\
+		$\dot U_\epsilon(z_0) = \{ z\in\Cm: 0<|z-z_0|<\epsilon \}$.\\
+		$U_\epsilon(\infty) = \{ z\in\overline\Cm:|z|>\epsilon \}$.\\
+		$\dot U_\epsilon(\infty) = \{ z \in\overline\Cm:\epsilon<|z|<\infty \}$.		
 	\end{definition}
 	\begin{definition}
-		Точка $z_0 \in \Cm$ называется\\
-		1)\textbf{ Внутренней} точкой мн-ва $M\subset\Cm$, если $\ \exists\, U_\epsilon(z_0)\subset M$.\\
-		2)\textbf { Предельной} точкой мн-ва $M\subset\Cm$, если $\ \forall\,\dot U_\epsilon(z_0)\subset M\implies\dot U_\epsilon(z_0)\cap M \ne \varnothing$.\\
-		3)\textbf { Граничной} точкой мн-ва $M\subset\Cm$, если $\ \forall \, U_\epsilon(z_0) \ \exists \,$точки, как из $M$, так и не из $M$.
+		Точка $z_0\in\Cm$ называется\\
+		1)\textbf{ Внутренней} точкой мн-ва $M\subset\Cm$, если $\exists\, U_\epsilon(z_0)\subset M$.\\
+		2)\textbf { Предельной} точкой мн-ва $M\subset\Cm$, если $\forall\,\dot U_\epsilon(z_0)\subset M\implies\dot U_\epsilon(z_0)\cap M\ne\varnothing$.\\
+		3)\textbf { Граничной} точкой мн-ва $M\subset\Cm$, если $\forall\, U_\epsilon(z_0)\ \exists \,$точки, как из $M$, так и не из $M$.
 	\end{definition}
 	\begin{definition}
-		Множество вида $\gamma =\{\ z \in \Cm : z(t) = x(t) + iy(t),\ t \in [\alpha,\, \beta]  \ \}$ называют \textbf{кривой} на $\Cm$.\\
-		$z(\alpha)$ --- начальная точка, $z(\beta)$ --- конечная точка, $t \uparrow$ --- ориентация.
+		Множество вида $\gamma =\{z\in\Cm : z(t)=x(t)+iy(t),\ t\in[\alpha,\,\beta]\}$ называют \textbf{кривой} на $\Cm$.\\
+		$z(\alpha)$ --- начальная точка, $z(\beta)$ --- конечная точка, $t\uparrow$ --- ориентация.
 	\end{definition}
 	\begin{definition}
 		Кривая $\gamma$ называется\\ 
-		1) \textbf{Непрерывной}, если $\ x(t),\, y(t) \in C[\alpha,\, \beta]$.\\
-		2) \textbf{Замкнутой}, если $\ z(\alpha) = z(\beta)$.\\
-		3) \textbf{Гладкой}, если $\ x(t),\, y(t) \in C^1[\alpha,\, \beta] \ $ и $\ \forall\, t \in [\alpha,\, \beta] \Rightarrow z'(t) \ne 0.$
+		1) \textbf{Непрерывной}, если $x(t),\,y(t)\in C[\alpha,\,\beta]$.\\
+		2) \textbf{Замкнутой}, если $z(\alpha)=z(\beta)$.\\
+		3) \textbf{Гладкой}, если $x(t),\,y(t)\in C^1[\alpha,\,\beta]$ и $\forall\,t\in[\alpha,\,\beta]\implies z'(t)\ne0$.
 	\end{definition}
 	\begin{definition}
 		Непрерывная кривая $\gamma$ называется \textbf{простой} или \textbf{кривой Жордана}, если $z(t_1) = z(t_2)$ выполняется только для двух точек $\alpha,\ \beta$.
 	\end{definition}
 	\begin{definition}
-		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^{N} \gamma_i$, где N --- конечное число гладких кривых.
+		Кривая $\gamma$ называется \textbf{кусочно-гладкой}, если $\gamma = \bigcup\limits_{i=1}^N \gamma_i$, где $N$ --- конечное число гладких кривых.
 	\end{definition}
 	\begin{definition}
 		Множество $M\subset\Cm$ называют\\
 		1) \textbf{Открытым}, если $\forall z_0 \in M$ --- внутренняя точка M.\\
-		2) \textbf{Связным}, если $\forall z_1,\, z_2 \in M \Rightarrow \exists$ Кривая Жордана $\gamma \subset M : z_1,\, z_2 \in \gamma $.
+		2) \textbf{Связным}, если $\forall z_1,\, z_2 \in M \implies \exists$ Кривая Жордана $\gamma \subset M : z_1,\, z_2 \in \gamma $.
 	\end{definition}
 	\begin{definition}
-		\textbf{Область} --- открытое связное множество $D \subset \Cm$.
+		\textbf{Область} --- открытое связное множество $D\subset\Cm$.
 	\end{definition}
 	\begin{definition}
-		Область D \textbf{односвязная}, если $\partial D$ --- связное множество.
+		Область $D$ \textbf{односвязная}, если $\partial D$ --- связное множество.
 	\end{definition}
 	\newpage
 	\begin{definition}
-		Область D \textbf{многосвязная}, если $\partial D$ --- не является связным множеством и\\ $\partial D = \bigcup\limits_{i=1}^{N}\gamma, \text{ где } \gamma_1, \ldots \gamma_N$ --- связные кривые, не имеющие общих точек.
+		Область $D$ \textbf{многосвязная}, если $\partial D$ --- не является связным множеством и\\ $\partial D = \bigcup\limits_{i=1}^N\gamma$, где $\gamma_1,\ldots,\gamma_N$ --- связные кривые, не имеющие общих точек.
 	\end{definition}
 	\begin{center}
 		\begin{tikzpicture}[scale=1]
@@ -322,51 +310,50 @@
 	\subsection{Пределы последовательностей.}
 	\begin{definition}
 		Число $z$ называется \textbf{пределом последовательности} $\{z_n\}$, если
-		\[ \forall\,\epsilon>0 : \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n - z| < \epsilon \iff \Lim_{n \to \infty} z_n = z \]
+		\[ \forall\,\epsilon>0:\exists\,N(\epsilon)\in\N:\forall\,n > N\implies |z_n - z| <\epsilon\iff \Lim_{n\to\infty}z_n = z. \]
 	\end{definition}
 	\begin{definition}
 		Число $\infty$ называется\textbf{ пределом последовательности} $\{z_n\}$, если
-		\[ \forall\,\epsilon>0\ \exists\, N(\epsilon)\in\N : \forall\,n > N \Rightarrow |z_n| > \epsilon \iff \Lim_{n \to \infty} z_n = \infty \]
+		\[ \forall\,\epsilon>0\ \exists\, N(\epsilon)\in\N :\forall\,n > N\implies|z_n| >\epsilon\iff \Lim_{n\to\infty}z_n=\infty. \]
 	\end{definition}
 	\begin{theorem*}
 		\[ \Lim_{n \to \infty} z_n = z, \text{ где }z = a+ib, \ z_n = x_n+iy_n\iff \Lim_{n \to \infty} x_n = a,\ \Lim_{n \to \infty} y_n = b \]
 	\end{theorem*}
 	\begin{proof}
-		\ \\$\boxed\Rightarrow$ 
-		\[ \forall\,\epsilon>0 \ \exists\,N\in\N : \forall\,n > N \Rightarrow |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
+		\ \\$\boxed\implies$
+		\[ \forall\,\epsilon>0 \ \exists\,N\in\N : \forall\,n > N \implies |z_n -z| = \sqrt{(x_n -a)^2 + (y_n - b)^2} < \epsilon \]
 		\begin{flalign*}
-			&|x_n -a| < \epsilon \Rightarrow \Lim_{n \to \infty} x_n = a &\\
-			&|y_n -b| < \epsilon \Rightarrow \Lim_{n \to \infty} y_n = b &
+			&|x_n -a| < \epsilon\implies\Lim_{n\to\infty} x_n = a &\\
+			&|y_n -b| < \epsilon\implies\Lim_{n\to\infty} y_n = b &
 		\end{flalign*}
 		\noindent$\boxed\Leftarrow$ 
 		\begin{align*}
-			&\Lim_{n \to \infty} x_n = a \iff \forall\,\epsilon>0 \ \exists\,N_1\in\N : \forall\,n > N_1 \Rightarrow |x_n -a| < \epsilon &\\
-			&\Lim_{n \to \infty} y_n = b \iff\forall\,\epsilon>0 \ \exists\,N_2\in\N : \forall\,n > N_2 \Rightarrow |y_n -b| < \epsilon &
+			&\Lim_{n\to\infty} x_n = a\iff\forall\,\epsilon>0\ \exists\,N_1\in\N:\forall\,n > N_1\implies |x_n -a| < \epsilon.&\\
+			&\Lim_{n\to\infty} y_n = b \iff\forall\,\epsilon>0\ \exists\,N_2\in\N:\forall\,n > N_2 \implies|y_n -b|<\epsilon.&
 		\end{align*}
-		Зафиксируем $ \epsilon > 0,\ N = \max\,\{N_1,\, N_2\} $. Тогда 
-			\[ \forall n>N \Rightarrow |z_n - z|^2 = (x_n -a)^2 + (y_n - b)^2 < 2\epsilon^2\iff |z_n - z| < \sqrt 2 \epsilon \]
+		Зафиксируем $\epsilon > 0,\ N = \max\,\{N_1,\, N_2\} $. Тогда 
+		\[ \forall\,n>N\implies |z_n - z|^2 = (x_n -a)^2 + (y_n - b)^2 < 2\epsilon^2\iff|z_n - z| \sqrt2\epsilon.\]
 	\end{proof}
 	\newpage
 	\begin{theorem*}
-		(Арифметические свойства пределов)\\ \indent
-			$\text{Пусть } \exists\Lim_{n \to \infty} z_n = z, \ \exists\Lim_{n \to \infty} s_n = s$. Тогда
-		\vspace{-0.25cm}
-		\begin{flalign*}
-			&1)\ \Lim_{n \to \infty} (z_n+s_n) = z + s&\\
-			&2)\ \Lim_{n \to \infty} (z_n\cdot s_n) = z\cdot s&\\
-			&3)\ \Lim_{n \to \infty} \left(\frac{z_n}{s_n}\right)  = \frac{z}{s},\ \forall\,n \in \N, \ s_n \ne 0,\ s \ne 0&
-		\end{flalign*}
+		(Арифметические свойства пределов)\\
+		\indent Пусть $\exists\Lim_{n\to\infty}z_n = z,\ \exists\Lim_{n\to\infty}s_n = s$. Тогда
+		\begin{enumerate}
+			\item $\Lim_{n\to\infty}(z_n+s_n)=z+s$;
+			\item $\Lim_{n\to\infty}(z_n\cdot s_n)=z\cdot s$;
+			\item $\displaystyle\Lim_{n\to\infty}\left(\frac{z_n}{s_n}\right)=\frac{z}{s},\ \forall\,n\in\N,\ s_n\ne0,\ s\ne0$.
+		\end{enumerate}
 	\end{theorem*}
 	\begin{theorem*}
-		(Единственность)\\ \indent
-		Пусть $\exists\Lim_{n \to \infty} z_n = z$. Тогда этот предел единственный.
+		(Единственность)\\
+		 \indent Пусть $\exists\Lim_{n\to\infty}z_n = z$. Тогда этот предел единственный.
 	\end{theorem*}
 	\begin{definition}
-		$\{ z_{n_k} \}_{k=1}^{+\infty} \subset \{ z_{n} \}_{k=1}^{+\infty}$ --- \textbf{подпоследовательность} последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$
+		$\{ z_{n_k} \}_{k=1}^{+\infty}\subset\{z_n\}_{k=1}^{+\infty}$ --- \textbf{подпоследовательность} последовательности $z_n$, где\\ $n_1 < n_2 < \ldots < n_k < \ldots$.
 	\end{definition}
 	\begin{definition}
-		Последовательность  $\{ z_n \}$ называется \textbf{ограниченной}, если\\
-		$ \exists\,K > 0 : \forall\,n\in\N\Rightarrow |z_n| \leqslant K$.
+		Последовательность $\{z_n\}$ называется \textbf{ограниченной}, если\\
+		$ \exists\,K > 0 : \forall\,n\in\N\implies |z_n|\leqslant K$.
 	\end{definition}
 	\begin{theorem*}
 		(Больцано-Вейерштрасса)\\ \indent 
@@ -374,17 +361,17 @@
 	\end{theorem*}
 	\begin{theorem*}
 		(Критерий Коши)
-		\[ \Lim_{n \to \infty} z_n = z\iff \forall\,\epsilon > 0 \ \exists\, N \in \N : \forall\, n,\, m > N \Rightarrow |z_n - z_m| < \epsilon \]
+		\[ \Lim_{n\to\infty} z_n = z\iff \forall\,\epsilon > 0\ \exists\, N\in\N:\forall\, n,\, m > N \implies |z_n - z_m| < \epsilon. \]
 	\end{theorem*}
 	\begin{example*}
-		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2\]
+		\[ z_n = \sqrt[n]{n} + i(1+\frac{2}{n})^n = 1 + ie^2.\]
 	\end{example*}
 	\begin{flalign*}
-		&\Lim_{n \to \infty} \sqrt[n]{n} = \Lim_{n \to \infty}n^\frac{1}{n} = \Lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \Lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1.&\\
-		&\Lim_{n \to \infty} (1 + \frac{2}{n})^n = e^{\ \Lim_{n \to \infty}n\ln{(1 + \frac{2}{n})}} = e^{\ \Lim_{n \to \infty} n \frac{2}{n}} = e^2.&
+		&\Lim_{n\to\infty}\sqrt[n]{n} = \Lim_{n \to \infty}n^\frac{1}{n} = \Lim_{n \to \infty} e^{\frac{1}{n}\ln n} = e^{\ \Lim_{n \to \infty} \frac{\ln n}{n}}= e^0 = 1.&\\
+		&\Lim_{n\to\infty}\left( 1 + \frac{2}{n}\right) ^n = e^{\Lim_{n\to\infty}n\ln{(1+\frac{2}{n})}}=e^{\Lim_{n \to \infty} n \frac{2}{n}} = e^2.&
 	\end{flalign*}
 	\begin{example*}
-		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ ---расходится, т.к. } (-1)^n \text{ расходится.}\]
+		\[ z_n = \frac{\sqrt{n^2-3} - \sqrt{n^2+5}}{\sqrt{n^2+2} - n} + i(-1)^n \text{ --- расходится, т.к. }(-1)^n\text{ расходится.}\]
 	\end{example*}
 	\newpage
 	\section{Лекция 4}
@@ -403,7 +390,7 @@
 		Функция однозначная
 	\end{example*}
 	\begin{example*}
-		\[ f(z) = \operatorname{Ln} z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus \{0 \} \]
+		\[ f(z) = \operatorname{Ln}z, \ z = re^{i(\phi + 2\pi k)} \in \Cm,\ D_f = \Cm\setminus \{0 \} \]
 		$ \operatorname{Ln} z = \ln{|z|} + i(\phi + 2\pi k), \ k \in \Z $\\
 		Функция многозначная
 	\end{example*}
@@ -423,12 +410,12 @@
 			&\text{Когда } \operatorname{Arccos}z \text{ принимает вещественные значения?}\\
 			&\ln{|z+\sqrt{z^2-1}|} = 0 \iff |z+\sqrt{z^2+1}| = 1 \iff z+\sqrt{z^2+1} = e^{it} &\\
 			&z^2+1 = (e^{it}-z)^2 = e^{2it}- 2ze^{it}+z^2 \iff z = \frac{e^{2it}+1}{2e^{it}} = \frac{e^{it}+e^{-it}}{2} = \cos t &\\ \\
-			&\text{Ответ: } M = \{ z \in \Cm:\Im z = 0, \ \Re\in[-1, 1] \}
+			&\text{Ответ: } M = \{z\in\Cm:\Im z = 0,\ \Re\in[-1,\,1]. \}
 		\end{flalign*}
 	\end{proof}
 	\newpage
 	\begin{example*}
-		\[ f(z) = z^n,\ n\in\N,\ D_f = \Cm \]
+		\[ f(z) = z^n,\ n\in\N,\ D_f = \Cm. \]
 	Функция однозначная
 	\end{example*}
 	\begin{example*}
@@ -446,7 +433,7 @@
 	\end{remark*}
 	\begin{definition}
 		Пусть однозначная функция определена на области $ D,\ z_0 \in D $.\\ Тогда число A называют пределом $f(z)\text{ при } z \to z_0$, если
-		\[ \forall\, \epsilon > 0\ \exists\,\delta(\epsilon) > 0 : \forall\,z\in \dot U_\delta(z_0)\cap D \Rightarrow |f(z) - A|< \epsilon \iff \Lim_{z \to z_0} f(z) = A  \]
+		\[ \forall\, \epsilon > 0\ \exists\,\delta(\epsilon) > 0 : \forall\,z\in \dot U_\delta(z_0)\cap D \implies |f(z) - A|< \epsilon \iff \Lim_{z \to z_0} f(z) = A  \]
 	\end{definition}
 	\begin{theorem*}
 		(Арифметические свойства)\\ \indent
@@ -461,17 +448,16 @@
 	\begin{definition}
 		Пусть однозначная функция $ f(z) $ определена на области D. Тогда $f(z)$ называется \textbf{непрерывной в точке} $ z_0 \in D\ (f(z)\in C(z_0)) $, если
 		\[ \Lim_{z \to z_0}f(z) = f(z_0) \]
-		
-		Функция $ f(z) $\textbf{ непрерывна на D}, если $ f(z) $ непрерывна в каждой точке $ z_0\in D $. 		
+		Функция $ f(z) $\textbf{ непрерывна на D}, если $f(z)$ непрерывна в каждой точке $ z_0\in D $. 		
 	\end{definition}
 	\begin{theorem}
-		Пусть $ f(z) \in C(z_0),\ g(w) \in C(w_0)$, где $w_0 = f(z_0)$. Тогда $ g(f(z))\in C(z_0) $.
+		Пусть $f(z)\in C(z_0),\ g(w)\in C(w_0)$, где $w_0 = f(z_0)$. Тогда $g(f(z))\in C(z_0)$.
 	\end{theorem}
 	\newpage
-	\subsection{Производная. Дифференцируемость. Условия Коши-Римана.}
+	\subsection{Производная. Дифференцируемость. Условия Коши-Римана}
 	\begin{definition}
 		Пусть функция $ f(z) $ определена на области $ D,\ z_0 \in D $. Тогда, если $ \exists $ конечный предел отношения приращения функции к приращению аргумента, то его называют\\ \textbf{производной функции} $ f(z) $ в точке $ z_0 $.
-		\[ f'(z_0) = \Lim_{z \to z_0}\frac{f(z) - f(z_0)}{z - z_0} = \Lim_{\Delta z \to 0}\frac{\Delta f(z_0)}{\Delta z} \]
+		\[ f'(z_0) = \Lim_{z\to z_0}\frac{f(z) - f(z_0)}{z - z_0} = \Lim_{\Delta z \to 0}\frac{\Delta f(z_0)}{\Delta z}. \]
 	\end{definition}
 	\begin{definition}
 		Пусть однозначная функция $ f(z) $  определена на области $D, \ z_0 \in D $. Тогда функция $ f(z) $
@@ -489,7 +475,7 @@
 	\end{flalign*}
 	\newpage
 	\begin{theorem}
-		Пусть функция $f(z)$ определена на области $D$, $z_0 \in D$. Тогда следующие условия эквивалентны:
+		Пусть функция $f(z)$ определена на области $D, z_0\in D$. Тогда следующие условия эквивалентны:
 		\begin{enumerate}
 			\item $f(z)$ дифференцируема в точке $z_0$.
 			\item Функции $u(x,\,y)$ и $v(x,\,y)$ дифференцируемы в точке $(x_0,\, y_0)$ и удовлетворяют условиям Коши–Римана:
@@ -502,7 +488,7 @@
 		\end{enumerate}
 	\end{theorem}
 	\begin{proof}
-		\ \\$\boxed\Rightarrow$\\
+		\ \\$\boxed\implies$\\
 		$ f(z) $ --- дифференцируема в точке $ z_0 $.\\ Тогда 
 		\[ \Delta f(z_0) = f'(z_0)\Delta z + \alpha(z_0;\, \Delta z)\Delta z,\ \Lim_{\Delta z \to 0}\alpha(z_0;\,\Delta z) = 0 \]
 		Распишем это определение
@@ -514,10 +500,10 @@
 			\Delta v(x_0,\, y_0) = a\Delta y + b\Delta x + \beta\Delta y + \delta\Delta x
 		\end{cases}
 		\Lim_{(\Delta x,\, \Delta y) \to 0}\beta = 0, 
-		\Lim_{(\Delta x,\, \Delta y) \to 0}\delta = 0 \Rightarrow
+		\Lim_{(\Delta x,\, \Delta y) \to 0}\delta = 0 \implies
 		\]
 		\[ 
-		\Rightarrow u(x,\, y), \ v(x,\, y) \text{ --- дифференцируемы в } (x_0,\, y_0) \text{ и } 
+		\implies u(x,\, y), \ v(x,\, y) \text{ --- дифференцируемы в } (x_0,\, y_0) \text{ и } 
 		\begin{cases}
 		  a = u'_x(x_0,\, y_0), \ b = -u'_y(x_0,\, y_0)\\
 		  a = v'_y(x_0,\, y_0), \ b = v'_x(x_0,\, y_0)
@@ -538,17 +524,17 @@
 	\begin{consequence*}
 		(Различные выражения для производной функции)
 		\begin{align*}
-			&f'(z_0) = u'_x(x_0,\,y_0) + iv'_x(x_0,\,y_0)\\
-			&f'(z_0) = v'_y(x_0,\,y_0) + iv'_x(x_0,\,y_0)\\
-			&f'(z_0) = u'_x(x_0,\,y_0) - iu'_y(x_0,\,y_0)\\
-			&f'(z_0) = v'_y(x_0,\,y_0) - iu'_y(x_0,\,y_0)
+			&f'(z_0) = u'_x(x_0,\,y_0) + iv'_x(x_0,\,y_0);\\
+			&f'(z_0) = v'_y(x_0,\,y_0) + iv'_x(x_0,\,y_0);\\
+			&f'(z_0) = u'_x(x_0,\,y_0) - iu'_y(x_0,\,y_0);\\
+			&f'(z_0) = v'_y(x_0,\,y_0) - iu'_y(x_0,\,y_0).
 		\end{align*}
 	\end{consequence*}
 	\newpage
 	\section{Лекция 5}
 	\subsection{Примеры}
 	\begin{example}
-		Исследовать $f(z) = z^2 - 2\bar z^2$ на дифференцируемость в $\Cm$.
+		Исследовать $f(z) = z^2-2\bar z^2$ на дифференцируемость в $\Cm$.
 	\end{example}
 		\[ f(z) = (x + iy)^2 - 2(x - iy)^2 = y^2 - x^2 + 6xyi \]
 		$ u(x,\, y) = y^2 - x^2,\ v(x,\, y) = 6xy $ --- дифференцируемы в $ \R^2 $, т.к. их частные производные непрерывны в $ \R^2 $.
@@ -578,17 +564,17 @@
 		Вопрос в следующем, можем ли мы представить нашу функцию как:
 		\[ \Delta u(0, 0) \stackrel{?}{=} u'_x(0, 0)\Delta x + u'_y(0, 0)\Delta y + \mu \sqrt{\Delta x^2 + \Delta y^2} \text{, где } \mu \text{--- бесконечно малая}\]
 		\[ \Delta u(0, 0) = \mu \sqrt{\Delta x^2 + \Delta y^2} \]
-		\[\Lim_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \Rightarrow \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
+		\[\Lim_{(\Delta x, \Delta y) \to (0, 0) }\mu = 0  \implies \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\Delta u(0, 0)}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{(\Delta x, \Delta y) \to (0, 0) }\frac{\sqrt{|\Delta x \Delta y|}}{\sqrt{\Delta x^2 + \Delta y^2}} = \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
 		Нам нужно показать, что если такого предела не существует или он не равен 0.
 		\newpage
 		\noindent\textbf{Способ 1:}\\
 		Рассмотрим этот предел вдоль прямой $y = kx$:
-		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \Lim_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \Rightarrow \nexists \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
+		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}} = \Lim_{x \to 0 }\frac{\sqrt{| kx^2 |}}{\sqrt{ (1 +  k^2)x^2}} = \frac{\sqrt{| k |}}{\sqrt{ 1 +  k^2}}  \implies \nexists \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\] \\
 		\textbf{Способ 2:}\\
 		Перейдем в полярные координаты $x = r \cos \phi$, $y = r \sin \phi$:
-		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \Lim_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \Rightarrow\nexists\Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
+		\[ \Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}  = \Lim_{r \to 0}\frac{r\sqrt{| \sin\phi\cos\phi|}}{r} = \sqrt{| \sin\phi\cos\phi|} \implies\nexists\Lim_{( x,  y) \to (0, 0) }\frac{\sqrt{| x  y|}}{\sqrt{ x^2 +  y^2}}\]
 		В итоге получили, что предела не существует.
-		\[\Rightarrow u(x, y) \text{ не дифференцируема в } (0, 0) \Rightarrow f(z) \text{ не дифференцируема в } z_0 = 0 \]
+		\[\implies u(x, y) \text{ не дифференцируема в } (0, 0) \implies f(z) \text{ не дифференцируема в } z_0 = 0 \]
 	\end{proof}
 	\newpage
 	\subsection{Условие Коши-Римана в полярной СК}
@@ -610,7 +596,7 @@
 			\Vm'_r(r,\,\phi)&= v'_x x'_r + v'_y y'_r = v'_x \cos \phi + v'_y\sin\phi \\
 			\Vm'_\phi(r,\,\phi)&= v'_x x'_\phi + v'_y y'_\phi = v'_x(-r\sin\phi) + v'_y(r\cos\phi)
 		\end{align*}
-		Знаем, что $\begin{cases}u'_x = v'_y\\ u'_y = -v'_x\end{cases}$, тогда $ \Rightarrow r\Um'_r = \Vm'_{\phi} \text{ и } -r\Vm'_r = \Um'_{\phi}$
+		Знаем, что $\begin{cases}u'_x = v'_y\\ u'_y = -v'_x\end{cases}$, тогда $ \implies r\Um'_r = \Vm'_{\phi} \text{ и } -r\Vm'_r = \Um'_{\phi}$
 	\end{proof}
 	\subsection{Аналитические функции}
 	В следующих определениях $f(z)$ --- однозначная функция.
@@ -619,16 +605,16 @@
 	\end{definition} 
 	\begin{definition}
 		Функция $f(z)$ называется \textbf{аналитической в области $D$}, если
-		она аналитична в каждой точке области D.
+		она аналитична в каждой точке области $D$.
 	\end{definition}
 	\begin{remark}
-		Обозначается $f(z) \in \A(z_0)$ и $f(z)\in\A(D)$ cоответственно.
+		Обозначается $f(z)\in\A(z_0)$ и $f(z)\in\A(D)$ cоответственно.
 	\end{remark}
 	\begin{example}
-		Выше доказали, что функция $f(z) = z^2 - 2(\bar z)^2$ дифференцируема только в точке\\ $z_0 = 0 \Rightarrow f(z)\notin\A(\Cm)$.
+		Выше доказали, что функция $f(z)=z^2-2(\bar z)^2$ дифференцируема только в точке\\ $z_0 = 0 \implies f(z)\notin\A(\Cm)$.
 	\end{example}
 	\begin{example*}
-		\[ f(z) = e^z\in\A(\Cm) \]
+		\[ f(z) = e^z\in\A(\Cm). \]
 	\end{example*}
 	\begin{example*}
 		\[ f(z)=\frac{1}{z-1}\in\A(\Cm\setminus\{1\}) \]
@@ -755,7 +741,7 @@
 		\arg (z'(t_0)) = \beta 
 	\end{cases}$ 
 	получаем
-	\[\arg(\omega'(t_0)) = \arg(f'(z_0)) + \arg(z'(t_0)) \Rightarrow\theta = \alpha + \beta \]
+	\[\arg(\omega'(t_0)) = \arg(f'(z_0)) + \arg(z'(t_0)) \implies\theta = \alpha + \beta \]
 	Тогда $\alpha = \theta - \beta$ --- угол поворота кривой в точке $z_0$
 	\begin{statement*}
 		(Геометрический смысл аргумента производной)\\ \indent
@@ -839,12 +825,12 @@
 			\end{tikzpicture}
 		\end{center}
 		\begin{align*}
-		&f(z) = e^z\Rightarrow f'(z) = e^z = e^{x+iy}\Rightarrow |f'(z)| = e^x\\
+		&f(z) = e^z\implies f'(z) = e^z = e^{x+iy}\implies |f'(z)| = e^x\\
 		&S_{D_\omega} = \Iint_{D_z} |f'(z)|^2 \, dxdy = \Int_0^4 \Int_1^2 e^{2x}\,dxdy = 4 \cdot\left.\frac{e^{2x}}{2}\right|_1^2 = 2(e^4 - e^2)
 		\end{align*}
 		\[ \]
 		Для поиска длины кривой параметризуем ее параметром $x$:
-		\[\text{Из рисунка } y = x \Rightarrow z = x + ix, \ 0 \leq x < 2\pi\]
+		\[\text{Из рисунка } y = x \implies z = x + ix, \ 0 \leq x < 2\pi\]
 		\[|f'(z(x))| = e^x, \quad |z'(x)| = |1 + i| = \sqrt{2}\]
 		
 		Тогда получаем, что:
@@ -860,7 +846,7 @@
 		Уравнение в частных производных вида $\Delta u = 0$ называется \textbf{уравнением Лапласа}.
 	\end{remark}
 	\begin{theorem}
-		Если $f(z) \in \A(D) \Rightarrow \Re f,\ \Im f$ --- гармонические функции в $D$.
+		Если $f(z) \in \A(D) \implies \Re f,\ \Im f$ --- гармонические функции в $D$.
 	\end{theorem}
 	\begin{proof}
 		$f(z) = u(x,y) + i v(x,y)$, где $u(x,\,y) = \Re f$,\ $v(x,\,y) = \Im f$.\\
@@ -888,7 +874,7 @@
 		Проинтегрируем данное равенство от $ (x_0,\, y_0) $ до $ (x,\, y) $
 		\[ v(x,y) = \Int_{(x_0,\,y_0)}^{(x,\,y)}(-u'_ydx + u'_xdy) + C, \ C \in \R\]
 		Проверим независимость интеграла от пути. Пусть $P = -u'_y$, $Q = u'_x$. Условием является равенство перекрестных производных:
-		\[P_y = Q_x \Rightarrow -u''_{yy} = u''_{xx} \Rightarrow \Delta u = 0\]
+		\[P_y = Q_x \implies -u''_{yy} = u''_{xx} \implies \Delta u = 0\]
 		Тогда аналитическая функция $f(z)$ запишется, как
 		\[f(z) = u + iv = u + i\Int_{(x_0,\,y_0)}^{(x,\,y)}(-u'_y dx + u'_x dy) + iC, \ C \in \R\]
 		Откуда видим, что наша функция определяется чисто мнимой постоянной.
@@ -903,7 +889,7 @@
 	\[ f(z) = u(x, y) + i v(x, y), f \in \A(D) \quad u, v \text{ --- гармонически сопряженные функции}\]
 	\[\begin{cases} u'_x = v'_y \\ u'_y = - v'_x \end{cases} \quad (x,y) \in D\]
 	Известно $u$. Требуется найти гармонически сопряженную функцию $v$. 
-	\[ \begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \Rightarrow v(x, y) = \Int_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy) \]
+	\[ \begin{cases}dv = v'_x dx + v'_y dy \\ dv = -u'_y dx + u'_x dy \end{cases} \implies v(x, y) = \Int_{(x_0, y_0)}^{(x, y)} (-u'_y dx + u'_x dy) \]
 	\begin{example}
 		Пусть $u = e^{-y}\cos x$. Найти такую $f(z)$, что $Re f = u$.
 	\end{example}
@@ -912,7 +898,7 @@
 			u'_x = -e^{-y} \sin x\\
 			u'_y = -e^{-y} \cos x
 		\end{cases}
-		\underset{\text{Т. К-Р}}{\Rightarrow}
+		\underset{\text{Т. К-Р}}{\implies}
 		\begin{cases}
 			v'_x = -u'_y = e^{-y} \cos x \\ 
 			v'_y = u'_x = -e^{-y} \sin x
@@ -927,10 +913,10 @@
 		\[ v'_y = -e^{-y} \sin x + B'(y) \]
 		\noindent
 		Подставляем во второе уравнение системы:
-		\[ -e^{-y}\sin x + B'(y) = -e^{-y}\sin x \Rightarrow B'(y) = 0\Rightarrow B(y) = c_0 \]
+		\[ -e^{-y}\sin x + B'(y) = -e^{-y}\sin x \implies B'(y) = 0\implies B(y) = c_0 \]
 		\noindent
 		Таким образом:
-		\[v = e^{-y} \sin x + c_0 \Rightarrow f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0,\ c_0 \in \R\]
+		\[v = e^{-y} \sin x + c_0 \implies f(z) = e^{-y} \cos x + i e^{-y} \sin x + i c_0,\ c_0 \in \R\]
 		\noindent
 		Воспользуемся формулами Эйлера:
 		\[ \sin x = \frac{e^{ix} - e^{-ix}}{2i}, \ \cos x = \frac{e^{ix} + e^{-ix}}{2} \]
@@ -943,11 +929,11 @@
 		Ответ: $f(z) = e^{iz} + i c_0,\ c_0 \in \R$
 	\end{proof} 
 	В общем случае не так легко получить результат, чтобы он зависел от $z$, а не от $x$ и $y$. Для этого используем:
-	\[ \begin{cases} z = x + iy \\ \overline{z} = x - iy\end{cases} \Rightarrow \begin{cases} x = \frac{z + \overline{z}}{2} \\ y = \frac{z - \overline{z}}{2i} \end{cases} \]
+	\[ \begin{cases} z = x + iy \\ \overline{z} = x - iy\end{cases} \implies \begin{cases} x = \frac{z + \overline{z}}{2} \\ y = \frac{z - \overline{z}}{2i} \end{cases} \]
 	\begin{example}
 		Существуют ли гармонические функции вида $u(x,y) = \psi(\frac{y}{x})$? Если да, то найти их.
-		\[\Delta u = 0 \Rightarrow u''_{xx} + u''_{yy} = 0\]
-		\[s = \frac{y}{x}, u = \psi(s) \Rightarrow u'_y = \psi'(s) \cdot s'_y = \psi '(s) \cdot \frac{1}{x} \Rightarrow u''_{yy} = \frac{1}{x} \cdot \psi''(s) \cdot s'_y = \frac{\psi ''(s)}{x^2}\]
+		\[\Delta u = 0 \implies u''_{xx} + u''_{yy} = 0\]
+		\[s = \frac{y}{x}, u = \psi(s) \implies u'_y = \psi'(s) \cdot s'_y = \psi '(s) \cdot \frac{1}{x} \implies u''_{yy} = \frac{1}{x} \cdot \psi''(s) \cdot s'_y = \frac{\psi ''(s)}{x^2}\]
 		\[u''_{xx} = \psi ''(s) \cdot (-\frac{y}{x^2})^2 + \frac{2y\psi'(s)}{x^3}\]
 		Далее подставляем эти формулы в уравнение (*):
 		\[\psi'' \cdot \frac{y^2}{x^4} + \frac{2y}{x^3}\psi' + \frac{\psi''}{x^2} = 0\]
@@ -955,10 +941,10 @@
 		Получили линейное дифференциальное уравнение с переменными коэффициентами:
 		\[\psi '' (s^2 + 1) + 2s \psi' = 0 \text{--- ОДУ}\]
 		Сделаем замену $\psi'(s) = h(s)$
-		\[h'(s^2 + 1) + 2sh = 0 \Rightarrow \frac{dh}{h} = -\frac{2s}{s^2 + 1}ds\]
-		\[\ln|h| = - \ln|s^2 + 1| + \ln c_1 \Rightarrow h = \frac{c_2}{s^2 + 1} \Rightarrow \psi ' = \frac{c_2}{s^2 + 1}\]
+		\[h'(s^2 + 1) + 2sh = 0 \implies \frac{dh}{h} = -\frac{2s}{s^2 + 1}ds\]
+		\[\ln|h| = - \ln|s^2 + 1| + \ln c_1 \implies h = \frac{c_2}{s^2 + 1} \implies \psi ' = \frac{c_2}{s^2 + 1}\]
 		Решаем ОДУ первого порядка:
-		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \Rightarrow \psi = \arctg s \cdot c_2 + c_3\]
+		\[\psi = c_2 \int \frac{ds}{s^2 + 1} \implies \psi = \arctg s \cdot c_2 + c_3\]
 		Ответ: $u(x, y) = c_2 \cdot \arctg(\frac{y}{x}) + c_3, \quad c_2, c_3 \in \R$
 	\end{example}
 	\begin{theorem}
@@ -967,25 +953,25 @@
 		$\{ u(x,\,y) = c_1\} \perp \{v(x,\,y) = c_2 \}$, где $u = \Re f,\ v = \Im f$.
 	\end{theorem}
 	\begin{proof}
-		\[f(z) \in \A(D) \Rightarrow u, v - \text{гармонически сопряженные в D функции}\]
-		\[\Rightarrow u'_x = v'_y, \quad u'_y = -v'_x, (x, y) \in D\] 
+		\[f(z) \in \A(D) \implies u, v - \text{гармонически сопряженные в D функции}\]
+		\[\implies u'_x = v'_y, \quad u'_y = -v'_x, (x, y) \in D\] 
 		\[\{u = c_1\} \perp \{v = c_2\} \iff \nabla u \perp \nabla v\]
 		\[\nabla u = u'_x \overline{e}_x + u'_y \overline{e}_y\]
 		\[\nabla v = v'_x \overline{e}_x + v'_y \overline{e}_y\]
 		\[(\nabla u, \nabla v) = u'_x v'_x + u'_y v'_y = -u'_x u'_y + u'_y u'_x = 0\]
 	\end{proof}
 	\begin{remark}
-		Если $\exists z_0 \in D: f'(z_0) = 0 \Rightarrow f'(z_0) = u'_x(x_0, y_0) + i v'_x(x_0, y_0) = 0$
+		Если $\exists z_0 \in D: f'(z_0) = 0 \implies f'(z_0) = u'_x(x_0, y_0) + i v'_x(x_0, y_0) = 0$
 		\[ \begin{cases} 
 				u'_x (x_0, y_0) = 0\\ 
 				v'_x(x_0, y_0) = 0 
 			\end{cases} 
-			\Rightarrow 
+			\implies 
 			\begin{cases} 
 				v'_y (x_0, y_0) = 0\\ 
 				u'_y(x_0, y_0) = 0
 			\end{cases} 
-			\Rightarrow 
+			\implies 
 			\begin{cases} 
 				\nabla u(x_0, y_0) = \overline{0}\\ 
 				\nabla v(x_0, y_0) = \overline{0}
@@ -1068,8 +1054,8 @@
 	\end{theorem}
 	
 	\begin{proof}
-		Теорема об аналитичности обратной функции $\Rightarrow$ \textbf{1)} \\ 
-		Из геометрического смысла модуля и аргумента производной $\Rightarrow$ \textbf{2)}
+		Теорема об аналитичности обратной функции $\implies$ \textbf{1)} \\ 
+		Из геометрического смысла модуля и аргумента производной $\implies$ \textbf{2)}
 	\end{proof}
 	\begin{theorem} 
 		Если функция $f(z) \in \A(D)$ и положим отображение $\omega = f(z)$ однолистно на $D_z$. Тогда отображение $\omega = f(z)$ конформно на $D_z$.
@@ -1189,23 +1175,23 @@
 				node[midway, above, yshift=5pt] {$f$};
 			\end{tikzpicture}
 		\end{center}
-		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a > 0\} \ \mapsto \ D_w = \{w \in \Cm : \Re w > \frac{1}{a} \} \]
+		\[ D_z = \{z\in\Cm:x^2+y^2 < ax,\ a > 0\}\mapsto D_w = \{w\in\Cm:\Re w > \frac{1}{a} \}. \]
 		Аналогично доказывается для $ a < 0 $
-		\[ D_z = \{z \in \Cm : x^2+y^2 < ax, \ a < 0\} \ \mapsto \ D_w = \{w \in \Cm : \Re w < \frac{1}{a} \} \]
+		\[ D_z = \{z\in\Cm:x^2+y^2 < ax,\ a < 0\}\mapsto D_w = \{w\in\Cm:\Re w < \frac{1}{a} \}. \]
 	\end{example}
 	\begin{theorem*}
 		(Римана)\\ \indent
-		Пусть $ D_z, D_w$ --- односвязные области, границы которых состоят более чем из одной точки.
-		Тогда $\exists \ f(z)$ --- конформное отображение $ D_z $ на $ D_w $.  
+		Пусть $ D_z,\,D_w$ --- односвязные области, границы которых состоят более чем из одной точки.
+		Тогда $\exists\,f(z)$ --- конформное отображение $D_z$ на $D_w$.  
 	\end{theorem*}
 	\begin{remark}
-		Если наложить условия $ f(z_0) = w_0, \ z_0 \in D_z, \ w_0 \in D_w $ и $ \arg f(z_0) = \alpha_0 \in \R. $\\
-		Тогда $ f(z) $ --- единственно.
-		Фиксируем $ \alpha_0 \text{ и } z_0 = x_0 +iy_0,\text{ где } \alpha_0, x_0, y_0 \in \R$.
+		Если наложить условия $f(z_0)=w_0,\ z_0\in D_z,\ w_0 \in D_w $ и $\arg f(z_0)=\alpha_0\in\R$.\\
+		Тогда $f(z)$ --- единственно.
+		Фиксируем $\alpha_0$ и $z_0=x_0+iy_0$, где $\alpha_0,\,x_0,\,y_0\in\R$.
 	\end{remark}
 	\newpage
 	\subsection{Дробно-линейные отображения.}
-	\[ w = \frac{az+b}{cz+d},\text{ где } a, b, c, d \in \Cm \text{ и } ad - bc \ne 0 \]
+	\[ w = \frac{az+b}{cz+d},\text{ где } a, b, c, d\in\Cm\text{ и } ad - bc \ne 0. \]
 	\begin{theorem}
 		Всякое дробно-линейное отображение можно представить, как композицию базовых отображений:
 		\begin{flalign*}
@@ -1236,29 +1222,29 @@
 		 	w = \frac{az+b}{cz+d}\\ 
 		 	\xi = \frac{Aw+B}{Cz+D} 
 		 	\end{cases}
-		 	\Rightarrow \ 
+		 	\implies \ 
 		 	\xi = \frac{A\left(\frac{az+b}{cz+d}\right) + B}{C\left(\frac{az+b}{cz+d}\right) + D} = \frac{A(az+b) + B(cz+d)}{C(az+b) + D(cz+d)} = \frac{(Aa+Bc)z + Ab+Bd}{(Ca+Dc)z + Cb+Dd}
 		 \]
 		 Получилось дробно-линейное отображение.
 	\end{proof}
 	\newpage
-	\noindent Далее считаем, если $ w =  \dfrac{az+b}{cz+d}, \  ad - bc \ne 0. \text{ Тогда } w\left( -\dfrac{d}{c}\right)  = \infty, \ w(\infty) = \dfrac{a}{c}. $
+	\noindent Далее считаем, если $ w = \dfrac{az+b}{cz+d},\ ad - bc \ne 0$. Тогда $w\left( -\dfrac{d}{c}\right)=\infty,\ w(\infty) = \dfrac{a}{c}. $
 	\begin{theorem}
-		Всякое дробно-линейное преобразование конформно отображает $ \overline\Cm $ на $\overline\Cm$.
+		Всякое дробно-линейное преобразование конформно отображает $\overline\Cm$ на $\overline\Cm$.
 	\end{theorem}
 	\begin{proof}
-		\ \\Покажем, что это преобразование взаимнооднозначно\\
+		Покажем, что это преобразование взаимнооднозначно.\\
 		\[
 		\begin{cases}
-			w_1 = \frac{az_1+b}{cz_1+d}\\ 
-			w_2 = \frac{az_2+b}{cz_2+d} 
+			w_1 = \dfrac{az_1+b}{cz_1+d}\\ 
+			w_2 = \dfrac{az_2+b}{cz_2+d} 
 		\end{cases}
-		\Rightarrow
+		\implies
 		w_1 - w_2 = \frac{(az_1+b)(cz_2+d) - (az_2+b)(cz_1+d)}{(cz_1+d)(cz_2+d)} = \frac{(ad-bc)(z_1-z_2)}{(cz_1+d)(cz_2+d)} \ne 0
 		\]
 		Получается, при $ z_1 \ne z_2$ верно, что $ w_1 \ne w_2 $.\\
 		$ \text{Функция } w \text{ всюду дифференцируема: }  w' = \dfrac{ad-bc}{(cz+d)^2}, \text{ кроме точек: }\infty, -\dfrac{d}{c}. $\\
-		$ \text{т.е. } \ w \in \mathcal A(\overline\Cm \setminus \{\infty, -\dfrac{d}{c}\}) \Rightarrow \text{Непрерывность, коэффициенты подобия, углы сохраняются.} $
+		$ \text{т.е. } \ w \in \mathcal A(\overline\Cm \setminus \{\infty, -\dfrac{d}{c}\}) \implies \text{Непрерывность, коэффициенты подобия, углы сохраняются.} $
 		Точки $ \{\infty, -\dfrac{d}{c}\} $ преобразованиями $ \xi = \dfrac{1}{z} $ и $ \eta = \dfrac{1}{w} $ соответственно переведем в 0. 
 	\end{proof}
 	\newpage
@@ -1271,7 +1257,7 @@
 		Если дробно-линейное отображение имеет более двух неподвижных точек, тогда оно имеет вид $w = z$.
 	\end{theorem}
 	\begin{proof}
-		\[\frac{az+b}{cz+d} = z \iff cz^2 + (d - a)z - b = 0 \]
+		\[\frac{az+b}{cz+d} = z \iff cz^2 + (d - a)z - b = 0. \]
 		1) Если $c = 0$, $a = d$, $b \neq 0$, тогда \[w = z + \frac{b}{d}\]
 		\noindent
 		Конечных неподвижных точек нет и одна неподвижная точка $\infty$.\\
@@ -1305,7 +1291,7 @@
 		\[ h(w) = \frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1}, \quad w_1 \mapsto 0,\ w_2 \mapsto \infty,\ w_3 \mapsto 1  \]
 		Рассмотрим отображение: \[ w = f(z) = h^{-1}(g(z)) \text{ --- дробно-линейное отображение} \]
 		Итого имеем 
-		\[ h(w) = g(z) \Rightarrow \boxed{\frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}} \]
+		\[ h(w) = g(z) \implies \boxed{\frac{w - w_1}{w - w_2} \cdot \frac{w_3 - w_2}{w_3 - w_1} = \frac{z - z_1}{z - z_2} \cdot \frac{z_3 - z_2}{z_3 - z_1}} \]
 		Отсюда можно в явном виде найти чему равно $ w $.\\
 		\noindent
 		2) Единственность:\\
@@ -1314,7 +1300,7 @@
 		\[ \psi(z) = \tilde f^{-1}(f(z)) \]
 		Такое отображение переводит $ z_j \mapsto z_j $, т.е. оставляет точки неподвижными.\\ 
 		Получается, что
-		\[ \psi(z) = z \Rightarrow \tilde f^{-1}(f(z)) = z  \Rightarrow f(z) \equiv \tilde f(z)\ !?\] 
+		\[ \psi(z) = z \implies \tilde f^{-1}(f(z)) = z  \implies f(z) \equiv \tilde f(z)\ !?\] 
 	\end{proof}
 	\vspace{-0.5cm}
 	\begin{definition}
@@ -1350,17 +1336,17 @@
 	\end{definition}
 	\begin{statement}
 		Точки $z$ и $z^*$ симметричны относительно окружности $\gamma_R \iff$\\
-		Для всякой окружности $\Gamma$, выполняется $z, z^* \in \Gamma \Rightarrow \Gamma \perp \gamma_R$.
+		Для всякой окружности $\Gamma$, выполняется $z, z^* \in \Gamma \implies \Gamma \perp \gamma_R$.
 	\end{statement}
 	\begin{proof}
-		\ \\ \boxed \Rightarrow\\ 
+		\ \\ \boxed \implies\\ 
 		Пусть $z$ и $z^*$ симметричны относительно окружности $\gamma_R$, тогда
-		\[ |z - z_0||z^* - z_0| = R^2 \Rightarrow \text{ длина отрезка касательной равна } R \Rightarrow \gamma_R \perp \Gamma\]
+		\[ |z - z_0||z^* - z_0| = R^2 \implies \text{ длина отрезка касательной равна } R \implies \gamma_R \perp \Gamma\]
 		\noindent\boxed \Leftarrow\\ 
 		$\Gamma\perp\gamma_R$, значит $z$ и $z^*$ лежат на одном луче, выходящем из точки $z_0$.\\
 		\textbf{(Тут должна быть картинка)}\\
 		Из школьной геометрии: $ |OB|^2 = |OC||OD| $, тогда
-		\[ R^2 = |z - z_0||z^* - z_0| \Rightarrow z \text{ и } z^* \text{ симметричны относительно окружности} \]
+		\[ R^2 = |z - z_0||z^* - z_0| \implies z \text{ и } z^* \text{ симметричны относительно окружности} \]
 	\end{proof}
 	\newpage
 	\begin{theorem}
@@ -1446,8 +1432,8 @@
 		\end{tikzpicture}
 	\end{center}
 	В верхней полуплоскости найдется такая точка $ a $, что $a\mapsto 0,\ \Im a > 0$.\\
-	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точке $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (это берется из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \Rightarrow w^* = \frac{1}{w}$)\\
-	\[ f(z) = \frac{Az + B}{Cz + D} \Rightarrow
+	У окружности точка симметричная точки 0 будет точка $\infty$, значит симметричная точка к точке $ a $ перейдет в $\infty:\ \bar a \mapsto \infty $ (это берется из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}} \implies w^* = \frac{1}{w}$)\\
+	\[ f(z) = \frac{Az + B}{Cz + D} \implies
 	\begin{cases}
 		Aa + B = 0\\
 		C\bar a + D = 0
@@ -1457,9 +1443,9 @@
 		B = -a A \\
 		D = -\bar aC
 	\end{cases} 
-	\Rightarrow w = \frac{A(z - a)}{C(z - \bar a)} = K\frac{(z - a)}{(z - \bar a)} \]
+	\implies w = \frac{A(z - a)}{C(z - \bar a)} = K\frac{(z - a)}{(z - \bar a)} \]
 	Знаем, что точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
-	\[ 0 \mapsto e^{it} \Rightarrow \frac{-a}{-\bar a}K = e^{it} \Rightarrow |K| = 1 \Rightarrow K = e^{i\alpha} \] 
+	\[ 0 \mapsto e^{it} \implies \frac{-a}{-\bar a}K = e^{it} \implies |K| = 1 \implies K = e^{i\alpha} \] 
 	\textbf{Ответ:} $w = \dfrac{z-a}{z-\bar a}e^{i \alpha},\ \Im a > 0,\ \alpha \in \R$\\
 	\newpage
 	\noindent
@@ -1503,7 +1489,7 @@
 	Внутри окружности найдется такая точка $ a $, что $ a \mapsto 0,\ |a| < 1 $, также симметричная точка перейдет в симметричную  $ \dfrac{1}{\bar a} \mapsto \infty $ (из формулы $w^* = w_0 + \frac{R^2}{\overline{w - w_0}})$. Тогда
 	\[ f(z) = \tilde K\frac{z - a}{z - \frac{1}{\bar a}} = K\frac{z-a}{1-\bar az} \]
 	Точки на границе, также прейдут в точки на границе, из этого найдем $K$:\\
-	\[ 1 \mapsto e^{it} \Rightarrow K\frac{1-a}{1-\bar a} = e^{it} \Rightarrow  |K|\frac{|1-a|}{|1-\bar a|} = 1 \Rightarrow |K| = 1 \]
+	\[ 1 \mapsto e^{it} \implies K\frac{1-a}{1-\bar a} = e^{it} \implies  |K|\frac{|1-a|}{|1-\bar a|} = 1 \implies |K| = 1 \]
 	\textbf{Ответ:} $w = \dfrac{z - a}{1 - \bar az}e^{i \alpha},\ 0 < |a| < 1,\ \alpha\in\R$\\
 	\begin{example}
 		Найти такое отображение $f$, что $K_z$ переводит в $K_w$, $w(2) = i,\ \arg w(2) = 0$\\
@@ -1557,7 +1543,7 @@
 	\[ \begin{cases}
 			\arg w'(2) = 0\\ 
 			w'(2) = Ae^{-i\alpha}, \ A > 0
-		\end{cases} \Rightarrow \alpha = 0 \]
+		\end{cases} \implies \alpha = 0 \]
 	\textbf{Ответ: } $z - 2 = \dfrac{2(w - i)}{2 - iw}$. \\ 
 	\textbf{Способ 2}\\
 	Знаем, что $ 2 \mapsto i $, значит точка симметричная 2 тоже перейдет в симметричную: 
@@ -1739,9 +1725,9 @@
 	\end{center}
 	\subsection{Отображения, задаваемые функциями $f(z) = e^z$, $f(z) = \operatorname{Ln}(z)$}
 	\subsubsection{Функция $ f(z) = e^z $}
-	Её производная $f'(z) = e^z \neq 0, \ \forall z \in \Cm \Rightarrow f(z) \in \A(\Cm)$, она конформна на $\Cm$.\\
-	$e^z = e^{x + iy} \Rightarrow |e^z| = e^x$\\
-	$\forall z \in \Cm \Rightarrow e^z = e^{z + 2\pi i},\ T = 2\pi i$ --- основной период\\
+	Её производная $f'(z) = e^z \neq 0, \ \forall z \in \Cm \implies f(z) \in \A(\Cm)$, она конформна на $\Cm$.\\
+	$e^z = e^{x + iy} \implies |e^z| = e^x$\\
+	$\forall z \in \Cm \implies e^z = e^{z + 2\pi i},\ T = 2\pi i$ --- основной период\\
 	Уравнение $e^z = 0$ не имеет решений.
 	\[ D = \{z \in \Cm :\ 0 < \Im z < 2\pi\} \text{ --- область конформности.} \]
 	(Любая полоса шириной $ 2\pi $ является облостью конформности.)
@@ -1783,9 +1769,9 @@
 	\end{center}
 	Парметризуем границы этой области:
 	$ \begin{cases}
-		\Gamma_1: z = x,\ x \in \R \Rightarrow w = e^x\\
-		\Gamma_2: z = x + 2 \pi i,\ x \in \R \Rightarrow w = e^x\\
-		\Gamma_3: z = x + \pi i,\ x \in \R \Rightarrow w = -e^x
+		\Gamma_1: z = x,\ x \in \R \implies w = e^x\\
+		\Gamma_2: z = x + 2 \pi i,\ x \in \R \implies w = e^x\\
+		\Gamma_3: z = x + \pi i,\ x \in \R \implies w = -e^x
 	\end{cases} $
 	\[ D_w = \{ w \in \Cm :\ 0 < \arg w < 2\pi \} \]
 	\newpage
@@ -1831,9 +1817,9 @@
 			\end{tikzpicture}
 	\end{center}
 	$ \begin{cases}
-		\Gamma_1: z = x,\ x \leqslant 0 \Rightarrow w = e^x \\
-		\Gamma_2: z = yi,\  0 \leqslant y \leqslant 2\pi \Rightarrow w = e^{iy}\\
-		\Gamma_3: z = x + 2\pi i,\ x \leqslant 0 \Rightarrow w = e^x
+		\Gamma_1: z = x,\ x \leqslant 0 \implies w = e^x \\
+		\Gamma_2: z = yi,\  0 \leqslant y \leqslant 2\pi \implies w = e^{iy}\\
+		\Gamma_3: z = x + 2\pi i,\ x \leqslant 0 \implies w = e^x
 	\end{cases} $
 	\[ D_w = \{ w \in \Cm: |w| < 1\} \setminus \{ w \in \Cm: \Im w = 0,\ 0 \leqslant \Re w \leqslant 1 \} \]
 	\noindent\textbf{2)} $ D_z = \{z \in \Cm :\ 0 \leqslant \Im z \leqslant 2\pi,\ \Re z \geqslant 0 \} $
@@ -2033,10 +2019,10 @@
 	Очевидно, что $0 \mapsto \infty$ и $\infty \mapsto \infty$.
 	 
 	Рассмотрим $z_1 = 0$ и отображение $\dfrac{1}{f(z)}$
-	\[ \frac{1}{f(z)} = \frac{2}{z + \frac{1}{z}} = \frac{2z}{z^2 + 1} = g(z) \Rightarrow g'(0) = 2 \Rightarrow w = f(z) \text{ конформно в точке } 0.\]
+	\[ \frac{1}{f(z)} = \frac{2}{z + \frac{1}{z}} = \frac{2z}{z^2 + 1} = g(z) \implies g'(0) = 2 \implies w = f(z) \text{ конформно в точке } 0.\]
 	
 	Рассмотрим $z_2 = \infty$. Обозначим $s = \dfrac{1}{z}$. Тогда
-	\[ h(s) = \frac{1}{2}(\frac{1}{s} + s) \Rightarrow h(s)\text{ конформно в точке } 0 \Rightarrow w = f(z) \text{ конформно в точке } \infty/ \]
+	\[ h(s) = \frac{1}{2}(\frac{1}{s} + s) \implies h(s)\text{ конформно в точке } 0 \implies w = f(z) \text{ конформно в точке } \infty/ \]
 	\textbf{Вывод:} отображение $ f(z) = \dfrac{1}{2} (z + \dfrac{1}{z}) $ конформно в каждой точке, кроме $ z = \pm 1 $
 	\newpage
 	\section{Лекция 12}
@@ -2054,7 +2040,7 @@
 	\end{statement}
 	\begin{proof}
 		Исследуем на взаимооднозначность при $z_1\ne z_2$.
-		\[w_1 - w_2 = \frac{1}{2}\left(z_1 + \frac{1}{z_1}\right)-\frac{1}{2}\left(z_2+\frac{1}{z_2}\right) = \frac{z_1-z_2}{2}\left(1-\frac{1}{z_1z_2}\right)\Rightarrow w_1\ne w_1\iff z_1z_2\ne 1. \]
+		\[w_1 - w_2 = \frac{1}{2}\left(z_1 + \frac{1}{z_1}\right)-\frac{1}{2}\left(z_2+\frac{1}{z_2}\right) = \frac{z_1-z_2}{2}\left(1-\frac{1}{z_1z_2}\right)\implies w_1\ne w_1\iff z_1z_2\ne 1. \]
 	\end{proof}
 	\vspace{-\baselineskip}
 	\subsection{Примеры}
@@ -2248,8 +2234,8 @@
 		\end{tikzpicture}
 	\end{center}
 	\begin{flalign*}
-		&f' = \frac{1}{2}\left(1 - \frac{1}{x^2} \right) = 0 \Rightarrow x = \pm 1 \text{ экстремумы. }&\\
-		&f'' = \frac{1}{x^2} \Rightarrow f''(1) = 1 > 0 \text{ --- выпукла вниз},\ f''(-1) = -1 > 0 \text{ --- выпукла вверх.}&
+		&f' = \frac{1}{2}\left(1 - \frac{1}{x^2} \right) = 0 \implies x = \pm 1 \text{ экстремумы. }&\\
+		&f'' = \frac{1}{x^2} \implies f''(1) = 1 > 0 \text{ --- выпукла вниз},\ f''(-1) = -1 > 0 \text{ --- выпукла вверх.}&
 	\end{flalign*}
 	\begin{center}
 		\begin{tikzpicture}[scale=2]
@@ -4314,44 +4300,45 @@
 			\end{center}
 		\textbf{Ответ:} $w = \frac{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} - i}{\sqrt{\frac{z^2 + 2z + 1}{-z^2 + (h + \frac{1}{h})z - 1}} + i}$.
 	\section{Лекция 14}
-	\subsection{Интегрирование функций комплексного переменного.}
-	Дана гладкая или кусочно-гладкая кривая $ \gamma $ и её разбиение $\tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $\Delta z_k = z_k - z_{k-1}$ берем опорную точку $\xi_k \in \gamma.\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \} $.
-	Параметр разбиения $ \lambda = \max\limits_{1 \leqslant k 
-	\leqslant n}|\Delta z_k|$. Пусть $f(z)$ --- однозначная функция, определенная на прямой $\gamma$. Составим интегральную сумму: $\sigma(f,\, \xi,\, \tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k$.
+	\subsection{Интегрирование функций комплексного переменного}
+	Дана гладкая или кусочно-гладкая кривая $ \gamma $ и её разбиение $\tau = \{A = z_0,\, z_1, \ldots,\, z_n = B \}$. На каждом $\Delta z_k = z_k - z_{k-1}$ берем опорную точку $\xi_k\in\gamma,\ \xi = \{ \xi_1,\, \ldots,\, \xi_n \}$.
+	Параметр разбиения $\lambda = \max\limits_{1\leqslant k 
+	\leqslant n}|\Delta z_k|$. Пусть $f(z)$ --- однозначная функция, определенная на кривой $\gamma$. Составим интегральную сумму: $\sigma(f,\,\xi,\,\tau) = \Sum_{k=1}^n f(\xi_k)\Delta z_k$.
 	\begin{definition}
-		Пусть при $ \lambda \rightarrow 0 $ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $ \xi $, тогда его обозначают $ \int_\gamma f(z)dz $ и называют \textbf{интегралом} от функции $ f(z) $ по кривой $ \gamma $ в выбранном направлении.
-		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
+		Пусть при $\lambda\to0$ существует конечный предел интегральной суммы и этот предел не зависит от выбора разбиения и точек $\xi$, тогда его обозначают $\int_\gamma f(z)dz$ и называют \textbf{интегралом} от функции $f(z)$ по кривой $\gamma$ в выбранном направлении.
+		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\to0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
 	\end{definition}
-	Дано параметрическое представление прямой $ \gamma: (x(t),\,y(t)),\ t \in [a,\,b] $.\\ Тогда по Т. Пифагора(физический уровень строгости): $ ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
+	Дано параметрическое представление кривой $\gamma:(x(t),\,y(t)),\ t\in [a,\,b]$.\\ 
+	По теореме Пифагора (физический уровень строгости): $ds = \sqrt{dx^2+dy^2} = \sqrt{x'^2+y'^2}\,dt$.\\
 	\textbf{Криволинейный интеграл 1-го рода:}
-	\[ I_1 =  \Int_\gamma f(z)\,ds = \Int_\alpha^\beta f(x(t),\,y(t))\sqrt{x'^2+y'^2}\,dt \]
+	\[ I_1 = \Int_\gamma f(z)\,ds = \Int_\alpha^\beta f(x(t),\,y(t))\sqrt{x'^2+y'^2}\,dt. \]
 	\textbf{Криволинейный интеграл 2-го рода:}
-	\[ I_2 =  \Int_\gamma \bar g(x,\,y)\,d\bar s = \Int_\gamma Pdx + Qdy = 
+	\[ I_2 = \Int_\gamma\bar g(x,\,y)\,d\bar s = \Int_\gamma Pdx + Qdy = 
 	\Int_\alpha^\beta (P(x,\,y)x' + Q(x,\,y)y')\,dt, \]
-	где $ d\bar s = (dx,\, dy),\quad \bar g(x,\,y) = (P(x,\,y),\ Q(x,\,y)) $
+	где $d\bar s = (dx,\, dy),\quad \bar g(x,\,y) = (P(x,\,y),\ Q(x,\,y))$.
 	\begin{theorem}
-		Пусть существуют криволинейные интегралы 2-го рода: $\Int_\gamma vdx + udy,\ \Int_\gamma udx - vdy $. Тогда\\
-		\[ \Int_\gamma f(z)\,dz = \Int_\gamma udx - vdy + i\Int_\gamma vdx + udy \]
+		Пусть существуют криволинейные интегралы 2-го рода: $\int_\gamma vdx + udy,\ \int_\gamma udx - vdy$. Тогда
+		\[ \Int_\gamma f(z)\,dz = \Int_\gamma udx - vdy + i\Int_\gamma vdx + udy. \]
 	\end{theorem}
 	\begin{proof}
 		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n (u(\xi_k) + iv(\xi_k))(\Delta x_k + i\Delta y_k) = \]
-		\[ = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k) \]
+		\[ = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(u(\xi_k)\Delta x_k - v(\xi_k)\Delta y_k) + i\Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n(v(\xi_k)\Delta x_k + u(\xi_k)\Delta y_k). \]
 	\end{proof}
 	\begin{theorem}
-		Пусть $f(z) \in C(\gamma)$, где $\gamma$ --- гладкая кривая Жордана,  $ z = z(t),\ t \in [\alpha,\,\beta] $. Тогда
+		Пусть $f(z)\in C(\gamma)$, где $\gamma$ --- гладкая кривая Жордана, $z = z(t),\ t\in [\alpha,\,\beta]$. Тогда
 		\[ \Int_\gamma f(z)\,dz = \Int_\alpha^\beta f(z(t))z'(t)\,dt. \]
 	\end{theorem}
 	\begin{proof}
-		$ f(z) \in C(\gamma) \Rightarrow u(x, y),\ v(x, y) \in C(\gamma) $. По определению кривой Жордана: $ x(t),\ y(t) \in C^1[\alpha,\,\beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt $
+		$f(z)\in C(\gamma)\implies u(x, y),\ v(x, y)\in C(\gamma) $. По определению кривой Жордана: $x(t),\ y(t)\in C^1[\alpha,\,\beta],\ z(t)= x(t) + iy(t),\ dz = (x' + iy')dt$.
 		\begin{align*}
-		J_1 = \Int_\gamma udx-vdy = \Int_\alpha^\beta u(x(t),\, y(t))x'(t)- v(x(t),\, y(t))y'(t)\,dt\\
-		J_2 = \Int_\gamma udx+vdy = \Int_\alpha^\beta u(x(t),\, y(t))x'(t)+ v(x(t),\, y(t))y'(t)\,dt\\
-		\Int_\gamma f(z)\,dz = J_1 + iJ_2 = \Int_\gamma(u+iv)(x'(t) + iy'(t))\,dt = \Int_\alpha^\beta f(z(t))z'(t)\,dt
+			J_1 = \Int_\gamma udx-vdy = \Int_\alpha^\beta u(x(t),\, y(t))x'(t)- v(x(t),\, y(t))y'(t)\,dt.\\
+			J_2 = \Int_\gamma vdx+udy = \Int_\alpha^\beta v(x(t),\, y(t))x'(t)+ u(x(t),\, y(t))y'(t)\,dt.\\
+			\Int_\gamma f(z)\,dz = J_1 + iJ_2 = \Int_\gamma(u+iv)(x'(t) + iy'(t))\,dt = \Int_\alpha^\beta f(z(t))z'(t)\,dt.
 		\end{align*}
 	\end{proof}
 	\begin{example}			
 			\begin{minipage}{0.4\textwidth}
-				\[ 1)\ I = \Int_\gamma z\Re z\,dz \]
+				\[ 1)\ I = \Int_\gamma z\Re z\,dz. \]
 			\end{minipage}
 			\begin{minipage}{0.4\textwidth}
 				\begin{tikzpicture}
@@ -4367,11 +4354,11 @@
 				\end{tikzpicture}
 			\end{minipage}
 	\end{example}
-	Выполним параметризацию кривой $ \gamma : z = x + i\dfrac{x}{2},\ x \in [0,\,2].\ dz = 1+\dfrac{i}{2}\,dx $
-	\[ I =  \Int_0^2 \left( x+i\frac{x}{2}\right)x\left( 1+ \frac{i}{2} \right) dx = \left( 1+ \frac{i}{2} \right)^2\Int_0^2 x^2\,dx = \left.\left( \frac{3}{4} + i \right) \frac{x^3}{3}\,\right|_0^2 = 2 + \frac{8}{3}i. \]
+	Выполним параметризацию кривой $\gamma:z = x + i\dfrac{x}{2},\ x\in[0,\,2].\ dz = 1+\dfrac{i}{2}\,dx.$
+	\[ I = \Int_0^2 \left( x+i\frac{x}{2}\right)x\left(1+\frac{i}{2} \right)dx = \left(1+\frac{i}{2} \right)^2\Int_0^2 x^2\,dx = \left.\left(\frac{3}{4} + i\right) \frac{x^3}{3}\,\right|_0^2 = 2+\frac{8}{3}i. \]
 	\begin{example}			
 		\begin{minipage}{0.4\textwidth}
-			\[ 2)\ I = \Int_\gamma\Im z\,dz \]
+			\[ 2)\ I = \Int_\gamma\Im z\,dz. \]
 		\end{minipage}
 		\begin{minipage}{0.4\textwidth}
 			\begin{tikzpicture}
@@ -4383,55 +4370,57 @@
 			\end{tikzpicture}
 		\end{minipage}
 	\end{example}
-	Выполним параметризацию кривой $\gamma: z = e^{it},\ t \in [0,\,\pi].\ dz = ie^{it}\,dt$
-	\[ I = \Int_0^\pi \sin t\,ie^{it}\,dt = \Int_0^\pi \frac{e^{it} - e^{-it}}{2i} ie^{it}\,dt =  \Int_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2}. \]
+	Выполним параметризацию кривой $\gamma: z = e^{it},\ t\in[0,\,\pi].\ dz = ie^{it}\,dt$.
+	\[ I = \Int_0^\pi\sin t\,ie^{it}\,dt = \Int_0^\pi\frac{e^{it}-e^{-it}}{2i}ie^{it}\,dt =\Int_0^\pi \frac{e^{2it}-1}{2}\,dt = -\frac{\pi}{2}. \]
 	\newpage
 	\subsection{Свойства интеграла вдоль кривой.}
 	\begin{theorem*}
 		(Линейность)\\
-		\indent Пусть существуют интегралы $ \Int_\gamma f(z)\,dz $ и $ \Int_\gamma g(z)\,dz $. Тогда
-		\[ \forall\,c_1,\,c_2 \in\Cm\Rightarrow\exists\Int_\gamma c_1f(z) + c_2g(z)\,dz = c_1\Int_\gamma f(z)\,dz + c_2\Int_\gamma g(z)\,dz.  \]
+		\indent Пусть существуют интегралы $\Int_\gamma f(z)\,dz$ и $\Int_\gamma g(z)\,dz$. Тогда
+		\[ \forall\,c_1,\,c_2\in\Cm\quad\Int_\gamma c_1f(z) + c_2g(z)\,dz = c_1\Int_\gamma f(z)\,dz + c_2\Int_\gamma g(z)\,dz. \]
 	\end{theorem*} 
 	\begin{theorem}
 		При изменении направления обхода вдоль кривой, знак интеграла сменится на противоположный.
 		\[ \Int_{\gamma^-}f(z)\,dz = -\Int_\gamma f(z)\,dz. \]
 	\end{theorem}
 	\begin{theorem}
-		Пусть $ \gamma = \gamma_1 \cup \gamma_2 $ (Они пересекаются в одной концевой точке). Тогда
+		Пусть $\gamma = \gamma_1\cup\gamma_2$ (они пересекаются в одной концевой точке). Тогда
 		\[ \Int_\gamma f(z)\,dz = \Int_{\gamma_1}f(z)\,dz + \Int_{\gamma_2}f(z)\,dz. \]
 	\end{theorem}
 	\begin{theorem*}
-		\[ \bigg| \Int_\gamma f(z)\,dz\bigg| \leqslant \Int_\gamma |f(z)|\,ds,\ |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода}).\]
+		\[ \bigg|\Int_\gamma f(z)\,dz\bigg|\leqslant\Int_\gamma |f(z)|\,ds,\ |dz| = ds,\ (\text{Криволинейный интеграл 1-го рода}).\]
 	\end{theorem*}
 	\begin{proof}
-		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k \]
-		\[ \left| \Sum_{k=1}^n f(\xi_k)\Delta z_k\right| \leqslant \Sum_{k=1}^n |f(\xi_k)||\Delta z_k| \leqslant \Sum_{k=1}^n |f(\xi_k)|\Delta s_k \xrightarrow[\lambda \to 0]{} \text{ Получаем исходное неравенство.} \] 
+		\[ \Int_\gamma f(z)\,dz = \Lim_{\lambda\rightarrow 0}\ \Sum_{k=1}^n f(\xi_k)\Delta z_k. \]
+		\[ \left|\Sum_{k=1}^n f(\xi_k)\Delta z_k\right|\leqslant\Sum_{k=1}^n |f(\xi_k)||\Delta z_k| \leqslant\Sum_{k=1}^n |f(\xi_k)|\Delta s_k.\text{ При }\lambda\to0\text{ получаем исходное неравенство.} \] 
 	\end{proof}
 	\begin{theorem*}
 		(Замена переменной)\\ \indent
-		Пусть $z = \psi(\xi)$ взаимнооднозначно переводит кривую $ \gamma_\xi $ на $ \gamma_z$(Гладкие или кусочно-гладкие кривые Жордана). Пусть $\psi(\xi) \in \A(\gamma_\xi),\ f(z)\in C(\gamma_z)$. Тогда
-		\[ \Int_{\gamma_z} f(z)\,dz =  \Int_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi \]
+		Пусть $z = \psi(\xi)$ взаимнооднозначно переводит кривую $\gamma_\xi$ на $\gamma_z$ (гладкие или кусочно-гладкие кривые Жордана). Пусть $\psi(\xi)\in\A(\gamma_\xi),\ f(z)\in C(\gamma_z)$. Тогда
+		\[ \Int_{\gamma_z} f(z)\,dz = \Int_{\gamma_\xi}f(\psi(\xi))\psi'(\xi)\,d\xi. \]
 	\end{theorem*}
 	\newpage
 	\subsection{Интегральная теорема Коши}
 	\begin{theorem*}
 		(Интегральная теорема Коши для односвязной области)\\
-		\indent Пусть $ f(z) \in \A(D)$, где $ D $ --- односвязная область.
-		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $ \gamma \subset D$ \[ \Oint_\gamma f(z) \, dz = 0. \] 
+		\indent Пусть $f(z)\in\A(D)$, где $D$ --- односвязная область.
+		Тогда для всякой замкнутой гладкой или кусочно-гладкой кривой Жордана $\gamma \subset D$
+		\[ \Oint_\gamma f(z) \, dz = 0. \] 
 	\end{theorem*}
 	\begin{proof}
-		\[ \Oint_\gamma f(z) \, dz = \Oint_\gamma (udx - vdy) + i\Oint_\gamma (vdx + udy) \]
-		Выпишем формулу Грина, где $G$ --- это область, внутри кривой. $\ P,\,Q \in C^1(\partial G)$.
-		\[ \Oint_{\partial G} Pdx + Qdy = \Iint_G Q'_x - P'_y\, dxdy\]
-		$ f(z) \in \A(D) \Rightarrow \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда применим формулу Грина
+		\[ \Oint_\gamma f(z)\,dz = \Oint_\gamma (udx - vdy) + i\Oint_\gamma (vdx + udy). \]
+		Выпишем формулу Грина, где $G$ --- область, ограниченная кривой $\gamma$. $\ P,\,Q \in C^1(\partial G)$.
+		\[ \Oint_{\partial G} Pdx + Qdy = \Iint_G Q'_x - P'_y\,dxdy.\]
+		$ f(z) \in \A(D) \implies \begin{cases} u'_x = v'_y\\u'_y = -v'_x \end{cases} $. Тогда применим формулу Грина:
 		\begin{align*}
-			&\Oint_\gamma udx - vdy = \Iint_G -v'_x - u'_y\, dxdy = 0\\
+			&\Oint_\gamma udx - vdy = \Iint_G -v'_x - u'_y\, dxdy = 0;\\
 			&\Oint_\gamma vdx + udy = \Iint_G u'_x - v'_y\, dxdy = 0 .
 		\end{align*}
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{remark}
-		Теорема доказана при доп. предположении о гладкости ф-ий $u,\,v:\ u,\,v\in C^1(D)\\ 
-		u'_x,\,u'_y,\,v'_x,\,v'_y \in C(D). $
+		Теорема доказана при доп. предположении о гладкости ф-ий $u,\,v:\ u,\,v\in C^1(D).\\ 
+		u'_x,\,u'_y,\,v'_x,\,v'_y\in C(D)$.
 	\end{remark}
 	\newpage
 	\section{Лекция 15}
@@ -4450,8 +4439,9 @@
 		\[ \Oint_\gamma f(z)\,dz = 0\iff\Oint_{\gamma_1} f(z)\,dz + \Oint_{\gamma_2^-} f(z)\,dz = 0\iff\Oint_{\gamma_1} f(z)\,dz = \Oint_{\gamma_2} f(z)\,dz. \]
 		Предположим $ \gamma_1,\,\gamma_2 $ имеют общие точки, отличающеися от начала и конца.\\ 
 		Пусть $ \gamma = \gamma_1 \cup\gamma_2^- = (\bigcup\limits_{j=1}^N \Gamma_j) \cup(\bigcup\limits_{l=1}^M K_l) $, где $ \Gamma_j $ --- замкнутые контуры, $ K_l $ --- совпадающие контуры (обход будет осуществляться два раза в обе стороны). Тогда
-		\[ \Oint_\gamma f(z)\,dz = \Sum_{j=1}^N\Oint_{\Gamma_j} f(z)\,dz + \Sum_{l=1}^M\bigg(\Int_{K_l} f(z)\,dz + \Int_{K_l^-} f(z)\,dz \bigg) = 0 \]
+		\[ \Oint_\gamma f(z)\,dz = \Sum_{j=1}^N\Oint_{\Gamma_j} f(z)\,dz + \Sum_{l=1}^M\bigg(\Int_{K_l} f(z)\,dz + \Int_{K_l^-} f(z)\,dz \bigg) = 0. \]
 	\end{proof}
+	\vspace{-\baselineskip}
 	\begin{example*}
 		\[ \Oint_{|z-\pi|=\pi}\sin^n z\,dz = 0 \text{ --- по теореме Коши для односвязной области.} \]
 	\end{example*}
@@ -5227,7 +5217,7 @@
 		Точка $z_0\in\Cm$ --- устранимая особая точка функции $f(z)\in\A(\dot U_\delta(z_0))\iff \exists\Lim_{z\to z_0}f(z)$.
 	\end{theorem}
 	\begin{proof}
-		\ \\$\boxed\Rightarrow$ Пусть $z_0$ --- устранимая особая точка. Тогда в проколотой окрестности функция $f(z)$ представима в виде ряда
+		\ \\$\boxed\implies$ Пусть $z_0$ --- устранимая особая точка. Тогда в проколотой окрестности функция $f(z)$ представима в виде ряда
 		\[ f(z) = \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\epsilon. \]
 		Переходя к пределу слева и справа видем, что 
 		\[ \lim_{z\to z_0}f(z) = c_0. \]
@@ -5245,7 +5235,7 @@
 		Точка $z_0\in\Cm$ является полюсом функции $f(z)\in\A(\dot U_\delta(z_0))\iff\Lim_{z\to z_0}f(z) = +\infty.$
 	\end{theorem}
 	\begin{proof}
-		\ \\$\boxed\Rightarrow$ Пусть $z_0$ --- полюс функции $f(z)$. Тогда
+		\ \\$\boxed\implies$ Пусть $z_0$ --- полюс функции $f(z)$. Тогда
 		\[ f(z) = \frac{c_{-m}}{(z-z_0)^m} + \frac{c_{-( m-1)}}{(z-z_0)^{m-1}} + \ldots + \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\delta. \]
 		\[ f(z) = \frac{c_{-m} + c_{-( m-1)}(z-z_0) + \ldots}{(z-z_0)^m}+ \Sum_{k=0}^{+\infty}c_k(z-z_0)^k,\ 0<|z-z_0|<\delta. \]
 		Рассмотрим функцию $\psi(z) = c_{-m} + c_{-(m-1)}(z-z_0) + \ldots$, причем $\psi(z_0) = c_{-m}$. Если $f(z)\in\A(\dot U_\delta(z_0))$, то $\psi(z)\in\A(U_\delta(z_0))$. Тогда
