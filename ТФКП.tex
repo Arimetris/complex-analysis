@@ -5656,7 +5656,67 @@
 	Пусть $x(t)\risingdotseq F(p)$ --- преобразование Лапласа. Тогда
 	\[ p^2F(p) + p - pF(p)-1 - 2F(p) = \Int_0^{+\infty}e^{t(1-p)}\,dt = \left.\frac{e^{t(1-p)}}{1-p}\right|_0^{+\infty} = \frac{1}{p-1}. \]
 	Отсюда выразим $F(p)$
-	\[ F(p) = \frac{1}{(p-1)(p^2-p-2)} - \frac{p-1}{p^2-p-2}. \]
-	Итого получим
-	\[ x(t) = \Sum_{k=1}^N\Res_{p=p_k}F(p)e^{pt}. \]
+	\[ F(p) = \frac{1}{(p-1)(p^2-p-2)} - \frac{p-1}{p^2-p-2} = \frac{1}{p^2-p-2}\left(\frac{1}{p-1}-(p-1)\right). \]
+	Найдем особые точки
+	\[ p_1 = 2 \text{ --- устранимая особая точка},\quad p_{2,3} =\pm1\text{ --- простые полюсы. } \]
+	Итого имеем
+	\begin{multline*}
+		f(t)= \Sum_{k=1}^N\Res_{p=p_k}F(p)e^{pt} = \Res_{p=1}F(p)e^{pt}+\Res_{p=-1}F(p)e^{pt} = \Lim_{p\to1}\frac{e^{pt}}{p^2-p-2}+\Lim_{p\to-1}\frac{e^{pt}(\frac{1}{p-1}-p+1)}{2p-1}=\\=-\frac{e^t}{2}-\frac{e^{-t}}{3}\cdot(2-\frac{1}{2}) = -\ch t.
+	\end{multline*}
+	\newpage
+	\section{Лекция 25}
+	\subsection{Операционное исчисление}
+	\begin{definition}
+		Вещественнозначную функцию $f(t)$ назовем \textbf{функцией-оригиналом}, если
+			\begin{enumerate}
+			\item $f(t) = 0,\ t<0$;
+			\item $f(t)$ является кусочно-гладкой при $t\geqslant0$, причем на каждом конечном отрезке содержится лишь конечное число точек разрыва $f$ и $f'$, все разрывы первого рода;
+			\item $f(t)$ --- функция ограниченного роста.
+		\end{enumerate}
+	\end{definition}
+	\begin{definition}
+		Пусть существуют такие $s>0$ и $M>0$, что $\forall\,t\geqslant0\quad|f(t)|\leqslant Me^{st}$. Пусть $\alpha = \inf \{s:|f(t)|\leqslant Me^{st}\}$. Если $\alpha$ --- конечное число, то функцию $f(t)$ назовем функцией ограниченного роста и $\alpha$ назовем её порядком (показателем) роста. 
+	\end{definition}
+	\begin{remark*}
+		\[\text{ Можем рассмотреть функцию } \eta(t) = \begin{cases}1,\ t>0\\0,\ t\leqslant 0 \end{cases}, \text{ и считать, что } f(t) = f(t)\eta(t).\]
+	\end{remark*}
+	\begin{theorem}
+		Пусть $f(t)$ --- функция-оригинал с показателем роста $\alpha$. Тогда при $\Re p>\alpha$ интеграл 
+		\[ F(p) = \Int_0^{+\infty}f(t)e^{-pt}\,dt, \text{ сходится.} \]
+	\end{theorem}
+	\begin{proof}
+		Возьмем любое $\sigma:\alpha < \sigma <\Re p $. Если $\alpha$ --- показатель роста, тогда верно
+		\[ \exists\,M>0:\forall\,t\geqslant0\quad |f(t)|\leqslant Me^{\sigma t}. \]
+		Пусть $p = p_x+ip_y$, где $p_x,\,p_y\in\R$. Имеем
+		\[ \Int_0^{+\infty}f(t)e^{-pt}\,dt = \Lim_{a\to+\infty}\Int_0^a f(t)e^{-pt}\,dt. \]
+		Оценим этот интеграл
+		\[ \bigg|\Int_0^a f(t)e^{-pt}\,dt\bigg|\leqslant\Int_0^a Me^{\sigma t}e^{-p_xt}\,dt =\left. M\cdot\frac{e^{(\sigma-p_x)t}}{\sigma - p_x}\right|_0^a = M\cdot\frac{e^{(\sigma-p_x)a} - 1}{\sigma - p_x} \to \frac{M}{p_x-\sigma}, \text{ при } a\to+\infty.\]
+	\end{proof}
+	\vspace{-\baselineskip}
+	\begin{remark*}
+		\[ F(p)\in\A(\{p\in\Cm: \Re p > \alpha\}).\]
+	\end{remark*}
+	\begin{statement}
+		Пусть $f(t),\ g(t)$ --- функции-оригиналы и $f(t)\risingdotseq F(p),\ g(t)\risingdotseq G(p)$. Тогда
+		\[ \Int_0^tf(\tau)g(t-\tau)\,d\tau\risingdotseq F(p)\cdot G(p). \] 
+	\end{statement}
+	\begin{proof}
+		\begin{multline*}
+			\Int_0^{+\infty}e^{-pt}\,dt\Int_0^t f(\tau)g(t-\tau)\,d\tau = \Iint_D f(\tau)g(t-\tau)e^{-pt}\,dtd\tau = \Int_0^{+\infty}f(\tau)\,d\tau\Int_\tau^{+\infty}g(t-\tau)e^{-pt}\,dt =\\= \{s =t-\tau\}= \Int_0^{+\infty}f(\tau)\,d\tau\Int_0^{+\infty}g(s)e^{-ps}e^{-p\tau}\,ds = \Int_0^{+\infty}f(\tau)e^{-p\tau}\,d\tau\cdot\Int_0^{+\infty}g(s)e^{-ps}\,ds = F(p)\cdot G(p).
+		\end{multline*}
+	\end{proof}
+	\vspace{-\baselineskip}
+	\begin{example*}
+		\[ \cos(\omega t)\risingdotseq\Int_0^{+\infty}\cos(\omega t)e^{-pt}\,dt = \Re\Int_0^{+\infty}e^{i\omega t}e^{-pt}\,dt,\ \Im p = 0. \]
+		\[ \Re\left.\frac{e^{(i\omega -p)t}}{i\omega - p}\right|_0^{+\infty} = \Re\frac{1}{p-i\omega} = \Re\frac{p+i\omega}{p^2+\omega^2} = \frac{p}{p^2+\omega^2}. \]
+		В силу единственности аналитического продолжения, ответ можем продолжить на комплексную плоскость, а продолжение всегда единственно. Аналогично получим		
+		\[\sin\omega t\risingdotseq\frac{\omega}{p^2+\omega^2}. \]
+	\end{example*}
+	\begin{example*}
+		\[ \begin{cases}\displaystyle x''(t) - \Int_0^t\sin(\tau - t)(x''(\tau) + x(\tau))\,d\tau = 2\cos t,\\x(0) = 0,\\x'(0) = 0. \end{cases} \]
+	\end{example*}
+	Пусть $x(t)\risingdotseq F(p)$. Тогда
+	\[ p^2F - \frac{1}{p^2+1}\cdot p^2F - \frac{1}{p^2+1}F = \frac{2p}{p^2+1}\iff F = \frac{2p}{p^4-1}. \]
+	Все особые точки --- простые полюсы. Итого
+	\[ f(t) = \Sum_{k=1}^N\Res_{p=p_k}\frac{2p}{p^4-1}e^{pt} = \Lim_{p\to1}\frac{2p}{4p^3}e^{pt}+\Lim_{p\to-1}\frac{2p}{4p^3}e^{pt} + \Lim_{p\to i}\frac{2p}{4p^3}e^{pt}+\Lim_{p\to-i}\frac{2p}{4p^3}e^{pt} = \ch t - \cos t.\]
 \end{document}
